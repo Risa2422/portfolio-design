@@ -8,12 +8,12 @@ function Header() {
   ];
 
   return (
-    <header className="flex justify-between items-center py-6 px-8 md:px-[160px]">
+    <header className="flex justify-between items-center py-6 px-[5vw] sm:px-[10vw] mb-[5vw]">
       <Link to="/" className="text-xl font-bold">
         LOGO
       </Link>
       <nav>
-        <ul className="flex md:space-x-10 space-x-6">
+        <ul className="flex sm:space-x-10 space-x-6">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
