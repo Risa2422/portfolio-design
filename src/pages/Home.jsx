@@ -1,9 +1,12 @@
 import React from "react";
+import SectionTitle from "../components/SectionTitle";
+import WorkCard from "../components/WorkCard";
+import workData from "../data/workData";
 
 const Home = () => {
   return (
-    <div className=" h-[560px]">
-      <div className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px]">
+    <section className="">
+      <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[520px]">
         {/* <img
           src="/circle-yellow.png"
           alt="Yellow Circle"
@@ -28,8 +31,24 @@ const Home = () => {
             デザイナー目指しています。一生懸命頑張りますデザイナー目指しています。一生懸命頑張ります
           </p>
         </div>
-      </div>
-    </div>
+      </section>
+      <section>
+        {/* works */}
+        <SectionTitle title="Works" />
+        <div className="space-y-10 md:space-y-20 mt-4 md:mt-8">
+          {workData.map((work, index) => (
+            <WorkCard
+              key={index}
+              imageSrc={work.imageSrc}
+              title={work.title}
+              description={work.description}
+              tags={work.tags}
+              reverse={index % 2 === 1}
+            />
+          ))}
+        </div>
+      </section>
+    </section>
   );
 };
 
