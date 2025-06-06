@@ -1,11 +1,19 @@
 import React from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import BlogCard from "../components/BlogCard";
 import SectionTitle from "../components/SectionTitle";
 import WorkCard from "../components/WorkCard";
+import blogData from "../data/blogData";
 import workData from "../data/workData";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Home = () => {
+  const isMobile = useIsMobile();
   return (
-    <section className="">
+    <section>
       <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[520px]">
         {/* <img
           src="/circle-yellow.png"
@@ -47,6 +55,42 @@ const Home = () => {
             />
           ))}
         </div>
+      </section>
+      {/* blogs */}
+      <section>
+        <SectionTitle title="Blogs" />
+        <div></div>
+        {isMobile ? (
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper px-4 mt-4 md:mt-8"
+            spaceBetween={10}
+            slidesPerView={1.2}
+          >
+            {blogData.map((data, i) => (
+              <SwiperSlide key={i}>
+                <BlogCard
+                  imageSrc={data.imageSrc}
+                  title={data.title}
+                  url={data.url}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 md:mt-8">
+            {blogData.map((data) => (
+              <BlogCard
+                imageSrc={data.imageSrc}
+                title={data.title}
+                url={data.url}
+              />
+            ))}
+          </div>
+        )}
       </section>
     </section>
   );
