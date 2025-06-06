@@ -4,14 +4,14 @@ const BlogCard = ({ imageSrc, title, url }) => {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block h-[200px] md:h-[300px] px-4 py-2 rounded-md cursor-pointer hover:opacity-80 transition"
+      className="block h-[200px] md:h-[240px] px-4 rounded-md cursor-pointer hover:opacity-80 transition"
     >
       <img
         src={imageSrc}
         alt="blog info"
-        className="h-2/3 md:h-1/2 w-full object-cover rounded-md"
+        className="h-2/3  w-full object-cover rounded-md"
       />
-      <h4 className="mt-2 font-medium text-sm">{title}</h4>
+      <h4 className="mt-2 font-medium">{title}</h4>
     </a>
   );
 };

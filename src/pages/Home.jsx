@@ -59,38 +59,52 @@ const Home = () => {
       {/* blogs */}
       <section>
         <SectionTitle title="Blogs" />
-        <div></div>
-        {isMobile ? (
-          <Swiper
-            pagination={{
-              dynamicBullets: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper px-4 mt-4 md:mt-8"
-            spaceBetween={10}
-            slidesPerView={1.2}
-          >
-            {blogData.map((data, i) => (
-              <SwiperSlide key={i}>
+        <div className="mt-4 md:mt-8 space-y-1">
+          {isMobile ? (
+            <Swiper
+              pagination={{
+                dynamicBullets: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper space-x-2"
+              spaceBetween={10}
+              slidesPerView={1.2}
+            >
+              {blogData.map((data, i) => (
+                <SwiperSlide key={i}>
+                  <BlogCard
+                    imageSrc={data.imageSrc}
+                    title={data.title}
+                    url={data.url}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              {blogData.map((data) => (
                 <BlogCard
                   imageSrc={data.imageSrc}
                   title={data.title}
                   url={data.url}
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 md:mt-8">
-            {blogData.map((data) => (
-              <BlogCard
-                imageSrc={data.imageSrc}
-                title={data.title}
-                url={data.url}
-              />
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+          <a
+            href="https://note.com/rsloth24"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-end gap-1 cursor-pointer hover:opacity-80 transition"
+          >
+            <p className="text-sm">ブログ一覧を見る</p>
+            <img
+              src="/note-icon.png"
+              alt="note icon"
+              className="w-6 h-6 object-cover border-text-sub border-[0.6px] rounded-md"
+            />
+          </a>
+        </div>
       </section>
     </section>
   );
