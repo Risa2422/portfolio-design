@@ -1,4 +1,6 @@
 import SectionTitle from "../components/SectionTitle";
+import SkillItem from "../components/Skilltem";
+import skillData from "../data/skillData";
 
 const profileItems = ["鹿児島県出身 🍠", "カナダ在住 🇨🇦", "1997年生まれ 🗓️"];
 
@@ -40,7 +42,7 @@ const Profile = () => {
             {profileItems.map((text, index) => (
               <li
                 key={index}
-                className="px-4 py-1.5 text-text-sub border border-border rounded-full text-sm bg-white"
+                className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs"
               >
                 {text}
               </li>
@@ -78,6 +80,24 @@ const Profile = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+      <section className="px-6 md:px-10">
+        <SectionTitle title="Skills" sub />
+        <div className="px-6 md:px-10 mt-4 md:mt-8 space-y-4">
+          <div className="flex justify-center">
+            <ul className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-10">
+              {skillData.map((skill) => (
+                <SkillItem
+                  key={skill.label}
+                  icon={skill.icon}
+                  label={skill.label}
+                  size={skill.size}
+                  cover={skill.cover}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </section>
