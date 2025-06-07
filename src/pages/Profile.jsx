@@ -25,7 +25,6 @@ const backgrounds = [
 const Profile = () => {
   return (
     <section className="flex-1 space-y-10">
-      {/* Profile セクション */}
       <SectionTitle title="Profile" />
       <div className="flex flex-col items-center md:items-start md:flex-row md:gap-8 px-10 mt-4 md:mt-8">
         <div className="w-[300px]">
@@ -49,8 +48,6 @@ const Profile = () => {
           </ul>
         </div>
       </div>
-
-      {/* Backgrounds セクション */}
       <section className="px-6 md:px-10">
         <SectionTitle title="Backgrounds" sub />
         <div className="px-6 md:px-10 mt-4 md:mt-8 space-y-4">
