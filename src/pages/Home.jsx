@@ -45,7 +45,7 @@ const Home = () => {
         {/* works */}
         <section className="space-y-10">
           <SectionTitle title="Works" />
-          <div className="space-y-10 md:space-y-20 mt-4 md:mt-8">
+          <div className="flex flex-col gap-10 md:gap-20 mt-4 md:mt-8">
             {workData.map((work, index) => (
               <WorkCard
                 key={index}

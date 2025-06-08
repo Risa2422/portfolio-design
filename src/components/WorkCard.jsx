@@ -11,18 +11,18 @@ function WorkCard({
   return (
     <Link to={`/works/${to}`}>
       <div
-        className={`flex flex-col md:flex-row gap-2 md:gap-12 md:h-[300px] px-4 ${
+        className={`flex flex-col md:flex-row gap-2 md:gap-12 md:h-[300px] px-4  ${
           reverse ? "md:flex-row-reverse" : ""
         }`}
       >
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 overflow-hidden">
           <img
             src={imageSrc}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="md:w-1/2 space-y-3 pt-2">
+        <div className="md:w-1/2 space-y-3 pt-2 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-2">
             <h3 className="font-base text-lg">{title}</h3>
             <p className="text-sm text-text-sub">{description}</p>
