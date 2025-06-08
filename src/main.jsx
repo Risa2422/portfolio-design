@@ -5,7 +5,7 @@ import "./index.css";
 import { RootLayout } from "./layouts/root-layout.jsx";
 import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile.jsx";
-import Work from "./pages/Work.jsx";
+import EventManagement from "./pages/works/EventManagement.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "profile", element: <Profile /> },
-      { path: ":workId", element: <Work /> },
+      { path: "works/event-management", element: <EventManagement /> },
     ],
   },
 ]);

@@ -1,7 +1,8 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
+
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "profile", label: "Profile" },
@@ -14,16 +15,20 @@ function Header() {
       </Link>
       <nav>
         <ul className="flex sm:space-x-10 space-x-6">
-          {navLinks.map((link) => (
+          {navLinks.map(({ to, label }) => (
             <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `transition-all duration-600 font-light underline-offset-8 decoration-[1.4px] underline hover:text-primary
-                  ${isActive ? "decoration-primary" : "decoration-transparent"}`
-              }
+              key={to}
+              to={to}
+              className={({ isActive }) => {
+                const isWorkPath = location.pathname.startsWith("/works");
+                const active = isActive || (to === "/" && isWorkPath);
+
+                return `transition-all duration-600 font-light underline-offset-8 decoration-[1.4px] underline hover:text-primary ${
+                  active ? "decoration-primary" : "decoration-transparent"
+                }`;
+              }}
             >
-              {link.label}
+              {label}
             </NavLink>
           ))}
         </ul>

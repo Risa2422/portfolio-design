@@ -54,6 +54,7 @@ const Home = () => {
                 description={work.description}
                 tags={work.tags}
                 reverse={index % 2 === 1}
+                to={work.to}
               />
             ))}
           </div>
