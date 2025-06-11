@@ -11,6 +11,7 @@ export default {
       },
       colors: {
         background: "#FFFDF7",
+        "background-secondary": "#FAF7F0",
         primary: "#D8B259",
         "primary-light": "rgba(216, 178, 89, 0.48)",
         secondary: "rgba(168, 187, 162)",
@@ -19,6 +20,7 @@ export default {
         text: "#37383C",
         "text-sub": "#555555",
         border: "#BFC0C0",
+        accent: "#CD6D34",
       },
     },
   },

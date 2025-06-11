@@ -14,7 +14,7 @@ const Home = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section>
+    <section className="px-[5vw] sm:px-[10vw]">
       <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[560px]">
         {/* <img
           src="/circle-yellow.png"

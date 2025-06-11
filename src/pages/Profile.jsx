@@ -27,7 +27,7 @@ const backgrounds = [
 
 const Profile = () => {
   return (
-    <section className="flex-1 space-y-10">
+    <section className="flex-1 space-y-10 px-[5vw] sm:px-[10vw]">
       <SectionTitle title="Profile" />
       <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-16 px-10 md:px-0 mt-4 md:mt-10">
         <div className="w-[320px]">
