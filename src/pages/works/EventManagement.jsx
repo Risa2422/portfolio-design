@@ -32,7 +32,7 @@ const EventManagement = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
-        <h2 className="text-lg text-accent font-medium">概要</h2>
+        <h2 className="text-xl  text-accent font-medium">概要</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           子どもの誕生日会を主催するユーザーを主な対象としたイベントマネジメントツールです。
           イベントの企画段階から、準備、当日の運営、終了後のフォローアップまで、すべての工程をひとつのサービス内で完結することを目的としています。
@@ -41,7 +41,7 @@ const EventManagement = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-lg text-accent font-medium">背景</h2>
+        <h2 className="text-xl text-accent font-medium">背景</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           本サービスの着想は、私が大学時代に行っていたイベントの企画・運営経験にあります。
           準備から当日の運営、アフターケアに至るまで多くのタスクを複数のツールで管理していたことから、作業の煩雑さに課題を感じていました。
@@ -54,7 +54,7 @@ const EventManagement = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
-        <h2 className="text-lg text-accent font-medium">課題の洗い出し</h2>
+        <h2 className="text-xl text-accent font-medium">課題の洗い出し</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           ユーザーシナリオ（現状の課題を浮き彫りにするための私の経験）
           課題の洗い出しをするにあたって、私の経験をもとに以下のユーザーシナリオを想定しました。
@@ -92,13 +92,14 @@ const EventManagement = () => {
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           イベント主催者にとって、イベントの準備から当日運営、終了後の振り返りまでには多くのタスクが存在し、
           それらを複数のツールで管理することによる情報の分散や抜け漏れが大きな課題となると感じました。
+          <br />
           特に、参加者とのスムーズな情報共有や連絡手段の確保、当日の運営負担を軽減するサポート機能などが求められているのではないかと考えました。
           また参加者側にとっても、イベントの詳細や持ち物、当日のスケジュールが分かりづらいことや、参加者の顔ぶれなど、必要な情報にすぐアクセスできず、主催者にその都度確認しなければならない点が負担になっているのではないかと考えました。
           このように、イベントの全体フローに潜む課題を洗い出したことで、「イベント主催における一連の体験をまるごと支援する」サービス設計が重要であると再認識しました。
         </p>
       </div>
       <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-lg text-accent font-medium text-center">MVP設定</h2>
+        <h2 className="text-xl text-accent font-medium text-center">MVP設定</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           今回はデザインから実装までの期間が4週間と短かったこともありMVPを設定しました。
         </p>
@@ -146,7 +147,7 @@ const EventManagement = () => {
                 <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
                   もう一人のデザイナーと参考にしたいデザインを集め、イメージボードを作成しました。
                 </p>
-                <div className="flex flex-col md:flex-row md:justify-around gap-10 flex-wrap">
+                <div className="flex flex-col md:flex-row md:justify-around items-center gap-10 flex-wrap">
                   <div className="max-w-[420px] h-[320px] flex flex-col">
                     <img
                       src="/event-management/image-board.png"
@@ -179,97 +180,131 @@ const EventManagement = () => {
             {/* 完成UI */}
             <section className="flex flex-col gap-6">
               <h3 className="text-lg font-semibold">3. 完成UI</h3>
-              <div className="space-y-10">
+              <div>
                 {/* イベント前 */}
-                <div className="space-y-">
+                <div>
                   <div className="flex items-center gap-2">
                     <p className="font-medium m-0">イベント前</p>
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
-                  <div className="flex flex-col gap-8">
+                  <div className="flex flex-col">
                     {/* 主催者フロー */}
-                    <div className="flex flex-col lg:flex-row flex-wrap items-center md:justify-between gap-10 mb-6 w-full px-2 mt-3">
-                      <div className="w-full max-w-[420px] space-y-1.5">
-                        <div className="flex items-center gap-1 mb-1">
-                          <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
-                            主催者
-                          </span>
-                          <h4 className="text-sm text-gray-700">
-                            イベント招待状作成フロー
-                          </h4>
+                    <div className="flex flex-col lg:flex-row items-center md:justify-between mb-6 w-full px-2 mt-3">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                        <div>
+                          <div className="flex items-center gap-1 mb-1">
+                            <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
+                              主催者
+                            </span>
+                            <h4 className="text-sm text-gray-700">
+                              イベント招待状作成フロー
+                            </h4>
+                          </div>
+                          <p className="text-xs text-gray-600">
+                            ※担当 : フロントエンド
+                          </p>
                         </div>
-                        <div className="w-[420px] max-w-[480px] h-[420px]">
+                        <div className="w-full max-w-[480px] h-[400px]">
                           <video
                             src="/event-management/demo-createinvitation.mp4"
                             controls
-                            className="w-full h-full object-cover rounded"
+                            className="h-full object-contain rounded"
                           />
                         </div>
+
+                        <p className="text-sm text-gray-700">
+                          主催者はイベントを作成する際に、招待状を作成します。屋外での開催を予定している場合は、花見やピクニックなどのアクティビティに応じて、場所提案機能を利用することができます。
+                        </p>
                       </div>
                       <img
                         src="/event-management/arrow-right.svg"
                         alt="right arrow"
                         className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
                       />
-                      <div className="w-full max-w-[420px] space-y-1.5">
-                        <div className="flex items-center gap-1 mb-1">
-                          <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
-                            主催者
-                          </span>
-                          <h4 className="text-sm text-gray-700">
-                            イベントページ作成フロー
-                          </h4>
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                        <div>
+                          <div className="flex items-center gap-1 mb-1">
+                            <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
+                              主催者
+                            </span>
+                            <h4 className="text-sm text-gray-700">
+                              イベントページ作成フロー
+                            </h4>
+                          </div>
+                          <p className="text-xs text-gray-600">
+                            ※担当 : デザイン / フロントエンド(RSVP
+                            Responses以外)
+                          </p>
                         </div>
-                        <div className="w-[420px] max-w-[480px] h-[420px]">
+                        <div className="w-full max-w-[480px] h-[400px]">
                           <video
                             src="/event-management/demo-host-eventpre.mp4"
                             controls
-                            className="w-full h-full object-cover rounded"
+                            className="h-full object-contain rounded"
                           />
                         </div>
+                        <p className="text-sm text-gray-700">
+                          イベント招待状を作成すると、アプリ上でイベントの詳細情報を設定できるようになります。「タイムライン」「持ち物リスト」「予算管理」「出欠確認」機能を利用し、準備をスムーズに進めることができます。
+                        </p>
                       </div>
                     </div>
 
                     {/* 参加者フロー */}
-                    <div className="flex flex-col lg:flex-row flex-wrap items-center md:justify-between gap-4 mb-6 w-full px-2">
-                      <div className="w-full max-w-[420px] space-y-1.5">
-                        <div className="flex items-center gap-1 mb-1">
-                          <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
-                            参加者
-                          </span>
-                          <h4 className="text-sm text-gray-700">
-                            招待状回答フロー
-                          </h4>
+                    <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10 mb-6 w-full px-2">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                        <div>
+                          <div className="flex items-center gap-1 mb-1">
+                            <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                              参加者
+                            </span>
+                            <h4 className="text-sm text-gray-700">
+                              招待状回答フロー
+                            </h4>
+                          </div>
+                          <p className="text-xs text-gray-600">
+                            ※担当 : フロントエンド
+                          </p>
                         </div>
-                        <div className="w-[420px] max-w-[480px] h-[420px]">
+                        <div className="w-full max-w-[480px] h-[400px]">
                           <video
                             src="/event-management/demo-rsvp.mp4"
                             controls
-                            className="w-full h-full object-cover rounded"
+                            className="h-full object-contain rounded"
                           />
                         </div>
+                        <p className="text-sm text-gray-700">
+                          招待者は招待状に回答し出欠を主催者に知らせます。アレルギー情報を事前に知らせることができ、また家族などの同伴者がいる場合も名前を追加することができます。
+                        </p>
                       </div>
                       <img
                         src="/event-management/arrow-right.svg"
                         alt="right arrow"
-                        className="w-[60px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
+                        className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
                       />
-                      <div className="w-full max-w-[420px] space-y-1.5">
-                        <div className="flex items-center gap-1 mb-1">
-                          <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
-                            参加者
-                          </span>
-                          <h4 className="text-sm text-gray-700">
-                            イベントページ閲覧フロー
-                          </h4>
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                        <div>
+                          <div className="flex items-center gap-1 mb-1">
+                            <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                              参加者
+                            </span>
+                            <h4 className="text-sm text-gray-700">
+                              イベントページ閲覧フロー
+                            </h4>
+                          </div>
+                          <p className="text-xs text-gray-600">
+                            ※担当 : デザイン / フロントエンド
+                          </p>
                         </div>
-                        <div className="w-[420px] max-w-[480px] h-[420px]">
+                        <div className="w-full max-w-[480px] h-[400px]">
                           <video
                             src="/event-management/demo-guest-eventpre.mp4"
                             controls
-                            className="w-full h-full object-cover rounded"
+                            className="h-full object-contain rounded"
                           />
                         </div>
+                        <p className="text-sm text-gray-700">
+                          イベントに参加する場合、メールでイベントページのリンクが送信されます。イベントページで当日の持ち物リストやタイムライン、また参加者一覧を確認することができます。
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -282,22 +317,30 @@ const EventManagement = () => {
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                   <div className="flex flex-col lg:flex-row justify-between items-center gap-4 px-2">
-                    <div className="w-full max-w-[420px] space-y-1.5">
-                      <div className="flex items-center gap-1 mb-1">
-                        <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
-                          主催者
-                        </span>
-                        <h4 className="text-sm text-gray-700">
-                          イベント当日の運営フロー
-                        </h4>
+                    <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                      <div>
+                        <div className="flex items-center gap-1 mb-1">
+                          <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
+                            主催者
+                          </span>
+                          <h4 className="text-sm text-gray-700">
+                            イベント当日の運営フロー
+                          </h4>
+                        </div>
+                        <p className="text-xs text-gray-600">
+                          ※担当 : デザイン
+                        </p>
                       </div>
-                      <div className="w-[420px] max-w-[480px] h-[420px]">
+                      <div className="w-full max-w-[480px] h-[400px]">
                         <video
                           src="/event-management/demo-host-eventday.mp4"
                           controls
-                          className="w-full h-full object-cover rounded"
+                          className="h-full object-contain rounded"
                         />
                       </div>
+                      <p className="text-sm text-gray-700">
+                        主催者は参加者の出欠確認とアルバム作成ができます。アルバム機能では画像認識処理を用いて個人のアルバムが自動生成されます。
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -309,22 +352,30 @@ const EventManagement = () => {
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                   <div className="flex flex-col lg:flex-row justify-between items-center gap-4 px-2">
-                    <div className="w-full max-w-[420px] space-y-1.5">
-                      <div className="flex items-center gap-1 mb-1">
-                        <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
-                          参加者
-                        </span>
-                        <h4 className="text-sm text-gray-700 font-me">
-                          イベント後のレビューフロー
-                        </h4>
+                    <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                      <div>
+                        <div className="flex items-center gap-1 mb-1">
+                          <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                            参加者
+                          </span>
+                          <h4 className="text-sm text-gray-700 font-me">
+                            イベント後のレビューフロー
+                          </h4>
+                        </div>
+                        <p className="text-xs text-gray-600">
+                          ※担当 : デザイン
+                        </p>
                       </div>
-                      <div className="w-[420px] max-w-[480px] h-[420px]">
+                      <div className="w-full max-w-[480px] h-[400px]">
                         <video
                           src="/event-management/demo-guest-review.mp4"
                           controls
-                          className="w-full h-full object-cover rounded"
+                          className="h-full object-contain rounded"
                         />
                       </div>
+                      <p className="text-sm text-gray-700">
+                        参加者はイベントでの思い出をアプリ内に投稿することができます。
+                      </p>
                     </div>
                   </div>
                 </div>
