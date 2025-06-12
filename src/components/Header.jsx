@@ -9,7 +9,7 @@ function Header() {
   ];
 
   return (
-    <header className="flex justify-between items-center py-6 px-[5vw] sm:px-[10vw] mb-[5vw]">
+    <header className="flex justify-between items-center py-6 px-[5vw] sm:px-[10vw] mb-[1vw]">
       <Link to="/" className="text-xl font-bold">
         LOGO
       </Link>

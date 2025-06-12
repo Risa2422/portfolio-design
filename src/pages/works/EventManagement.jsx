@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import Arrow from "../../components/Arrow";
 import InfoList from "../../components/InfoList";
 
 const EventManagement = () => {
@@ -8,8 +10,13 @@ const EventManagement = () => {
     { title: "使用ツール(デザイン)", value: "Figma" },
     { title: "開発言語", value: "Next.js, Tailwind CSS, shadcn/ui" },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="space-y-10 md:space-y-4">
+      <Arrow />
       <div className="flex flex-col md:flex-row gap-2 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56">
         <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-40">
           <img
@@ -131,7 +138,7 @@ const EventManagement = () => {
                     alt="ワイヤーフレーム画像"
                     className="w-full max-w-full object-cover border border-border rounded"
                   />
-                  <p className="text-xs text-center text-gray-500 mt-2">
+                  <p className="text-xs text-center text-gray-520 mt-2">
                     作成したワイヤーフレーム
                   </p>
                 </div>
@@ -154,7 +161,7 @@ const EventManagement = () => {
                       alt="イメージボード"
                       className="w-full h-full object-cover border border-border rounded max-w-full"
                     />
-                    <p className="text-xs text-center text-gray-500 mt-2">
+                    <p className="text-xs text-center text-gray-520 mt-2">
                       イメージボード
                     </p>
                   </div>
@@ -164,7 +171,7 @@ const EventManagement = () => {
                       alt="カラートークン"
                       className="w-full h-full object-cover border border-border rounded max-w-full"
                     />
-                    <p className="text-xs text-center text-gray-500 mt-2">
+                    <p className="text-xs text-center text-gray-520 mt-2">
                       カラートークン
                     </p>
                   </div>
@@ -189,8 +196,8 @@ const EventManagement = () => {
                   </div>
                   <div className="flex flex-col">
                     {/* 主催者フロー */}
-                    <div className="flex flex-col lg:flex-row items-center md:justify-between mb-6 w-full px-2 mt-3">
-                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                    <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10 mb-6 w-full px-2">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                         <div>
                           <div className="flex items-center gap-1 mb-1">
                             <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
@@ -204,7 +211,7 @@ const EventManagement = () => {
                             ※担当 : フロントエンド
                           </p>
                         </div>
-                        <div className="w-full max-w-[480px] h-[400px]">
+                        <div className="w-full max-w-[480px] h-[380px]">
                           <video
                             src="/event-management/demo-createinvitation.mp4"
                             controls
@@ -221,7 +228,7 @@ const EventManagement = () => {
                         alt="right arrow"
                         className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
                       />
-                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                         <div>
                           <div className="flex items-center gap-1 mb-1">
                             <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
@@ -236,7 +243,7 @@ const EventManagement = () => {
                             Responses以外)
                           </p>
                         </div>
-                        <div className="w-full max-w-[480px] h-[400px]">
+                        <div className="w-full max-w-[480px] h-[380px]">
                           <video
                             src="/event-management/demo-host-eventpre.mp4"
                             controls
@@ -251,7 +258,7 @@ const EventManagement = () => {
 
                     {/* 参加者フロー */}
                     <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10 mb-6 w-full px-2">
-                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                         <div>
                           <div className="flex items-center gap-1 mb-1">
                             <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
@@ -265,7 +272,7 @@ const EventManagement = () => {
                             ※担当 : フロントエンド
                           </p>
                         </div>
-                        <div className="w-full max-w-[480px] h-[400px]">
+                        <div className="w-full max-w-[480px] h-[380px]">
                           <video
                             src="/event-management/demo-rsvp.mp4"
                             controls
@@ -281,7 +288,7 @@ const EventManagement = () => {
                         alt="right arrow"
                         className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
                       />
-                      <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                      <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                         <div>
                           <div className="flex items-center gap-1 mb-1">
                             <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
@@ -295,7 +302,7 @@ const EventManagement = () => {
                             ※担当 : デザイン / フロントエンド
                           </p>
                         </div>
-                        <div className="w-full max-w-[480px] h-[400px]">
+                        <div className="w-full max-w-[480px] h-[380px]">
                           <video
                             src="/event-management/demo-guest-eventpre.mp4"
                             controls
@@ -317,7 +324,7 @@ const EventManagement = () => {
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                   <div className="flex flex-col lg:flex-row justify-between items-center gap-4 px-2">
-                    <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                    <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                       <div>
                         <div className="flex items-center gap-1 mb-1">
                           <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
@@ -331,7 +338,7 @@ const EventManagement = () => {
                           ※担当 : デザイン
                         </p>
                       </div>
-                      <div className="w-full max-w-[480px] h-[400px]">
+                      <div className="w-full max-w-[480px] h-[380px]">
                         <video
                           src="/event-management/demo-host-eventday.mp4"
                           controls
@@ -352,7 +359,7 @@ const EventManagement = () => {
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                   <div className="flex flex-col lg:flex-row justify-between items-center gap-4 px-2">
-                    <div className="w-full max-w-[420px] space-y-1.5 h-[580px]">
+                    <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                       <div>
                         <div className="flex items-center gap-1 mb-1">
                           <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
@@ -366,7 +373,7 @@ const EventManagement = () => {
                           ※担当 : デザイン
                         </p>
                       </div>
-                      <div className="w-full max-w-[480px] h-[400px]">
+                      <div className="w-full max-w-[480px] h-[380px]">
                         <video
                           src="/event-management/demo-guest-review.mp4"
                           controls
@@ -383,9 +390,9 @@ const EventManagement = () => {
                 {/* 意識した点 */}
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">4. 意識した点</h3>
-                  <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-gray-700">
+                  <ul className="list-disc pl-5 space-y-6 text-sm md:text-base text-gray-700">
                     <li>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col">
                         <strong>コントラスト</strong>
                         <p>
                           タイムラインのUIでは、アクティビティをカード形式で表現し、直感的な操作ができるよう複数の色を使って設計しました。しかし、全体の視認性に課題があったため、最終的にはコントラストを重視し、使用する色を2色に絞って見やすさを向上させました。
@@ -393,7 +400,7 @@ const EventManagement = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col">
                         <strong>レスポンシブ対応</strong>
                         <p>
                           今回はレスポンシブのみの対応だったため、スマートフォンで片手操作しやすいように、ボタンのサイズや幅を広めに設計しました。
@@ -401,7 +408,7 @@ const EventManagement = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col">
                         <strong>コンポーネントライブラリに合わせた設計</strong>
                         <p>
                           実装時に shadcn/ui
@@ -421,7 +428,7 @@ const EventManagement = () => {
         <h2 className="text-xl text-accent font-medium">学び</h2>
         <ul className="list-disc pl-5 space-y-6 text-sm md:text-base text-gray-700">
           <li>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
               <strong>想定パターンの幅を広げる重要性</strong>
               <p>
                 設計中、想定すべきユーザーフローのパターンに抜け漏れが多く、自分の中での引き出しの少なさを実感しました。たとえば、今回のプロジェクトでは「ユーザーがホストかゲストか」「データが存在しない場合のUIをどうするか」といったケースへの対応が不十分でした。今後は、より多くの事例に触れながら柔軟な発想を身につけ、幅広い状況を想定できるよう日頃から意識していきたいです。
@@ -429,7 +436,7 @@ const EventManagement = () => {
             </div>
           </li>
           <li>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
               <strong>設計意図の言語化の重要性</strong>
               <p>
                 一部のUIで設計意図が曖昧なまま進めてしまい、プロジェクトメンバーからデザインの意図を尋ねられた際に答えられない場面がありました。今後は「なぜこの設計にしたのか」を常に意識し、明確な根拠を持ってデザインするよう努めたいです。
@@ -437,7 +444,7 @@ const EventManagement = () => {
             </div>
           </li>
           <li>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
               <strong>実装とのバランス感覚</strong>
               <p>
                 デザインの理想と実装の現実の間で柔軟に調整する力が必要だと感じました。例えば、イベントホーム画面に子どもの絵や写真を表示する案がありましたが、DB設計の都合で実現が難しく、仕様を見直す判断が求められました。
