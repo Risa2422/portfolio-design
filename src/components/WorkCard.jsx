@@ -31,9 +31,9 @@ function WorkCard({
             {tags.map((tag, index) => (
               <li
                 key={index}
-                className="flex items-center px-4 py-1.5 border border-[#F0EEEA] bg-[#F0EEEA] rounded-full"
+                className="flex items-center px-3 py-1.5 border border-[#F0EEEA] bg-[#F0EEEA] rounded-full"
               >
-                <p className="text-xs md:text-sm">{tag}</p>
+                <p className="text-xs">{tag}</p>
               </li>
             ))}
           </ul>

@@ -43,7 +43,7 @@ const Profile = () => {
             {profileItems.map((text, index) => (
               <li
                 key={index}
-                className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs"
+                className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs bg-white"
               >
                 {text}
               </li>
