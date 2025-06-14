@@ -32,11 +32,11 @@ const Home = () => {
           className="hidden md:block absolute md:top-36 md:left-[1000px] md:w-[240px] md:h-[240px]"
         /> */}
         <div className="font-lustria gap-2 flex flex-col px-4">
-          <h1 className="text-5xl gap-2 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
+          <h1 className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
             <span className="uppercase">Risa</span>
             <span className="uppercase">Yamamoto</span>
           </h1>
-          <p className="text-xs md:text-sm z-30 px-2 md:px-4 ">
+          <p className="text-xs md:text-sm z-30 px-2 md:px-4 text-text-sub">
             デザイナー目指しています。一生懸命頑張りますデザイナー目指しています。一生懸命頑張ります
           </p>
         </div>

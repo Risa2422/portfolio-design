@@ -10,9 +10,8 @@ const workData = [
   {
     imageSrc: "/susan4.jpg",
     title: "麻雀対戦記録アプリ",
-    description:
-      "学校の課題で制作したイベント管理アプリです。イベント作成、出席確認、写真共有などの機能を備えています。",
-    tags: ["Webアプリ", "UIデザイン"],
+    description: "既存の麻雀対戦記録アプリのリデザインを行いました。",
+    tags: ["Webアプリ", "UIデザイン", "リデザイン"],
     to: "mahjong",
   },
   {

@@ -19,10 +19,10 @@ function WorkCard({
           <img
             src={imageSrc}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105 rounded"
           />
         </div>
-        <div className="md:w-1/2 space-y-3 pt-2 hover:opacity-70 transition-opacity duration-200">
+        <div className="md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-2">
             <h3 className="font-base text-lg">{title}</h3>
             <p className="text-sm text-text-sub">{description}</p>

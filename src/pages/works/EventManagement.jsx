@@ -4,6 +4,7 @@ import InfoList from "../../components/InfoList";
 
 const EventManagement = () => {
   const infoItems = [
+    { title: "サービス種別", value: "Webアプリ(モバイル版)" },
     { title: "制作種類", value: "チーム制作" },
     { title: "期間", value: "1週間(デザイン) / 3週間(コーディング)" },
     { title: "担当", value: "デザイン / フロントエンド開発" },
@@ -25,15 +26,14 @@ const EventManagement = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="space-y-6 py-2 flex-1">
+        <div className="space-y-6 flex-1">
           <div>
-            <div className="space-y-2">
-              <p className="w-fit flex items-center text-xs mb-1 px-2.5 py-1 border border-[#F0EEEA] bg-[#F0EEEA] rounded-full">
-                webアプリ
-              </p>
-              <h1 className="text-xl font-semibold">イベント管理サービス</h1>
+            <div>
+              <div className="space-y-3">
+                <h1 className="text-xl font-semibold">イベント管理サービス</h1>
+                <div className="flex-1 h-[0.8px] bg-border mt-4" />
+              </div>
             </div>
-            <div className="flex-1 h-[0.8px] bg-border mt-4" />
           </div>
           <InfoList items={infoItems} />
         </div>

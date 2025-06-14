@@ -5,7 +5,7 @@ function InfoList({ items }) {
         {items.map(({ title, value }, index) => (
           <div key={index} className="flex gap-10 text-sm justify-start">
             <dt className="w-20 md:w-40 font-medium">{title}</dt>
-            <dd className="">{value}</dd>
+            <dd>{value}</dd>
           </div>
         ))}
       </dl>
