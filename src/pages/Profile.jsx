@@ -54,7 +54,7 @@ const Profile = () => {
       <div className="space-y-16 md:space-y-20 pb-10">
         <section className="px-6 md:px-4">
           <SectionTitle title="Backgrounds" sub />
-          <div className="px-4 md:px-10 mt-4 md:mt-8 space-y-4">
+          <div className="px-4 md:px-10 mt-4 md:mt-8 space-y-8">
             {backgrounds.map((item, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex flex-col items-center space-y-2 mt-1.5">
@@ -73,7 +73,7 @@ const Profile = () => {
                 </div>
                 <div className="flex-1 space-y-2 md:space-y-1">
                   <div className="flex flex-col gap-1 md:flex-row justify-between">
-                    <p className="font-me">{item.title}</p>
+                    <p className="font-medium">{item.title}</p>
                     <p className="text-sm text-[#66676B]">{item.date}</p>
                   </div>
                   <p className="text-sm text-text-sub leading-relaxed ">

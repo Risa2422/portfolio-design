@@ -17,12 +17,12 @@ const Mahjong = () => {
   return (
     <section className="space-y-10 md:space-y-4">
       <Arrow />
-      <div className="flex flex-col md:flex-row gap-2 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56">
-        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-40">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 pt-12">
+        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
           <img
-            src="/susan4.jpg"
+            src="/mahjong/thumbnail.png"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain scale-110"
           />
         </div>
         <div className="space-y-6 flex-1">

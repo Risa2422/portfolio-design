@@ -14,7 +14,7 @@ const Home = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="px-[5vw] sm:px-[10vw]">
+    <section className="px-[5vw] sm:px-[11vw]">
       <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[560px]">
         {/* <img
           src="/circle-yellow.png"
@@ -45,7 +45,7 @@ const Home = () => {
         {/* works */}
         <section className="space-y-10">
           <SectionTitle title="Works" />
-          <div className="flex flex-col gap-10 md:gap-20 mt-4 md:mt-8">
+          <div className="flex flex-col gap-10 md:gap-24 mt-4 md:mt-8">
             {workData.map((work, index) => (
               <WorkCard
                 key={index}

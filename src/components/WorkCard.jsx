@@ -11,7 +11,7 @@ function WorkCard({
   return (
     <Link to={`/works/${to}`}>
       <div
-        className={`flex flex-col md:flex-row gap-2 md:gap-12 md:h-[300px] px-4  ${
+        className={`flex flex-col md:flex-row gap-10 md:h-[300px] ${
           reverse ? "md:flex-row-reverse" : ""
         }`}
       >
@@ -19,13 +19,17 @@ function WorkCard({
           <img
             src={imageSrc}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105 rounded"
+            className="transition-transform duration-300 ease-in-out hover:scale-105 rounded"
           />
         </div>
-        <div className="md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200">
+        <div
+          className={`md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200 ${
+            reverse ? "pl-20" : "pr-20"
+          }`}
+        >
           <div className="space-y-2">
-            <h3 className="font-base text-lg">{title}</h3>
-            <p className="text-sm text-text-sub">{description}</p>
+            <h3 className="md:text-lg font-semibold">{title}</h3>
+            <p className="text-xs md:text-sm text-text-sub">{description}</p>
           </div>
           <ul className="flex gap-2 text-sm flex-wrap">
             {tags.map((tag, index) => (

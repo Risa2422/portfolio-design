@@ -18,12 +18,12 @@ const EventManagement = () => {
   return (
     <section className="space-y-10 md:space-y-4">
       <Arrow />
-      <div className="flex flex-col md:flex-row gap-2 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56">
-        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-40">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-20 px-6 md:px-16 lg:px-32 xl:px-56 pt-12">
+        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
           <img
-            src="/susan4.jpg"
+            src="/event-management/thumbnail.png"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain scale-110"
           />
         </div>
         <div className="space-y-6 flex-1">
@@ -66,7 +66,7 @@ const EventManagement = () => {
           ユーザーシナリオ（現状の課題を浮き彫りにするための私の経験）
           課題の洗い出しをするにあたって、私の経験をもとに以下のユーザーシナリオを想定しました。
         </p>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 self-start">
           <img
             src="/event-management/user-scenario.png"
             alt=""
@@ -110,7 +110,7 @@ const EventManagement = () => {
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           今回はデザインから実装までの期間が4週間と短かったこともありMVPを設定しました。
         </p>
-        <div className="md:w-1/2 self-center">
+        <div className="md:w-1/2">
           <img
             src="/event-management/mvp.png"
             alt=""
@@ -132,7 +132,7 @@ const EventManagement = () => {
                   ホーム画面に概要と重要情報を集約し、必要に応じて各機能へ遷移可能としました。
                   また、親しみやすさを出すため、丸みを帯びた要素を多く取り入れました。
                 </p>
-                <div className="md:w-1/2 self-center">
+                <div className="md:w-1/2">
                   <img
                     src="/event-management/wireframe.png"
                     alt="ワイヤーフレーム画像"
@@ -154,7 +154,7 @@ const EventManagement = () => {
                 <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
                   もう一人のデザイナーと参考にしたいデザインを集め、イメージボードを作成しました。
                 </p>
-                <div className="flex flex-col md:flex-row md:justify-around items-center gap-10 flex-wrap">
+                <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
                   <div className="max-w-[420px] h-[320px] flex flex-col">
                     <img
                       src="/event-management/image-board.png"
