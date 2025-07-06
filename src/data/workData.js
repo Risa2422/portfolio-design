@@ -15,12 +15,12 @@ const workData = [
     to: "mahjong",
   },
   {
-    imageSrc: "/test2.png",
-    title: "イベント管理サービス",
+    imageSrc: "/quiz-thumbnail.png",
+    title: "Japan Quiz Journey",
     description:
-      "学校の課題で制作したイベント管理アプリです。イベント作成、出席確認、写真共有などの機能を備えています。",
-    tags: ["Webアプリ", "グループ制作"],
-    to: "event-management",
+      "クイズアプリのデザインを行いました。訪日外国人向けに、日本の文化やマナーを学ぶことができるサービスです。",
+    tags: ["クライアントワーク", "Webアプリ", "UIデザイン"],
+    to: "quiz",
   },
 ];
 
