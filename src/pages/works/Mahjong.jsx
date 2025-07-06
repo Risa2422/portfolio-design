@@ -7,7 +7,7 @@ const Mahjong = () => {
     { title: "サービス種別", value: "Webアプリ(モバイル版)" },
     { title: "制作形態", value: "チーム制作" },
     { title: "制作期間", value: "1週間" },
-    { title: "担当領域", value: "デザイン" },
+    { title: "担当領域", value: "UIデザイン" },
     { title: "使用ツール", value: "Figma" },
   ];
 
@@ -17,7 +17,7 @@ const Mahjong = () => {
   return (
     <section className="space-y-10 md:space-y-4">
       <Arrow />
-      <div className="flex flex-col md:flex-row gap-2 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 pt-12">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
         <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
           <img
             src="/mahjong/thumbnail.png"
@@ -38,7 +38,16 @@ const Mahjong = () => {
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
         <h2 className="text-xl  text-accent font-medium">概要</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
-          既存の麻雀記録アプリのUIリデザインをしました。
+          既存の
+          <a
+            href="https://jonglog.ravious.co.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            麻雀記録アプリ
+          </a>
+          のUIリデザインをしました。
           背景として、麻雀好きな知人のエンジニアが普段、対戦結果を記録するために使用しているアプリが使い辛く、
           より使いやすいアプリを開発したいとのことで、既存アプリの基本的な機能は引き継ぎつつもより直感的なUIデザインの制作に力を入れました。
         </p>
@@ -47,7 +56,7 @@ const Mahjong = () => {
         <h2 className="text-xl text-accent font-medium">課題</h2>
         <div className="space-y-8">
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
-            現行のジャンログは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
+            現行サービスは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
             実際にヒアリングを行った際、依頼者も「機能には特に不満はないが、使いづらさや見た目の古さを感じる」と話しており、UIの使いやすさと視覚的な魅力の両立が求められていると判断しました。
           </p>
 

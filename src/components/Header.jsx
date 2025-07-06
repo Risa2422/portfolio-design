@@ -23,8 +23,10 @@ function Header() {
                 const isWorkPath = location.pathname.startsWith("/works");
                 const active = isActive || (to === "/" && isWorkPath);
 
-                return `transition-all duration-600 font-light underline-offset-8 decoration-[1.4px] underline hover:text-primary ${
-                  active ? "decoration-primary" : "decoration-transparent"
+                return `transition-all duration-600 underline-offset-8 decoration-[1.4px] underline hover:text-primary ${
+                  active
+                    ? "decoration-primary text-primary"
+                    : "decoration-transparent"
                 }`;
               }}
             >

@@ -24,10 +24,10 @@ function WorkCard({
         </div>
         <div
           className={`md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200 ${
-            reverse ? "pl-20" : "pr-20"
+            reverse ? "md:pl-14" : "md:pr-4"
           }`}
         >
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h3 className="md:text-lg font-semibold">{title}</h3>
             <p className="text-xs md:text-sm text-text-sub">{description}</p>
           </div>

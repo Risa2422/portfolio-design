@@ -7,7 +7,7 @@ const EventManagement = () => {
     { title: "サービス種別", value: "Webアプリ(モバイル版)" },
     { title: "制作種類", value: "チーム制作" },
     { title: "期間", value: "1週間(デザイン) / 3週間(コーディング)" },
-    { title: "担当", value: "デザイン / フロントエンド開発" },
+    { title: "担当", value: "UIデザイン / フロントエンド開発" },
     { title: "使用ツール(デザイン)", value: "Figma" },
     { title: "開発言語", value: "Next.js, Tailwind CSS, shadcn/ui" },
   ];
@@ -18,12 +18,12 @@ const EventManagement = () => {
   return (
     <section className="space-y-10 md:space-y-4">
       <Arrow />
-      <div className="flex flex-col md:flex-row gap-4 md:gap-20 px-6 md:px-16 lg:px-32 xl:px-56 pt-12">
-        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
+        <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20 overflow-hidden object-top">
           <img
             src="/event-management/thumbnail.png"
             alt=""
-            className="w-full h-full object-contain scale-110"
+            className="w-full\ h-full object-contain scale-110 "
           />
         </div>
         <div className="space-y-6 flex-1">
