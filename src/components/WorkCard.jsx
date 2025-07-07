@@ -9,7 +9,12 @@ function WorkCard({
   to,
 }) {
   return (
-    <Link to={`/works/${to}`}>
+    <Link
+      to={`/works/${to}`}
+      onClick={() => {
+        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+      }}
+    >
       <div
         className={`flex flex-col md:flex-row gap-10 md:h-[300px] ${
           reverse ? "md:flex-row-reverse" : ""
@@ -28,7 +33,7 @@ function WorkCard({
           }`}
         >
           <div className="space-y-5">
-            <h3 className="md:text-xl font-semibold">{title}</h3>
+            <h3 className="md:text-lg font-semibold">{title}</h3>
             <p className="text-xs md:text-sm text-text-sub">{description}</p>
           </div>
           <ul className="flex gap-2 text-sm flex-wrap">

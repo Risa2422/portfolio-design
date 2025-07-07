@@ -17,6 +17,7 @@ const EventManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <section className="space-y-10 md:space-y-4">
       <Arrow />
@@ -191,13 +192,13 @@ const EventManagement = () => {
             </section>
 
             {/* 完成UI */}
-            <section className="flex flex-col gap-6">
+            <section id="final-ui" className="flex flex-col gap-6 scroll-mt-24">
               <h3 className="text-lg font-semibold">3. 完成UI</h3>
               <div>
                 {/* イベント前 */}
                 <div>
-                  <div className="flex items-center gap-2">
-                    <p className="font-medium m-0">イベント前</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <p className="font-medium">イベント前</p>
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                   <div className="flex flex-col">
@@ -461,7 +462,7 @@ const EventManagement = () => {
           </li>
         </ul>
         <Link to="/" className="hover:opacity-80 pt-4">
-          <div className=" flex items-center gap-1">
+          <div className="flex items-center gap-1">
             <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
             <p className="pb-0.5 text-sm underline">Home</p>
           </div>

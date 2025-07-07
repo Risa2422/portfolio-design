@@ -117,7 +117,10 @@ const Mahjong = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden">
+      <div
+        id="final-ui"
+        className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden scroll-mt-24"
+      >
         <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
         <div className="flex flex-col w-full gap-6">
           <div className="space-y-2">

@@ -255,7 +255,10 @@ const Quiz = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-8 min-h-72 bg-background">
+      <div
+        id="final-ui"
+        className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-8 min-h-72 bg-background scroll-mt-24"
+      >
         <h2 className="text-lg md:text-xl text-accent font-medium">完成UI</h2>
         <video
           src="/quiz/prototype.mov"

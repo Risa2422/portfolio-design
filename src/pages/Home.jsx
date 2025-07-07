@@ -13,6 +13,18 @@ import useIsMobile from "../hooks/useIsMobile";
 const Home = () => {
   const isMobile = useIsMobile();
 
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem("scrollPosition");
+    if (savedPosition) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: parseInt(savedPosition, 10),
+        });
+        sessionStorage.removeItem("scrollPosition");
+      }, 50);
+    }
+  }, []);
+
   return (
     <section className="px-[5vw] sm:px-[12vw]">
       <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[560px]">
