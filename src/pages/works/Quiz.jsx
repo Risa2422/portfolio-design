@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import InfoList from "../../components/InfoList";
 
@@ -55,7 +57,7 @@ const Quiz = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background-secondary">
-        <h2 className="text-xl  text-accent font-medium">概要</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           訪日外国人観光客や海外在住者を対象に日本文化やマナーを学ぶことができるクイズ形式学習アプリのUIデザインを担当しました。
           <br />
@@ -63,7 +65,9 @@ const Quiz = () => {
         </p>
       </div>
       <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-8 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium text-center">要件</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium text-center">
+          要件
+        </h2>
         <div className="space-y-8">
           <p className="text-sm leading-relaxed ">
             ※要約後 (一部省略、編集しています)
@@ -130,7 +134,9 @@ const Quiz = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden">
-        <h2 className="text-xl text-accent font-medium">制作プロセス</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">
+          制作プロセス
+        </h2>
         <div className="flex flex-col w-full gap-6">
           <div className="space-y-2">
             <h3 className="text-base md:text-lg font-semibold m-0">
@@ -250,7 +256,7 @@ const Quiz = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-8 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium">完成UI</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">完成UI</h2>
         <video
           src="/quiz/prototype.mov"
           controls
@@ -460,8 +466,8 @@ const Quiz = () => {
           </div>
         </section>
       </div>
-      <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 0 pb-20 min-h-72 bg-background-secondary overflow-hidden py-10">
-        <h2 className="text-xl text-accent font-medium">学び</h2>
+      <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 0 pb-10 bg-background-secondary overflow-hidden py-10">
+        <h2 className="text-xl text-center text-accent font-medium">学び</h2>
         <div className="flex flex-col w-full gap-4">
           <ul class="list-disc pl-6 space-y-8 text-sm md:text-base leading-relaxed text-gray-700">
             <li>
@@ -472,6 +478,12 @@ const Quiz = () => {
             </li>
           </ul>
         </div>
+        <Link to="/" className="hover:opacity-80 pt-4">
+          <div className=" flex items-center gap-1">
+            <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
+            <p className="pb-0.5 text-sm underline">Home</p>
+          </div>
+        </Link>
       </div>
     </section>
   );

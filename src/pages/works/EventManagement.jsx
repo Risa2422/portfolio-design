@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import InfoList from "../../components/InfoList";
 
@@ -39,7 +41,7 @@ const EventManagement = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
-        <h2 className="text-xl  text-accent font-medium">概要</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           子どもの誕生日会を主催するユーザーを主な対象としたイベントマネジメントツールです。
           イベントの企画段階から、準備、当日の運営、終了後のフォローアップまで、すべての工程をひとつのサービス内で完結することを目的としています。
@@ -48,7 +50,7 @@ const EventManagement = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium">背景</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">背景</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           本サービスの着想は、私が大学時代に行っていたイベントの企画・運営経験にあります。
           準備から当日の運営、アフターケアに至るまで多くのタスクを複数のツールで管理していたことから、作業の煩雑さに課題を感じていました。
@@ -61,7 +63,9 @@ const EventManagement = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
-        <h2 className="text-xl text-accent font-medium">課題の洗い出し</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">
+          課題の洗い出し
+        </h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           ユーザーシナリオ（現状の課題を浮き彫りにするための私の経験）
           課題の洗い出しをするにあたって、私の経験をもとに以下のユーザーシナリオを想定しました。
@@ -106,7 +110,9 @@ const EventManagement = () => {
         </p>
       </div>
       <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium text-center">MVP設定</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium text-center">
+          MVP設定
+        </h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           今回はデザインから実装までの期間が4週間と短かったこともありMVPを設定しました。
         </p>
@@ -119,7 +125,7 @@ const EventManagement = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden">
-        <h2 className="text-xl text-accent font-medium">UI設計</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
         <div>
           <div className="space-y-20">
             {/* ワイヤーフレーム作成 */}
@@ -424,8 +430,10 @@ const EventManagement = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium">学び</h2>
+      <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
+        <h2 className="text-lg md:text-xl text-accent font-medium text-center">
+          学び
+        </h2>
         <ul className="list-disc pl-5 space-y-6 text-sm md:text-base text-gray-700">
           <li>
             <div className="flex flex-col">
@@ -452,6 +460,12 @@ const EventManagement = () => {
             </div>
           </li>
         </ul>
+        <Link to="/" className="hover:opacity-80 pt-4">
+          <div className=" flex items-center gap-1">
+            <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
+            <p className="pb-0.5 text-sm underline">Home</p>
+          </div>
+        </Link>
       </div>
     </section>
   );

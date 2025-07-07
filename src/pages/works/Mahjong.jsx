@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import InfoList from "../../components/InfoList";
 
@@ -36,7 +38,7 @@ const Mahjong = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
-        <h2 className="text-xl  text-accent font-medium">概要</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           既存の
           <a
@@ -53,7 +55,7 @@ const Mahjong = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium">課題</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">課題</h2>
         <div className="space-y-8">
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
             現行サービスは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
@@ -116,7 +118,7 @@ const Mahjong = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden">
-        <h2 className="text-xl text-accent font-medium">UI設計</h2>
+        <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
         <div className="flex flex-col w-full gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
@@ -294,14 +296,21 @@ const Mahjong = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-        <h2 className="text-xl text-accent font-medium">学び</h2>
+      <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
+        <h2 className="text-lg md:text-xl text-center text-accent font-medium">
+          学び
+        </h2>
         <p className="text-sm md:text-base leading-relaxed text-gray-700">
           麻雀の世界観を意識し、「赤・緑・青」を基調とした配色を取り入れましたが、色数が多いにも関わらず配色の優先順位を明確に定義できていなかったため、視覚的な混乱が生まれてしまいい、その結果UI全体に統一感を持たせるのに時間がかかる要因となりました。
           <br />
           今後は、背景色や主役カラーの役割を明確にした上で配色の優先順位を整理し、調和の取れたUI設計を心がけていきたいと考えています。
         </p>
+        <Link to="/" className="hover:opacity-80 pt-4">
+          <div className=" flex items-center gap-1">
+            <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
+            <p className="pb-0.5 text-sm underline">Home</p>
+          </div>
+        </Link>
       </div>
     </section>
   );
