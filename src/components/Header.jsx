@@ -30,9 +30,9 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center py-4 px-[5vw] sm:px-[10vw]">
+      <div className="flex justify-between items-center py-3 px-[5vw] sm:px-[10vw]">
         <Link to="/" className="text-xl font-bold">
-          LOGO
+          <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
         </Link>
         <button
           onClick={toggleMenu}
@@ -56,7 +56,7 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 py-1 sm:py-0 justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 py- sm:py-0 justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
 
@@ -73,11 +73,11 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                        transition-all duration-600 underline-offset-8 decoration-[1.4px] sm:underline hover:text-primary space-y-4 text-sm sm:text-base block py-3 
+                        transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm sm:text-base block py-3 
                         ${
                           active && !isOpen
-                            ? "sm:decoration-primary text-primary"
-                            : "sm:decoration-transparent text-base"
+                            ? "text-primary"
+                            : "sm:decoration-transparent text-gray-600"
                         }
                         ${
                           active && isOpen
