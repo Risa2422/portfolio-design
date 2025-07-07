@@ -7,7 +7,7 @@ import InfoList from "../../components/InfoList";
 const Mahjong = () => {
   const infoItems = [
     { title: "サービス種別", value: "Webアプリ(モバイル版)" },
-    { title: "制作形態", value: "チーム制作" },
+    { title: "制作形態", value: "チーム開発" },
     { title: "制作期間", value: "1週間" },
     { title: "担当領域", value: "UIデザイン" },
     { title: "使用ツール", value: "Figma" },

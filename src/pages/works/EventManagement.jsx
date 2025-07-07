@@ -7,7 +7,7 @@ import InfoList from "../../components/InfoList";
 const EventManagement = () => {
   const infoItems = [
     { title: "サービス種別", value: "Webアプリ(モバイル版)" },
-    { title: "制作種類", value: "チーム制作" },
+    { title: "制作種類", value: "チーム開発" },
     { title: "期間", value: "1週間(デザイン) / 3週間(コーディング)" },
     { title: "担当", value: "UIデザイン / フロントエンド開発" },
     { title: "使用ツール(デザイン)", value: "Figma" },

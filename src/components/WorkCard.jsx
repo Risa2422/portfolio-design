@@ -27,8 +27,8 @@ function WorkCard({
             reverse ? "md:pl-14" : "md:pr-4"
           }`}
         >
-          <div className="space-y-4">
-            <h3 className="md:text-lg font-semibold">{title}</h3>
+          <div className="space-y-5">
+            <h3 className="md:text-xl font-semibold">{title}</h3>
             <p className="text-xs md:text-sm text-text-sub">{description}</p>
           </div>
           <ul className="flex gap-2 text-sm flex-wrap">
