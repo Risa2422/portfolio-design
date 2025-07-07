@@ -62,7 +62,7 @@ const Home = () => {
         {/* blogs */}
         <section>
           <SectionTitle title="Blogs" />
-          <div className="mt-4 md:mt-8 space-y-1">
+          <div className="mt-4 md:mt-8">
             {isMobile ? (
               <Swiper
                 pagination={{
@@ -98,7 +98,7 @@ const Home = () => {
               href="https://note.com/rsloth24"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-end gap-1 cursor-pointer hover:opacity-80 transition"
+              className="flex items-center justify-end gap-1 cursor-pointer hover:opacity-80 transition pt-8"
             >
               <p className="text-sm">ブログ一覧を見る</p>
               <img
