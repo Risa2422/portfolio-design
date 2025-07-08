@@ -45,7 +45,7 @@ const Profile = () => {
             <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-3 px-10 md:px-0 ">
               <div className="w-[420px]">
                 <img
-                  src="profile.svg"
+                  src="profile-image.png"
                   alt="Profile"
                   width={320}
                   height={320}
