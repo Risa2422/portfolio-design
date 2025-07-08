@@ -65,11 +65,6 @@ const Profile = () => {
             {backgrounds.map((item, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex flex-col items-center space-y-2 mt-1.5">
-                  {/* <div
-                    className={`w-3 h-3 rounded-full ${
-                      index % 2 === 0 ? "bg-tertiary" : "bg-secondary"
-                    }`}
-                  /> */}
                   <img src="rhombus.svg" alt="" className="w-3.5 h-3.5" />
                   <div
                     className={`${

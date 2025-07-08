@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -48,12 +49,13 @@ const Home = () => {
             <span className="uppercase">Risa</span>
             <span className="uppercase">Yamamoto</span>
           </h1>
-          <p className="text-xs md:text-sm z-30 px-2 md:px-4 text-text-sub">
-            デザイナー目指しています。一生懸命頑張りますデザイナー目指しています。一生懸命頑張ります
+          <p className="text-xs md:text-sm z-30 px-2 md:px-4 text-gray-600">
+            エンジニアリングとデザインの架け橋になるデザイナーを目指します。
+            <br />
           </p>
         </div>
       </section>
-      <div className="space-y-20">
+      <div className="space-y-24">
         {/* works */}
         <section className="space-y-10">
           <SectionTitle title="Works" />
@@ -112,7 +114,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-end gap-1 cursor-pointer hover:opacity-80 transition pt-8"
             >
-              <p className="text-sm">ブログ一覧を見る</p>
+              <p className="text-sm ">ブログ一覧を見る</p>
               <img
                 src="/note-icon.png"
                 alt="note icon"
