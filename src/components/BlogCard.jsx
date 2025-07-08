@@ -9,7 +9,7 @@ const BlogCard = ({ imageSrc, title, url }) => {
       <img
         src={imageSrc}
         alt="blog info"
-        className="w-full object-cover border border-gray-400"
+        className="w-full border border-gray-400"
       />
       <h4 className="mt-2 font-medium">{title}</h4>
     </a>
