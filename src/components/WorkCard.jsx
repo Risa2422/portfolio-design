@@ -24,6 +24,8 @@ function WorkCard({
           <img
             src={imageSrc}
             alt={title}
+            width={560}
+            height={560}
             className="transition-transform duration-300 ease-in-out hover:scale-105 rounded"
           />
         </div>

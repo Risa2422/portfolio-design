@@ -41,8 +41,10 @@ const Quiz = () => {
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
             <img
               src="/quiz/thumbnail.png"
-              alt=""
-              className="w-full h-full object-contain scale-110"
+              alt="quiz thumbnail"
+              width={320}
+              height={320}
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="space-y-4 flex-1">
