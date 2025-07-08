@@ -108,19 +108,22 @@ const Home = () => {
                 ))}
               </div>
             )}
-            <a
-              href="https://note.com/rsloth24"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-end gap-1 cursor-pointer hover:opacity-80 transition pt-8"
-            >
-              <p className="text-sm ">ブログ一覧を見る</p>
-              <img
-                src="/note-icon.png"
-                alt="note icon"
-                className="w-6 h-6 object-cover border-text-sub border-[0.6px] rounded-md"
-              />
-            </a>
+            <div className="flex items-center justify-end hover:opacity-70 transition">
+              <a
+                href="https://note.com/rsloth24"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center justify-end gap-1 pt-8">
+                  <p className="text-sm">ブログ一覧を見る</p>
+                  <img
+                    src="/note-icon.png"
+                    alt="note icon"
+                    className="w-6 h-6 object-cover border-text-sub border-[0.6px] rounded-md"
+                  />
+                </div>
+              </a>
+            </div>
           </div>
         </section>
         {/* contact */}

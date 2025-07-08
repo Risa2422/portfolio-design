@@ -3,7 +3,11 @@ import SectionTitle from "../components/SectionTitle";
 import SkillItem from "../components/SkillItem";
 import skillData from "../data/skillData";
 
-const profileItems = ["鹿児島県出身 🍠", "カナダ在住 🇨🇦", "1997年生まれ 🗓️"];
+const profileItems = [
+  "# 鹿児島県出身 🍠",
+  "# カナダ在住 🇨🇦",
+  "# 1997年生まれ 🗓️",
+];
 
 const backgrounds = [
   {
@@ -41,10 +45,9 @@ const Profile = () => {
           />
         </div>
         <div className="md:w-1/2 space-y-5 md:mt-16">
-          <p className="font-base text-sm leading-relaxed">
-            元々エンジニアをしていましたが、デザインの世界に惹かれ、xxxxxx
-            元々エンジニアをしていましたが、デザインの世界に惹かれ、xxxxxx
-            元々エンジニアをしていましたが、デザインの世界に惹かれ、xxxxxx
+          <p className="font-base text-sm leading-loose text-gray-700">
+            これまでエンジニアとしてデスクトップアプリやWebアプリの開発に携わる中で、どれだけ優れた機能を備えていても、UIに課題があると使われ続けるサービスとして根付かないことを痛感しました。
+            また、開発中にデザインの意図が読み取りづらく、実装に戸惑う場面もあったことから、誰にとっても使いやすく、作りやすいプロダクトづくりができるデザイナーになりたいと考えています。
           </p>
           <ul className="flex flex-wrap gap-2">
             {profileItems.map((text, index) => (
