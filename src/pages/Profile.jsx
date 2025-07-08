@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
@@ -31,39 +32,45 @@ const backgrounds = [
 ];
 
 const Profile = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 space-y-10 px-[5vw] sm:px-[10vw] pt-8 md:pt-0">
-        <SectionTitle title="Profile" />
-        <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-16 px-10 md:px-0 mt-4 md:mt-10">
-          <div className="w-[320px]">
-            <img
-              src="profile.svg"
-              alt="Profile"
-              width={320}
-              height={320}
-              className="w-60 sm:w-80 h-auto mx-auto m-0"
-              loading="eager"
-            />
-          </div>
-          <div className="md:w-1/2 space-y-5 md:mt-16">
-            <p className="font-base text-sm leading-loose text-gray-700">
-              これまでエンジニアとしてデスクトップアプリやWebアプリの開発に携わる中で、どれほど優れたプログラムが実装されていても、UIに課題があると継続的に利用されるサービスにはなりにくいことを実感しました。
-              この経験から、UI/UXデザインの重要性を強く認識するようになり、誰にとっても「使いやすく、作りやすい」プロダクトを実現できるデザイナーを目指しています。
-            </p>
-            <ul className="flex flex-wrap gap-2">
-              {profileItems.map((text, index) => (
-                <li
-                  key={index}
-                  className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs bg-white"
-                >
-                  {text}
-                </li>
-              ))}
-            </ul>
+      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-0 space-y-8">
+        <div>
+          <SectionTitle title="Profile" />
+          <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-3 px-10 md:px-0 ">
+            <div className="w-[420px]">
+              <img
+                src="profile.svg"
+                alt="Profile"
+                width={320}
+                height={320}
+                className="w-80 sm:w-96 h-auto mx-auto m-0 block"
+                loading="eager"
+              />
+            </div>
+            <div className="md:w-1/2 space-y-5 md:mt-16">
+              <p className="font-base text-sm leading-loose text-gray-700">
+                これまでエンジニアとしてデスクトップアプリやWebアプリの開発に携わる中で、どれほど優れたプログラムが実装されていても、UIに課題があると継続的に利用されるサービスにはなりにくいことを実感しました。
+                この経験から、UI/UXデザインの重要性を強く意識するようになり、誰にとっても「使いやすく、作りやすい」プロダクトを実現できるデザイナーを目指しています。
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                {profileItems.map((text, index) => (
+                  <li
+                    key={index}
+                    className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs bg-white"
+                  >
+                    {text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        <div className="space-y-16 md:space-y-20 pb-10">
+        <div className="space-y-8 md:space-y-10">
           <section className="px-6 md:px-4">
             <SectionTitle title="Backgrounds" sub />
             <div className="px-4 md:px-10 mt-4 md:mt-8 space-y-6">
@@ -85,7 +92,9 @@ const Profile = () => {
                   </div>
                   <div className="flex-1 space-y-2 md:space-y-2">
                     <div className="flex flex-col gap-1 md:flex-row justify-between">
-                      <p className="font-medium">{item.title}</p>
+                      <p className="text-sm md:text-base font-medium">
+                        {item.title}
+                      </p>
                       <p className="text-sm text-[#66676B]">{item.date}</p>
                     </div>
                     <p className="text-xs md:text-sm leading-relaxed text-gray-700">

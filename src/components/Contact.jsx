@@ -37,7 +37,7 @@ const Contact = () => {
               <p className="text-sm leading-none">yama422@gmail.com</p>
             </div>
             {copied ? (
-              <p className="text-xs font-semibold w-full">コピーしました！</p>
+              <p className="text-xs w-full">コピーしました！✅</p>
             ) : (
               <p className="text-xs text-text-sub">
                 ※クリックでコピーができます
