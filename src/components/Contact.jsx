@@ -37,12 +37,10 @@ const Contact = () => {
               <p className="text-sm leading-none">yama422@gmail.com</p>
             </div>
             {copied ? (
-              <p className="text-xs text-[#7e611e] font-semibold">
-                メールアドレスをコピーしました！
-              </p>
+              <p className="text-xs font-semibold w-full">コピーしました！</p>
             ) : (
               <p className="text-xs text-text-sub">
-                ※クリックするとコピーができます
+                ※クリックでコピーができます
               </p>
             )}
           </li>
@@ -56,9 +54,9 @@ const Contact = () => {
               <img
                 src="/linkedin-icon.png"
                 alt="LinkedIn"
-                className="w-7 h-6 mt-0.5 object-cover "
+                className="w-7 h-6 mt-0.5 object-cover"
               />
-              <p className="leading-none">risa-yamamoto-profile</p>
+              <p className="leading-none text-sm">risa-yamamoto-profile</p>
             </a>
           </li>
         </ul>

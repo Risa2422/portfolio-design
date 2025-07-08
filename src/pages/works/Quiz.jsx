@@ -45,7 +45,7 @@ const Quiz = () => {
               className="w-full h-full object-contain scale-110"
             />
           </div>
-          <div className="space-y-6 flex-1">
+          <div className="space-y-4 flex-1">
             <div>
               <div className="space-y-3">
                 <h1 className="text-xl font-semibold">
@@ -61,9 +61,9 @@ const Quiz = () => {
         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background-secondary">
           <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
-            訪日外国人観光客や海外在住者を対象に日本文化やマナーを学ぶことができるクイズ形式学習アプリのUIデザインを担当しました。
+            訪日外国人観光客や海外在住者を対象にした、日本文化やマナーを学ぶことができるクイズ形式学習アプリのUIデザインを担当しました。
             <br />
-            提示された要件を満たすだけでなく、ターゲットユーザーにとって使いやすいサービスとなるようにUI設計、デザインを行いました。
+            提示された要件を満たすだけでなく、ターゲットユーザーにとって使いやすいサービスとなるように心がけました。
           </p>
         </div>
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-8 min-h-72 bg-background">
@@ -82,8 +82,7 @@ const Quiz = () => {
                 </p>
               </div>
               <p className="list-disc text-sm md:text-base pl-5 space-y-1">
-                日本文化やマナー、緊急時の対応について外国人が楽しく学べるクイズアプリ。
-                <br />
+                日本文化やマナー、緊急時の対応について外国人が楽しく学べるクイズアプリであり、
                 文化的なトラブルを防ぎ、安全で充実した滞在をサポートすることを目的とする。
               </p>
             </div>
@@ -181,12 +180,11 @@ const Quiz = () => {
                 </div>
               </div>
               <p>
-                ペルソナを通じて、「
+                ペルソナを通じて「
                 <span className="font-bold">
-                  多忙な
-                  生活の中でも短時間で利用でき、継続的な使用によって成長を実感できるサービス
+                  多忙な生活の中でも短時間で利用でき、継続的な使用によって成長を実感できるサービス
                 </span>
-                」が求められていることが分かりました。
+                」が求められているのではないかと仮定しました。
               </p>
             </div>
           </div>
@@ -227,7 +225,7 @@ const Quiz = () => {
                 </h3>
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3 ">
-                    ワイヤーフレームの作成では、要件を満たしつつ直感的な操作が実現するように心がけました。
+                    ワイヤーフレームの作成では、要件を満たしつつ直感的な操作が実現するよう意識しました。
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
                     <div className="flex flex-col md:w-1/2">
@@ -283,7 +281,7 @@ const Quiz = () => {
             </div>
             <div className="space-y-4">
               <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3 ">
-                ターゲットユーザーが成人の外国人であることを踏まえ、クイズらしいポップさを取り入れつつも、全体としてはシンプルかつ直感的なUIを目指しました。
+                ターゲットユーザーが成人であることを踏まえ、クイズらしいポップさを取り入れつつも、全体としてはシンプルかつ直感的なUIを目指しました。
                 また、ユーザーのモチベーションの維持と継続的な学習を促すために、声かけなどの対話的要素も取り入れました。
               </p>
             </div>
@@ -485,10 +483,10 @@ const Quiz = () => {
           <div className="flex flex-col w-full gap-4">
             <ul class="list-disc pl-6 space-y-8 text-sm md:text-base leading-relaxed text-gray-700">
               <li>
-                ペルソナを作り出すことでよりユーザーが求めている機能を持ったサービスの提供に繋がるということを学ぶことができました。例えば表示候補内容が複数ある場合に、ペルソナを具体的に指定していることで、ペルソナの課題を解決できる点を基準にして判断できました。
+                ペルソナを作り出すことでよりユーザーが求めている機能を備えたサービスの提供に繋がるということを体感することができました。特に表示候補内容が複数ある場合に、ペルソナを具体的に指定していることで、ペルソナの課題を解決できる点を基準にして判断できました。
               </li>
               <li>
-                当初、フォントにFredokaを使用していましたがポップさが強まってしまい、全体的に締まりがなく再度フォントの選定を再度し直すことになったので、フォントの選定は慎重に行う必要がると感じました。
+                当初、フォントにFredokaを使用していましたがポップさが強まってしまい、全体的に締まりがなく、再度フォントの選定が必要になったため、フォントの選定は慎重に行う必要がると感じました。
               </li>
             </ul>
           </div>

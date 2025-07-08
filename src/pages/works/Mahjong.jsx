@@ -29,7 +29,7 @@ const Mahjong = () => {
               className="w-full h-full object-contain scale-110"
             />
           </div>
-          <div className="space-y-6 flex-1">
+          <div className="space-y-4 flex-1">
             <div>
               <div className="space-y-3">
                 <h1 className="text-xl font-semibold">麻雀対戦記録アプリ</h1>
@@ -39,34 +39,36 @@ const Mahjong = () => {
             <InfoList items={infoItems} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background-secondary">
           <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
             既存の
             <a
-              href="https://jonglog.ravious.co.jp/"
+              href="https://apps.apple.com/jp/app/%E9%9B%80%E3%83%AD%E3%82%B0-%E9%BA%BB%E9%9B%80%E3%81%AE%E6%88%90%E7%B8%BE-%E5%8F%8E%E6%94%AF%E3%82%92%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E5%B8%B3%E7%B0%BF%E3%82%A2%E3%83%97%E3%83%AA/id1439070045"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 underline hover:text-blue-800"
             >
               麻雀記録アプリ
             </a>
-            のUIリデザインをしました。
-            背景として、麻雀好きな知人のエンジニアが普段、対戦結果を記録するために使用しているアプリが使い辛く、
+            をベースとした麻雀対戦記録アプリのデザインを担当しました。
+            背景としては、麻雀好きな知人のエンジニアが、普段対戦結果を記録するために使用している既存アプリが使い辛く、
             より使いやすいアプリを開発したいとのことで、既存アプリの基本的な機能は引き継ぎつつもより直感的なUIデザインの制作に力を入れました。
           </p>
         </div>
         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-          <h2 className="text-lg md:text-xl text-accent font-medium">課題</h2>
+          <h2 className="text-lg md:text-xl text-accent font-medium">
+            課題の洗い出し
+          </h2>
           <div className="space-y-8">
             <p className="text-sm md:text-base leading-relaxed text-gray-700">
-              現行サービスは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
+              既存アプリは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
               実際にヒアリングを行った際、依頼者も「機能には特に不満はないが、使いづらさや見た目の古さを感じる」と話しており、UIの使いやすさと視覚的な魅力の両立が求められていると判断しました。
             </p>
 
             <div className="flex flex-col gap-4">
               <p className="text-sm md:text-base leading-relaxed text-gray-700">
-                まずは既存アプリの課題をページごとに洗い出しました。
+                そこでまずはじめに、既存アプリの課題をページごとに洗い出しました。
               </p>
               <div className="space-y-4">
                 <div className="flex flex-col gap-10">
@@ -124,15 +126,12 @@ const Mahjong = () => {
           className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden scroll-mt-24"
         >
           <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
-          <div className="flex flex-col w-full gap-6">
+          <div className="flex flex-col w-full gap-2">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <h3 className="text-lg font-semibold m-0">完成UI</h3>
                 <div className="flex-1 h-[0.8px] bg-border" />
               </div>
-              <p className="text-sm md:text-base leading-relaxed text-gray-700">
-                基本的な機能やUIの構造に大きな変化を加えないようにしつつも、必要最低限の機能や情報を中心的に表示するように意識しました。
-              </p>
             </div>
             <div className="space-y-12">
               <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10">
@@ -210,11 +209,11 @@ const Mahjong = () => {
               <section className="flex flex-col gap-2 mt-10">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold m-0">改善内容</h3>
+                    <h3 className="text-lg font-semibold m-0">意識した点</h3>
                     <div className="flex-1 h-[0.8px] bg-border" />
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-2">
                   {/* カード1 */}
                   <div className="flex flex-col">
                     <img
@@ -286,8 +285,9 @@ const Mahjong = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
-                    麻雀牌を連想させる「赤・緑・青」の色を基調にすることで、麻雀らしさを視覚的に表現し、背景色には落ち着いたベージュ（#F7F1E1）を採用することで和の雰囲気を保ちながら、親しみやすさを感じられる配色を意識しました。
-                    また、イラストは知人に描いてもらいました。
+                    麻雀牌を連想させる「赤・緑・青」を基調にすることで、麻雀らしさを視覚的に表現しました。背景色には落ち着いたベージュ（#F7F1E1）を採用することで和の雰囲気を保ちながら、親しみやすさを感じられる配色を意識しました。
+                    <br />
+                    また、イラストは知人に依頼しました。
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
                     <div className="flex flex-col md:w-1/2">
@@ -303,14 +303,14 @@ const Mahjong = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background">
           <h2 className="text-lg md:text-xl text-center text-accent font-medium">
             学び
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
-            麻雀の世界観を意識し、「赤・緑・青」を基調とした配色を取り入れましたが、色数が多いにも関わらず配色の優先順位を明確に定義できていなかったため、視覚的な混乱が生まれてしまいい、その結果UI全体に統一感を持たせるのに時間がかかる要因となりました。
+            色数が多いにも関わらず配色の優先順位を明確に定義できていなかったため、統一感を持たせるのに時間を要しました。
             <br />
-            今後は、背景色や主役カラーの役割を明確にした上で配色の優先順位を整理し、調和の取れたUI設計を心がけていきたいと考えています。
+            今後は、背景色や主役カラーの役割を明確にした上で配色の優先順位を整理し、よりスムーズにデザインを進めることを目指します。
           </p>
           <Link to="/" className="hover:opacity-80 pt-4">
             <div className=" flex items-center gap-1">

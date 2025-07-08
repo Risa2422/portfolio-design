@@ -50,13 +50,13 @@ function Header() {
             transition-all duration-200
             ${
               isOpen
-                ? "opacity-100 scale-100 visible"
+                ? "opacity-100 scale-100 visible bg-white shadow-sm"
                 : "opacity-0 scale-95 invisible"
             }
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 py- sm:py-0 justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-8 sm:space-y-0 sm:py-0 justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
 

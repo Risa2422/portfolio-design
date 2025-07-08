@@ -32,7 +32,7 @@ function WorkCard({
             reverse ? "md:pl-14" : "md:pr-4"
           }`}
         >
-          <div className="space-y-5">
+          <div className="space-y-2">
             <h3 className="md:text-lg font-semibold">{title}</h3>
             <p className="text-xs md:text-sm text-text-sub">{description}</p>
           </div>
