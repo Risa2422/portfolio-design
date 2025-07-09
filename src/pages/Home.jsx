@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -63,15 +64,22 @@ const Home = () => {
             <SectionTitle title="Works" />
             <div className="flex flex-col gap-10 md:gap-32 mt-4 md:mt-8">
               {workData.map((work, index) => (
-                <WorkCard
+                <motion.div
                   key={index}
-                  imageSrc={work.imageSrc}
-                  title={work.title}
-                  description={work.description}
-                  tags={work.tags}
-                  reverse={index % 2 === 1}
-                  to={work.to}
-                />
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  <WorkCard
+                    imageSrc={work.imageSrc}
+                    title={work.title}
+                    description={work.description}
+                    tags={work.tags}
+                    reverse={index % 2 === 1}
+                    to={work.to}
+                  />
+                </motion.div>
               ))}
             </div>
           </section>
