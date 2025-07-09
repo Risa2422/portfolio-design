@@ -53,7 +53,7 @@ const Home = () => {
               <span className="uppercase">Yamamoto</span>
             </h1>
             <p className="text-xs md:text-sm z-30 px-2 md:px-4 text-gray-600">
-              エンジニアリングとデザインの架け橋になるデザイナーを目指します。
+              エンジニアリングとデザインの架け橋になるデザイナーを目指しまています。
               <br />
             </p>
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
         <div className="space-y-24">
           {/* works */}
           <section className="space-y-10">
-            <SectionTitle title="Works" />
+            <SectionTitle title="Works" jp="制作物" />
             <div className="flex flex-col gap-10 md:gap-32 mt-4 md:mt-8">
               {workData.map((work, index) => (
                 <motion.div
@@ -85,7 +85,7 @@ const Home = () => {
           </section>
           {/* blogs */}
           <section>
-            <SectionTitle title="Blogs" />
+            <SectionTitle title="Blogs" jp="学習のアウトプット" />
             <div className="mt-4 md:mt-8">
               {isMobile ? (
                 <Swiper
