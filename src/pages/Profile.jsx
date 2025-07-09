@@ -49,7 +49,7 @@ const Profile = () => {
                   alt="Profile"
                   width={320}
                   height={320}
-                  className="w-80 sm:w-96 h-auto mx-auto m-0 block"
+                  className="w-64 sm:w-96 h-auto mx-auto m-0 block"
                   loading="eager"
                 />
               </div>

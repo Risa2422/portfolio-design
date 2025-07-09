@@ -30,7 +30,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center py-3 px-[5vw] sm:px-[10vw]">
+      <div className="flex justify-between items-center py-5 md:py-3 px-8 sm:px-[10vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
         </Link>
@@ -56,7 +56,7 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-8 sm:space-y-0 sm:py-0 justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
 
@@ -73,11 +73,11 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                        transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm sm:text-base block py-3 
+                        transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm sm:text-base block py-3 tracking-wide w-12
                         ${
                           active && !isOpen
-                            ? "text-primary"
-                            : "sm:decoration-transparent text-gray-600"
+                            ? "underline decoration-primary underline-offset-4"
+                            : "sm:decoration-transparent text-gray-600 text-sm font-light"
                         }
                         ${
                           active && isOpen
