@@ -1,7 +1,7 @@
 const blogData = [
   {
     imageSrc: "/blogs/blog-googlemaps.png",
-    title: "【学習記録】Google mapのリデザイン",
+    title: "【学習記録】Google mapsのリデザイン",
     url: "https://note.com/rsloth24/n/n0597c33bdca6",
   },
   {
