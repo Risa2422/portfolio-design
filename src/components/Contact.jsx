@@ -18,9 +18,9 @@ const Contact = () => {
   return (
     <section className="mt-0">
       <SectionTitle title="Contact" jp="お問い合わせ" />
-      <div className="space-y-10 md:space-y-20 mt-4 md:mt-8 mb-10 px-4">
+      <div className="space-y-10 md:space-y-20 mt-4 mb-10 px-4">
         <ul className="flex flex-col md:flex-row gap-4 md:gap-20 md:h-16">
-          <li className="w-56 space-y-1">
+          <li className="flex items-center md:flex-col md:w-56 gap-4 md:gap-1 md:items-start">
             <div
               className="flex items-center gap-2 cursor-pointer select-text hover:opacity-70 transition"
               onClick={handleCopy}
@@ -39,7 +39,9 @@ const Contact = () => {
             {copied ? (
               <p className="text-xs w-full">コピーしました！✅</p>
             ) : (
-              <p className="text-xs text-text-sub">※クリックでコピーできます</p>
+              <p className="text-xs text-text-sub w-full">
+                ※クリックでコピーできます
+              </p>
             )}
           </li>
           <li className="hover:opacity-70 transition">

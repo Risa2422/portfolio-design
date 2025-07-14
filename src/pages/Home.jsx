@@ -40,7 +40,7 @@ const Home = () => {
           <img
             src="/circle-green.png"
             alt="Green Circle"
-            className="hidden md:block absolute md:top-[80px] md:left-[800px] md:w-[420px] md:h-[420px]"
+            className="hidden lg:block absolute md:top-[80px] md:left-[800px] md:w-[420px] md:h-[420px]"
           />
           {/* <img
             src="/circle-red.png"
@@ -62,7 +62,7 @@ const Home = () => {
           {/* works */}
           <section className="space-y-10">
             <SectionTitle title="Works" jp="制作物" />
-            <div className="flex flex-col gap-10 md:gap-32 mt-4 md:mt-8">
+            <div className="flex flex-col gap-10 md:gap-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div
                   key={index}
@@ -86,7 +86,7 @@ const Home = () => {
           {/* blogs */}
           <section>
             <SectionTitle title="Blogs" jp="学習のアウトプット" />
-            <div className="mt-4 md:mt-8">
+            <div className="mt-4">
               {isMobile ? (
                 <Swiper
                   pagination={{

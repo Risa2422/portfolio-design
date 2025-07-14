@@ -38,7 +38,7 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-0 space-y-24">
+      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-0 space-y-32">
         <div>
           <div>
             <SectionTitle title="Profile" jp="私について" />
@@ -62,7 +62,7 @@ const Profile = () => {
                   {profileItems.map((text, index) => (
                     <li
                       key={index}
-                      className="px-4 py-1.5 text-text-sub border border-border rounded-full text-xs bg-white"
+                      className="px-4 py-1.5 text-text-sub border border-gray-400 rounded-full text-xs bg-white"
                     >
                       {text}
                     </li>
@@ -75,7 +75,7 @@ const Profile = () => {
           <div className="space-y-8 md:space-y-20 mt-10 md:mt-20">
             <section className="px-6 md:px-4">
               <SectionTitle title="Backgrounds" sub jp="学歴 & 経歴" />
-              <div className="px-4 md:px-10 mt-4 md:mt-8 space-y-6">
+              <div className="px-4 md:px-10 mt-4 space-y-8">
                 {backgrounds.map((item, index) => (
                   <div key={index} className="flex gap-4">
                     <div className="flex flex-col items-center space-y-2 mt-1.5">
@@ -109,7 +109,7 @@ const Profile = () => {
             </section>
             <section className="px-6 md:px-4">
               <SectionTitle title="Skills" sub jp="できること" />
-              <div className="px-6 md:px-10 mt-4 md:mt-8 space-y-4">
+              <div className="px-6 md:px-10 mt-4 space-y-4">
                 <div className="flex justify-center md:justify-start">
                   <ul className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 gap-8 md:gap-9">
                     {skillData.map((skill) => (
