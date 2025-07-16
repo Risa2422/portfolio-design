@@ -28,7 +28,7 @@ function InfoList({ items }) {
           onClick={scrollToFinalUI}
           className="group flex items-center gap-1 px-4 py-1.5 bg-white border border-gray-400 rounded-full text-sm transition"
         >
-          完成UIを見る
+          完成UIはこちら
           <ArrowRight className="w-5 h-4 transform duration-200 group-hover:translate-x-0.5 text-gray-700" />
         </a>
       </div>

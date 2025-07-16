@@ -73,7 +73,7 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                        transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm sm:text-base block py-3 tracking-wide w-12
+                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm block py-3 tracking-wide w-9
                         ${
                           active && !isOpen
                             ? "underline decoration-primary underline-offset-4"

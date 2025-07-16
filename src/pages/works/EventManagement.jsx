@@ -11,7 +11,7 @@ const EventManagement = () => {
     { title: "制作種類", value: "チーム開発" },
     { title: "期間", value: "1週間(デザイン) / 3週間(コーディング)" },
     { title: "担当", value: "UIデザイン / フロントエンド開発" },
-    { title: "使用ツール(デザイン)", value: "Figma" },
+    { title: "使用ツール (デザイン)", value: "Figma" },
     { title: "開発言語", value: "Next.js, Tailwind CSS, shadcn/ui" },
   ];
 
@@ -38,7 +38,7 @@ const EventManagement = () => {
               <div>
                 <div className="space-y-3">
                   <h1 className="text-xl font-semibold">
-                    イベント管理サービス
+                    誕生日イベント管理アプリ
                   </h1>
                   <div className="flex-1 h-[0.8px] bg-border mt-4" />
                 </div>
@@ -214,6 +214,14 @@ const EventManagement = () => {
                 <div>
                   {/* イベント前 */}
                   <div>
+                    <a
+                      href="https://www.figma.com/design/oIPqiG9YMKMtWQmttO0IU1/Event-app?node-id=2-7042&t=4fp1dIlf82wF3oub-1"
+                      className="underline text-blue-500 hover:opacity-75 pt-2 pb-4 block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Figmaでデザインを見る
+                    </a>
                     <div className="flex items-center gap-2 mb-2">
                       <p className="font-medium">イベント前</p>
                       <div className="flex-1 h-[0.8px] bg-border" />
