@@ -7,9 +7,9 @@ import InfoList from "../../components/InfoList";
 
 const EventManagement = () => {
   const infoItems = [
-    { title: "サービス種別", value: "Webアプリ(モバイル版)" },
-    { title: "制作種類", value: "チーム開発" },
-    { title: "期間", value: "1週間(デザイン) / 3週間(コーディング)" },
+    { title: "サービス種別", value: "Webアプリ (モバイル版)" },
+    { title: "制作種類", value: "チーム開発 (4人)" },
+    { title: "期間", value: "1週間 (デザイン) / 3週間 (コーディング)" },
     { title: "担当", value: "UIデザイン / フロントエンド開発" },
     { title: "使用ツール (デザイン)", value: "Figma" },
     { title: "開発言語", value: "Next.js, Tailwind CSS, shadcn/ui" },
@@ -54,16 +54,12 @@ const EventManagement = () => {
             一般的なイベントマネジメントアプリとの違いとして、開催場所を提案するサジェスト機能や、写真アルバム内で人物を自動認識する機能などの機能を提供します。
           </p>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-6 min-h-56 bg-background">
           <h2 className="text-lg md:text-xl text-accent font-medium">背景</h2>
           <p className="text-sm md:text-base leading-relaxed text-gray-700">
             本サービスの着想は、私が大学時代に行っていたイベントの企画・運営経験にあります。
             準備から当日の運営、アフターケアに至るまで多くのタスクを複数のツールで管理しており、作業の煩雑さに課題を感じていました。
             そこでイベント管理に必要なすべての工程をひとつのサービスで完結できれば、主催者・参加者の負担を減らせるのではないかと考えました。
-            <br />
-            <br />
-            既存のイベント管理プラットフォームとの差別化を図るため、「子どもの誕生日会を主催する子育て層」にターゲットを絞りました。
-            背景には、現在居住しているカナダでは子どもの誕生日会が気軽に、かつ頻繁に開催されているという文化があり、こうしたニーズに特化することで、より実用性の高いサービスになると仮定しました。
           </p>
         </div>
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary">
@@ -109,8 +105,11 @@ const EventManagement = () => {
             イベント主催者にとって、イベントの準備から運営まで多くのタスクが存在し、
             それらを複数のツールで管理することによる情報の分散や抜け漏れが大きな課題となると感じ、
             特に、参加者とのスムーズな情報共有や連絡手段の確保、当日の運営負担を軽減するサポート機能などが求められているのではないかと考えました。
-            <br />
             また、参加者側にとってもイベントの詳細や持ち物、当日のスケジュールが分かりづらいことや、参加者の顔ぶれなど、主催者にその都度確認しなければならない点が負担になっているのではないかと考えました。
+            <br />
+            <br />
+            さらに、既存のイベント管理プラットフォームとの差別化を図るため、「子どもの誕生日会を主催する子育て層」にターゲットを絞りました。
+            背景には、現在居住しているカナダでは子どもの誕生日会が気軽に、かつ頻繁に開催されているという文化があり、こうしたニーズに特化することで、より実用性の高いサービスになると仮定しました。
           </p>
         </div>
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
@@ -139,10 +138,9 @@ const EventManagement = () => {
                 </h3>
                 <div className="flex flex-col gap-4">
                   <p className="text-sm md:text-base leading-relaxed text-gray-700">
-                    デザインはチームなのデザイナーと二人で担当しました。私はイベントのホストとゲストのイベント管理画面を担当し、MVPのコア機能をベースに双方の使いやすさを意識してワイヤーフレームを作成しました。
+                    私はイベントの主催者と参加者のイベント管理画面を担当し、MVPのコア機能をベースに双方の使いやすさを意識してワイヤーフレームを作成しました。
                     <br />
                     イベント管理画面は、ホーム画面に概要や重要な情報を集約し、必要に応じて各機能へ遷移できるように設計しました。
-                    <br />
                     また、親しみやすさを演出するため、丸みを帯びたデザイン要素を多く取り入れました。
                   </p>
                   <div className="md:w-1/2">
@@ -159,7 +157,7 @@ const EventManagement = () => {
               </section>
 
               {/* イメージボードとスタイルガイド */}
-              <section className="flex flex-col gap-4">
+              <section className="flex flex-col gap-2">
                 <h3 className="text-lg font-semibold">
                   2. イメージボードの作成とスタイルガイドの決定
                 </h3>
@@ -176,8 +174,8 @@ const EventManagement = () => {
                       },
                       {
                         src: "/event-management/color-token.png",
-                        alt: "カラートークン",
-                        label: "カラートークン",
+                        alt: "カラーシステム",
+                        label: "カラーシステム",
                       },
                     ].map((item, index) => (
                       <div
