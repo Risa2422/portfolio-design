@@ -42,7 +42,7 @@ const Contact = () => {
             ) : (
               // <p className="text-xs w-full">コピーしました！✅</p>
               <p className="text-sm text-neutral-700 w-full ">
-                {/* ※クリックでコピーできます */}⭐️ Click to Copy ⭐️
+                {/* ※クリックでコピーできます */}※ Click to Copy
               </p>
             )}
           </li>

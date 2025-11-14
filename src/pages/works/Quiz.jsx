@@ -761,7 +761,7 @@ const Quiz = () => {
                   </div>
                 </div>
               </section>
-              <section className="flex flex-col gap-2">
+              {/* <section className="flex flex-col gap-2">
                 <h3 className="text-base md:text-lg font-semibold m-0">
                   4. Style Guide Creation
                 </h3>
@@ -785,7 +785,7 @@ const Quiz = () => {
                     </div>
                   </div>
                 </div>
-              </section>
+              </section> */}
             </div>
           </div>
         </div>

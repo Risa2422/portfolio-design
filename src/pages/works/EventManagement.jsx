@@ -268,10 +268,10 @@ const EventManagement = () => {
                     {/* カラーについては、ターゲットが子育て層であることを踏まえ、「安心感」「親しみやすさ」「つながり」を表現するオレンジ（#FF8549）をテーマカラーとして採用しました。
                     また、余白や文字サイズは8の倍数のルールに基づいてあらかじめ決定し、デザインの一貫性を保つようにしました。 */}
                     Considering our target audience of parents with young
-                    children, we adopted orange (#FF8549) as our main theme
-                    color to express feelings of "safety," "approachability,"
-                    and "connection." Furthermore, to ensure design consistency,
-                    we pre-determined the use of padding and font sizes based on
+                    children, we adopted orange as our main theme color to
+                    express feelings of "safety," "approachability," and
+                    "connection." Furthermore, to ensure design consistency, we
+                    pre-determined the use of padding and font sizes based on
                     the 8-point grid system rule (multiples of 8)
                   </p>
                 </div>

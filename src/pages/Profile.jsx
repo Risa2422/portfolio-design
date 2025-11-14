@@ -159,7 +159,7 @@ const backgrounds = [
     title: "Prime Style Inc.",
     date: "Aug 2025 - Oct 2025",
     description:
-      "Developed user stories and user flows for a new service to clarify user needs, created wireframes and collaborated on UI design to ensure a consistent and user-friendly interface, and communicated in English with a multicultural team to facilitate smooth discussions and align design decisions.",
+      "Developed user stories and user flows for a new service to clarify user needs, created wireframes and collaborated on UI design to ensure a consistent and user-friendly interface, and collaborated effectively with an international team to facilitate smooth discussions and align design decisions.",
   },
   {
     title: "Cornerstone International Community College of Canada",
