@@ -30,7 +30,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center py-5 md:py-3 px-8 sm:px-[10vw]">
+      <div className="flex justify-between items-center py-8 px-[10vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
         </Link>
@@ -73,11 +73,11 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-sm block py-3 tracking-wide w-9
+                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-md block py-3 tracking-wide w-14
                         ${
                           active && !isOpen
-                            ? "underline decoration-primary underline-offset-4"
-                            : "sm:decoration-transparent text-gray-600 text-sm font-light"
+                            ? "underline decoration-primary underline-offset-4 font-light"
+                            : "sm:decoration-transparent text-gray-600 font-light"
                         }
                         ${
                           active && isOpen

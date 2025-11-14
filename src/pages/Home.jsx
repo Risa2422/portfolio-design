@@ -47,18 +47,22 @@ const Home = () => {
             alt="Red Circle"
             className="hidden md:block absolute md:top-36 md:left-[1000px] md:w-[240px] md:h-[240px]"
           /> */}
-          <div className="font-lustria gap-2 flex flex-col px-4">
-            <h1 className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
-              <span className="uppercase">Risa</span>
-              <span className="uppercase">Yamamoto</span>
-            </h1>
-            <p className="text-xs md:text-sm z-30 px-2 md:px-4 text-gray-600">
-              エンジニアリングとデザインの架け橋になるデザイナーを目指しています。
+          <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
+            <div className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
+              <div className="w-2/3 md:w-full ">
+                <p className="uppercase text-left">Risa</p>
+                <p className="uppercase text-left">Yamamoto</p>
+              </div>
+            </div>
+            <p className="font-sans text-sm md:text-lg z-30 text-neutral-600">
+              {/* エンジニアリングとデザインの架け橋になるデザイナーを目指しています。 */}
+              My goal is to become a designer who seamlessly connects
+              engineering and design.
               <br />
             </p>
           </div>
         </section>
-        <div className="space-y-24">
+        <div className="space-y-40">
           {/* works */}
           <section className="space-y-10">
             <SectionTitle title="Works" jp="制作物" />
@@ -84,7 +88,7 @@ const Home = () => {
             </div>
           </section>
           {/* blogs */}
-          <section>
+          {/* <section>
             <SectionTitle title="Blogs" jp="学習のアウトプット" />
             <div className="mt-4">
               {isMobile ? (
@@ -136,7 +140,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-          </section>
+          </section> */}
           {/* contact */}
           <Contact />
         </div>

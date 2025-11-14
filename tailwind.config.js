@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Noto Sans JP"', "sans-serif"],
+        sans: ['"Noto Sans"', "sans-serif"],
         roboto: ['"Roboto"', "sans-serif"],
         raleway: ['"Raleway"', "sans-serif"],
         lustria: ['"Lustria"', "serif"],

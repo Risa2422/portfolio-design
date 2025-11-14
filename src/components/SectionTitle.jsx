@@ -1,11 +1,11 @@
 const SectionTitle = ({ title, jp, sub = false }) => {
   return (
     <div>
-      <p className="text-xs pl-5 text-gray-600">{jp}</p>
+      {/* <p className="text-xs pl-5 text-gray-600">{jp}</p> */}
       <div className="flex items-center space-x-4">
         <div className="relative">
           <h2
-            className={`relative z-10 font-raleway whitespace-nowrap pl-4 ${
+            className={`relative z-10 font-raleway whitespace-nowrap pl-4 font-medium text-gray-800 ${
               sub
                 ? "text-xl md:text-2xl pt-0 md:pt-1"
                 : "text-2xl md:text-3xl pt-0 md:pt-[0.8px]"

@@ -16,9 +16,9 @@ const Contact = () => {
     }
   };
   return (
-    <section className="mt-0">
+    <section>
       <SectionTitle title="Contact" jp="お問い合わせ" />
-      <div className="space-y-10 md:space-y-20 mt-4 mb-10 px-4">
+      <div className="space-y-10 md:space-y-20 mt-4 mb-14 px-4">
         <ul className="flex flex-col md:flex-row gap-4 md:gap-20 md:h-16">
           <li className="flex items-center md:flex-col md:w-56 gap-4 md:gap-1 md:items-start">
             <div
@@ -31,16 +31,18 @@ const Contact = () => {
                   handleCopy();
                 }
               }}
-              aria-label="メールアドレスをクリップボードにコピー"
+              // aria-label="メールアドレスをクリップボードにコピー"
+              aria-label="Click to Copy"
             >
-              <VscMail size={20} />
-              <p className="text-sm leading-none">yama422@gmail.com</p>
+              <VscMail size={24} />
+              <p className="leading-none">yama422@gmail.com</p>
             </div>
             {copied ? (
-              <p className="text-xs w-full">コピーしました！✅</p>
+              <p className="text-sm w-full">Copied!✅</p>
             ) : (
-              <p className="text-xs text-text-sub w-full">
-                ※クリックでコピーできます
+              // <p className="text-xs w-full">コピーしました！✅</p>
+              <p className="text-sm text-neutral-700 w-full ">
+                {/* ※クリックでコピーできます */}⭐️ Click to Copy ⭐️
               </p>
             )}
           </li>
@@ -56,7 +58,7 @@ const Contact = () => {
                 alt="LinkedIn"
                 className="w-6 h-5 mt-0.5 object-cover"
               />
-              <p className="leading-none text-sm">risa-yamamoto-profile</p>
+              <p className="leading-none">risa-yamamoto-profile</p>
             </a>
           </li>
         </ul>
