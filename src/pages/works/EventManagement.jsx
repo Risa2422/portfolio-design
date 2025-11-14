@@ -647,7 +647,7 @@ const EventManagement = () => {
               </div>
             </li>
           </ul>
-          <Link to="/" className="hover:opacity-80 pt-4">
+          <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
               <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
               <p className="pb-0.5 text-sm underline">Home</p>

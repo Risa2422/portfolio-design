@@ -2,14 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import BlogCard from "../components/BlogCard";
 import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import WorkCard from "../components/WorkCard";
-import blogData from "../data/blogData";
 import workData from "../data/workData";
 import useIsMobile from "../hooks/useIsMobile";
 

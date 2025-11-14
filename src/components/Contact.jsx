@@ -22,7 +22,7 @@ const Contact = () => {
         <ul className="flex flex-col md:flex-row gap-4 md:gap-20 md:h-16">
           <li className="flex items-center md:flex-col md:w-56 gap-4 md:gap-1 md:items-start">
             <div
-              className="flex items-center gap-2 cursor-pointer select-text hover:opacity-70 transition"
+              className="flex items-center gap-2 cursor-pointer select-text hover:opacity-70 transition text-sm"
               onClick={handleCopy}
               role="button"
               tabIndex={0}
@@ -35,7 +35,7 @@ const Contact = () => {
               aria-label="Click to Copy"
             >
               <VscMail size={24} />
-              <p className="leading-none">yama422@gmail.com</p>
+              <p className="text-base leading-none">yamari2422@gmail.com</p>
             </div>
             {copied ? (
               <p className="text-sm w-full">Copied!✅</p>
@@ -58,7 +58,7 @@ const Contact = () => {
                 alt="LinkedIn"
                 className="w-6 h-5 mt-0.5 object-cover"
               />
-              <p className="leading-none">risa-yamamoto-profile</p>
+              <p className="leading-none text-base">risa-yamamoto-profile</p>
             </a>
           </li>
         </ul>

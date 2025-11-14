@@ -75,7 +75,7 @@ function WorkCard({
       className="group"
     >
       <div
-        className={`flex flex-col md:flex-row gap-10 md:h-[300px] ${
+        className={`flex flex-col md:flex-row gap-20 md:h-[300px] ${
           reverse ? "md:flex-row-reverse" : ""
         }`}
       >
@@ -104,7 +104,7 @@ function WorkCard({
               <li
                 key={index}
                 className="flex items-center justify-center px-3 py-1.5 
-                 bg-[#F0EEEA] border border-[#F0EEEA] rounded-full"
+                bg-[#F0EEEA] border border-[#F0EEEA] rounded-full"
               >
                 <span className="text-xs">{tag}</span>
               </li>
