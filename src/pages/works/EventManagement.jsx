@@ -17,8 +17,8 @@ const EventManagement = () => {
 
   const infoItems = [
     { title: "Service Type", value: "Web App (Mobile Version)" },
-    { title: "Project Type", value: "Team Development (4 members)" },
-    { title: "Timeline", value: "1 week (Design) / 3 weeks (Coding)" },
+    { title: "Project Type", value: "Team Development (4members)" },
+    { title: "Timeline", value: "1week(Design) / 3weeks(Coding)" },
     { title: "Role", value: "UI Design / Frontend Development" },
     { title: "Design Tool", value: "Figma" },
     { title: "Tech Stack", value: "Next.js, Tailwind CSS, shadcn/ui" },
