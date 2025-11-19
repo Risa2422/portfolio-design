@@ -29,6 +29,14 @@
 
 const workData = [
   {
+    imageSrc: "/googlemaps-thumbnail.png",
+    title: "Google Maps – New Album Feature Design",
+    description:
+      "I designed a new album feature for Google Maps, enhancing the existing Lists functionality. I focused on identifying user needs, designing the UI, and creating wireframes.",
+    tags: ["UI Design", "Feature Design"],
+    to: "googleMaps-album",
+  },
+  {
     imageSrc: "/event-thumbnail.png",
     title: "Birthday Event Management App",
     description:
