@@ -60,7 +60,7 @@ const GoogleMapsAlbum = () => {
           </h2>
           <p className="text-base leading-relaxed text-gray-700">
             During spring break, I went on a trip to Jasper, Canada, with my
-            classmates. Since it was a group trip, we used a shared Google Maps
+            friends. Since it was a group trip, we used a shared Google Maps
             list to organize and coordinate all of our destinations. After the
             trip, I tried sharing our travel photos through Slack, but quickly
             found the process inconvenient—Slack doesn’t offer an album feature,
