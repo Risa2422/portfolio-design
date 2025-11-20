@@ -221,10 +221,11 @@ const GoogleMapsAlbum = () => {
                       className="object-contain rounded"
                     />
                     <p className="text-base md:text-sm text-gray-700 pt-2">
-                      After setting up the list information, the design allows
-                      users to freely choose whether to use the album feature
-                      via a half-modal, preventing unexpected features from
-                      appearing suddenly and causing confusion.
+                      I displayed albums by location and chose smaller album
+                      cards to keep scrolling minimal, since users often visit
+                      many places when traveling. I also separated albums with
+                      photos from those without, so users can quickly understand
+                      their options and take intuitive actions.
                     </p>
                   </div>
                   <div className="w-full h-[500px] sm:h-[800px] md:max-w-[480px] md:h-[620px]">
@@ -234,14 +235,14 @@ const GoogleMapsAlbum = () => {
                       className="object-contain rounded"
                     />
                     <p className="text-sm text-gray-700 pt-2">
-                      I designed the interface to display albums for each
-                      location. While deciding on the album size, I considered
-                      that users often visit multiple spots during a trip. To
-                      minimize scrolling even when the number of albums
-                      increases, I set the albums to a smaller size.
-                      Additionally, I separated albums with existing photos from
-                      those without, allowing users to intuitively interact with
-                      the albums based on their purpose.
+                      I explored several ways to display photos, such as
+                      individual cards and horizontal scrolling. But since users
+                      often have many photos, I decided that a vertical,
+                      camera-roll-style layout would help them find what they
+                      need more quickly. For comments, which are lower in
+                      priority compared to photos, I kept the section compact
+                      and used horizontal scrolling so users can browse all
+                      comments without taking up too much space.
                     </p>
                   </div>
                 </div>
@@ -255,15 +256,14 @@ const GoogleMapsAlbum = () => {
             Learnings
           </h2>
           <p className="text-base leading-relaxed text-gray-700">
-            Throughout this project, I focused on maintaining consistency across
-            the app by leveraging existing components wherever possible, while
-            making improvements only in the areas that truly needed enhancement,
-            without significantly altering the current user flow. This
-            experience taught me that when updating the design of an existing
-            app, it is crucial to respect the established information
-            architecture and familiar user experience. Ensuring that
-            improvements do not disrupt what users are already accustomed to
-            requires careful consideration and thoughtful decision-making.
+            Throughout this project, I focused on keeping the design consistent
+            by reusing existing components whenever I could, and only improving
+            the parts that really needed it—without changing the overall user
+            flow too much. Through this process, I learned how important it is
+            to respect the existing information architecture and the user
+            experience people are already familiar with. I realized that
+            improving an existing app requires careful decisions so the update
+            doesn’t disrupt what users are used to.
           </p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
