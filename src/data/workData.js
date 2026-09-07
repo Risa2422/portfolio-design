@@ -60,6 +60,20 @@ const workData = [
     tags: ["Web App", "Client Work", "UI Design"],
     to: "quiz",
   },
+  {
+    imageSrc: "/mining-project-thumbnail.png",
+    title: "Mining Project",
+    description: "",
+    tags: [],
+    to: "mining-project",
+  },
+  {
+    imageSrc: "/web-design-thumbnail.png",
+    title: "Web Design",
+    description: "",
+    tags: [],
+    to: "web-design",
+  },
 ];
 
 export default workData;

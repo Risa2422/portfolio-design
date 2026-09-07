@@ -9,6 +9,8 @@ import EventManagement from "./pages/works/EventManagement.jsx";
 import GoogleMapsAlbum from "./pages/works/Googlemaps.jsx";
 import Mahjong from "./pages/works/Mahjong.jsx";
 import Quiz from "./pages/works/Quiz.jsx";
+import MiningProject from "./pages/works/MiningProject.jsx";
+import WebDesign from "./pages/works/WebDesign.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +23,8 @@ export const router = createBrowserRouter([
       { path: "works/googlemaps-album", element: <GoogleMapsAlbum /> },
       { path: "works/mahjong", element: <Mahjong /> },
       { path: "works/quiz", element: <Quiz /> },
+      { path: "works/mining-project", element: <MiningProject /> },
+      { path: "works/web-design", element: <WebDesign /> },
     ],
   },
 ]);
