@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import { LanguageProvider } from "./context/LanguageContext.jsx";
 import { RootLayout } from "./layouts/root-layout.jsx";
 import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile.jsx";
@@ -33,7 +34,9 @@ const rootElement = document.getElementById("root");
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <LanguageProvider>
+        <RouterProvider router={router} />
+      </LanguageProvider>
     </StrictMode>
   );
 }

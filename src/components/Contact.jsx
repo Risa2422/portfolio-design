@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { VscMail } from "react-icons/vsc";
+import { useLanguage } from "../context/LanguageContext";
 import SectionTitle from "./SectionTitle";
 
 const Contact = () => {
+  const { language } = useLanguage();
   const [copied, setCopied] = useState(false);
   const textToCopy = "yamari2422@gmail.com";
 
@@ -31,18 +33,22 @@ const Contact = () => {
                   handleCopy();
                 }
               }}
-              // aria-label="メールアドレスをクリップボードにコピー"
-              aria-label="Click to Copy"
+              aria-label={
+                language === "ja"
+                  ? "メールアドレスをクリップボードにコピー"
+                  : "Click to Copy"
+              }
             >
               <VscMail size={24} />
               <p className="text-base leading-none">yamari2422@gmail.com</p>
             </div>
             {copied ? (
-              <p className="text-sm w-full">Copied!✅</p>
+              <p className="text-sm w-full">
+                {language === "ja" ? "コピーしました！✅" : "Copied!✅"}
+              </p>
             ) : (
-              // <p className="text-xs w-full">コピーしました！✅</p>
               <p className="text-sm text-neutral-700 w-full ">
-                {/* ※クリックでコピーできます */}※ Click to Copy
+                {language === "ja" ? "※クリックでコピーできます" : "※ Click to Copy"}
               </p>
             )}
           </li>

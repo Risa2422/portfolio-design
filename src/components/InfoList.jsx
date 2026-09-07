@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 function InfoList({ items }) {
+  const { language } = useLanguage();
   const scrollToFinalUI = (e) => {
     e.preventDefault();
     const element = document.getElementById("final-ui");
@@ -28,8 +30,7 @@ function InfoList({ items }) {
           onClick={scrollToFinalUI}
           className="group flex items-center gap-1 px-4 py-1.5 text-white  rounded-full text-sm transition  bg-accent"
         >
-          {/* 完成UIはこちら */}
-          Check the Final UI
+          {language === "ja" ? "完成UIを見る" : "Check the Final UI"}
           <ArrowRight className="w-5 h-4 transform duration-200 group-hover:translate-x-0.5 text-white" />
         </a>
       </div>

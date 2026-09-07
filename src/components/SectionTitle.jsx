@@ -1,7 +1,11 @@
+import { useLanguage } from "../context/LanguageContext";
+
 const SectionTitle = ({ title, jp, sub = false }) => {
+  const { language } = useLanguage();
+  const displayText = language === "ja" && jp ? jp : title;
+
   return (
     <div>
-      {/* <p className="text-xs pl-5 text-gray-600">{jp}</p> */}
       <div className="flex items-center space-x-4">
         <div className="relative">
           <h2
@@ -11,7 +15,7 @@ const SectionTitle = ({ title, jp, sub = false }) => {
                 : "text-2xl md:text-3xl pt-0 md:pt-[0.8px]"
             }`}
           >
-            {title}
+            {displayText}
           </h2>
           <div
             className={`absolute top-0 left-0 md:-left-1 w-7 h-7 md:w-9 md:h-9 rounded-full z-0 ${

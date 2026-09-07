@@ -1,15 +1,23 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
+
+const navLabels = {
+  ja: { home: "ホーム", profile: "プロフィール" },
+  en: { home: "Home", profile: "Profile" },
+};
 
 function Header() {
   const location = useLocation();
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "profile", label: "Profile" },
+    { to: "/", label: navLabels[language].home },
+    { to: "profile", label: navLabels[language].profile },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -34,13 +42,16 @@ function Header() {
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
         </Link>
-        <button
-          onClick={toggleMenu}
-          className="sm:hidden focus:outline-none"
-          aria-label="Toggle navigation"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 sm:hidden">
+          <LanguageToggle />
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none"
+            aria-label="Toggle navigation"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Navigation */}
         <nav
@@ -94,6 +105,10 @@ function Header() {
             })}
           </ul>
         </nav>
+
+        <div className="hidden sm:block">
+          <LanguageToggle />
+        </div>
       </div>
     </header>
   );

@@ -6,11 +6,26 @@ import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import WorkCard from "../components/WorkCard";
+import { useLanguage } from "../context/LanguageContext";
 import workData from "../data/workData";
 import useIsMobile from "../hooks/useIsMobile";
+import { localizeImage } from "../utils/localizeImage";
+
+const content = {
+  ja: {
+    tagline:
+      "エンジニアリングとデザインの架け橋になるデザイナーを目指しています。",
+  },
+  en: {
+    tagline:
+      "My goal is to become a designer who seamlessly connects engineering and design.",
+  },
+};
 
 const Home = () => {
   const isMobile = useIsMobile();
+  const { language } = useLanguage();
+  const t = content[language];
 
   useEffect(() => {
     const savedPosition = sessionStorage.getItem("scrollPosition");
@@ -51,9 +66,7 @@ const Home = () => {
               </div>
             </div>
             <p className="font-sans text-sm md:text-lg z-30 text-neutral-600">
-              {/* エンジニアリングとデザインの架け橋になるデザイナーを目指しています。 */}
-              My goal is to become a designer who seamlessly connects
-              engineering and design.
+              {t.tagline}
               <br />
             </p>
           </div>
@@ -72,10 +85,10 @@ const Home = () => {
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <WorkCard
-                    imageSrc={work.imageSrc}
-                    title={work.title}
-                    description={work.description}
-                    tags={work.tags}
+                    imageSrc={localizeImage(work.imageSrc, language)}
+                    title={work.title[language]}
+                    description={work.description[language]}
+                    tags={work.tags[language]}
                     reverse={index % 2 === 1}
                     to={work.to}
                   />
