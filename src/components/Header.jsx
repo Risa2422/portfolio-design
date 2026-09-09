@@ -67,7 +67,7 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
 
@@ -84,7 +84,7 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-md block py-3 tracking-wide w-14
+                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-md block py-3 tracking-wide
                         ${
                           active && !isOpen
                             ? "underline decoration-primary underline-offset-4 font-light"
@@ -103,12 +103,11 @@ function Header() {
                 </li>
               );
             })}
+            <div className=" sm:block">
+              <LanguageToggle />
+            </div>
           </ul>
         </nav>
-
-        <div className="hidden sm:block">
-          <LanguageToggle />
-        </div>
       </div>
     </header>
   );
