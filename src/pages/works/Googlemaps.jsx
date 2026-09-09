@@ -24,16 +24,16 @@ const content = {
     backgroundText: (
       <>
         During spring break, I went on a trip to Jasper, Canada, with my
-        friends. Since it was a group trip, we used a shared Google Maps list
-        to organize and coordinate all of our destinations. After the trip, I
-        tried sharing our travel photos through Slack, but quickly found the
-        process inconvenient—Slack doesn’t offer an album feature, and it
-        only allows up to 10 photos to be uploaded at once. <br />
+        friends. Since it was a group trip, we used a shared Google Maps list to
+        organize and coordinate all of our destinations. After the trip, I tried
+        sharing our travel photos through Slack, but quickly found the process
+        inconvenient—Slack doesn’t offer an album feature, and it only allows up
+        to 10 photos to be uploaded at once. <br />
         This experience made me realize how useful it would be if Google Maps
         allowed users to create photo albums for each place in their travel
         list. Being able to save, share, and revisit memories directly within
-        the app would make the entire travel experience much smoother. This
-        idea became the starting point for my redesign.
+        the app would make the entire travel experience much smoother. This idea
+        became the starting point for my redesign.
       </>
     ),
     problemTitle: "Identifying the Problems & Generating Ideas",
@@ -50,15 +50,14 @@ const content = {
         First of all, I analyzed the current Lists feature page by page and
         identified opportunities to introduce a new album feature.
         <br />
-        The existing app allows users to create lists for sharing by
-        selecting the "You" tag and choosing "Shared" when configuring the
-        list details.
+        The existing app allows users to create lists for sharing by selecting
+        the "You" tag and choosing "Shared" when configuring the list details.
       </>
     ),
     flowCaption: (
       <>
-        Next, I created user stories and, while comparing them with the
-        existing app flow, brainstormed potential ideas for each screen.
+        Next, I created user stories and, while comparing them with the existing
+        app flow, brainstormed potential ideas for each screen.
         <br />
         (The text in red indicates the parts that were incorporated into this
         design.)
@@ -84,7 +83,7 @@ const content = {
   ja: {
     infoItems: [
       { title: "サービス種別", value: "Webアプリ / モバイル" },
-      { title: "プロジェクト形式", value: "機能デザイン" },
+      { title: "プロジェクト区分", value: "機能デザイン" },
       { title: "期間", value: "1日" },
       { title: "担当領域", value: "UI/UXデザイン" },
       { title: "使用ツール", value: "Figma" },
@@ -214,9 +213,7 @@ const GoogleMapsAlbum = () => {
             </div>
 
             <div className="space-y-4">
-              <p className="leading-relaxed text-gray-700">
-                {t.analysisText}
-              </p>
+              <p className="leading-relaxed text-gray-700">{t.analysisText}</p>
 
               {/* Existing Flow Images */}
               <div className="flex flex-col gap-24">
@@ -228,7 +225,7 @@ const GoogleMapsAlbum = () => {
                         <img
                           src={localizeImage(
                             `/googlemaps-album/${src}`,
-                            language
+                            language,
                           )}
                           alt="Lists Page Before"
                           className="h-full object-cover border border-border rounded max-w-full"
@@ -283,7 +280,7 @@ const GoogleMapsAlbum = () => {
                       <img
                         src={localizeImage(
                           `/googlemaps-album/${src}`,
-                          language
+                          language,
                         )}
                         alt="Album Page"
                         className="object-contain rounded"
@@ -307,7 +304,7 @@ const GoogleMapsAlbum = () => {
                     <img
                       src={localizeImage(
                         "/googlemaps-album/album.png",
-                        language
+                        language,
                       )}
                       alt="Album Page"
                       className="object-contain rounded"
@@ -320,7 +317,7 @@ const GoogleMapsAlbum = () => {
                     <img
                       src={localizeImage(
                         "/googlemaps-album/album-detail.png",
-                        language
+                        language,
                       )}
                       alt="Album Detail Page"
                       className="object-contain rounded"

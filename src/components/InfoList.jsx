@@ -19,7 +19,7 @@ function InfoList({ items }) {
       <dl className="space-y-4">
         {items.map(({ title, value }, index) => (
           <div key={index} className="flex gap-10 text-sm justify-start">
-            <dt className="w-24 md:w-40 font-medium">{title}</dt>
+            <dt className="w-24 md:w-40 font-semibold">{title}</dt>
             <dd>{value}</dd>
           </div>
         ))}

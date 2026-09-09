@@ -525,9 +525,9 @@ const content = {
     overviewTitle: "Overview",
     overviewText: (
       <>
-        I was responsible for the UI design of a quiz-based learning
-        application targeting international visitors and overseas residents,
-        allowing them to learn about Japanese culture and manners.
+        I was responsible for the UI design of a quiz-based learning application
+        targeting international visitors and overseas residents, allowing them
+        to learn about Japanese culture and manners.
         <br />
         My goal was not only to meet the presented requirements but also to
         create a service that is easy for the target users to use.
@@ -569,8 +569,8 @@ const content = {
       <>
         Through the personas, I hypothesized that the service needed to be "
         <span className="font-bold">
-          usable in a short time even in a busy life, and enable users to feel
-          a sense of growth through continuous use
+          usable in a short time even in a busy life, and enable users to feel a
+          sense of growth through continuous use
         </span>
         ."
       </>
@@ -604,20 +604,20 @@ const content = {
     levelScreenLabel: "Level Selection Screen",
     levelScreenText: (
       <>
-        I used star marks to visually represent difficulty and included the
-        quiz themes corresponding to each level, making it easier for users
-        to select questions appropriate for them.
+        I used star marks to visually represent difficulty and included the quiz
+        themes corresponding to each level, making it easier for users to select
+        questions appropriate for them.
         <br />
-        Furthermore, judging that the user's "past highest rank" is not
-        critical information for all users, the screen is configured with
-        tabs to switch between level selection and ranking display.
+        Furthermore, judging that the user's "past highest rank" is not critical
+        information for all users, the screen is configured with tabs to switch
+        between level selection and ranking display.
       </>
     ),
     quizScreenLabel: "Quiz Screen",
     quizScreenText: (
       <>
-        I adopted a card-style design for the quiz screen to create a sense
-        of excitement.
+        I adopted a card-style design for the quiz screen to create a sense of
+        excitement.
         <br />
         Also, to evoke a Japanese feel, I used a reddish circle image,
         reminiscent of the Japanese flag (Hinomaru), as an accent. To prevent
@@ -632,24 +632,24 @@ const content = {
         immediately clear.
         <br />
         Furthermore, by displaying both the user's selected answer and the
-        correct answer, users can reflect on "which option they chose and
-        where they went wrong," not just the correctness.
+        correct answer, users can reflect on "which option they chose and where
+        they went wrong," not just the correctness.
         <br />
       </>
     ),
     resultScreenLabel: "Result Screen",
     resultScreenText: (
       <>
-        I established a priority to first display the overall result by
-        placing the correct answer rate at the very top of the screen,
-        followed by the specific number of correct answers.
+        I established a priority to first display the overall result by placing
+        the correct answer rate at the very top of the screen, followed by the
+        specific number of correct answers.
         <br />
-        Additionally, changing the message to the user according to the
-        correct answer rate provides a more interactive experience.
+        Additionally, changing the message to the user according to the correct
+        answer rate provides a more interactive experience.
         <br />
         Furthermore, considering users who do not actively check the ranking,
-        the rank is displayed below the number of correct answers if they are
-        in the top 20 overall, aiming to boost motivation.
+        the rank is displayed below the number of correct answers if they are in
+        the top 20 overall, aiming to boost motivation.
       </>
     ),
     rankingScreenLabel: "Ranking Screen",
@@ -675,7 +675,7 @@ const content = {
   ja: {
     infoItems: [
       { title: "サービス種別", value: "Webアプリ(モバイル版)" },
-      { title: "プロジェクト形式", value: "クライアントワーク" },
+      { title: "プロジェクト区分", value: "クライアントワーク" },
       { title: "期間", value: "1週間" },
       { title: "担当領域", value: "UIデザイン" },
       { title: "使用ツール", value: "Figma" },
@@ -1098,7 +1098,7 @@ const Quiz = () => {
                       <img
                         src={localizeImage(
                           "/quiz/quiz-not-selected.svg",
-                          language
+                          language,
                         )}
                         alt="Quiz Screen Not Selected"
                         className="h-full w-full object-contain"
@@ -1106,10 +1106,7 @@ const Quiz = () => {
                     </div>
                     <div className="h-[320px]">
                       <img
-                        src={localizeImage(
-                          "/quiz/quiz-selected.svg",
-                          language
-                        )}
+                        src={localizeImage("/quiz/quiz-selected.svg", language)}
                         alt="Quiz Screen Selected"
                         className="h-full w-full object-contain"
                       />

@@ -349,8 +349,8 @@ const content = {
     overviewTitle: "Overview",
     overviewText: (
       <>
-        I was responsible for designing a Mahjong match record application
-        based on an existing{" "}
+        I was responsible for designing a Mahjong match record application based
+        on an existing{" "}
         <a
           href="https://apps.apple.com/jp/app/%E9%9B%80%E3%83%AD%E3%82%B0-%E9%BA%BB%E9%9B%80%E3%81%AE%E6%88%90%E7%B8%BE-%E5%8F%8E%E6%94%AF%E3%82%92%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E5%B8%B3%E7%B0%BF%E3%82%A2%E3%83%97%E3%83%AA/id1439070045"
           target="_blank"
@@ -368,7 +368,7 @@ const content = {
     ),
     problemTitle: "Problem Identification",
     problemIntro:
-      "While the existing application was feature-rich, the design was overly functional, giving the impression that it lacked the visual world or atmosphere of a Mahjong app. During the initial interview, the requester also mentioned, \"I have no specific complaints about the functions, but I find it difficult to use and the look feels outdated.\" Thus, I determined that balancing ease of use with visual appeal was required.",
+      'While the existing application was feature-rich, the design was overly functional, giving the impression that it lacked the visual world or atmosphere of a Mahjong app. During the initial interview, the requester also mentioned, "I have no specific complaints about the functions, but I find it difficult to use and the look feels outdated." Thus, I determined that balancing ease of use with visual appeal was required.',
     analysisIntro:
       "First, I analyzed the issues of the existing app page by page.",
     scoreCaption: "Score Page",
@@ -385,7 +385,7 @@ const content = {
     designFocusLabel: "Design Focus",
     colorIllustrationLabel: "Color & Illustration",
     colorIllustrationText:
-      "We visually expressed the essence of Mahjong by using \"Red, Green, and Blue\" reminiscent of Mahjong tiles as the base colors. By adopting a calm beige for the background, we aimed for a color scheme that maintains a Japanese atmosphere while feeling approachable. The illustrations were commissioned from an acquaintance.",
+      'We visually expressed the essence of Mahjong by using "Red, Green, and Blue" reminiscent of Mahjong tiles as the base colors. By adopting a calm beige for the background, we aimed for a color scheme that maintains a Japanese atmosphere while feeling approachable. The illustrations were commissioned from an acquaintance.',
     learningsTitle: "Learnings",
     learningsText:
       "Despite using many colors, the prioritization of the color scheme was not clearly defined, which resulted in time spent to achieve a sense of unity. Moving forward, I aim to clarify the roles of the background and main accent colors and organize the color prioritization to proceed with design more smoothly.",
@@ -394,7 +394,7 @@ const content = {
   ja: {
     infoItems: [
       { title: "サービス種別", value: "Webアプリ（モバイル版）" },
-      { title: "プロジェクト形式", value: "チーム開発" },
+      { title: "プロジェクト区分", value: "チーム開発" },
       { title: "期間", value: "1週間" },
       { title: "担当領域", value: "UIデザイン" },
       { title: "使用ツール", value: "Figma" },
@@ -500,7 +500,7 @@ const Mahjong = () => {
                       <img
                         src={localizeImage(
                           "/mahjong/score-before.png",
-                          language
+                          language,
                         )}
                         alt="Score Page"
                         className="h-full object-cover border border-border rounded max-w-full"
@@ -513,7 +513,7 @@ const Mahjong = () => {
                       <img
                         src={localizeImage(
                           "/mahjong/record-before.png",
-                          language
+                          language,
                         )}
                         alt="History Page"
                         className="h-full object-contain border border-border rounded max-w-full"
@@ -528,7 +528,7 @@ const Mahjong = () => {
                       <img
                         src={localizeImage(
                           "/mahjong/input-before.png",
-                          language
+                          language,
                         )}
                         alt="Score Input Page"
                         className="h-full object-cover border border-border rounded max-w-full"
@@ -541,7 +541,7 @@ const Mahjong = () => {
                       <img
                         src={localizeImage(
                           "/mahjong/account-before.png",
-                          language
+                          language,
                         )}
                         alt="Account Page"
                         className="h-full object-contain border border-border rounded max-w-full"
@@ -566,9 +566,7 @@ const Mahjong = () => {
           <div className="flex flex-col w-full gap-2">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold m-0">
-                  {t.finalUiLabel}
-                </h3>
+                <h3 className="text-lg font-semibold m-0">{t.finalUiLabel}</h3>
                 <div className="flex-1 h-[0.8px] bg-border" />
               </div>
             </div>
@@ -658,10 +656,7 @@ const Mahjong = () => {
                   {/* カード1 */}
                   <div className="flex flex-col">
                     <img
-                      src={localizeImage(
-                        "/mahjong/score-after.png",
-                        language
-                      )}
+                      src={localizeImage("/mahjong/score-after.png", language)}
                       alt="Score Page"
                       className="w-full object-contain border border-border rounded"
                     />
@@ -673,10 +668,7 @@ const Mahjong = () => {
                   {/* カード2 */}
                   <div className="flex flex-col">
                     <img
-                      src={localizeImage(
-                        "/mahjong/record-after.png",
-                        language
-                      )}
+                      src={localizeImage("/mahjong/record-after.png", language)}
                       alt="History Page"
                       className="w-full object-contain border border-border rounded"
                     />
@@ -688,10 +680,7 @@ const Mahjong = () => {
                   {/* カード3 */}
                   <div className="flex flex-col">
                     <img
-                      src={localizeImage(
-                        "/mahjong/input-after.png",
-                        language
-                      )}
+                      src={localizeImage("/mahjong/input-after.png", language)}
                       alt="Score Input Page"
                       className="w-full object-contain border border-border rounded"
                     />
@@ -703,10 +692,7 @@ const Mahjong = () => {
                   {/* カード4 */}
                   <div className="flex flex-col">
                     <img
-                      src={localizeImage(
-                        "/mahjong/mypage-after.png",
-                        language
-                      )}
+                      src={localizeImage("/mahjong/mypage-after.png", language)}
                       alt="Account Page"
                       className="w-full object-contain border border-border rounded"
                     />
@@ -720,7 +706,7 @@ const Mahjong = () => {
                     <img
                       src={localizeImage(
                         "/mahjong/friends-after.png",
-                        language
+                        language,
                       )}
                       alt="Friend Management Page"
                       className="w-full object-contain border border-border rounded"
@@ -748,7 +734,7 @@ const Mahjong = () => {
                       <img
                         src={localizeImage(
                           "/mahjong/style-guide.png",
-                          language
+                          language,
                         )}
                         alt="Style Guide/Mood Board"
                         className="h-full object-cover border border-border rounded max-w-full"
