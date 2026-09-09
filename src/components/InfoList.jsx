@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Fragment } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 function InfoList({ items }) {
@@ -16,12 +17,12 @@ function InfoList({ items }) {
 
   return (
     <div className="flex flex-col justify-start gap-6">
-      <dl className="space-y-4">
+      <dl className="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4 text-sm">
         {items.map(({ title, value }, index) => (
-          <div key={index} className="flex gap-10 text-sm justify-start">
-            <dt className="w-24 md:w-40 font-semibold">{title}</dt>
+          <Fragment key={index}>
+            <dt className="font-semibold">{title}</dt>
             <dd>{value}</dd>
-          </div>
+          </Fragment>
         ))}
       </dl>
       <div className="flex justify-center items-center self-end ">
