@@ -384,8 +384,13 @@ const MiningProject = () => {
           <p className="text-base leading-relaxed">{t.learningsText}</p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
-              <MdOutlineArrowBackIosNew className="w-5 h-3" />
-              <p className="text-sm underline">{t.home}</p>
+              <span
+                className="flex items-center justify-center rounded-full w-6 h-6"
+                style={{ backgroundColor: "#746B60" }}
+              >
+                <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+              </span>
+              <p className="text-sm">{t.home}</p>
             </div>
           </Link>
         </div>

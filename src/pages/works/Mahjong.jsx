@@ -755,8 +755,13 @@ const Mahjong = () => {
           </p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
-              <MdOutlineArrowBackIosNew width={10} className="w-5 h-3" />
-              <p className="text-sm underline">{t.homeLabel}</p>
+              <span
+                className="flex items-center justify-center rounded-full w-6 h-6"
+                style={{ backgroundColor: "#746B60" }}
+              >
+                <MdOutlineArrowBackIosNew width={10} className="w-5 h-3 text-white" />
+              </span>
+              <p className="text-sm">{t.homeLabel}</p>
             </div>
           </Link>
         </div>
