@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
-import {
-  FaCaretDown,
-  FaMinus,
-  FaPlus,
-  FaQuoteLeft,
-  FaQuoteRight,
-} from "react-icons/fa";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Accordion from "../../components/Accordion";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
+import Improvement1 from "./mining/Improvement1";
+import Improvement2 from "./mining/Improvement2";
+import Improvement3 from "./mining/Improvement3";
 
 const content = {
   ja: {
@@ -24,16 +21,111 @@ const content = {
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
     title: "Mining Project",
-    ProductOverview: "Product Overview",
+    ProductOverview: "プロジェクト概要",
     ProductOverviewText:
       "鉱山業界のプログラムマネージャーを対象としたプロジェクト管理プラットフォームです。従来、複数のツールに分散していたプロジェクト情報や進捗管理を一元化し、業務効率を大幅に向上させます。ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを実現しました。",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
       "スタートアップでのプロダクト開発であったため、基本的に要件定義からリリースまでの工程を全メンバーで協力して進めました。",
     improvementsTitle: "改善案3案",
+    improvements: [
+      {
+        id: 1,
+        title: "プログラム作成フロー簡略化",
+        summary: "フローを簡潔化しました。",
+        description: "改善案1の詳細な説明がここに記載されます。",
+        before: {
+          label: "変更前",
+          image: "/mining/creation-flow-before.svg",
+          alt: "変更前のプログラム作成フロー",
+          heading: "課題",
+          items: [
+            "プログラム作成までに時間がかかっていた。",
+            "プログラムを作成するフローが画面遷移のため、似たよ...",
+            "必須入力項目が多かった",
+            "他のプログラム名の名前がわからない",
+          ],
+        },
+        after: {
+          label: "変更後",
+          image: "/mining/creation-flow-after.svg",
+          alt: "変更後のプログラム作成フロー",
+          heading: "改善内容",
+          items: [
+            "プログラム作成までに時間がかかっていた。",
+            "プログラムを作成するフローが画面遷移のため、似たよ...",
+            "必須入力項目が多かった",
+            "他のプログラム名の名前がわからない",
+          ],
+        },
+      },
+      {
+        id: 2,
+        title: "複雑な大量データを迷わせない「テーブルUI」の設計",
+        summary: "フローを簡潔化しました。",
+        description: "改善案2の詳細な説明がここに記載されます。",
+        before: {
+          label: "変更前",
+          image: "/mining/cost-management-before.png",
+          alt: "変更前のコスト管理画面",
+          text: "改善前の画面の説明",
+          items: [
+            "AIが自動で計算する",
+            "AIが自動で計算する",
+            "AIが自動で計算する",
+          ],
+        },
+        hearing: {
+          heading: "ヒアリングの結果...",
+          quotes: [
+            "AIの機能は必要ない",
+            "複雑なデータを迷わせないUIにしてほしい",
+          ],
+        },
+        after: {
+          label: "変更後",
+          image: "/mining/cost-management-after.png",
+          alt: "変更後のコスト管理画面",
+          heading: "改善内容",
+          items: ["改善内容1", "改善内容1", "改善内容1"],
+        },
+      },
+      {
+        id: 3,
+        title: "新規機能追加",
+        summary: "フローを簡潔化しました。",
+        description: "改善案3の詳細な説明がここに記載されます。",
+        steps: [
+          {
+            badgeClass: "bg-[#746B60]",
+            label: "1. ヒアリング",
+            intro: "聞き取りをし、以下の要件が決まりました。",
+            items: ["予算を作成したい", "予算を作成したい", "予算を作成したい"],
+          },
+          {
+            badgeClass: "bg-[#4A6F8A]",
+            label: "2. ユーザーストーリー作成",
+            text: "ユーザーストーリーを作成し、エンジニアと打ち合わせをしました。",
+            image: "/mining/user-story.png",
+            alt: "ユーザーストーリーの画像",
+          },
+          {
+            badgeClass: "bg-[#4A5742]",
+            label: "3. UI作成",
+            image: "/mining/draft-mode.svg",
+            alt: "ドラフトモードUIの画像",
+            heading: "改善内容",
+            items: ["改善内容1", "改善内容1", "改善内容1"],
+          },
+        ],
+      },
+    ],
     aiUsageTitle: "AIをどう仕事に取り入れたか",
-    aiUsageText:
-      "- クライアントとの打ち合わせの際に使用するプロトタイプの作成 (AlloyとClause design, Figma make) - Edgeケースの洗い出し- いくつかのUIパターンの生成",
+    aiUsageText: [
+      "クライアントとの打ち合わせの際に使用するプロトタイプの作成 (AlloyとClause design, Figma make)",
+      "Edgeケースの洗い出し",
+      "いくつかのUIパターンの生成",
+    ],
     learnings: "Learnings",
     learningsText:
       "リリース直前に退職したため、リアルユーザーの反応はわからないが、少なくとも前のプロダクトに比べたらユーザーのニーズを満たしたプロダクトを作成できたのではないかと思う。* 現在はパートナーのオンボーディング（導入）初期段階にあるため、定量的なユーザー指標（データ）はまだ得られていません。",
@@ -53,10 +145,109 @@ const content = {
     productFlowTitle: "Product Development Process",
     productFlowText:
       "Dummy text. This section describes the product development process, from requirements definition through release, and the work done at each phase.",
+    improvementsTitle: "3 Improvement Proposals",
+    improvements: [
+      {
+        id: 1,
+        title: "Simplifying the Program Creation Flow",
+        summary: "Simplified the flow.",
+        description: "A detailed description of improvement 1 goes here.",
+        before: {
+          label: "Before",
+          image: "/mining/creation-flow-before.svg",
+          alt: "Program creation flow before the change",
+          heading: "Challenges",
+          items: [
+            "Creating a program took a long time.",
+            "The flow required navigating through several similar screens due to page transitions.",
+            "There were many required input fields.",
+            "Users couldn't tell the names of other existing programs.",
+          ],
+        },
+        after: {
+          label: "After",
+          image: "/mining/creation-flow-after.svg",
+          alt: "Program creation flow after the change",
+          heading: "Improvements",
+          items: [
+            "Creating a program took a long time.",
+            "The flow required navigating through several similar screens due to page transitions.",
+            "There were many required input fields.",
+            "Users couldn't tell the names of other existing programs.",
+          ],
+        },
+      },
+      {
+        id: 2,
+        title: "Designing a Table UI for Complex, Large Datasets",
+        summary: "Simplified the flow.",
+        description: "A detailed description of improvement 2 goes here.",
+        before: {
+          label: "Before",
+          image: "/mining/cost-management-before.png",
+          alt: "Cost management screen before the change",
+          text: "Description of the screen before the improvement.",
+          items: [
+            "AI calculates it automatically.",
+            "AI calculates it automatically.",
+            "AI calculates it automatically.",
+          ],
+        },
+        hearing: {
+          heading: "Feedback from user interviews...",
+          quotes: [
+            "We don't need the AI feature",
+            "We want a UI that won't confuse us with complex data",
+          ],
+        },
+        after: {
+          label: "After",
+          image: "/mining/cost-management-after.png",
+          alt: "Cost management screen after the change",
+          heading: "Improvements",
+          items: ["Improvement content 1", "Improvement content 1", "Improvement content 1"],
+        },
+      },
+      {
+        id: 3,
+        title: "Adding a New Feature",
+        summary: "Simplified the flow.",
+        description: "A detailed description of improvement 3 goes here.",
+        steps: [
+          {
+            badgeClass: "bg-[#746B60]",
+            label: "1. Interviews",
+            intro:
+              "After conducting interviews, the following requirements were defined.",
+            items: [
+              "Wanted to be able to create a budget.",
+              "Wanted to be able to create a budget.",
+              "Wanted to be able to create a budget.",
+            ],
+          },
+          {
+            badgeClass: "bg-[#4A6F8A]",
+            label: "2. Creating User Stories",
+            text: "Created user stories and discussed them with the engineers.",
+            image: "/mining/user-story.png",
+            alt: "Image of the user story",
+          },
+          {
+            badgeClass: "bg-[#4A5742]",
+            label: "3. UI Creation",
+            image: "/mining/draft-mode.svg",
+            alt: "Image of the draft mode UI",
+            heading: "Improvements",
+            items: ["Improvement content 1", "Improvement content 1", "Improvement content 1"],
+          },
+        ],
+      },
+    ],
 
     aiUsageTitle: "How I Incorporated AI Into My Work",
-    aiUsageText:
+    aiUsageText: [
       "Dummy text. This section describes how AI was incorporated into daily work, specific use cases, and the impact it had.",
+    ],
     learnings: "Learnings",
     learningsText: "",
     home: "Home",
@@ -106,8 +297,9 @@ const MiningProject = () => {
           </div>
         </div>
         {/* ProductOverview Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
           </h2>
           <div className="flex flex-col gap-8 justify-center items-center">
@@ -122,8 +314,9 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Product Development Flow Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
           </h2>
           <div className="flex flex-col items-center gap-8">
@@ -134,341 +327,61 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
           </h2>
           <div className="space-y-4 w-full">
-            <div className="w-full bg-white border border-gray-300 border-l-8 border-l-teal-700 rounded-lg p-4">
-              {/* 改善案1 */}
-              <button
-                type="button"
-                onClick={() => toggleSection(1)}
-                aria-expanded={openSections[1]}
-                className="w-full flex justify-between items-center gap-4 cursor-pointer"
+            {t.improvements.map((improvement) => (
+              <Accordion
+                key={improvement.id}
+                title={improvement.title}
+                summary={improvement.summary}
+                isOpen={openSections[improvement.id]}
+                onToggle={() => toggleSection(improvement.id)}
               >
-                <div className="flex flex-col items-start">
-                  <h2 className="text-lg md:text-xl font-semibold">
-                    プログラム作成フロー簡略化
-                  </h2>
-                  <p className="text-gray-700 text-sm p-1 ">
-                    フローを簡潔化しました。
-                  </p>
-                </div>
-                {openSections[1] ? (
-                  <FaMinus className="w-5 h-5 shrink-0 text-teal-700" />
-                ) : (
-                  <FaPlus className="w-5 h-5 shrink-0 text-teal-700" />
+                <p className="my-6">{improvement.description}</p>
+                {improvement.id === 1 && (
+                  <Improvement1
+                    before={improvement.before}
+                    after={improvement.after}
+                  />
                 )}
-              </button>
-              <div
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openSections[1]
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <hr className="border-t-2 border-dotted border-gray-300 my-4" />
-                  <p className="my-6">
-                    改善案1の詳細な説明がここに記載されます。
-                  </p>
-                  <div className="space-y-6">
-                    {[
-                      {
-                        label: "Before /",
-                        badgeClass: "bg-blue-700 border-blue-700",
-                        image: "/mining/creation-flow-before.svg",
-                        heading: "課題",
-                        items: [
-                          "プログラム作成までに時間がかかっていた。",
-                          "プログラムを作成するフローが画面遷移のため、似たよ...",
-                          "必須入力項目が多かった",
-                          "他のプログラム名の名前がわからない",
-                        ],
-                      },
-                      {
-                        label: "After /",
-                        badgeClass: "bg-green-700 border-green-700",
-                        image: "/mining/creation-flow-after.svg",
-                        heading: "改善内容",
-                        items: [
-                          "プログラム作成までに時間がかかっていた。",
-                          "プログラムを作成するフローが画面遷移のため、似たよ...",
-                          "必須入力項目が多かった",
-                          "他のプログラム名の名前がわからない",
-                        ],
-                      },
-                    ].map((flow, idx) => (
-                      <div key={flow.label}>
-                        <div className="space-y-4">
-                          <p
-                            className={`w-fit py-1 px-4 border text-white text-xl font-semibold rounded-full ${flow.badgeClass}`}
-                          >
-                            {flow.label}
-                          </p>
-                          <div className="space-y-6">
-                            <img
-                              src={flow.image}
-                              className="w-full h-full object-contain"
-                              alt="image of program creation flow"
-                            />
-                            <div className="space-y-2">
-                              <div className="flex items-center gap-1">
-                                <span className="inline-block w-3 h-3 rounded-full bg-slate-600 shrink-0"></span>
-                                <h3 className="text-lg font-bold">
-                                  {flow.heading}
-                                </h3>
-                              </div>
-                              <ul className="list-disc list-inside space-y-1 pl-1">
-                                {flow.items.map((item) => (
-                                  <li key={item}>{item}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        {idx === 0 && (
-                          <div className="flex flex-col justify-center items-center gap-2 mt-6">
-                            <FaCaretDown className="w-14 h-14" />
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full bg-white border border-gray-300 border-l-8 border-l-teal-700 rounded-lg p-4">
-              {/* 改善案2 */}
-              <button
-                type="button"
-                onClick={() => toggleSection(2)}
-                aria-expanded={openSections[2]}
-                className="w-full flex justify-between items-center gap-4 cursor-pointer"
-              >
-                <div className="flex flex-col items-start">
-                  <h2 className="text-lg md:text-xl font-semibold">
-                    複雑な大量データを迷わせない「テーブルUI」の設計
-                  </h2>
-                  <p className="text-gray-700 text-sm p-1 ">
-                    フローを簡潔化しました。
-                  </p>
-                </div>
-                {openSections[2] ? (
-                  <FaMinus className="w-5 h-5 shrink-0 text-teal-700" />
-                ) : (
-                  <FaPlus className="w-5 h-5 shrink-0 text-teal-700" />
+                {improvement.id === 2 && (
+                  <Improvement2
+                    before={improvement.before}
+                    hearing={improvement.hearing}
+                    after={improvement.after}
+                  />
                 )}
-              </button>
-
-              <div
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openSections[2]
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <hr className="border-t-2 border-dotted border-gray-300 my-4" />
-                  <p className="mb-6">
-                    改善案2の詳細な説明がここに記載されます。
-                  </p>
-                  <div className="">
-                    <div className="space-y-4">
-                      <p className="w-fit py-1 px-4 border bg-blue-500 text-white text-xl font-semibold rounded-full">
-                        Before
-                      </p>
-                      <div className="flex gap-4">
-                        <img
-                          src="/mining/cost-management-before.png"
-                          alt=""
-                          className="w-1/3 object-contain"
-                        />
-                        <div className="space-y-10">
-                          <p>
-                            改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画
-                            面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明
-                          </p>
-                          <ul className="list-disc list-inside space-y-1 pl-1">
-                            <li>AIが自動で計算する</li>
-                            <li>AIが自動で計算する</li>
-                            <li>AIが自動で計算する</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-center gap-2 mt-6">
-                        <FaCaretDown className="w-14 h-14" />
-                      </div>
-                      <div className="space-y-4">
-                        <h5>ヒアリングの結果...</h5>
-                        <div>
-                          <p className="flex text-xl items-center gap-2 italic text-gray-600">
-                            <FaQuoteLeft className="w-3 h-3 shrink-0" />
-                            AIの機能は必要ない
-                            <FaQuoteRight className="w-3 h-3 shrink-0" />
-                          </p>
-                          <p className="flex text-xl items-center gap-2 italic text-gray-600">
-                            <FaQuoteLeft className="w-3 h-3 shrink-0" />
-                            複雑なデータを迷わせないUIにしてほしい
-                            <FaQuoteRight className="w-3 h-3 shrink-0" />
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center items-center gap-2 mt-6">
-                      <FaCaretDown className="w-14 h-14" />
-                    </div>
-
-                    <div className="space-y-4 mt-6">
-                      <p className="w-fit py-1 px-4 border bg-blue-500 text-white text-xl font-semibold rounded-full">
-                        After
-                      </p>
-                      <div className="flex flex-col md:flex-row gap-4">
-                        <img
-                          src="/mining/cost-management-after.png"
-                          className="w-1/2"
-                          alt=""
-                        />
-                        <ul className="list-disc list-inside space-y-1 pl-1">
-                          <div>
-                            <span className="inline-block w-3 h-3 rounded-full bg-slate-600 shrink-0"></span>
-                            <span className="ml-2 font-semibold text-lg">
-                              改善内容
-                            </span>
-                          </div>
-                          <li>
-                            改善内容1改善内容1改善内容1改善内容1改善内容1改善内容1
-                          </li>
-                          <li>改善内容2</li>
-                          <li>改善内容3</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full bg-white border border-gray-300 border-l-8 border-l-teal-700 rounded-lg p-4">
-              {/* 改善案2 */}
-              <button
-                type="button"
-                onClick={() => toggleSection(3)}
-                aria-expanded={openSections[3]}
-                className="w-full flex justify-between items-center gap-4 cursor-pointer"
-              >
-                <div className="flex flex-col items-start">
-                  <h2 className="text-lg md:text-xl font-semibold">
-                    新規機能追加
-                  </h2>
-                  <p className="text-gray-700 text-sm p-1 ">
-                    フローを簡潔化しました。
-                  </p>
-                </div>
-                {openSections[3] ? (
-                  <FaMinus className="w-5 h-5 shrink-0 text-teal-700" />
-                ) : (
-                  <FaPlus className="w-5 h-5 shrink-0 text-teal-700" />
+                {improvement.id === 3 && (
+                  <Improvement3 steps={improvement.steps} />
                 )}
-              </button>
-              <div
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openSections[3]
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <hr className="border-t-2 border-dotted border-gray-300 my-4" />
-                  <p className="mb-6">
-                    改善案3の詳細な説明がここに記載されます。
-                  </p>
-
-                  <div>
-                    <h4 className="font-semibold text-xl">1.ヒアリング</h4>
-                    <p>聞き取りをし、以下の要件が決まりました。</p>
-                    <ul className="list-disc list-inside space-y-1 pl-1">
-                      <li>予算を作成したい</li>
-                      <li>予算を作成したい</li>
-                      <li>予算を作成したい</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div className="flex flex-col justify-center items-center gap-2 mt-6">
-                      <FaCaretDown className="w-14 h-14" />
-                    </div>
-                    <h4 className="font-semibold text-xl">
-                      2. ユーザーストーリーの作成
-                    </h4>
-                    <div className="flex flex-col md:flex-row gap-4">
-                      <p>
-                        ユーザーストーリーを作成し、エンジニアと打ち合わせをしました。
-                      </p>
-                      <img
-                        src="/mining/user-story.png"
-                        alt="image of user story"
-                        className="w-1/2"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-2 mt-6">
-                    <FaCaretDown className="w-14 h-14" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-xl">3. UI作成</h4>
-                    <img
-                      src="/mining/draft-mode.svg"
-                      alt="image of draft mode UI"
-                    />
-                    <ul className="list-disc list-inside space-y-1 pl-1">
-                      <div>
-                        <span className="inline-block w-3 h-3 rounded-full bg-slate-600 shrink-0"></span>
-                        <span className="ml-2 font-semibold text-lg">
-                          改善内容
-                        </span>
-                      </div>
-                      <li>
-                        改善内容1改善内容1改善内容1改善内容1改善内容1改善内容1
-                      </li>
-                      <li>改善内容2</li>
-                      <li>改善内容3</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* <p>{t.improvementsText}</p>
-          <div className="w-full grid  gap-8">
-            {t.improvements.map((item, idx) => (
-              <div key={idx} className="space-y-2">
-                <p className="text-lg font-bold">{item.title}</p>
-                <p className="text-base leading-relaxed text-gray-700">
-                  {item.description}
-                </p>
-              </div>
+              </Accordion>
             ))}
-          </div> */}
           </div>
         </div>
 
         {/* AI Usage Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.aiUsageText}
-          </p>
+          <ul className="list-disc list-inside space-y-2 text-base leading-relaxed ">
+            {t.aiUsageText.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
         {/* Learnings Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="text-2xl text-center text-accent font-medium">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learnings}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.learningsText}
-          </p>
+          <p className="text-base leading-relaxed">{t.learningsText}</p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
               <MdOutlineArrowBackIosNew className="w-5 h-3" />
