@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { LuChevronDown } from "react-icons/lu";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
@@ -22,11 +24,12 @@ const content = {
       "鉱山業界のプログラムマネージャーを対象としたプロジェクト管理プラットフォームです。従来、複数のツールに分散していたプロジェクト情報や進捗管理を一元化し、業務効率を大幅に向上させます。ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを実現しました。",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
-      "    - 🖼️クライアント(SME)からのヒアリング (now, later, future) -> 課題特定、定義 -> 機能考案 -> ワイヤーフレーム、プロトタイプ作成 -> クライアントにプレゼン -> 実装 (ちょっとフロントエンドを手伝ったよ) -> テスト ",
+      "スタートアップでのプロダクト開発であったため、基本的に要件定義からリリースまでの工程を全メンバーで協力して進めました。",
     improvementsTitle: "改善案3案",
+    improvementsText: "今回は3つの改善案を提案しました。",
     improvements: [
       {
-        title: "改善案1",
+        title: "改善案1 - プログラム作成フロー簡略化",
         description:
           "ダミーテキストです。改善案1の内容についてここに記載します。",
       },
@@ -41,9 +44,7 @@ const content = {
           "ダミーテキストです。改善案3の内容についてここに記載します。",
       },
     ],
-    teamCollabTitle: "チームコラボレーション",
-    teamCollabText:
-      "ダミーテキストです。チームコラボレーションについてここに記載します。エンジニアやPMとの連携方法やコミュニケーションの工夫について説明します。",
+
     aiUsageTitle: "AIをどう仕事に取り入れたか",
     aiUsageText:
       "- クライアントとの打ち合わせの際に使用するプロトタイプの作成 (AlloyとClause design, Figma make) - Edgeケースの洗い出し- いくつかのUIパターンの生成",
@@ -81,9 +82,7 @@ const content = {
         description: "Dummy text describing improvement proposal 3.",
       },
     ],
-    teamCollabTitle: "Team Collaboration",
-    teamCollabText:
-      "Dummy text. This section describes how I collaborated with engineers and PMs, and the communication practices used throughout the project.",
+
     aiUsageTitle: "How I Incorporated AI Into My Work",
     aiUsageText:
       "Dummy text. This section describes how AI was incorporated into daily work, specific use cases, and the impact it had.",
@@ -131,24 +130,190 @@ const MiningProject = () => {
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.ProductOverview}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.ProductOverviewText}
-          </p>
+          <div className="flex flex-col md:flex-row gap-8">
+            <img
+              src="/mining/blurred_medium.png"
+              className="md:w-1/2 object-contain"
+              alt="ProductOverview"
+            />
+            <p className="text-base leading-relaxed text-gray-700 md:w-1/2">
+              {t.ProductOverviewText}
+            </p>
+          </div>
         </div>
         {/* Product Development Flow Section */}
         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.productFlowTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.productFlowText}
-          </p>
+          <div className="flex flex-col md:flex-row gap-8">
+            <img src="/mining/product-flow.png" className="rounded-lg w-2/3" />
+            <p className="text-base leading-relaxed text-gray-700">
+              {t.productFlowText}
+            </p>
+          </div>
         </div>
         {/* Improvement Proposals Section */}
         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.improvementsTitle}
           </h2>
+          <div className="space-y-24">
+            <div>
+              {/* 改善案1 */}
+              <div className="flex flex-col gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-1.5 h-6 bg-teal-700"></span>
+                  <h2 className="text-lg md:text-2xl font-semibold">
+                    改善案1: プログラム作成フロー簡略化
+                    (予算作成画面にどれだけ早く辿り着けるか)
+                  </h2>
+                </div>
+                <p>改善案1の詳細な説明がここに記載されます。</p>
+              </div>
+              <div className="space-y-6">
+                {[
+                  {
+                    label: "Before /",
+                    badgeClass: "bg-blue-700 border-blue-700",
+                    image: "/mining/creation-flow-before.svg",
+                    heading: "課題",
+                    items: [
+                      "プログラム作成までに時間がかかっていた。",
+                      "プログラムを作成するフローが画面遷移のため、似たよ...",
+                      "必須入力項目が多かった",
+                      "他のプログラム名の名前がわからない",
+                    ],
+                  },
+                  {
+                    label: "After /",
+                    badgeClass: "bg-green-700 border-green-700",
+                    image: "/mining/creation-flow-after.svg",
+                    heading: "改善内容",
+                    items: [
+                      "プログラム作成までに時間がかかっていた。",
+                      "プログラムを作成するフローが画面遷移のため、似たよ...",
+                      "必須入力項目が多かった",
+                      "他のプログラム名の名前がわからない",
+                    ],
+                  },
+                ].map((flow, idx) => (
+                  <div key={flow.label}>
+                    <div className="space-y-4">
+                      <p
+                        className={`w-fit py-1 px-4 border text-white text-xl font-semibold rounded-full ${flow.badgeClass}`}
+                      >
+                        {flow.label}
+                      </p>
+                      <div className="space-y-6">
+                        <img
+                          src={flow.image}
+                          className="w-full h-full object-contain"
+                          alt="image of program creation flow"
+                        />
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-1">
+                            <span className="inline-block w-3 h-3 rounded-full bg-slate-600 shrink-0"></span>
+                            <h3 className="text-lg font-bold">
+                              {flow.heading}
+                            </h3>
+                          </div>
+                          <ul className="list-disc list-inside space-y-1 pl-1">
+                            {flow.items.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {idx === 0 && (
+                      <div className="flex flex-col justify-center items-center gap-2 mt-6">
+                        <LuChevronDown className="w-12 h-12" strokeWidth={1.5} />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              {/* 改善案2 */}
+              <h2>改善案2 - 予算管理画面の改善</h2>
+              <p>改善案2の詳細な説明がここに記載されます。</p>
+              <div className="">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <img
+                    src="/mining/cost-management-before.png"
+                    alt=""
+                    className="w-1/2"
+                  />
+                  <div>
+                    <p>
+                      改善前の画面の説明改善前の画面の説明改善前の画面の説明改善前の画面の説明
+                    </p>
+                    <div>
+                      <p className="flex text-3xl items-center gap-2 italic text-gray-600">
+                        <FaQuoteLeft className="w-3 h-3 shrink-0" />
+                        これはいらないな
+                        <FaQuoteRight className="w-3 h-3 shrink-0" />
+                      </p>
+                      <p className="flex text-3xl items-center gap-2 italic text-gray-600">
+                        <FaQuoteLeft className="w-3 h-3 shrink-0" />
+                        これはいらないな
+                        <FaQuoteRight className="w-3 h-3 shrink-0" />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <h4>修正後</h4>
+                <div className="flex flex-col md:flex-row gap-4">
+                  <img
+                    src="/mining/cost-management-after.png"
+                    className="w-2/3"
+                    alt=""
+                  />
+                  <ul>
+                    <li>改善内容1</li>
+                    <li>改善内容2</li>
+                    <li>改善内容3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div>
+              {/* 改善案3 */}
+              <h2>改善案3 - 新機能追加</h2>
+              <p>改善案3の詳細な説明がここに記載されます。</p>
+
+              <div>
+                <h4>1. ヒアリング</h4>
+                <p className="flex text-3xl items-center gap-2 italic text-gray-600">
+                  <FaQuoteLeft className="w-3 h-3 shrink-0" />
+                  これはいらないな
+                  <FaQuoteRight className="w-3 h-3 shrink-0" />
+                </p>
+                <p className="flex text-3xl items-center gap-2 italic text-gray-600">
+                  <FaQuoteLeft className="w-3 h-3 shrink-0" />
+                  これはいらないな
+                  <FaQuoteRight className="w-3 h-3 shrink-0" />
+                </p>
+              </div>
+              <div>
+                <h4>2.ユーザーストーリーの作成</h4>
+                <img src="/mining/user-story.png" alt="" />
+              </div>
+              <div>
+                <h4>3.UI作成</h4>
+                <img src="/mining/draft-mode.png" alt="" />
+                <ul className="list-disc">
+                  <li>改善内容1</li>
+                  <li>改善内容2</li>
+                  <li>改善内容3</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* <p>{t.improvementsText}</p>
           <div className="w-full grid  gap-8">
             {t.improvements.map((item, idx) => (
               <div key={idx} className="space-y-2">
@@ -158,19 +323,12 @@ const MiningProject = () => {
                 </p>
               </div>
             ))}
+          </div> */}
           </div>
         </div>
-        {/* Team Collaboration Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
-            {t.teamCollabTitle}
-          </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.teamCollabText}
-          </p>
-        </div>
+
         {/* AI Usage Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.aiUsageTitle}
           </h2>
@@ -179,7 +337,7 @@ const MiningProject = () => {
           </p>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
           <h2 className="text-2xl text-center text-accent font-medium">
             {t.learnings}
           </h2>
