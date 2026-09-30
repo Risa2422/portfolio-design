@@ -205,7 +205,11 @@ const content = {
           image: "/mining/cost-management-after.png",
           alt: "Cost management screen after the change",
           heading: "Improvements",
-          items: ["Improvement content 1", "Improvement content 1", "Improvement content 1"],
+          items: [
+            "Improvement content 1",
+            "Improvement content 1",
+            "Improvement content 1",
+          ],
         },
       },
       {
@@ -238,7 +242,11 @@ const content = {
             image: "/mining/draft-mode.svg",
             alt: "Image of the draft mode UI",
             heading: "Improvements",
-            items: ["Improvement content 1", "Improvement content 1", "Improvement content 1"],
+            items: [
+              "Improvement content 1",
+              "Improvement content 1",
+              "Improvement content 1",
+            ],
           },
         ],
       },
@@ -298,7 +306,7 @@ const MiningProject = () => {
         </div>
         {/* ProductOverview Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
           </h2>
@@ -315,11 +323,11 @@ const MiningProject = () => {
         </div>
         {/* Product Development Flow Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
           </h2>
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col gap-8">
             <p className="text-base leading-relaxed text-gray-700">
               {t.productFlowText}
             </p>
@@ -328,7 +336,7 @@ const MiningProject = () => {
         </div>
         {/* Improvement Proposals Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
           </h2>
@@ -365,7 +373,7 @@ const MiningProject = () => {
 
         {/* AI Usage Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
@@ -377,7 +385,7 @@ const MiningProject = () => {
         </div>
         {/* Learnings Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-3xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learnings}
           </h2>
