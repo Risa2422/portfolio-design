@@ -456,7 +456,7 @@ const Mahjong = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
             <ZoomableImage
-              src={localizeImage("/mahjong/thumbnail.png", language)}
+              src={localizeImage("/mahjong/thumbnail.png")}
               alt="mahjong thumbnail"
               className="w-full h-full object-contain"
             />
@@ -758,7 +758,10 @@ const Mahjong = () => {
                 className="flex items-center justify-center rounded-full w-6 h-6"
                 style={{ backgroundColor: "#746B60" }}
               >
-                <MdOutlineArrowBackIosNew width={10} className="w-5 h-3 text-white" />
+                <MdOutlineArrowBackIosNew
+                  width={10}
+                  className="w-5 h-3 text-white"
+                />
               </span>
               <p className="text-sm">{t.homeLabel}</p>
             </div>

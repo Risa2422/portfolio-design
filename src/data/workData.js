@@ -93,23 +93,23 @@ const workData = [
     },
     to: "quiz",
   },
-  {
-    imageSrc: "/googlemaps-thumbnail.png",
-    title: {
-      ja: "Google Maps – アルバム機能",
-      en: "Google Maps – New Album Feature Design",
-    },
-    date: "2025",
-    description: {
-      ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、UIデザイン、ワイヤーフレーム作成に取り組みました。",
-      en: "I designed a new album feature for Google Maps, enhancing the existing Lists functionality. I focused on identifying user needs, designing the UI, and creating wireframes.",
-    },
-    tags: {
-      ja: ["自主制作", "UIデザイン", "機能デザイン"],
-      en: ["Personal Project", "UI Design", "Feature Design"],
-    },
-    to: "googleMaps-album",
-  },
+  // {
+  //   imageSrc: "/googlemaps-thumbnail.png",
+  //   title: {
+  //     ja: "Google Maps – アルバム機能",
+  //     en: "Google Maps – New Album Feature Design",
+  //   },
+  //   date: "2025",
+  //   description: {
+  //     ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、UIデザイン、ワイヤーフレーム作成に取り組みました。",
+  //     en: "I designed a new album feature for Google Maps, enhancing the existing Lists functionality. I focused on identifying user needs, designing the UI, and creating wireframes.",
+  //   },
+  //   tags: {
+  //     ja: ["自主制作", "UIデザイン", "機能デザイン"],
+  //     en: ["Personal Project", "UI Design", "Feature Design"],
+  //   },
+  //   to: "googleMaps-album",
+  // },
 ];
 
 export default workData;

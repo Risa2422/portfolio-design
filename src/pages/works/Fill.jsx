@@ -4,79 +4,68 @@ import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
-
-const ImagePlaceholder = ({ label, className = "" }) => (
-  <div
-    className={`flex items-center justify-center rounded-lg border border-dashed border-gray-300 bg-white text-center text-xs md:text-sm text-gray-400 ${className}`}
-  >
-    {label}
-  </div>
-);
+import { localizeImage } from "../../utils/localizeImage";
 
 const content = {
   ja: {
     infoLabels: [
       {
         title: "担当範囲",
-        value:
-          "派生画面のUIデザイン設計、コンポーネント展開、デザインガイドラインの適用",
+        value: "ワイヤーフレーム作成、派生画面のUIデザイン展開",
       },
       { title: "使用ツール", value: "Figma" },
       { title: "制作期間", value: "3ヶ月（2026年10月〜12月）" },
       {
         title: "チーム構成",
-        value:
-          "リードデザイナー1名、Webデザイナー（自身）1名、エンジニア1名",
+        value: "リードデザイナー1名、Webデザイナー（自身）1名、エンジニア1名",
       },
     ],
-    title: "Fill",
+    title: "Webサイトリニューアル",
     subtitle: "自社Webサイト",
     overviewTitle: "プロジェクト概要",
     overviewText:
-      "自社Webサイトのリニューアルプロジェクト。インターン生としてプロジェクトに参画し、リードデザイナーが定義した基本デザインシステムおよびメインページをベースに、多数の派生画面・管理画面のデザイン展開を担当しました。メインページのトーン＆マナーや主要なデザインルールは決定していたものの、事業展開に伴い、詳細設定・データ管理・編集フローといった複雑な派生画面を大量に作成する必要がありました。",
+      "自社Webサイトのリニューアルプロジェクトにインターン生として参画しました。ワイヤーフレームの作成と、リードデザイナーが定義したデザインシステムおよびメインページをベースに、多数の派生画面のデザイン展開を担当しました。",
+    siteLinkPrefix: "サイトは",
+    siteLinkText: "こちら",
+    siteLinkSuffix: "をご覧ください。",
     overviewImageLabel: "Webサイトの画像（準備中）",
-    outputTitle: "成果物",
+    outputTitle: "成果物 (一部)",
     outputImageLabels: [
-      "デザインしたページのスクリーンショット①（準備中）",
-      "デザインしたページのスクリーンショット②（準備中）",
-      "デザインしたページのスクリーンショット③（準備中）",
+      { url: "inquiry", label: "お問い合わせページ" },
+      { url: "information-request", label: "資料請求ページ" },
+      { url: "recruit", label: "採用ページ" },
+      { url: "about-us", label: "私たちについてページ" },
+      { url: "blog", label: "ブログページ" },
+
+      { url: "service", label: "サービスページ" },
     ],
-    processTitle: "デザインプロセスと意識したこと",
+    processTitle: "意識したこと",
     process: [
       {
         number: "①",
-        title: "デザインルール・システムのキャッチアップと厳格な適用",
+        title: "デザインシステムの理解とルールに沿ったUI設計",
         paragraphs: [
-          "既存のFigmaライブラリ（カラー・タイポグラフィ・余白ルール・共通コンポーネント）の構造を深く理解した上でデザインに着手しました。単にパーツを配置するだけでなく、状態変化（Hover, Active, Disabledなど）やレスポンシブ時の挙動も含めて、ルールから外れない一貫性のあるUI設計を徹底しました。",
+          "デザインシステムの全体像と各ページの役割・目的を把握した上で作業に入りました。エンジニアが実装で迷わないよう、Hover/Active/Disabledなどの状態変化やレスポンシブ時の挙動まで考慮し、一貫性のあるUI設計を徹底しました。",
         ],
       },
       {
         number: "②",
-        title:
-          "メンターレビューにおける自発的な取り組み（コミュニケーションの工夫）",
-        intro:
-          "デザインの品質と制作スピードを両立させるため、レビューの受け方や意思疎通において以下の点に注力しました。",
-        points: [
-          {
-            heading: "意思・仮説を持って相談する（A/B案の提示）",
-            text: "指示待ちではなく、自分なりの意図と根拠を持ってレビューに臨みました。「メインページのルールを踏襲したA案」と「派生画面特有の情報密度に最適化したB案」のように複数パターンを作成し、「この画面の目的からはA案が適していると考えていますが、いかがでしょうか？」という形式で提案を行いました。",
-          },
-          {
-            heading: "フィードバックの抽象化と他画面への即時展開",
-            text: "1つの画面で受けた修正指示やアドバイスについて、「なぜその指摘を受けたのか」という本質的な理由・原則を言語化して理解しました。それにより、残り数十画面の制作にも即座にその考え方を横展開し、同じ指摘を繰り返さない再現性を意識しました。",
-          },
+        title: "レビューを通じた学びの横展開",
+        paragraphs: [
+          "レビューでいただいた指摘やアドバイスは、「なぜその指摘を受けたのか」という背景を理解するよう心がけました。そうすることで他のページのデザインレビュー時に、同じ指摘を繰り返さないよう意識しました。",
         ],
       },
       {
         number: "③",
-        title: "派生画面特有のUI/UXレイアウトの考案",
+        title: "派生画面特有の情報設計とレイアウト工夫",
         paragraphs: [
-          "メインページにはない複雑なデータ表示（テーブル、フィルタリング機能、入力フォームなど）が必要な画面では、既存のトーン＆マナーを崩さない範囲で情報設計を工夫し、直感的に操作できるレイアウトを構成しました。また、CMSとの連携制約の確認もしました。",
+          "メインページとは異なり、複雑なデータ表示（図形、フィルター、各種フォームなど）が必要になる画面では、全体のトーン＆マナーを崩さない範囲でレイアウトを工夫しました。直感的に操作できる情報設計を目指しつつ、CMSの仕様や実装上の制約についても事前に確認しながら進めました。",
         ],
       },
     ],
-    resultsTitle: "成果と学び",
+    resultsTitle: "学び",
     resultsText:
       "実務におけるデザインシステムの運用・理解が深まっただけでなく、「チームで働くデザイナー」として、仮説を持ったコミュニケーションや効率的なレビュープロセスの重要性を身をもって学ぶことができました。",
     home: "ホーム",
@@ -85,8 +74,7 @@ const content = {
     infoLabels: [
       {
         title: "Scope of Work",
-        value:
-          "UI design for derivative screens, component rollout, and application of design guidelines",
+        value: "Wireframing and UI design for derivative pages",
       },
       { title: "Tools Used", value: "Figma" },
       { title: "Duration", value: "3 months (Oct - Dec 2026)" },
@@ -95,55 +83,52 @@ const content = {
         value: "1 Lead Designer, 1 Web Designer (myself), 1 Engineer",
       },
     ],
-    title: "Fill",
+    title: "Website Redesign",
     subtitle: "Corporate Website",
     overviewTitle: "Project Overview",
     overviewText:
-      "A renewal project for our company website. I joined as an intern and, building on the core design system and main page already defined by the lead designer, took charge of designing a large number of derivative and admin screens. While the tone and manner and the key design rules had already been set on the main page, the growth of the business meant we needed to produce a large volume of complex derivative screens covering detailed settings, data management, and editing flows.",
+      "I joined our company's website redesign project as an intern. I was responsible for creating wireframes and for designing a large number of derivative pages, building on the design system and main page defined by the lead designer.",
+    siteLinkPrefix: " You can view the site ",
+    siteLinkText: "here",
+    siteLinkSuffix: ".",
     overviewImageLabel: "Website image (coming soon)",
-    outputTitle: "Deliverables",
+    outputTitle: "Deliverables (excerpt)",
     outputImageLabels: [
-      "Screenshot of a designed page ① (coming soon)",
-      "Screenshot of a designed page ② (coming soon)",
-      "Screenshot of a designed page ③ (coming soon)",
+      { url: "inquiry", label: "Contact Page" },
+      { url: "information-request", label: "Information Request Page" },
+      { url: "recruit", label: "Careers Page" },
+      { url: "about-us", label: "About Us Page" },
+      { url: "blog", label: "Blog Page" },
+
+      { url: "service", label: "Services Page" },
     ],
-    processTitle: "Design Process & What I Focused On",
+    processTitle: "What I Focused On",
     process: [
       {
         number: "1.",
-        title: "Thoroughly learning and applying the design rules and system",
+        title:
+          "Understanding the design system and designing UI within its rules",
         paragraphs: [
-          "Before starting any design work, I made sure to deeply understand the structure of the existing Figma library (colors, typography, spacing rules, and shared components). Rather than simply placing parts, I made sure the UI stayed consistent with the rules, including state changes (hover, active, disabled, etc.) and responsive behavior.",
+          "Before starting, I made sure to grasp the overall design system as well as the role and purpose of each page. So that engineers would never be unsure during implementation, I accounted for state changes such as hover, active, and disabled, as well as responsive behavior, keeping the UI consistent throughout.",
         ],
       },
       {
         number: "2.",
-        title:
-          "Being proactive in mentor reviews (communication approach)",
-        intro:
-          "To keep both quality and speed high, I focused on the following when receiving reviews and communicating with the team.",
-        points: [
-          {
-            heading:
-              "Bringing an opinion and a hypothesis to every discussion (proposing A/B options)",
-            text: "Instead of waiting for instructions, I brought my own reasoning to reviews. I would create multiple patterns — for example, “Option A, which follows the main page's rules” and “Option B, optimized for this derivative screen's information density” — and propose them with a framing such as “Given the purpose of this screen, I think Option A is more suitable — what do you think?”",
-          },
-          {
-            heading:
-              "Abstracting feedback and applying it immediately to other screens",
-            text: "For any correction or advice I received on one screen, I made sure to articulate the underlying reason or principle behind it. This let me immediately apply that thinking across the dozens of remaining screens, avoiding repeat feedback on the same issue.",
-          },
+        title: "Applying lessons from reviews across other pages",
+        paragraphs: [
+          "For any feedback or advice I received in reviews, I made a point of understanding why it was given. This helped me avoid receiving the same feedback again when other pages were reviewed.",
         ],
       },
       {
         number: "3.",
-        title: "Designing UI/UX layouts specific to derivative screens",
+        title:
+          "Information architecture and layouts tailored to derivative pages",
         paragraphs: [
-          "For screens that needed complex data displays not found on the main page (tables, filtering, input forms, etc.), I devised information architecture that stayed within the existing tone and manner while remaining intuitive to use. I also confirmed constraints around CMS integration.",
+          "Unlike the main page, some pages required complex data displays (diagrams, filters, various forms, etc.). For these, I refined the layouts without breaking the overall tone and manner. While aiming for an intuitive information architecture, I also checked CMS specifications and implementation constraints in advance as I worked.",
         ],
       },
     ],
-    resultsTitle: "Results & Learnings",
+    resultsTitle: "Learnings",
     resultsText:
       "Beyond deepening my practical understanding of operating a design system, I learned firsthand — as a designer working within a team — the importance of hypothesis-driven communication and an efficient review process.",
     home: "Home",
@@ -169,9 +154,10 @@ const WebDesign = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
-            <ImagePlaceholder
-              label={t.subtitle}
-              className="w-full h-full"
+            <ZoomableImage
+              src={localizeImage("/fill/thumbnail.png")}
+              alt="Fill Project Thumbnail"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="space-y-4 flex-1">
@@ -179,7 +165,7 @@ const WebDesign = () => {
               <h1 className="text-2xl font-semibold">{t.title}</h1>
               <div className="h-[0.8px] bg-border mt-4" />
             </div>
-            <InfoList items={infoItems} />
+            <InfoList items={infoItems} visible={false} />
           </div>
         </div>
         {/* Overview Section */}
@@ -191,11 +177,19 @@ const WebDesign = () => {
           <div className="flex flex-col gap-8 justify-center items-center">
             <p className="text-base leading-relaxed text-gray-700">
               {t.overviewText}
+              <span>
+                {t.siteLinkPrefix}
+                <a
+                  href="https://fill.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  {t.siteLinkText}
+                </a>
+                {t.siteLinkSuffix}
+              </span>
             </p>
-            <ImagePlaceholder
-              label={t.overviewImageLabel}
-              className="w-full md:w-2/3 aspect-video"
-            />
           </div>
         </div>
         {/* Output Section */}
@@ -204,9 +198,16 @@ const WebDesign = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.outputTitle}
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-10 items-start md:grid-cols-3">
             {t.outputImageLabels.map((label) => (
-              <ImagePlaceholder key={label} label={label} className="aspect-video" />
+              <div>
+                <p>{label.label}</p>
+                <ZoomableImage
+                  src={localizeImage(`/fill/${label.url}.png`)}
+                  alt={label.label}
+                  className="w-full h-full object-contain pt-1"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -216,9 +217,9 @@ const WebDesign = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.processTitle}
           </h2>
-          <div className="space-y-12">
+          <div className="space-y-8">
             {t.process.map((item) => (
-              <div key={item.number} className="space-y-4">
+              <div key={item.number} className="space-y-2">
                 <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   <span className="mr-2">{item.number}</span>
                   {item.title}
