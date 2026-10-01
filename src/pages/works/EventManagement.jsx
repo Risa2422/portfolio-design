@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 
@@ -302,11 +303,9 @@ const EventManagement = () => {
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20 overflow-hidden object-top">
-            <img
+            <ZoomableImage
               src={localizeImage("/event-management/thumbnail.png", language)}
               alt="event management thumbnail"
-              width={320}
-              height={320}
               className="w-full h-full object-contain"
             />
           </div>
@@ -345,7 +344,7 @@ const EventManagement = () => {
               {t.problemIntro}
             </p>
             <div className="md:w-1/2 self-start">
-              <img
+              <ZoomableImage
                 src={localizeImage(
                   "/event-management/user-scenario.png",
                   language
@@ -360,7 +359,7 @@ const EventManagement = () => {
               <p>{t.problemAnalysisText}</p>
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="md:w-1/2">
-                  <img
+                  <ZoomableImage
                     src={localizeImage(
                       "/event-management/problem-host.png",
                       language
@@ -370,7 +369,7 @@ const EventManagement = () => {
                   />
                 </div>
                 <div className="md:w-1/2 ">
-                  <img
+                  <ZoomableImage
                     src={localizeImage(
                       "/event-management/problem-guest.png",
                       language
@@ -394,7 +393,7 @@ const EventManagement = () => {
             {t.mvpText}
           </p>
           <div className="md:w-1/2">
-            <img
+            <ZoomableImage
               src={localizeImage("/event-management/mvp.png", language)}
               alt=""
               className="w-full h-full object-cover border border-border rounded"
@@ -415,7 +414,7 @@ const EventManagement = () => {
                     {t.wireframeText}
                   </p>
                   <div className="md:w-1/2">
-                    <img
+                    <ZoomableImage
                       src={localizeImage(
                         "/event-management/wireframe.png",
                         language
@@ -444,7 +443,7 @@ const EventManagement = () => {
                         className="max-w-[420px] w-full flex flex-col items-center"
                       >
                         <div className="w-full md:h-[240px] flex items-center justify-center border border-border rounded bg-white">
-                          <img
+                          <ZoomableImage
                             src={localizeImage(item.src, language)}
                             alt={item.alt}
                             className="max-h-full max-w-full object-contain"

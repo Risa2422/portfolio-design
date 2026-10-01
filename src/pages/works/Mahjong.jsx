@@ -333,6 +333,7 @@ import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 
@@ -454,11 +455,9 @@ const Mahjong = () => {
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
-            <img
+            <ZoomableImage
               src={localizeImage("/mahjong/thumbnail.png", language)}
               alt="mahjong thumbnail"
-              width={320}
-              height={320}
               className="w-full h-full object-contain"
             />
           </div>
@@ -497,7 +496,7 @@ const Mahjong = () => {
                 <div className="flex flex-col gap-10">
                   <div className="flex flex-col md:flex-row flex-1 gap-10">
                     <div className="flex flex-col">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/mahjong/score-before.png",
                           language,
@@ -510,7 +509,7 @@ const Mahjong = () => {
                       </p>
                     </div>
                     <div className="flex flex-col">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/mahjong/record-before.png",
                           language,
@@ -525,7 +524,7 @@ const Mahjong = () => {
                   </div>
                   <div className="flex flex-col md:flex-row flex-1 gap-10">
                     <div className="flex flex-col">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/mahjong/input-before.png",
                           language,
@@ -538,7 +537,7 @@ const Mahjong = () => {
                       </p>
                     </div>
                     <div className="flex flex-col">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/mahjong/account-before.png",
                           language,
@@ -655,7 +654,7 @@ const Mahjong = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-2">
                   {/* カード1 */}
                   <div className="flex flex-col">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/mahjong/score-after.png", language)}
                       alt="Score Page"
                       className="w-full object-contain border border-border rounded"
@@ -667,7 +666,7 @@ const Mahjong = () => {
 
                   {/* カード2 */}
                   <div className="flex flex-col">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/mahjong/record-after.png", language)}
                       alt="History Page"
                       className="w-full object-contain border border-border rounded"
@@ -679,7 +678,7 @@ const Mahjong = () => {
 
                   {/* カード3 */}
                   <div className="flex flex-col">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/mahjong/input-after.png", language)}
                       alt="Score Input Page"
                       className="w-full object-contain border border-border rounded"
@@ -691,7 +690,7 @@ const Mahjong = () => {
 
                   {/* カード4 */}
                   <div className="flex flex-col">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/mahjong/mypage-after.png", language)}
                       alt="Account Page"
                       className="w-full object-contain border border-border rounded"
@@ -703,7 +702,7 @@ const Mahjong = () => {
 
                   {/* カード5 */}
                   <div className="flex flex-col">
-                    <img
+                    <ZoomableImage
                       src={localizeImage(
                         "/mahjong/friends-after.png",
                         language,
@@ -731,7 +730,7 @@ const Mahjong = () => {
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
                     <div className="flex flex-col md:w-1/2">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/mahjong/style-guide.png",
                           language,

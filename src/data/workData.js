@@ -38,7 +38,7 @@ const workData = [
     },
     date: "2025",
     description: {
-      ja: "子育て世代をターゲットにした誕生日会管理アプリのデザインと開発を担当しました。ユーザーニーズの発見からMVPの定義、UIデザイン、フロントエンド実装まで一貫して行いました。",
+      ja: "子育て世代をターゲットにした誕生日会管理アプリのデザインと実装を担当しました。ユーザーニーズの発見からMVP定義、UIデザイン、フロントエンド実装まで一貫して行いました。",
       en: "I designed and developed a birthday party management app targeted at parents with young children. I handled everything from identifying user needs to defining the MVP, designing the UI, and implementing the frontend.",
     },
     tags: {
@@ -96,12 +96,12 @@ const workData = [
   {
     imageSrc: "/googlemaps-thumbnail.png",
     title: {
-      ja: "Google Maps – 新しいアルバム機能デザイン",
+      ja: "Google Maps – アルバム機能",
       en: "Google Maps – New Album Feature Design",
     },
     date: "2025",
     description: {
-      ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、UIデザイン、ワイヤーフレーム作成に注力しました。",
+      ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、UIデザイン、ワイヤーフレーム作成に取り組みました。",
       en: "I designed a new album feature for Google Maps, enhancing the existing Lists functionality. I focused on identifying user needs, designing the UI, and creating wireframes.",
     },
     tags: {

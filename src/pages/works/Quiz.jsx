@@ -503,6 +503,7 @@ import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 
@@ -820,11 +821,9 @@ const Quiz = () => {
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
-            <img
+            <ZoomableImage
               src={localizeImage("/quiz/thumbnail.png", language)}
               alt="quiz thumbnail"
-              width={320}
-              height={320}
               className="w-full h-full object-contain"
             />
           </div>
@@ -921,9 +920,8 @@ const Quiz = () => {
               <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10">
                 <div className="space-y-1.5">
                   <div className="w-full space-y-2">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/persona1.png", language)}
-                      controls
                       className="h-full object-contain rounded  border border-gray-300"
                     />
                     <p className="text-xs text-gray-700 text-center">
@@ -933,9 +931,8 @@ const Quiz = () => {
                 </div>
                 <div className="space-y-1.5">
                   <div className="w-full space-y-2">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/persona2.png", language)}
-                      controls
                       className="h-full object-contain rounded  border border-gray-300"
                     />
                     <p className="text-xs text-gray-700 text-center">
@@ -961,7 +958,7 @@ const Quiz = () => {
                     <div key={index} className="flex flex-col items-center">
                       <div className="flex gap-4">
                         {images.map((src, i) => (
-                          <img
+                          <ZoomableImage
                             key={i}
                             src={localizeImage(src, language)}
                             alt={`${t.designOptions[index]} Image ${i + 1}`}
@@ -987,7 +984,7 @@ const Quiz = () => {
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
                     <div className="flex flex-col md:w-1/2">
-                      <img
+                      <ZoomableImage
                         src={localizeImage("/quiz/wireframe.png", language)}
                         alt="Wireframe"
                         className="h-full object-cover border border-border rounded max-w-full"
@@ -1054,7 +1051,7 @@ const Quiz = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                   <div className="h-[320px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/home.svg", language)}
                       alt="Home Screen"
                       className="h-full w-full object-contain rounded"
@@ -1074,7 +1071,7 @@ const Quiz = () => {
 
                 <div className="flex flex-col gap-6">
                   <div className="h-[320px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/level-select.svg", language)}
                       alt="Level Selection Screen"
                       className="h-full w-full object-contain"
@@ -1095,7 +1092,7 @@ const Quiz = () => {
                 <div className="flex flex-col gap-6">
                   <div className="flex justify-around gap-8">
                     <div className="h-[320px]">
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           "/quiz/quiz-not-selected.svg",
                           language,
@@ -1105,7 +1102,7 @@ const Quiz = () => {
                       />
                     </div>
                     <div className="h-[320px]">
-                      <img
+                      <ZoomableImage
                         src={localizeImage("/quiz/quiz-selected.svg", language)}
                         alt="Quiz Screen Selected"
                         className="h-full w-full object-contain"
@@ -1125,14 +1122,14 @@ const Quiz = () => {
                 <div className="flex flex-col gap-6">
                   <div className="flex justify-around gap-8">
                     <div className="h-[320px]">
-                      <img
+                      <ZoomableImage
                         src={localizeImage("/quiz/correct.svg", language)}
                         alt="Correct Screen"
                         className="h-full w-full object-contain"
                       />
                     </div>
                     <div className="h-[320px]">
-                      <img
+                      <ZoomableImage
                         src={localizeImage("/quiz/wrong.svg", language)}
                         alt="Incorrect Screen"
                         className="h-full w-full object-contain"
@@ -1153,7 +1150,7 @@ const Quiz = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                   <div className="h-[320px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/result.svg", language)}
                       alt="Result Screen"
                       className="h-full w-full object-contain"
@@ -1171,7 +1168,7 @@ const Quiz = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                   <div className="h-[320px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/ranking.svg", language)}
                       alt="Ranking Screen"
                       className="h-full w-full object-contain"
@@ -1191,7 +1188,7 @@ const Quiz = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                   <div className="h-[320px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage("/quiz/quit.svg", language)}
                       alt="Quiz Interruption Screen"
                       className="h-full w-full object-contain rounded"

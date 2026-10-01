@@ -1,3 +1,4 @@
+import ZoomableImage from "../../../components/ZoomableImage";
 import ArrowDivider from "./ArrowDivider";
 import Badge from "./Badge";
 import DetailBox from "./DetailBox";
@@ -7,7 +8,11 @@ function FlowStep({ label, badgeClass, image, alt, heading, items }) {
     <div className="space-y-4">
       <Badge colorClass={badgeClass}>{label}</Badge>
       <div className="space-y-6">
-        <img src={image} className="w-full h-full object-contain" alt={alt} />
+        <ZoomableImage
+          src={image}
+          className="w-full h-full object-contain"
+          alt={alt}
+        />
         <DetailBox heading={heading} items={items} />
       </div>
     </div>

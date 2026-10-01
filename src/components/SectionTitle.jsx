@@ -6,7 +6,7 @@ const SectionTitle = ({ title, jp, sub = false }) => {
 
   return (
     <div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 pb-6">
         <div className="relative">
           <h2
             className={`relative z-10 font-raleway whitespace-nowrap pl-4 font-medium text-gray-800 ${

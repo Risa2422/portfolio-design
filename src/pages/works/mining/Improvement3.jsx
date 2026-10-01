@@ -1,3 +1,4 @@
+import ZoomableImage from "../../../components/ZoomableImage";
 import ArrowDivider from "./ArrowDivider";
 import Badge from "./Badge";
 import DetailBox from "./DetailBox";
@@ -24,13 +25,19 @@ function Improvement3({ steps }) {
               <div className="flex flex-col md:flex-row gap-4">
                 <p>{step.text}</p>
                 {step.image && (
-                  <img src={step.image} alt={step.alt} className="w-1/2" />
+                  <ZoomableImage
+                    src={step.image}
+                    alt={step.alt}
+                    className="w-1/2"
+                  />
                 )}
               </div>
             )}
             {step.heading && (
               <>
-                {step.image && <img src={step.image} alt={step.alt} />}
+                {step.image && (
+                  <ZoomableImage src={step.image} alt={step.alt} />
+                )}
                 <DetailBox heading={step.heading} items={step.items} />
               </>
             )}

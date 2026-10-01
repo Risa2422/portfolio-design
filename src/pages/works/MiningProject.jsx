@@ -5,6 +5,7 @@ import Accordion from "../../components/Accordion";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 import Improvement1 from "./mining/Improvement1";
@@ -290,8 +291,8 @@ const MiningProject = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
-            <img
-              src={localizeImage("/mining-project/thumbnail.png", language)}
+            <ZoomableImage
+              src={localizeImage("/mining/thumbnail.png", language)}
               alt="Mining Project Thumbnail"
               className="w-full h-full object-contain"
             />
@@ -314,7 +315,7 @@ const MiningProject = () => {
             <p className="text-base leading-relaxed text-gray-700 ">
               {t.ProductOverviewText}
             </p>
-            <img
+            <ZoomableImage
               src="/mining/blurred_medium.png"
               className="md:w-1/2 object-contain"
               alt="ProductOverview"
@@ -331,7 +332,11 @@ const MiningProject = () => {
             <p className="text-base leading-relaxed text-gray-700">
               {t.productFlowText}
             </p>
-            <img src="/mining/product-flow.svg" className="rounded-lg w-23" />
+            <ZoomableImage
+              src="/mining/product-flow.svg"
+              alt={t.productFlowTitle}
+              className="rounded-lg w-23 bg-background"
+            />
           </div>
         </div>
         {/* Improvement Proposals Section */}

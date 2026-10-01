@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 
@@ -159,7 +160,7 @@ const GoogleMapsAlbum = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
-            <img
+            <ZoomableImage
               src={localizeImage("/googlemaps-album/thumbnail.png", language)}
               alt="Google Maps Album Feature Thumbnail"
               className="w-full h-full object-contain"
@@ -222,7 +223,7 @@ const GoogleMapsAlbum = () => {
                     <div className="flex flex-col md:flex-row flex-1 gap-10">
                       <div className="flex flex-col gap-2">
                         {idx === 1 ? <p>{t.flowCaption}</p> : ""}
-                        <img
+                        <ZoomableImage
                           src={localizeImage(
                             `/googlemaps-album/${src}`,
                             language,
@@ -255,7 +256,7 @@ const GoogleMapsAlbum = () => {
               <p className="text-base">{t.newScreensCaption}</p>
             </div>
             <div>
-              <img
+              <ZoomableImage
                 src={localizeImage("/googlemaps-album/final-ui.png", language)}
                 alt="Album Feature Page"
                 className="h-full object-cover rounded"
@@ -277,7 +278,7 @@ const GoogleMapsAlbum = () => {
                       key={idx}
                       className="w-full h-[500px] sm:h-[800px] md:max-w-[480px] md:h-[500px]"
                     >
-                      <img
+                      <ZoomableImage
                         src={localizeImage(
                           `/googlemaps-album/${src}`,
                           language,
@@ -301,7 +302,7 @@ const GoogleMapsAlbum = () => {
                 {/* Row 2 */}
                 <div className="flex flex-col items-center lg:flex-row gap-8 lg:items-start md:justify-between">
                   <div className="w-full sm:h-[800px] md:max-w-[480px] md:h-[620px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage(
                         "/googlemaps-album/album.png",
                         language,
@@ -314,7 +315,7 @@ const GoogleMapsAlbum = () => {
                     </p>
                   </div>
                   <div className="w-full h-[500px] sm:h-[800px] md:max-w-[480px] md:h-[620px]">
-                    <img
+                    <ZoomableImage
                       src={localizeImage(
                         "/googlemaps-album/album-detail.png",
                         language,
