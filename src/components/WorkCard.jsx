@@ -61,6 +61,7 @@ import { Link } from "react-router-dom";
 function WorkCard({
   imageSrc,
   title,
+  date,
   description,
   tags = [],
   reverse = false,
@@ -96,9 +97,8 @@ function WorkCard({
         >
           <div className="space-y-3">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="text-md text-text-sub">{description}</p>
+            <p className="pt-3 text-text-sub">{description}</p>
           </div>
-
           <ul className="flex gap-2 text-sm flex-wrap">
             {tags.map((tag, index) => (
               <li
@@ -110,6 +110,7 @@ function WorkCard({
               </li>
             ))}
           </ul>
+          <p className="text-sm text-gray-800 pt-2">{date}</p>
         </div>
       </div>
     </Link>

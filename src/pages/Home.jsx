@@ -86,6 +86,7 @@ const Home = () => {
                 >
                   <WorkCard
                     imageSrc={localizeImage(work.imageSrc, language)}
+                    date={work.date}
                     title={work.title[language]}
                     description={work.description[language]}
                     tags={work.tags[language]}
