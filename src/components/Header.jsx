@@ -84,11 +84,11 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      relative transition-all duration-600 hover:text-primary space-y-4 text-md block py-3 tracking-wide
+                      group relative transition-all duration-600 space-y-4 text-md block py-3 tracking-wide
                         ${
                           active && !isOpen
-                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary"
-                            : "text-gray-600 font-light"
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full after:bg-primary"
+                            : "text-gray-600 "
                         }
                         ${
                           active && isOpen
@@ -98,7 +98,17 @@ function Header() {
                       `;
                     }}
                   >
-                    {label}
+                    <span className="relative block overflow-hidden">
+                      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
+                        {label}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                      >
+                        {label}
+                      </span>
+                    </span>
                   </NavLink>
                 </li>
               );

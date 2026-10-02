@@ -85,7 +85,12 @@ const Home = () => {
         <div className="space-y-40">
           {/* works */}
           <section className="space-y-10">
-            <SectionTitle title="Works" jp="制作物" />
+            <SectionTitle
+              title="Works"
+              subtitle="FEATURED PROJECTS"
+              jpSubtitle="制作実績"
+              jp="Works"
+            />
             <div className="flex flex-col gap-10 md:gap-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div

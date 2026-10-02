@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Noto Sans"', "sans-serif"],
+        sans: ['"Noto Sans"', '"Noto Sans JP"', "sans-serif"],
         roboto: ['"Roboto"', "sans-serif"],
         raleway: ['"Raleway"', "sans-serif"],
         lustria: ['"Lustria"', "serif"],
+        kurenaido: ['"Zen Kurenaido"', "sans-serif"],
       },
       colors: {
         background: "#FFFDF7",
         "background-secondary": "#FAF7F0",
-        primary: "#D8B259",
+        primary: "#C4633F",
         "primary-light": "rgba(216, 178, 89, 0.48)",
         secondary: "rgba(168, 187, 162)",
         "secondary-light": "rgba(168, 187, 162, 0.48)",

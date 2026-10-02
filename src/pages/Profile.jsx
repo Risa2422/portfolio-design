@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
@@ -117,59 +117,20 @@ const content = {
 };
 
 const Timeline = ({ items }) => {
-  const containerRef = useRef(null);
-  const dotRefs = useRef([]);
-  const [line, setLine] = useState(null);
-
-  // 最初の丸の中心から最後の丸の中心までの位置を計測して、一本の線を引く
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const measure = () => {
-      const dots = dotRefs.current.filter(Boolean);
-      if (dots.length < 2) return setLine(null);
-      const containerRect = container.getBoundingClientRect();
-      const center = (dot) => {
-        const rect = dot.getBoundingClientRect();
-        return {
-          x: rect.left + rect.width / 2 - containerRect.left,
-          y: rect.top + rect.height / 2 - containerRect.top,
-        };
-      };
-      const first = center(dots[0]);
-      const last = center(dots[dots.length - 1]);
-      setLine({ left: first.x, top: first.y, height: last.y - first.y });
-    };
-
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, [items]);
-
   return (
-    <div ref={containerRef} className="relative px-4 md:px-10 mt-4 space-y-10">
-      {line && (
-        <div
-          className="absolute -translate-x-1/2 border-l-2 border-dotted border-gray-500"
-          style={{ left: line.left, top: line.top, height: line.height }}
-        />
-      )}
+    <div className="mt-4 space-y-6">
       {items.map((item, index) => (
-        <div key={index} className="flex gap-6">
-          <div className="relative z-10 pt-2">
-            <div className="flex items-center">
-              <span
-                ref={(el) => (dotRefs.current[index] = el)}
-                className="inline-block w-2.5 h-2.5 bg-gray-600 rounded-full"
-              ></span>
-            </div>
-          </div>
+        <div
+          key={index}
+          className="flex gap-6 pb-8 border-b border-gray-300 last:pb-0 last:border-b-0"
+        >
+          {/* <div className="pt-2">
+            <span className="inline-block w-2.5 h-2.5 bg-gray-600 rounded-full"></span>
+          </div> */}
           <div className="flex-1 space-y-3">
             <div className="flex flex-col md:flex-row justify-between">
               <div className="space-y-1">
-                <p className="font-semibold">{item.title}</p>
+                <p className="font-semibold text-lg">{item.title}</p>
                 <div className="flex gap-2 items-center">
                   {item.place && (
                     <p className="text-sm text-gray-500">
@@ -182,9 +143,7 @@ const Timeline = ({ items }) => {
                 <p className="text-sm text-text-sub">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm md:text-base font-light text-gray-700">
-              {item.description}
-            </p>
+            <p className="text-sm text-text-sub">{item.description}</p>
           </div>
         </div>
       ))}
@@ -202,50 +161,70 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-10 space-y-32">
+      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-10 space-y-40">
         <div>
           <div>
-            <SectionTitle title="Profile" jp="自己紹介" />
-            <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-3 px-10 md:px-0 ">
-              <div className="w-[420px]">
+            <SectionTitle
+              title="Profile"
+              subtitle="WHO I AM"
+              jpSubtitle="私について"
+              jp="PROFILE"
+            />
+            <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-16 px-12 pt-16">
+              <div className="space-y-8 pt-4 md:w-2/3">
+                <p>
+                  <span className="font-kurenaido text-3xl font-bold pr-2">
+                    山元里紗
+                  </span>
+                  と申します。
+                </p>
+
+                <p className=" text-gray-700">{t.bio}</p>
+              </div>
+              <div className="md:w-1/3">
                 <img
-                  src="profile-image.png"
+                  src="profile-image.svg"
                   alt="Profile"
-                  width={320}
-                  height={320}
-                  className="w-64 sm:w-96 h-auto mx-auto m-0 block"
+                  className="w-full h-auto"
+                  width={120}
+                  height={120}
                   loading="eager"
                 />
               </div>
-              <div className="md:w-1/2 space-y-5 md:mt-24">
-                <p className="font-base text-gray-700 ">{t.bio}</p>
-                {/* <ul className="flex flex-wrap gap-2">
-                  {t.profileItems.map((text, index) => (
-                    <li
-                      key={index}
-                      className="px-4 py-1.5  border border-gray-300 rounded-full text-xs bg-white"
-                    >
-                      {text}
-                    </li>
-                  ))}
-                </ul> */}
-              </div>
             </div>
           </div>
-          <div className="space-y-8 md:space-y-32 mt-40 ml-8">
-            <section className="px-6 md:px-4">
-              <SectionTitle title="Experience" sub jp="職歴" />
+          <div className="space-y-8 md:space-y-32 mt-40">
+            <section className="">
+              <SectionTitle
+                title="CAREER"
+                subtitle="WORK HISTORY"
+                jpSubtitle="実務経験"
+                sub
+                jp="CAREER"
+              />
               <Timeline items={t.experiences} />
             </section>
             <section className="px-6 md:px-4">
-              <SectionTitle title="Education" sub jp="学歴" />
+              <SectionTitle
+                title="EDUCATION"
+                subtitle="学歴"
+                jpSubtitle="LEARNING HISTORY"
+                sub
+                jp="EDUCATION"
+              />
               <Timeline items={t.education} />
             </section>
             <section className="px-6 md:px-4">
-              <SectionTitle title="Skills" sub jp="スキル" />
-              <div className="px-6 md:px-10 mt-4 space-y-4">
+              <SectionTitle
+                title="SKILLS"
+                subtitle="TOOLS & TECHNOLOGIES"
+                jpSubtitle="できること・わかること"
+                sub
+                jp="SKILLS"
+              />
+              <div className="mt-4 space-y-4">
                 <div className="flex justify-center md:justify-start">
-                  <ul className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 gap-8 md:gap-9">
+                  <ul className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-8 md:gap-8">
                     {skillData.map((skill) => (
                       <SkillItem
                         key={skill.label}
