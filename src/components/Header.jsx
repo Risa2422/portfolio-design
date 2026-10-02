@@ -84,11 +84,11 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-md block py-3 tracking-wide
+                      relative transition-all duration-600 hover:text-primary space-y-4 text-md block py-3 tracking-wide
                         ${
                           active && !isOpen
-                            ? "underline decoration-primary underline-offset-4 font-light"
-                            : "sm:decoration-transparent text-gray-600 font-light"
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary"
+                            : "text-gray-600 font-light"
                         }
                         ${
                           active && isOpen

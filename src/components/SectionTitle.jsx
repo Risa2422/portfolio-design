@@ -6,13 +6,13 @@ const SectionTitle = ({ title, jp, sub = false }) => {
 
   return (
     <div>
-      <div className="flex items-center space-x-4 pb-6">
+      <div className="flex items-center space-x-4 pb-4">
         <div className="relative">
           <h2
-            className={`relative z-10 font-raleway whitespace-nowrap pl-4 font-medium text-gray-800 ${
+            className={`relative z-10 whitespace-nowrap pl-4 font-medium text-gray-800 ${
               sub
-                ? "text-xl md:text-2xl pt-0 md:pt-1"
-                : "text-2xl md:text-3xl pt-0 md:pt-[0.8px]"
+                ? "text-xl md:text-3xl pt-0 md:pt-1"
+                : "text-2xl md:text-4xl pt-0 md:pt-[0.8px]"
             }`}
           >
             {displayText}
@@ -23,7 +23,7 @@ const SectionTitle = ({ title, jp, sub = false }) => {
             }`}
           ></div>
         </div>
-        <div className="flex-1 h-[0.8px] bg-border" />
+        <div className="flex-1 h-[1px] bg-[#A89E8D]" />
       </div>
     </div>
   );
