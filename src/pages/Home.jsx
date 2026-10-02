@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
+import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import WorkCard from "../components/WorkCard";
@@ -161,32 +162,9 @@ const Home = () => {
               </div>
             </div>
           </section> */}
+
           {/* contact */}
-          {/* <Contact /> */}
-        </div>
-        <div className="mt-48 mb-32 w-full flex justify-center">
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="w-full max-w-md cursor-pointer"
-            aria-label={
-              language === "ja"
-                ? "メールアドレスをクリップボードにコピー"
-                : "Copy email address to clipboard"
-            }
-          >
-            <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] hover:brightness-125 active:scale-x-[1.02]">
-              <img src="/contact.svg" alt="contact info" className="w-full" />
-              <span
-                className={`absolute left-[4.0%] top-[10%] h-[80%] w-[76.3%] bg-[#38372F] flex items-center justify-center text-white font-semibold text-base sm:text-xl transition-opacity duration-300 ${
-                  copied ? "opacity-100" : "opacity-0"
-                }`}
-                aria-hidden="true"
-              >
-                {language === "ja" ? "コピーしました！" : "Copied!"}
-              </span>
-            </div>
-          </button>
+          <Contact />
         </div>
       </section>
     </FadeInPageWrapper>

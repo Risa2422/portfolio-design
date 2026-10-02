@@ -19,7 +19,31 @@ const Contact = () => {
   };
   return (
     <section>
-      <SectionTitle title="Contact" jp="お問い合わせ" />
+      <div className="mt-48 mb-32 w-full flex justify-center">
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="w-full max-w-md cursor-pointer"
+          aria-label={
+            language === "ja"
+              ? "メールアドレスをクリップボードにコピー"
+              : "Copy email address to clipboard"
+          }
+        >
+          <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] hover:brightness-125 active:scale-x-[1.02]">
+            <img src="/contact.svg" alt="contact info" className="w-full" />
+            <span
+              className={`absolute left-[4.0%] top-[10%] h-[80%] w-[76.3%] bg-[#38372F] flex items-center justify-center text-white font-semibold text-base sm:text-xl transition-opacity duration-300 ${
+                copied ? "opacity-100" : "opacity-0"
+              }`}
+              aria-hidden="true"
+            >
+              {language === "ja" ? "コピーしました！" : "Copied!"}
+            </span>
+          </div>
+        </button>
+      </div>
+      {/* <SectionTitle title="Contact" jp="お問い合わせ" />
       <div className="space-y-10 md:space-y-20 mt-4 mb-14 px-4">
         <ul className="flex flex-col md:flex-row gap-4 md:gap-20 md:h-16">
           <li className="flex items-center md:flex-col md:w-56 gap-4 md:gap-1 md:items-start">
@@ -68,7 +92,7 @@ const Contact = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };
