@@ -53,8 +53,8 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[12vw]">
-        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[560px]">
-          <img
+        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[80px] h-[320px] md:h-[600px]">
+          {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
             className="absolute -top-10 -left-10 md:-top-36 md:-left-40 w-[200px] h-[200px] md:w-[600px] md:h-[600px]"
@@ -63,13 +63,13 @@ const Home = () => {
             src="/circle-green.png"
             alt="Green Circle"
             className="hidden lg:block absolute md:top-[80px] md:left-[800px] md:w-[420px] md:h-[420px]"
-          />
+          /> */}
           {/* <img
             src="/circle-red.png"
             alt="Red Circle"
             className="hidden md:block absolute md:top-36 md:left-[1000px] md:w-[240px] md:h-[240px]"
           /> */}
-          <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
+          {/* <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
             <div className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
               <div className="w-2/3 md:w-full ">
                 <p className="uppercase text-left">Risa</p>
@@ -80,6 +80,19 @@ const Home = () => {
               {t.tagline}
               <br />
             </p>
+          </div> */}
+          <div>
+            <p className="font-leaguescript font-bold text-xl md:text-6xl">
+              Risa's
+            </p>
+            <img src="/fv.svg" alt="" className="w-[650px]" />
+          </div>
+          <div className="flex justify-between items-end pt-24">
+            <p className="leading-relaxed w-1/4">
+              I believe every dot finds its place, and every detail has a
+              reason.
+            </p>
+            <p className="font-bold text-4xl tracking-wider">2026</p>
           </div>
         </section>
         <div className="space-y-40">

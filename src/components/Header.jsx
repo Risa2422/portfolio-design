@@ -87,7 +87,7 @@ function Header() {
                       group relative transition-all duration-600 space-y-4 text-md block py-3 tracking-wide
                         ${
                           active && !isOpen
-                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full after:bg-primary"
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full after:bg-gray-500"
                             : "text-gray-600 "
                         }
                         ${

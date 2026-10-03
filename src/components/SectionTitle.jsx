@@ -27,7 +27,7 @@ const SectionTitle = ({
       <div className="flex items-center space-x-4 mt-2">
         <h2
           className={`whitespace-nowrap font-bold uppercase leading-4  ${
-            sub ? "text-xl md:text-3xl" : "text-2xl md:text-4xl"
+            sub ? "text-xl md:text-4xl" : "text-2xl md:text-4xl"
           }`}
         >
           {displayText}

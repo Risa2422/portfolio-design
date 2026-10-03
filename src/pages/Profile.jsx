@@ -143,7 +143,7 @@ const Timeline = ({ items }) => {
                 <p className="text-sm text-text-sub">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm text-text-sub">{item.description}</p>
+            <p className="text-sm text-text-sub w-3/4">{item.description}</p>
           </div>
         </div>
       ))}
@@ -173,7 +173,7 @@ const Profile = () => {
             <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-16 px-12 pt-16">
               <div className="space-y-8 pt-4 md:w-2/3">
                 <p>
-                  <span className="font-kurenaido text-3xl font-bold pr-2">
+                  <span className="font-kurenaido text-4xl font-bold pr-2">
                     山元里紗
                   </span>
                   と申します。
@@ -181,7 +181,7 @@ const Profile = () => {
 
                 <p className=" text-gray-700">{t.bio}</p>
               </div>
-              <div className="md:w-1/3">
+              {/* <div className="md:w-1/3">
                 <img
                   src="profile-image.svg"
                   alt="Profile"
@@ -190,7 +190,7 @@ const Profile = () => {
                   height={120}
                   loading="eager"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="space-y-8 md:space-y-32 mt-40">
