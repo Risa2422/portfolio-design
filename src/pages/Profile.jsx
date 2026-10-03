@@ -176,7 +176,8 @@ const Profile = () => {
                   <p className="text-5xl font-bold">Hi, it's Risa</p>
                 ) : (
                   <p>
-                    <span className="font-kurenaido text-4xl font-bold pr-2">
+                    はじめまして。
+                    <span className="font-kurenaido text-4xl font-extrabold pr-2">
                       山元里紗
                     </span>
                     と申します。

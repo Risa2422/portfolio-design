@@ -21,7 +21,7 @@ function LanguageToggle() {
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute right-2 text-[14px] font-semibold leading-none text-gray-700"
+        className="pointer-events-none absolute right-2.5 text-[14px] font-semibold leading-none text-gray-700"
       >
         A
       </span>

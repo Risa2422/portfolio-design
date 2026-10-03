@@ -17,7 +17,7 @@ function InfoList({ items, visible = true }) {
 
   return (
     <div className="flex flex-col justify-start gap-6">
-      <dl className="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4 text-sm">
+      <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 ">
         {items.map(({ title, value }, index) => (
           <Fragment key={index}>
             <dt className="font-semibold">{title}</dt>

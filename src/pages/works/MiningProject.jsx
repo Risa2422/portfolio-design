@@ -7,7 +7,6 @@ import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
-import { localizeImage } from "../../utils/localizeImage";
 import Improvement1 from "./mining/Improvement1";
 import Improvement2 from "./mining/Improvement2";
 import Improvement3 from "./mining/Improvement3";
@@ -22,12 +21,15 @@ const content = {
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
     title: "Mining Project",
+    thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロジェクト概要",
     ProductOverviewText:
       "鉱山業界のプログラムマネージャーを対象としたプロジェクト管理プラットフォームです。従来、複数のツールに分散していたプロジェクト情報や進捗管理を一元化し、業務効率を大幅に向上させます。ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを実現しました。",
+    productOverviewImage: "/mining/blurred_medium.png",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
       "スタートアップでのプロダクト開発であったため、基本的に要件定義からリリースまでの工程を全メンバーで協力して進めました。",
+    productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善案3案",
     improvements: [
       {
@@ -141,11 +143,14 @@ const content = {
       { title: "Tools Used", value: "Figma" },
     ],
     title: "Mining Project",
+    thumbnail: "/mining/thumbnail.png",
     ProductOverview: "ProductOverview",
     ProductOverviewText: "",
+    productOverviewImage: "/mining/blurred_medium.png",
     productFlowTitle: "Product Development Process",
     productFlowText:
       "Dummy text. This section describes the product development process, from requirements definition through release, and the work done at each phase.",
+    productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "3 Improvement Proposals",
     improvements: [
       {
@@ -292,7 +297,7 @@ const MiningProject = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
-              src={localizeImage("/mining/thumbnail.png")}
+              src={t.thumbnail}
               alt="Mining Project Thumbnail"
               className="w-full h-full object-contain"
             />
@@ -316,7 +321,7 @@ const MiningProject = () => {
               {t.ProductOverviewText}
             </p>
             <ZoomableImage
-              src="/mining/blurred_medium.png"
+              src={t.productOverviewImage}
               className="md:w-1/2 object-contain"
               alt="ProductOverview"
             />
@@ -333,7 +338,7 @@ const MiningProject = () => {
               {t.productFlowText}
             </p>
             <ZoomableImage
-              src="/mining/product-flow.svg"
+              src={t.productFlowImage}
               alt={t.productFlowTitle}
               className="rounded-lg w-23 bg-background"
             />

@@ -39,26 +39,24 @@ const content = {
       <>
         For event organizers, the number of tasks involved, from initial
         preparation through day-of operation, is significant. I recognized a
-        major challenge in information dispersion and omissions that result
-        from managing these tasks using multiple tools. Specifically, I
-        concluded there was a demand for support functions that ensure
-        seamless information sharing and reliable communication with
-        attendees, while simultaneously reducing the operational burden on
-        the day of the event. On the attendee side, I also saw a
-        considerable burden of confirmation placed on them, often having to
-        repeatedly check with the organizer about crucial details—such as
-        unclear event specifics, required items, the day's schedule, or even
-        the faces of the other participants.
+        major challenge in information dispersion and omissions that result from
+        managing these tasks using multiple tools. Specifically, I concluded
+        there was a demand for support functions that ensure seamless
+        information sharing and reliable communication with attendees, while
+        simultaneously reducing the operational burden on the day of the event.
+        On the attendee side, I also saw a considerable burden of confirmation
+        placed on them, often having to repeatedly check with the organizer
+        about crucial details—such as unclear event specifics, required items,
+        the day's schedule, or even the faces of the other participants.
         <br />
         <br />
-        Furthermore, to differentiate ourselves from existing event
-        management platforms, we narrowed our target audience to focus on
-        parents organizing children's birthday parties. This focus was
-        motivated by the cultural context of my current residence in Canada,
-        where children's birthday parties are hosted casually and
-        frequently. We hypothesized that by specializing in this particular,
-        high-demand niche, we could create a service with significantly
-        greater practical utility
+        Furthermore, to differentiate ourselves from existing event management
+        platforms, we narrowed our target audience to focus on parents
+        organizing children's birthday parties. This focus was motivated by the
+        cultural context of my current residence in Canada, where children's
+        birthday parties are hosted casually and frequently. We hypothesized
+        that by specializing in this particular, high-demand niche, we could
+        create a service with significantly greater practical utility
       </>
     ),
     mvpTitle: "MVP Definition",
@@ -68,14 +66,14 @@ const content = {
     wireframeHeading: "1. Wireframing",
     wireframeText: (
       <>
-        I was responsible for designing the event management screens for
-        both the organizer and the attendee.
+        I was responsible for designing the event management screens for both
+        the organizer and the attendee.
         <br />
-        The event management interface was designed to centralize the
-        overview and critical information on the home screen, allowing users
-        to easily navigate to specific functions as needed. Additionally, to
-        create a friendly and approachable feel, I incorporated numerous
-        rounded design elements throughout the interface.
+        The event management interface was designed to centralize the overview
+        and critical information on the home screen, allowing users to easily
+        navigate to specific functions as needed. Additionally, to create a
+        friendly and approachable feel, I incorporated numerous rounded design
+        elements throughout the interface.
       </>
     ),
     wireframeCaption: "Wireframe Outputs",
@@ -84,7 +82,7 @@ const content = {
       "Working with a fellow designer, we collected design references and compiled a mood board.",
     moodboardItems: ["Mood Board", "Color Palette System"],
     moodboardStyleText:
-      "Considering our target audience of parents with young children, we adopted orange as our main theme color to express feelings of \"safety,\" \"approachability,\" and \"connection.\" Furthermore, to ensure design consistency, we pre-determined the use of padding and font sizes based on the 8-point grid system rule (multiples of 8)",
+      'Considering our target audience of parents with young children, we adopted orange as our main theme color to express feelings of "safety," "approachability," and "connection." Furthermore, to ensure design consistency, we pre-determined the use of padding and font sizes based on the 8-point grid system rule (multiples of 8)',
     finalUiHeading: "3. Final UI Design",
     figmaLinkLabel: "View Design in Figma",
     preEventLabel: "Pre-Event",
@@ -97,17 +95,17 @@ const content = {
         When creating an event, the organizer proceeds to generate the
         invitation.
         <br />
-        If the party is planned to be held outdoors, the organizer can
-        utilize the Venue Suggestion feature, which provides relevant
-        location ideas based on the specific activity, such as a cherry
-        blossom viewing or a picnic.
+        If the party is planned to be held outdoors, the organizer can utilize
+        the Venue Suggestion feature, which provides relevant location ideas
+        based on the specific activity, such as a cherry blossom viewing or a
+        picnic.
       </>
     ),
     eventPrepFlowHeading: "Event Preparation Flow",
     eventPrepFlowRole:
       "Role: Designer / Frontend Developer (Excluding RSVP Responses)",
     eventPrepFlowText:
-      "Once the event invitation is created, the organizer gains access to the detailed event settings screen from their main page. They can then utilize features such as \"Timeline,\" \"Packing List (or Items to Bring),\" \"Budget Management,\" and \"RSVP Tracking\" to ensure smooth and efficient preparation.",
+      'Once the event invitation is created, the organizer gains access to the detailed event settings screen from their main page. They can then utilize features such as "Timeline," "Packing List (or Items to Bring)," "Budget Management," and "RSVP Tracking" to ensure smooth and efficient preparation.',
     rsvpFlowHeading: "Invitation Response Flow",
     rsvpFlowRole: "Role: Frontend Developer",
     rsvpFlowText:
@@ -124,9 +122,8 @@ const content = {
         The organizer can manage attendee check-in (attendance tracking) and
         create the photo album within the application.
         <br />
-        For the photo album feature, individual photo albums are
-        automatically generated for each attendee using image recognition
-        processing.
+        For the photo album feature, individual photo albums are automatically
+        generated for each attendee using image recognition processing.
       </>
     ),
     postEventLabel: "Post-Event",
@@ -153,11 +150,11 @@ const content = {
     takeaways: [
       {
         title: "The Importance of Expanding Scenarios",
-        text: "During the design process, I realized a lack of breadth in anticipating necessary user flows, leading to many omissions in expected patterns. For instance, in this project, handling edge cases such as determining the UI for \"Host or Guest\" status or designing the interface for \"no data available\" scenarios was insufficient. Moving forward, I plan to consciously engage with and analyze a wider variety of existing services to better anticipate and accommodate comprehensive situations and user behaviors in my future designs.",
+        text: 'During the design process, I realized a lack of breadth in anticipating necessary user flows, leading to many omissions in expected patterns. For instance, in this project, handling edge cases such as determining the UI for "Host or Guest" status or designing the interface for "no data available" scenarios was insufficient. Moving forward, I plan to consciously engage with and analyze a wider variety of existing services to better anticipate and accommodate comprehensive situations and user behaviors in my future designs.',
       },
       {
         title: "The Importance of Articulating Design Intent",
-        text: "During the project, I encountered situations where the design rationale for certain UI elements was ambiguous. This led to instances where I was unable to clearly explain the design choices when asked by team members. Moving forward, I am committed to always defining \"Why I made this specific design decision,\" ensuring every choice is backed by a clear and explicit rationale.",
+        text: 'During the project, I encountered situations where the design rationale for certain UI elements was ambiguous. This led to instances where I was unable to clearly explain the design choices when asked by team members. Moving forward, I am committed to always defining "Why I made this specific design decision," ensuring every choice is backed by a clear and explicit rationale.',
       },
       {
         title: "Balancing Design and Implementation",
@@ -304,7 +301,7 @@ const EventManagement = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20 overflow-hidden object-top">
             <ZoomableImage
-              src={localizeImage("/event-management/thumbnail.png", language)}
+              src={localizeImage("/event-management/thumbnail.png")}
               alt="event management thumbnail"
               className="w-full h-full object-contain"
             />
@@ -347,7 +344,7 @@ const EventManagement = () => {
               <ZoomableImage
                 src={localizeImage(
                   "/event-management/user-scenario.png",
-                  language
+                  language,
                 )}
                 alt="user scenario"
                 className="w-full h-full object-cover border border-border rounded"
@@ -362,7 +359,7 @@ const EventManagement = () => {
                   <ZoomableImage
                     src={localizeImage(
                       "/event-management/problem-host.png",
-                      language
+                      language,
                     )}
                     alt=""
                     className="w-full h-full object-cover border border-border rounded"
@@ -372,7 +369,7 @@ const EventManagement = () => {
                   <ZoomableImage
                     src={localizeImage(
                       "/event-management/problem-guest.png",
-                      language
+                      language,
                     )}
                     alt=""
                     className="w-full h-full object-cover border border-border rounded"
@@ -417,7 +414,7 @@ const EventManagement = () => {
                     <ZoomableImage
                       src={localizeImage(
                         "/event-management/wireframe.png",
-                        language
+                        language,
                       )}
                       alt="ワイヤーフレーム画像"
                       className="w-full max-w-full object-cover border border-border rounded"
@@ -515,7 +512,7 @@ const EventManagement = () => {
                         <img
                           src={localizeImage(
                             "/event-management/arrow-right.svg",
-                            language
+                            language,
                           )}
                           alt="right arrow"
                           className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
@@ -577,7 +574,7 @@ const EventManagement = () => {
                         <img
                           src={localizeImage(
                             "/event-management/arrow-right.svg",
-                            language
+                            language,
                           )}
                           alt="right arrow"
                           className="w-[64px] h-auto object-cover transform rotate-90 lg:rotate-0 transition-transform duration-300"
@@ -723,7 +720,10 @@ const EventManagement = () => {
                 className="flex items-center justify-center rounded-full w-6 h-6"
                 style={{ backgroundColor: "#746B60" }}
               >
-                <MdOutlineArrowBackIosNew width={10} className="w-5 h-3 text-white" />
+                <MdOutlineArrowBackIosNew
+                  width={10}
+                  className="w-5 h-3 text-white"
+                />
               </span>
               <p className="pb-0.5 text-sm">{t.homeLabel}</p>
             </div>
