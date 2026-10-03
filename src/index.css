@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lustria&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Kurenaido&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Lustria&family=League+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Zen+Kurenaido&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,4 +10,9 @@ html {
 
 body {
   @apply bg-background text-text font-sans;
+}
+
+html:lang(en) body,
+html:lang(en) .font-sans {
+  font-family: "Geist", "Zen Kaku Gothic New", sans-serif;
 }

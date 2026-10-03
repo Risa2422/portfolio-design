@@ -81,18 +81,19 @@ const Home = () => {
               <br />
             </p>
           </div> */}
-          <div>
-            <p className="font-leaguescript font-bold text-xl md:text-6xl">
+          <div className="space-y-2">
+            <p className="font-leaguescript tracking-wider font-bold text-xl md:text-5xl">
               Risa's
             </p>
             <img src="/fv.svg" alt="" className="w-[650px]" />
           </div>
-          <div className="flex justify-between items-end pt-24">
-            <p className="leading-relaxed w-1/4">
-              I believe every dot finds its place, and every detail has a
-              reason.
+          <div className="flex justify-between items-center pt-40">
+            <p className="tracking-wide text-xl font-medium">
+              I believe every dot finds its place,
+              <br />
+              and every detail has a reason.
             </p>
-            <p className="font-bold text-4xl tracking-wider">2026</p>
+            <p className="font-bold text-4xl tracking-wide font-geist ">2026</p>
           </div>
         </section>
         <div className="space-y-40">
@@ -100,7 +101,7 @@ const Home = () => {
           <section className="space-y-10">
             <SectionTitle
               title="Works"
-              subtitle="FEATURED PROJECTS"
+              subtitle="Featured Projects"
               jpSubtitle="制作実績"
               jp="Works"
             />
@@ -114,7 +115,7 @@ const Home = () => {
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <WorkCard
-                    imageSrc={localizeImage(work.imageSrc, language)}
+                    imageSrc={localizeImage(work.imageSrc)}
                     date={work.date}
                     title={work.title[language]}
                     description={work.description[language]}

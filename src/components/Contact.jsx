@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] hover:brightness-125 active:scale-x-[1.02]">
             <img src="/contact.svg" alt="contact info" className="w-full" />
             <span
-              className={`absolute left-[4.0%] top-[10%] h-[80%] w-[76.3%] bg-[#38372F] flex items-center justify-center text-white font-semibold text-base sm:text-xl transition-opacity duration-300 ${
+              className={`absolute left-[4.0%] top-[10%] h-[80%] w-[76.3%] bg-text flex items-center justify-center text-white font-semibold text-base sm:text-xl transition-opacity duration-300 ${
                 copied ? "opacity-100" : "opacity-0"
               }`}
               aria-hidden="true"

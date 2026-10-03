@@ -38,7 +38,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center py-8 px-[10vw]">
+      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[10vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
         </Link>
@@ -84,11 +84,12 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      group relative transition-all duration-600 space-y-4 text-md block py-3 tracking-wide
+                      group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide
+                        ${active ? "font-medium" : ""}
                         ${
                           active && !isOpen
-                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full after:bg-gray-500"
-                            : "text-gray-600 "
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full "
+                            : " "
                         }
                         ${
                           active && isOpen

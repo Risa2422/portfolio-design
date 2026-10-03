@@ -133,17 +133,17 @@ const Timeline = ({ items }) => {
                 <p className="font-semibold text-lg">{item.title}</p>
                 <div className="flex gap-2 items-center">
                   {item.place && (
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-600">
                       {item.position} / {item.place}
                     </p>
                   )}
                 </div>
               </div>
               <div>
-                <p className="text-sm text-text-sub">{item.date}</p>
+                <p className="text-sm text-text">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm text-text-sub w-3/4">{item.description}</p>
+            <p className="text-sm text-text w-3/4">{item.description}</p>
           </div>
         </div>
       ))}
@@ -166,61 +166,65 @@ const Profile = () => {
           <div>
             <SectionTitle
               title="Profile"
-              subtitle="WHO I AM"
+              subtitle="Who I am"
               jpSubtitle="私について"
-              jp="PROFILE"
+              jp="Profile"
             />
-            <div className="flex flex-col items-center justify-center md:items-start md:flex-row md:gap-16 px-12 pt-16">
-              <div className="space-y-8 pt-4 md:w-2/3">
-                <p>
-                  <span className="font-kurenaido text-4xl font-bold pr-2">
-                    山元里紗
-                  </span>
-                  と申します。
-                </p>
+            <div className="flex flex-col justify-center md:flex-row items-center md:gap-24 py-12">
+              <div className="space-y-8 md:w-2/3">
+                {language === "en" ? (
+                  <p className="text-5xl font-bold">Hi, it's Risa</p>
+                ) : (
+                  <p>
+                    <span className="font-kurenaido text-4xl font-bold pr-2">
+                      山元里紗
+                    </span>
+                    と申します。
+                  </p>
+                )}
 
                 <p className=" text-gray-700">{t.bio}</p>
               </div>
-              {/* <div className="md:w-1/3">
+              <div className="md:w-1/3">
                 <img
-                  src="profile-image.svg"
+                  src="profile-deco.svg"
                   alt="Profile"
                   className="w-full h-auto"
                   width={120}
                   height={120}
                   loading="eager"
                 />
-              </div> */}
+              </div>
             </div>
           </div>
           <div className="space-y-8 md:space-y-32 mt-40">
             <section className="">
               <SectionTitle
-                title="CAREER"
-                subtitle="WORK HISTORY"
+                title="Career"
+                subtitle="Work History"
                 jpSubtitle="実務経験"
                 sub
-                jp="CAREER"
+                jp="Career"
               />
               <Timeline items={t.experiences} />
             </section>
             <section className="px-6 md:px-4">
               <SectionTitle
-                title="EDUCATION"
+                title="Education"
                 subtitle="学歴"
-                jpSubtitle="LEARNING HISTORY"
+                jpSubtitle="Learning History"
                 sub
-                jp="EDUCATION"
+                jp="Education"
               />
               <Timeline items={t.education} />
             </section>
             <section className="px-6 md:px-4">
               <SectionTitle
-                title="SKILLS"
-                subtitle="TOOLS & TECHNOLOGIES"
+                title="Skills"
+                subtitle="Tools & Technologies"
                 jpSubtitle="できること・わかること"
                 sub
-                jp="SKILLS"
+                jp="Skills"
               />
               <div className="mt-4 space-y-4">
                 <div className="flex justify-center md:justify-start">
