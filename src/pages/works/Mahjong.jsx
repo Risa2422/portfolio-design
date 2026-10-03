@@ -454,7 +454,7 @@ const Mahjong = () => {
       <section className="space-y-10 md:space-y-4">
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
-          <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
+          <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/mahjong/thumbnail.png")}
               alt="mahjong thumbnail"
@@ -471,25 +471,27 @@ const Mahjong = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20  bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.overviewText}
           </p>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.problemTitle}
           </h2>
           <div className="space-y-8">
-            <p className="text-sm md:text-base leading-relaxed text-gray-700">
+            <p className="text-base leading-relaxed text-gray-700">
               {t.problemIntro}
             </p>
 
             <div className="flex flex-col gap-4">
-              <p className="text-sm md:text-base leading-relaxed text-gray-700">
+              <p className="text-base leading-relaxed text-gray-700">
                 {t.analysisIntro}
               </p>
               <div className="space-y-4">
@@ -557,15 +559,16 @@ const Mahjong = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
+          className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
         >
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.uiDesignTitle}
           </h2>
           <div className="flex flex-col w-full gap-2">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold m-0">{t.finalUiLabel}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.finalUiLabel}</h3>
                 <div className="flex-1 h-[0.8px] bg-border" />
               </div>
             </div>
@@ -645,7 +648,7 @@ const Mahjong = () => {
               <section className="flex flex-col gap-2 mt-10">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold m-0">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900">
                       {t.designFocusLabel}
                     </h3>
                     <div className="flex-1 h-[0.8px] bg-border" />
@@ -719,13 +722,13 @@ const Mahjong = () => {
 
               <section className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-semibold m-0">
+                  <h3 className="text-base md:text-lg font-semibold text-gray-900">
                     {t.colorIllustrationLabel}
                   </h3>
                   <div className="flex-1 h-[0.8px] bg-border" />
                 </div>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
+                  <p className="text-base leading-relaxed text-gray-700 mb-3">
                     {t.colorIllustrationText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -745,11 +748,12 @@ const Mahjong = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-center text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learningsTitle}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.learningsText}
           </p>
           <Link to="/" className="hover:opacity-80 pt-10">

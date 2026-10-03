@@ -321,7 +321,7 @@ const Quiz = () => {
       <section className="space-y-10 md:space-y-4">
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
-          <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
+          <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/quiz/thumbnail.png")}
               alt="quiz thumbnail"
@@ -338,16 +338,18 @@ const Quiz = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20  bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.overviewText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium text-center">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.requirementsTitle}
           </h2>
           <div className="space-y-4">
@@ -359,7 +361,7 @@ const Quiz = () => {
                   {t.serviceOutlineLabel}
                 </p>
               </div>
-              <p className="list-disc text-sm md:text-base pl-5 space-y-1">
+              <p className="list-disc text-base pl-5 space-y-1">
                 {t.serviceOutlineText}
               </p>
             </div>
@@ -370,7 +372,7 @@ const Quiz = () => {
                   {t.targetUsersLabel}
                 </p>
               </div>
-              <ul className="list-disc text-sm md:text-base pl-5 space-y-1">
+              <ul className="list-disc text-base pl-5 space-y-1">
                 {t.targetUsersList.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -383,7 +385,7 @@ const Quiz = () => {
                   {t.featureListLabel}
                 </p>
               </div>
-              <ul className="list-disc text-sm md:text-base pl-5 space-y-1">
+              <ul className="list-disc text-base pl-5 space-y-1">
                 {t.featureList.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -396,7 +398,7 @@ const Quiz = () => {
                   {t.screensLabel}
                 </p>
               </div>
-              <ul className="list-disc text-sm md:text-base pl-5 space-y-1">
+              <ul className="list-disc text-base pl-5 space-y-1">
                 {t.screensList.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -404,16 +406,17 @@ const Quiz = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.processTitle}
           </h2>
           <div className="flex flex-col w-full gap-6">
             <div className="space-y-2">
-              <h3 className="text-base md:text-lg font-semibold m-0">
+              <h3 className="text-base md:text-lg font-semibold text-gray-900">
                 {t.personaTitle}
               </h3>
-              <p className="text-sm md:text-base text-gray-700">
+              <p className="text-base text-gray-700">
                 {t.personaIntro}
               </p>
             </div>
@@ -448,10 +451,10 @@ const Quiz = () => {
           <div>
             <div className="space-y-20">
               <section className="flex flex-col gap-2 mt-12">
-                <h3 className="text-base md:text-lg font-semibold m-0">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   {t.designOptionTitle}
                 </h3>
-                <p className="text-sm md:text-base text-gray-700">
+                <p className="text-base text-gray-700">
                   {t.designOptionIntro}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-6">
@@ -476,11 +479,11 @@ const Quiz = () => {
                 <p className="mt-6">{t.designOptionResult}</p>
               </section>
               <section className="flex flex-col gap-2">
-                <h3 className="text-base md:text-lg font-semibold m-0">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   {t.wireframeTitle}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3 ">
+                  <p className="text-base leading-relaxed text-gray-700 mb-3 ">
                     {t.wireframeIntro}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -495,11 +498,11 @@ const Quiz = () => {
                 </div>
               </section>
               {/* <section className="flex flex-col gap-2">
-                <h3 className="text-base md:text-lg font-semibold m-0">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   4. Style Guide Creation
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3 ">
+                  <p className="text-base leading-relaxed text-gray-700 mb-3 ">
                     As the app uses multiple near-primary colors to create a
                     playful and pop atmosphere, I adopted Open Sans for the font
                     due to its simplicity and excellent multilingual support.
@@ -524,9 +527,10 @@ const Quiz = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 md:py-20 bg-background scroll-mt-24"
+          className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 scroll-mt-24"
         >
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.finalUiTitle}
           </h2>
           <video
@@ -540,7 +544,7 @@ const Quiz = () => {
               <div className="flex-1 h-[1px] bg-border" />
             </div>
             <div className="space-y-4">
-              <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3 ">
+              <p className="text-base leading-relaxed text-gray-700 mb-3 ">
                 {t.designSummaryText}
               </p>
             </div>
@@ -703,12 +707,13 @@ const Quiz = () => {
             </div>
           </section>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 pb-10 bg-background-secondary overflow-hidden py-20">
-          <h2 className="text-lg md:text-2xl text-accent font-medium text-center">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 bg-background-secondary overflow-hidden py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learningsTitle}
           </h2>
           <div className="flex flex-col w-full gap-4">
-            <ul className="list-disc pl-6 space-y-8 text-sm md:text-base leading-relaxed text-gray-700">
+            <ul className="list-disc pl-6 space-y-8 text-base leading-relaxed text-gray-700">
               {t.learningsList.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}

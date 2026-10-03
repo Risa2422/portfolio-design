@@ -299,7 +299,7 @@ const EventManagement = () => {
       <section className="space-y-10 md:space-y-4">
         <Arrow />
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
-          <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20 overflow-hidden object-top">
+          <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px] overflow-hidden object-top">
             <ZoomableImage
               src={localizeImage("/event-management/thumbnail.png")}
               alt="event management thumbnail"
@@ -318,26 +318,29 @@ const EventManagement = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
           <p className="leading-relaxed text-gray-700">{t.overviewText}</p>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.backgroundTitle}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.backgroundText}
           </p>
         </div>
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="text-lg md:text-2xl text-accent font-medium text-center">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.problemTitle}
           </h2>
           <div className="space-y-2">
-            <p className="text-sm md:text-base leading-relaxed text-gray-700">
+            <p className="text-base leading-relaxed text-gray-700">
               {t.problemIntro}
             </p>
             <div className="md:w-1/2 self-start">
@@ -378,15 +381,16 @@ const EventManagement = () => {
               </div>
             </div>
           </div>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.problemSummaryText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium text-center">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.mvpTitle}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-relaxed text-gray-700">
             {t.mvpText}
           </p>
           <div className="md:w-1/2">
@@ -397,17 +401,18 @@ const EventManagement = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="text-lg md:text-2xl text-accent font-medium">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.uiDesignTitle}
           </h2>
           <div>
             <div className="space-y-20">
               {/* ワイヤーフレーム作成 */}
               <section className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{t.wireframeHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.wireframeHeading}</h3>
                 <div className="flex flex-col gap-4">
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                  <p className="text-base leading-relaxed text-gray-700">
                     {t.wireframeText}
                   </p>
                   <div className="md:w-1/2">
@@ -428,9 +433,9 @@ const EventManagement = () => {
 
               {/* イメージボードとスタイルガイド */}
               <section className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{t.moodboardHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.moodboardHeading}</h3>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
+                  <p className="text-base leading-relaxed text-gray-700 mb-3">
                     {t.moodboardText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -453,7 +458,7 @@ const EventManagement = () => {
                     ))}
                   </div>
 
-                  <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                  <p className="text-base leading-relaxed text-gray-700">
                     {t.moodboardStyleText}
                   </p>
                 </div>
@@ -464,7 +469,7 @@ const EventManagement = () => {
                 id="final-ui"
                 className="flex flex-col gap-2 scroll-mt-24"
               >
-                <h3 className="text-lg font-semibold">{t.finalUiHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.finalUiHeading}</h3>
                 <div>
                   {/* イベント前 */}
                   <div>
@@ -680,10 +685,10 @@ const EventManagement = () => {
 
                   {/* 意識した点 */}
                   <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900">
                       {t.keyPrinciplesHeading}
                     </h3>
-                    <ul className="list-disc pl-5 space-y-6 text-sm md:text-base text-gray-700">
+                    <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">
                       {t.keyPrinciples.map((item, idx) => (
                         <li key={idx}>
                           <div className="flex flex-col">
@@ -700,11 +705,12 @@ const EventManagement = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
-          <h2 className="text-lg md:text-2xl text-accent font-medium text-center">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.takeawaysTitle}
           </h2>
-          <ul className="list-disc pl-5 space-y-6 text-sm md:text-base text-gray-700">
+          <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">
             {t.takeaways.map((item, idx) => (
               <li key={idx}>
                 <div className="flex flex-col">
