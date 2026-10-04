@@ -40,7 +40,7 @@ function Header() {
     >
       <div className="flex justify-between items-center h-[92px] sm:h-20 px-[10vw]">
         <Link to="/" className="text-xl font-bold">
-          <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
+          <img src="logo.svg" alt="logo" className="w-6 h-6 object-contain" />
         </Link>
         <div className="flex items-center gap-4 sm:hidden">
           <LanguageToggle />
