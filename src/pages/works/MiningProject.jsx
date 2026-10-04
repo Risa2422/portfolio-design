@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Accordion from "../../components/Accordion";
-import Arrow from "../../components/Arrow";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import ZoomableImage from "../../components/ZoomableImage";
@@ -292,7 +291,17 @@ const MiningProject = () => {
   return (
     <FadeInPageWrapper>
       <section className="space-y-10 md:space-y-4">
-        <Arrow />
+        <Link
+          to="/"
+          className="block w-fit hover:opacity-80 px-6 md:px-16 lg:px-32 xl:px-[218px]"
+        >
+          <div className="flex items-center gap-1">
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            </span>
+            <p className="text-base">{t.home}</p>
+          </div>
+        </Link>
         {/* Header Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
@@ -312,7 +321,7 @@ const MiningProject = () => {
         </div>
         {/* ProductOverview Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
           </h2>
@@ -329,7 +338,7 @@ const MiningProject = () => {
         </div>
         {/* Product Development Flow Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
           </h2>
@@ -346,7 +355,7 @@ const MiningProject = () => {
         </div>
         {/* Improvement Proposals Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
           </h2>
@@ -383,7 +392,7 @@ const MiningProject = () => {
 
         {/* AI Usage Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
@@ -395,20 +404,17 @@ const MiningProject = () => {
         </div>
         {/* Learnings Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-lg md:text-2xl font-semibold text-[#3B2707]">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learnings}
           </h2>
           <p className="text-base leading-relaxed">{t.learningsText}</p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
-              <span
-                className="flex items-center justify-center rounded-full w-6 h-6"
-                style={{ backgroundColor: "#746B60" }}
-              >
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
                 <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
               </span>
-              <p className="text-sm">{t.home}</p>
+              <p className="text-base">{t.home}</p>
             </div>
           </Link>
         </div>

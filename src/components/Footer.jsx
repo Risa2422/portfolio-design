@@ -1,9 +1,7 @@
-import React from "react";
-
 function Footer() {
   return (
-    <footer className="h-8 bg-[#ac8e5b] flex items-center justify-center">
-      <p className="text-[12px] text-white">
+    <footer className="flex items-center justify-center pb-16">
+      <p className="text-[13px] font-medium">
         All Rights Reserved 2026 ©︎ Risa Yamamoto
       </p>
     </footer>

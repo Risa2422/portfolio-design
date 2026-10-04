@@ -342,10 +342,7 @@ const GoogleMapsAlbum = () => {
           </p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
-              <span
-                className="flex items-center justify-center rounded-full w-6 h-6"
-                style={{ backgroundColor: "#746B60" }}
-              >
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
                 <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
               </span>
               <p className="text-sm">{t.homeLabel}</p>

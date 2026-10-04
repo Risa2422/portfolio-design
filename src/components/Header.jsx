@@ -38,7 +38,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[5vw]">
+      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[12vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-6 h-6 object-contain" />
         </Link>
@@ -56,7 +56,7 @@ function Header() {
         {/* Navigation */}
         <nav
           className={`
-            absolute top-16 w-1/4 right-6 px-[3vw] rounded border border-gray-300
+            absolute top-16 w-max min-w-[8rem] right-6 px-6 rounded border border-gray-300
             sm:static sm:block sm:bg-transparent sm:px-0 sm:py-0 sm:border-none sm:rounded-none
             transition-all duration-200
             ${
@@ -83,7 +83,7 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide
+                      group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide whitespace-nowrap
                         ${active ? "font-medium" : ""}
                         ${
                           active && !isOpen
@@ -99,12 +99,12 @@ function Header() {
                     }}
                   >
                     <span className="relative block overflow-hidden">
-                      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
+                      <span className="text-base block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
                         {label}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                        className="text-base absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
                       >
                         {label}
                       </span>

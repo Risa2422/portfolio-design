@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { VscMail } from "react-icons/vsc";
 import { useLanguage } from "../context/LanguageContext";
-import SectionTitle from "./SectionTitle";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -19,7 +17,7 @@ const Contact = () => {
   };
   return (
     <section>
-      <div className="mt-48 mb-32 w-full flex justify-center">
+      <div className="mt-24 mb-10 w-full flex justify-center">
         <button
           type="button"
           onClick={handleCopy}

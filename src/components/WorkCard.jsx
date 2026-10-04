@@ -102,11 +102,11 @@ function WorkCard({
                 className="flex items-center justify-center px-3 py-1.5 
                 bg-[#F0EEEA] border border-[#F0EEEA] rounded-full"
               >
-                <span className="text-sm">{tag}</span>
+                <span className="text-">{tag}</span>
               </li>
             ))}
           </ul>
-          <p className="pt-2">{date}</p>
+          <p className="pt-2 text-base">{date}</p>
         </div>
       </div>
     </Link>

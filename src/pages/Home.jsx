@@ -107,7 +107,7 @@ const Home = () => {
               jpSubtitle="制作実績"
               jp="Works"
             />
-            <div className="flex flex-col gap-10 md:gap-32 mt-4">
+            <div className="flex flex-col gap-32 md:gap-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div
                   key={index}
