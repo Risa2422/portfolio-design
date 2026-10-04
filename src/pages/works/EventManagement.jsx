@@ -390,9 +390,7 @@ const EventManagement = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.mvpTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.mvpText}
-          </p>
+          <p className="text-base leading-relaxed text-gray-700">{t.mvpText}</p>
           <div className="md:w-1/2">
             <ZoomableImage
               src={localizeImage("/event-management/mvp.png", language)}
@@ -410,7 +408,9 @@ const EventManagement = () => {
             <div className="space-y-20">
               {/* ワイヤーフレーム作成 */}
               <section className="flex flex-col gap-2">
-                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.wireframeHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {t.wireframeHeading}
+                </h3>
                 <div className="flex flex-col gap-4">
                   <p className="text-base leading-relaxed text-gray-700">
                     {t.wireframeText}
@@ -433,7 +433,9 @@ const EventManagement = () => {
 
               {/* イメージボードとスタイルガイド */}
               <section className="flex flex-col gap-2">
-                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.moodboardHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {t.moodboardHeading}
+                </h3>
                 <div className="space-y-4">
                   <p className="text-base leading-relaxed text-gray-700 mb-3">
                     {t.moodboardText}
@@ -469,7 +471,9 @@ const EventManagement = () => {
                 id="final-ui"
                 className="flex flex-col gap-2 scroll-mt-24"
               >
-                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.finalUiHeading}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {t.finalUiHeading}
+                </h3>
                 <div>
                   {/* イベント前 */}
                   <div>
@@ -720,7 +724,7 @@ const EventManagement = () => {
               </li>
             ))}
           </ul>
-          <Link to="/" className="hover:opacity-80 pt-10">
+          <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
               <span
                 className="flex items-center justify-center rounded-full w-6 h-6"

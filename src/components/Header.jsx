@@ -38,7 +38,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[10vw]">
+      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[5vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-6 h-6 object-contain" />
         </Link>
@@ -70,7 +70,6 @@ function Header() {
           <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
-
               return (
                 <li
                   key={to}
@@ -88,12 +87,12 @@ function Header() {
                         ${active ? "font-medium" : ""}
                         ${
                           active && !isOpen
-                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full "
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
                             : " "
                         }
                         ${
                           active && isOpen
-                            ? "text-primary text-start"
+                            ? "text-text text-start font-bold"
                             : "text-start"
                         }
                       `;
@@ -114,9 +113,9 @@ function Header() {
                 </li>
               );
             })}
-            <div className=" sm:block">
+            <li className="hidden sm:block">
               <LanguageToggle />
-            </div>
+            </li>
           </ul>
         </nav>
       </div>

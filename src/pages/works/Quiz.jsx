@@ -416,9 +416,7 @@ const Quiz = () => {
               <h3 className="text-base md:text-lg font-semibold text-gray-900">
                 {t.personaTitle}
               </h3>
-              <p className="text-base text-gray-700">
-                {t.personaIntro}
-              </p>
+              <p className="text-base text-gray-700">{t.personaIntro}</p>
             </div>
             <div className="space-y-8">
               <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10">
@@ -454,9 +452,7 @@ const Quiz = () => {
                 <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   {t.designOptionTitle}
                 </h3>
-                <p className="text-base text-gray-700">
-                  {t.designOptionIntro}
-                </p>
+                <p className="text-base text-gray-700">{t.designOptionIntro}</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-6">
                   {designOptionImages.map((images, index) => (
                     <div key={index} className="flex flex-col items-center">
@@ -719,7 +715,7 @@ const Quiz = () => {
               ))}
             </ul>
           </div>
-          <Link to="/" className="hover:opacity-80 pt-10">
+          <Link to="/" className="hover:opacity-80 pt-20">
             <div className=" flex items-center gap-1">
               <span
                 className="flex items-center justify-center rounded-full w-6 h-6"

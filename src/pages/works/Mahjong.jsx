@@ -568,7 +568,9 @@ const Mahjong = () => {
           <div className="flex flex-col w-full gap-2">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <h3 className="text-base md:text-lg font-semibold text-gray-900">{t.finalUiLabel}</h3>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {t.finalUiLabel}
+                </h3>
                 <div className="flex-1 h-[0.8px] bg-border" />
               </div>
             </div>
@@ -756,7 +758,7 @@ const Mahjong = () => {
           <p className="text-base leading-relaxed text-gray-700">
             {t.learningsText}
           </p>
-          <Link to="/" className="hover:opacity-80 pt-10">
+          <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
               <span
                 className="flex items-center justify-center rounded-full w-6 h-6"

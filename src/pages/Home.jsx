@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[12vw]">
-        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[80px] h-[320px] md:h-[600px]">
+        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[80px] h-[480px] md:h-[600px]">
           {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
@@ -82,18 +82,20 @@ const Home = () => {
             </p>
           </div> */}
           <div className="space-y-2">
-            <p className="font-leaguescript tracking-wider font-bold text-xl md:text-5xl">
+            <p className="font-leaguescript tracking-wider font-bold text-4xl md:text-5xl">
               Risa's
             </p>
-            <img src="/fv.svg" alt="" className="w-[650px]" />
+            <img src="/fv.svg" alt="" className="w-full md:w-[650px]" />
           </div>
-          <div className="flex justify-between items-center pt-40">
+          <div className="flex flex-col items-start md:flex-row justify-between pt-16 md:pt-40 gap-4 md:gap-0">
             <p className="tracking-wide text-xl font-medium">
               I believe every dot finds its place,
               <br />
               and every detail has a reason.
             </p>
-            <p className="font-bold text-4xl tracking-wide font-geist ">2026</p>
+            <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-wide font-geist">
+              2026
+            </p>
           </div>
         </section>
         <div className="space-y-40">

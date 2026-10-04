@@ -264,7 +264,7 @@ const WebDesign = () => {
           <p className="text-base leading-relaxed text-gray-700">
             {t.resultsText}
           </p>
-          <Link to="/" className="hover:opacity-80 pt-10">
+          <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
               <span
                 className="flex items-center justify-center rounded-full w-6 h-6"

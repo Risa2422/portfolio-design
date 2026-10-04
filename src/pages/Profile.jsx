@@ -143,7 +143,9 @@ const Timeline = ({ items }) => {
                 <p className="text-sm text-text">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm text-text w-3/4">{item.description}</p>
+            <p className="text-sm text-text w-full md:w-3/4">
+              {item.description}
+            </p>
           </div>
         </div>
       ))}
@@ -161,7 +163,7 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-8 md:pt-10 space-y-40">
+      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
         <div>
           <div>
             <SectionTitle
@@ -170,7 +172,7 @@ const Profile = () => {
               jpSubtitle="私について"
               jp="Profile"
             />
-            <div className="flex flex-col justify-center md:flex-row items-center md:gap-24 py-12">
+            <div className="flex flex-col justify-center md:flex-row items-center md:gap-24 py-8 md:py-12">
               <div className="space-y-8 md:w-2/3">
                 {language === "en" ? (
                   <p className="text-5xl font-bold">Hi, it's Risa</p>
@@ -183,10 +185,9 @@ const Profile = () => {
                     と申します。
                   </p>
                 )}
-
                 <p className=" text-gray-700">{t.bio}</p>
               </div>
-              <div className="md:w-1/3">
+              <div className="hidden md:block md:w-1/3">
                 <img
                   src="profile-deco.svg"
                   alt="Profile"
@@ -198,7 +199,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className="space-y-8 md:space-y-32 mt-40">
+          <div className="space-y-16 md:space-y-32 mt-16 md:mt-40">
             <section className="">
               <SectionTitle
                 title="Career"
@@ -209,7 +210,7 @@ const Profile = () => {
               />
               <Timeline items={t.experiences} />
             </section>
-            <section className="px-6 md:px-4">
+            <section className="">
               <SectionTitle
                 title="Education"
                 subtitle="学歴"
@@ -219,7 +220,7 @@ const Profile = () => {
               />
               <Timeline items={t.education} />
             </section>
-            <section className="px-6 md:px-4">
+            <section className="">
               <SectionTitle
                 title="Skills"
                 subtitle="Tools & Technologies"
@@ -229,7 +230,7 @@ const Profile = () => {
               />
               <div className="mt-4 space-y-4">
                 <div className="flex justify-center md:justify-start">
-                  <ul className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-8 md:gap-8">
+                  <ul className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-8 md:gap-8">
                     {skillData.map((skill) => (
                       <SkillItem
                         key={skill.label}
