@@ -319,7 +319,7 @@ const EventManagement = () => {
             <div>
               <div>
                 <div className="space-y-3">
-                  <h1 className="text-2xl font-semibold">{t.heading}</h1>
+                  <h1 className="text-3xl font-semibold">{t.title}</h1>
                   <div className="flex-1 h-[0.8px] bg-border mt-4" />
                 </div>
               </div>

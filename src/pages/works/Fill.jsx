@@ -171,7 +171,7 @@ const WebDesign = () => {
           </div>
           <div className="space-y-4 flex-1">
             <div className="space-y-3">
-              <h1 className="text-2xl font-semibold">{t.title}</h1>
+              <h1 className="text-3xl font-semibold">{t.title}</h1>
               <div className="h-[0.8px] bg-border mt-4" />
             </div>
             <InfoList items={infoItems} visible={false} />

@@ -6,6 +6,7 @@ import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
+import { localizeImage } from "../../utils/localizeImage";
 import Improvement1 from "./mining/Improvement1";
 import Improvement2 from "./mining/Improvement2";
 import Improvement3 from "./mining/Improvement3";
@@ -23,29 +24,29 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロジェクト概要",
     ProductOverviewText:
-      "鉱山業界のプログラムマネージャーを対象としたプロジェクト管理プラットフォームです。従来、複数のツールに分散していたプロジェクト情報や進捗管理を一元化し、業務効率を大幅に向上させます。ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを実現しました。",
+      "鉱山採掘業界のプログラムマネージャーを対象としたプロジェクト管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
     productOverviewImage: "/mining/blurred_medium.png",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
-      "スタートアップでのプロダクト開発であったため、基本的に要件定義からリリースまでの工程を全メンバーで協力して進めました。",
+      "MVP開発のため、ヒアリングからリリースまでを短いサイクルで回しました。機能定義〜デザイン作成を担当し、その他の工程にも協働・サポートとして関わりました。",
     productFlowImage: "/mining/product-flow.svg",
-    improvementsTitle: "改善案3案",
+    improvementsTitle: "改善事例",
     improvements: [
       {
         id: 1,
         title: "プログラム作成フロー簡略化",
         summary: "フローを簡潔化しました。",
-        description: "改善案1の詳細な説明がここに記載されます。",
+        description:
+          "最もユーザーニーズが高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成手順）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。(１つのプロジェクト配下に、複数のプログラムを紐づけて作成・管理できる構造になっています。)",
         before: {
           label: "変更前",
           image: "/mining/creation-flow-before.svg",
           alt: "変更前のプログラム作成フロー",
           heading: "課題",
           items: [
-            "プログラム作成までに時間がかかっていた。",
-            "プログラムを作成するフローが画面遷移のため、似たよ...",
-            "必須入力項目が多かった",
-            "他のプログラム名の名前がわからない",
+            "プロジェクト作成から予算作成に至るまでの入力項目・必須項目が多く、予算作成ページ到達までに時間がかかっていました。",
+            "「プロジェクト作成」と「プログラム作成」の画面が分断されており、機能間の関連性や構造が分かりづらい状況でした。",
+            "画面遷移が発生することで、ユーザーが既存のプロジェクト(プログラム)名を確認しながら入力できませんでした。",
           ],
         },
         after: {
@@ -54,10 +55,9 @@ const content = {
           alt: "変更後のプログラム作成フロー",
           heading: "改善内容",
           items: [
-            "プログラム作成までに時間がかかっていた。",
-            "プログラムを作成するフローが画面遷移のため、似たよ...",
-            "必須入力項目が多かった",
-            "他のプログラム名の名前がわからない",
+            "ヒアリングを通して、必ずしも「１プロジェクト = 複数プログラム」ではないことが判明したため、プログラム単体での作成を選択可能にし、プログラム作成時後はダイレクトに予算作成画面へ遷移できる設計に変更しました。",
+            "画面遷移の代わりにモーダルUIを採用することで、元のコンテキストを維持したまま入力を完結できるフローへ改善しました。",
+            "入力必須項目をプロジェクト(プログラム)名のみに絞り込むことで、最速で予算作成を開始できるようにしました。",
           ],
         },
       },
@@ -122,15 +122,20 @@ const content = {
         ],
       },
     ],
-    aiUsageTitle: "AIをどう仕事に取り入れたか",
-    aiUsageText: [
-      "クライアントとの打ち合わせの際に使用するプロトタイプの作成 (AlloyとClause design, Figma make)",
-      "Edgeケースの洗い出し",
-      "いくつかのUIパターンの生成",
+    aiUsageTitle: "AIを業務にどう取り入れたか",
+    aiUsageSubTitle: [
+      "エッジケースの洗い出し",
+      "複数UIパターンの同時生成",
+      "クライアントとの打ち合わせ時に使用するプロトタイプの作成",
     ],
-    learnings: "Learnings",
+    aiUsageText: [
+      "開発フェーズでの手戻りを防ぐため、設計初期から生成AIを活用しエッジケースを洗い出しました。従来発生しがちだった実装直前の検討漏れを事前防止する仕組みを作れたため、開発効率の向上を実現することができました。",
+      "短期間で最適なUIを選定するため、生成AIを活用して複数のデザインパターンを迅速に作成・検証しました。早い段階から高精度なUIで比較・検討できたことで、実装に近い解像度で意思決定を行うことが可能でした。",
+      "クライアントレビューにおいて、静的プロトタイプで合意を得ていても実装後に実際の操作感とのギャップが生じる課題がありました。そこで開発前の段階でAIツール「Alloy」を導入し、クライアントが実機上で試走できるインタラクティブなプロトタイプを作成・共有しました。これにより、認識ギャップによる手戻りを防ぐことができました。",
+    ],
+    learnings: "振り返り",
     learningsText:
-      "リリース直前に退職したため、リアルユーザーの反応はわからないが、少なくとも前のプロダクトに比べたらユーザーのニーズを満たしたプロダクトを作成できたのではないかと思う。* 現在はパートナーのオンボーディング（導入）初期段階にあるため、定量的なユーザー指標（データ）はまだ得られていません。",
+      "プロジェクト参画当初は、クライアント自身も自覚していない潜在的な課題や本質的な解決策の特定に難しさを感じていました。しかし、「なぜ？」を繰り返す課題の深掘りを徹底したことで、最終的にはユーザーの真のニーズを捉えたプロダクト定義とUIUXデザインへ貢献できたと考えています。",
     home: "ホーム",
   },
   en: {
@@ -258,6 +263,7 @@ const content = {
     ],
 
     aiUsageTitle: "How I Incorporated AI Into My Work",
+    aiUsageSubTitle: ["Dummy subtitle"],
     aiUsageText: [
       "Dummy text. This section describes how AI was incorporated into daily work, specific use cases, and the impact it had.",
     ],
@@ -306,14 +312,14 @@ const MiningProject = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
-              src={t.thumbnail}
+              src={localizeImage(t.thumbnail)}
               alt="Mining Project Thumbnail"
               className="w-full h-full object-contain"
             />
           </div>
           <div className="space-y-4 flex-1">
             <div className="space-y-3">
-              <h1 className="text-2xl font-semibold">{t.title}</h1>
+              <h1 className="text-3xl font-semibold">{t.title}</h1>
               <div className="h-[0.8px] bg-border mt-4" />
             </div>
             <InfoList items={infoItems} visible={false} />
@@ -325,15 +331,25 @@ const MiningProject = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
           </h2>
-          <div className="flex flex-col gap-8 justify-center items-center">
-            <p className="text-base leading-relaxed text-gray-700 ">
-              {t.ProductOverviewText}
-            </p>
-            <ZoomableImage
-              src={t.productOverviewImage}
-              className="md:w-1/2 object-contain"
-              alt="ProductOverview"
-            />
+          <div className="flex flex-col md:flex-row gap-8 justify-center">
+            <div className="w-full md:w-1/2 md:pt-4">
+              <p className="text-base leading-relaxed text-gray-700 ">
+                {t.ProductOverviewText}
+              </p>
+              <p className="pt-4">
+                ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを追求しました。
+              </p>
+            </div>
+            <div className="md:w-1/2 space-y-2">
+              <ZoomableImage
+                src={localizeImage(t.productOverviewImage, language)}
+                className="w-full object-contain"
+                alt="ProductOverview"
+              />
+              <p className="text-xs text-gray-600 text-center">
+                主要画面・機能の抜粋
+              </p>
+            </div>
           </div>
         </div>
         {/* Product Development Flow Section */}
@@ -347,7 +363,7 @@ const MiningProject = () => {
               {t.productFlowText}
             </p>
             <ZoomableImage
-              src={t.productFlowImage}
+              src={localizeImage(t.productFlowImage, language)}
               alt={t.productFlowTitle}
               className="rounded-lg w-23 bg-background"
             />
@@ -396,9 +412,16 @@ const MiningProject = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-base leading-relaxed ">
-            {t.aiUsageText.map((item) => (
-              <li key={item}>{item}</li>
+          <ul className="flex flex-col gap-6 list-disc pl-5">
+            {t.aiUsageSubTitle.map((subTitle, index) => (
+              <li key={subTitle} className="space-y-2">
+                <h3 className="text-lg font-semibold text-[#3B2707]">
+                  {subTitle}
+                </h3>
+                <p className="text-base leading-relaxed">
+                  {t.aiUsageText[index]}
+                </p>
+              </li>
             ))}
           </ul>
         </div>

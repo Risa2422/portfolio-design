@@ -1,9 +1,12 @@
 import ZoomableImage from "../../../components/ZoomableImage";
+import { useLanguage } from "../../../context/LanguageContext";
+import { localizeImage } from "../../../utils/localizeImage";
 import ArrowDivider from "./ArrowDivider";
 import Badge from "./Badge";
 import DetailBox from "./DetailBox";
 
 function Improvement3({ steps }) {
+  const { language } = useLanguage();
   return (
     <div className="space-y-4">
       {steps.map((step, index) => (
@@ -26,7 +29,7 @@ function Improvement3({ steps }) {
                 <p>{step.text}</p>
                 {step.image && (
                   <ZoomableImage
-                    src={step.image}
+                    src={localizeImage(step.image, language)}
                     alt={step.alt}
                     className="w-1/2"
                   />
@@ -36,7 +39,7 @@ function Improvement3({ steps }) {
             {step.heading && (
               <>
                 {step.image && (
-                  <ZoomableImage src={step.image} alt={step.alt} />
+                  <ZoomableImage src={localizeImage(step.image, language)} alt={step.alt} />
                 )}
                 <DetailBox heading={step.heading} items={step.items} />
               </>
