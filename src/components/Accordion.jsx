@@ -2,7 +2,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 function Accordion({ title, summary, isOpen, onToggle, children }) {
   return (
-    <div className="w-full bg-white border rounded-lg p-6">
+    <div className="w-full bg-white border rounded-lg p-5">
       <button
         type="button"
         onClick={onToggle}

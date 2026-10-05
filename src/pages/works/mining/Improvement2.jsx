@@ -13,32 +13,40 @@ function Improvement2({ before, hearing, after }) {
       <div className="space-y-4">
         <Badge colorClass="bg-[#746B60]">{before.label}</Badge>
         <div className="flex gap-4">
-          <ZoomableImage
-            src={localizeImage(before.image, language)}
-            alt={before.alt}
-            className="w-1/3 object-contain"
-          />
-          <div className="space-y-10">
-            <p>{before.text}</p>
-            <ul className="list-disc list-inside space-y-1 pl-1">
-              {before.items.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+          <div className="flex flex-col md:flex-row w-full gap-4">
+            <div className="w-1/2 space-y-1">
+              <p className="font-medium text-sm">予算作成画面</p>
+              <ZoomableImage
+                src={localizeImage(before.image, language)}
+                alt={before.alt}
+                className="object-contain"
+              />
+            </div>
+            <div className="w-1/2 space-y-4 pt-7">
+              <p className="text-lg font-medium">【{before.text}】</p>
+              <ul className="list-disc list-outside space-y-3 pl-5">
+                {before.items.map((item, index) => (
+                  <li key={index}>
+                    <p className="font-medium">{before.itemTitles?.[index]}</p>
+                    <p className="text-gray-600">{item}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="pt-4">
+                (※実際の画面では、上部に「予算作成」と「トラッキング」を切り替えるタブメニューが配置されていました)
+              </p>
+            </div>
           </div>
         </div>
         <ArrowDivider />
-        <div className="space-y-4">
-          <h5>{hearing.heading}</h5>
-          <div>
+        <div className="space-y-6 py-6">
+          <h5 className="text-xl font-medium">{hearing.heading}</h5>
+          <div className="flex flex-col gap-4 px-8">
             {hearing.quotes.map((quote, index) => (
-              <p
-                key={index}
-                className="flex text-xl items-center gap-2 italic text-gray-600"
-              >
-                <FaQuoteLeft className="w-3 h-3 shrink-0" />
+              <p key={index} className="flex text-lg gap-1 italic ">
+                <FaQuoteLeft className="w-2.5 h-2.5 shrink-0 text-gray-600" />
                 {quote}
-                <FaQuoteRight className="w-3 h-3 shrink-0" />
+                <FaQuoteRight className="w-2.5 h-2.5 shrink-0 text-gray-600" />
               </p>
             ))}
           </div>
@@ -48,7 +56,24 @@ function Improvement2({ before, hearing, after }) {
       <div className="space-y-4 mt-6">
         <Badge colorClass="bg-[#4A5742]">{after.label}</Badge>
         <div className="flex flex-col justify-center items-center gap-4 w-full">
-          <ZoomableImage src={localizeImage(after.image, language)} className="w-2/3" alt={after.alt} />
+          <div className="flex flex-col md:flex-row w-full gap-4">
+            <ZoomableImage
+              src={localizeImage(after.image, language)}
+              className="w-1/2"
+              alt={after.alt}
+            />
+            <div className="space-y-4">
+              <p className="text-lg font-medium">【{before.text}】</p>
+              <ul className="list-disc list-outside space-y-3 pl-7">
+                {after.items.map((item, index) => (
+                  <li key={index}>
+                    <p className="font-medium">{after.itemTitles?.[index]}</p>
+                    <p className="text-gray-600">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <DetailBox heading={after.heading} items={after.items} />
         </div>
       </div>
