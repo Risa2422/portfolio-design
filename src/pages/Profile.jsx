@@ -8,7 +8,7 @@ import skillData from "../data/skillData";
 
 const content = {
   ja: {
-    bio: "エンジニアとしてデスクトップアプリやWebアプリの開発に携わる中で、どれほど優れたプログラムを実装しても、UIに課題があれば継続的に使われるサービスにはなりにくいと実感しました。この経験からUI/UXデザインの重要性を強く意識するようになり、誰にとっても「使いやすく、作りやすい」プロダクトを実現できるデザイナーを目指しています。",
+    bio: "エンジニア経験を経て「継続的に愛されるプロダクトには優れたUI/UXが不可欠」と実感し、UI/UXデザイナーへ転向しました。\n\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -61,7 +61,7 @@ const content = {
     ],
   },
   en: {
-    bio: 'Through my previous experience as an engineer involved in developing desktop and web applications, I realized that even the most brilliantly implemented program is unlikely to be continuously used if the UI presents challenges. This experience strongly highlighted the importance of UI/UX design. I aspire to be a designer who can create products that are "easy to use and easy to build" for everyone.',
+    bio: "With a background in software engineering, I realized that exceptional UI/UX is essential for building products that users truly love, which motivated my transition to UI/UX design.\n\n Most recently, I served as the sole designer at a Canadian startup. Working in an English-speaking environment, I independently led the process from user research and feature definition to UI design, honing my ability to take ownership and drive projects forward.",
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -185,7 +185,7 @@ const Profile = () => {
                     と申します。
                   </p>
                 )}
-                <p className=" text-gray-700">{t.bio}</p>
+                <p className="text-gray-700 whitespace-pre-line">{t.bio}</p>
               </div>
               <div className="hidden md:block md:w-1/3">
                 <img
