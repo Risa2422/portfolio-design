@@ -14,7 +14,7 @@ function Improvement2({ before, hearing, after }) {
         <Badge colorClass="bg-[#746B60]">{before.label}</Badge>
         <div className="flex gap-4">
           <div className="flex flex-col md:flex-row w-full gap-4">
-            <div className="w-1/2 space-y-1">
+            <div className="md:w-1/2 space-y-1">
               <p className="font-medium text-sm">{before.imageCaption}</p>
               <ZoomableImage
                 src={localizeImage(before.image, language)}
@@ -22,7 +22,7 @@ function Improvement2({ before, hearing, after }) {
                 className="object-contain"
               />
             </div>
-            <div className="w-1/2 space-y-4 pt-7">
+            <div className="md:w-1/2 space-y-4 pt-7">
               <p className="text-lg font-medium">【{before.text}】</p>
               <ul className="list-disc list-outside space-y-3 pl-5">
                 {before.items.map((item, index) => (
@@ -39,7 +39,7 @@ function Improvement2({ before, hearing, after }) {
         <ArrowDivider />
         <div className="space-y-6 py-6">
           <h5 className="text-xl font-medium">{hearing.heading}</h5>
-          <div className="flex flex-col gap-4 px-8">
+          <div className="flex flex-col gap-6 px-12">
             {hearing.quotes.map((quote, index) => (
               <p key={index} className="flex text-lg gap-1 italic ">
                 <FaQuoteLeft className="w-2.5 h-2.5 shrink-0 text-gray-600" />
@@ -57,7 +57,7 @@ function Improvement2({ before, hearing, after }) {
           <div className="flex flex-col md:flex-row w-full gap-4">
             <ZoomableImage
               src={localizeImage(after.image, language)}
-              className="w-1/2"
+              className="md:w-1/2"
               alt={after.alt}
             />
             <div className="space-y-4">

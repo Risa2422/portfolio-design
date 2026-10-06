@@ -20,7 +20,7 @@ const content = {
       { title: "担当領域", value: "主要機能設計・既存画面のUI/UX改善" },
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
-    title: "Mining Project",
+    title: "プロジェクト管理ツール(鉱山業界向け)",
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロジェクト概要",
     ProductOverviewText:
@@ -40,9 +40,9 @@ const content = {
         description:
           "最もユーザーニーズが高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成手順）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。(１つのプロジェクト配下に、複数のプログラムを紐づけて作成・管理できる構造になっています。)",
         before: {
-          label: "変更前",
+          label: "改善前",
           image: "/mining/creation-flow-before.svg",
-          alt: "変更前のプログラム作成フロー",
+          alt: "改善前のプログラム作成フロー",
           heading: "課題",
           items: [
             "プロジェクト作成から予算作成に至るまでの入力項目・必須項目が多く、予算作成ページ到達までに時間がかかっていました。",
@@ -64,14 +64,15 @@ const content = {
       },
       {
         id: 2,
-        title: "複雑な大量データを迷わせない「テーブルUI」の設計",
-        summary: "フローを簡潔化しました。",
+        title: "学習コストをかけない業務効率化",
+        summary:
+          "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
         description:
           "プロダクト初期段階では、ユーザーが事前入力した条件（プログラム期間や採掘場所など）に基づき、AIが自動で予算項目の作成・試算を行う仕様となっていました。",
         before: {
           label: "改善前",
           image: "/mining/cost-management-before.png",
-          alt: "変更前のコスト管理画面",
+          alt: "改善前のコスト管理画面",
           imageCaption: "予算作成画面",
           text: "予算作成画面の特徴",
           itemTitles: [
@@ -108,30 +109,42 @@ const content = {
       },
       {
         id: 3,
-        title: "新規機能追加",
-        summary: "フローを簡潔化しました。",
-        description: "改善案3の詳細な説明がここに記載されます。",
+        title: "試算機能の設計",
+        summary:
+          "既存の画面構成や操作感を維持したまま、新機能を組み込みました。",
+        description:
+          "クライアントからの要望を受け、予算の試算機能を新たに追加することになりました。",
         steps: [
           {
             badgeClass: "bg-[#746B60]",
             label: "1. ヒアリング",
-            intro: "聞き取りをし、以下の要件が決まりました。",
-            items: ["予算を作成したい", "予算を作成したい", "予算を作成したい"],
+            intro:
+              "クライアントヒアリングで、以下の課題とニーズが明確になりました。",
+            items: [
+              "現状は別のExcelファイルで試算を行っており、作成・転記の手間が発生している",
+              "試算を行う頻度が高く、業務における重要度が高い",
+              "作成した試算データをそのまま本番予算へ反映する場合もある",
+            ],
           },
           {
             badgeClass: "bg-[#4A6F8A]",
-            label: "2. ユーザーストーリー作成",
-            text: "ユーザーストーリーを作成し、エンジニアと打ち合わせをしました。",
+            label: "2. ユーザーフローの作成",
+            text: "ユーザーフローを作成して多様な操作パターン（保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
             image: "/mining/user-story.png",
-            alt: "ユーザーストーリーの画像",
+            alt: "ユーザーフローの画像",
           },
           {
-            badgeClass: "bg-[#4A5742]",
-            label: "3. UI作成",
+            badgeClass: "bg-[#627d50]",
+            label: "3. 完成UI",
             image: "/mining/draft-mode.svg",
             alt: "ドラフトモードUIの画像",
-            heading: "改善内容",
-            items: ["改善内容1", "改善内容1", "改善内容1"],
+            heading: "主要機能とUIの工夫",
+            items: [
+              "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化",
+              "新規試算作成時は、適用中の予算データを初期値として自動継承",
+              "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化",
+              "適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能",
+            ],
           },
         ],
       },
@@ -185,7 +198,7 @@ const content = {
           heading: "Challenges",
           items: [
             "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
-            "The \"Create Project\" and \"Create Program\" screens were separated, making it difficult to understand the relationship and structure between the features.",
+            'The "Create Project" and "Create Program" screens were separated, making it difficult to understand the relationship and structure between the features.',
             "Because of page transitions, users couldn't refer to existing project (program) names while entering information.",
           ],
         },
@@ -203,8 +216,9 @@ const content = {
       },
       {
         id: 2,
-        title: "Designing a Table UI for Complex, Large Datasets",
-        summary: "Simplified the flow.",
+        title: "Streamlining Operations Without a Learning Curve",
+        summary:
+          "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
         description:
           "In the early stage of the product, AI automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
         before: {
@@ -223,7 +237,7 @@ const content = {
             "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
             "Designed to cover not only initial budget planning but also tracking and managing actual costs after the project launched.",
           ],
-          note: "(*In the actual screen, a tab menu at the top let users switch between \"Budget Creation\" and \"Tracking.\")",
+          note: '(*In the actual screen, a tab menu at the top let users switch between "Budget Creation" and "Tracking.")',
         },
         hearing: {
           heading: "Feedback from the Client",
@@ -243,45 +257,48 @@ const content = {
             "Minimizing the learning curve",
           ],
           items: [
-            "Placed basic information such as \"Category\" and \"Amount\" on the left side of the table and consolidated \"daily quantity\" inputs in the right area. The basic information area can be collapsed to maximize the quantity input area, making large-volume data entry more efficient.",
+            'Placed basic information such as "Category" and "Amount" on the left side of the table and consolidated "daily quantity" inputs in the right area. The basic information area can be collapsed to maximize the quantity input area, making large-volume data entry more efficient.',
             "Supports direct cell editing, Undo/Redo, comments, filtering, and file export, providing the same familiar feel as Excel.",
           ],
         },
       },
       {
         id: 3,
-        title: "Adding a New Feature",
-        summary: "Simplified the flow.",
-        description: "A detailed description of improvement 3 goes here.",
+        title: "Designing a Budget Simulation Feature",
+        summary:
+          "Integrated a new feature while preserving the existing screen structure and interaction patterns.",
+        description:
+          "Based on a request from the client, we decided to add a new feature for simulating budgets.",
         steps: [
           {
             badgeClass: "bg-[#746B60]",
             label: "1. Interviews",
             intro:
-              "After conducting interviews, the following requirements were defined.",
+              "Client interviews clarified the following challenges and needs.",
             items: [
-              "Wanted to be able to create a budget.",
-              "Wanted to be able to create a budget.",
-              "Wanted to be able to create a budget.",
+              "Simulations were currently done in separate Excel files, which required extra effort to create and transfer data.",
+              "Simulations were run frequently and played an important role in their work.",
+              "In some cases, simulation data was applied directly to the actual budget.",
             ],
           },
           {
             badgeClass: "bg-[#4A6F8A]",
-            label: "2. Creating User Stories",
-            text: "Created user stories and discussed them with the engineers.",
+            label: "2. Creating a User Flow",
+            text: "Created a user flow to visualize the various interaction patterns (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the feature scope smoothly.",
             image: "/mining/user-story.png",
-            alt: "Image of the user story",
+            alt: "Image of the user flow",
           },
           {
-            badgeClass: "bg-[#4A5742]",
-            label: "3. UI Creation",
+            badgeClass: "bg-[#627d50]",
+            label: "3. Final UI",
             image: "/mining/draft-mode.svg",
             alt: "Image of the draft mode UI",
-            heading: "Improvements",
+            heading: "Key Features and UI Considerations",
             items: [
-              "Improvement content 1",
-              "Improvement content 1",
-              "Improvement content 1",
+              'A "Budget versions" dropdown brings creating and viewing simulations and switching to the actual budget into one place.',
+              "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
+              "The color theme of the entire screen changes so users can intuitively recognize when they are in simulation mode.",
+              "The total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
             ],
           },
         ],
@@ -289,12 +306,19 @@ const content = {
     ],
 
     aiUsageTitle: "How I Incorporated AI Into My Work",
-    aiUsageSubTitle: ["Dummy subtitle"],
+    aiUsageSubTitle: [
+      "Identifying edge cases",
+      "Generating multiple UI patterns in parallel",
+      "Building prototypes for client meetings",
+    ],
     aiUsageText: [
-      "Dummy text. This section describes how AI was incorporated into daily work, specific use cases, and the impact it had.",
+      "To prevent rework during development, I used generative AI from the early design stage to identify edge cases. This created a system for catching gaps that would often only surface right before implementation, which improved development efficiency.",
+      "To select the best UI in a short time, I used generative AI to quickly create and test multiple design patterns. Being able to compare high-fidelity UIs from an early stage allowed us to make decisions at a level of detail close to the final implementation.",
+      'In client reviews, even when we had reached agreement on static prototypes, gaps often emerged between expectations and the actual feel after implementation. To address this, I introduced the AI tool "Alloy" before development began, creating and sharing interactive prototypes that the client could try out on real devices. This helped prevent rework caused by misaligned expectations.',
     ],
     learnings: "Learnings",
-    learningsText: "",
+    learningsText:
+      'When I first joined the project, I found it challenging to identify latent issues the client themselves weren\'t aware of, as well as the solutions that would truly address them. However, by consistently digging deeper into problems and repeatedly asking "Why?", I believe I was ultimately able to contribute to a product definition and UI/UX design that captured users\' true needs.',
     home: "Home",
   },
 };

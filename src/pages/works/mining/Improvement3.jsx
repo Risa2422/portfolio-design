@@ -26,20 +26,23 @@ function Improvement3({ steps }) {
             )}
             {step.text && (
               <div className="flex flex-col md:flex-row gap-4">
-                <p>{step.text}</p>
                 {step.image && (
                   <ZoomableImage
                     src={localizeImage(step.image, language)}
                     alt={step.alt}
-                    className="w-1/2"
+                    className="md:w-1/2"
                   />
                 )}
+                <p>{step.text}</p>
               </div>
             )}
             {step.heading && (
               <>
                 {step.image && (
-                  <ZoomableImage src={localizeImage(step.image, language)} alt={step.alt} />
+                  <ZoomableImage
+                    src={localizeImage(step.image, language)}
+                    alt={step.alt}
+                  />
                 )}
                 <DetailBox heading={step.heading} items={step.items} />
               </>
