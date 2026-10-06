@@ -72,6 +72,7 @@ const content = {
           label: "改善前",
           image: "/mining/cost-management-before.png",
           alt: "変更前のコスト管理画面",
+          imageCaption: "予算作成画面",
           text: "予算作成画面の特徴",
           itemTitles: [
             "予算項目およびコストの自動算出",
@@ -83,6 +84,7 @@ const content = {
             "AIが提示した予算項目数や算出金額を、ユーザーが確認・修正",
             "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
           ],
+          note: "(※実際の画面では、上部に「予算作成」と「トラッキング」を切り替えるタブメニューが配置されていました)",
         },
         hearing: {
           heading: "クライアントからのフィードバック",
@@ -172,18 +174,19 @@ const content = {
       {
         id: 1,
         title: "Simplifying the Program Creation Flow",
-        summary: "Simplified the flow.",
-        description: "A detailed description of improvement 1 goes here.",
+        summary:
+          "Eliminated unnecessary page transitions to create an input experience that gets users to budget creation as quickly as possible.",
+        description:
+          "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the feature users needed most, lacked intuitiveness, causing drop-offs and confusion during operation. (The structure allows multiple programs to be created and managed under a single project.)",
         before: {
           label: "Before",
           image: "/mining/creation-flow-before.svg",
           alt: "Program creation flow before the change",
           heading: "Challenges",
           items: [
-            "Creating a program took a long time.",
-            "The flow required navigating through several similar screens due to page transitions.",
-            "There were many required input fields.",
-            "Users couldn't tell the names of other existing programs.",
+            "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
+            "The \"Create Project\" and \"Create Program\" screens were separated, making it difficult to understand the relationship and structure between the features.",
+            "Because of page transitions, users couldn't refer to existing project (program) names while entering information.",
           ],
         },
         after: {
@@ -192,10 +195,9 @@ const content = {
           alt: "Program creation flow after the change",
           heading: "Improvements",
           items: [
-            "Creating a program took a long time.",
-            "The flow required navigating through several similar screens due to page transitions.",
-            "There were many required input fields.",
-            "Users couldn't tell the names of other existing programs.",
+            "Interviews revealed that a project doesn't always contain multiple programs, so I made it possible to create a standalone program and redesigned the flow to take users directly to the Budget Creation screen after creating a program.",
+            "Replaced page transitions with a modal UI, allowing users to complete their input without losing the original context.",
+            "Reduced the required fields to just the project (program) name so users can start creating a budget as quickly as possible.",
           ],
         },
       },
@@ -203,23 +205,32 @@ const content = {
         id: 2,
         title: "Designing a Table UI for Complex, Large Datasets",
         summary: "Simplified the flow.",
-        description: "A detailed description of improvement 2 goes here.",
+        description:
+          "In the early stage of the product, AI automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
         before: {
           label: "Before",
           image: "/mining/cost-management-before.png",
           alt: "Cost management screen before the change",
-          text: "Description of the screen before the improvement.",
-          items: [
-            "AI calculates it automatically.",
-            "AI calculates it automatically.",
-            "AI calculates it automatically.",
+          imageCaption: "Budget Creation Screen",
+          text: "Key Features of the Budget Creation Screen",
+          itemTitles: [
+            "Automatic generation of budget items and costs",
+            "Review and edit suggestions",
+            "Budget creation and cost tracking in one place",
           ],
+          items: [
+            "AI automatically generated the categories and estimated costs needed for program planning, such as workers' meals and accommodation.",
+            "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
+            "Designed to cover not only initial budget planning but also tracking and managing actual costs after the project launched.",
+          ],
+          note: "(*In the actual screen, a tab menu at the top let users switch between \"Budget Creation\" and \"Tracking.\")",
         },
         hearing: {
-          heading: "Feedback from user interviews...",
+          heading: "Feedback from the Client",
           quotes: [
-            "We don't need the AI feature",
-            "We want a UI that won't confuse us with complex data",
+            "Mining projects involve many site-specific factors that AI can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
+            "We currently manage budgets in Excel, but errors from complex formulas and manual input are a constant problem.",
+            "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve probably won't stick.",
           ],
         },
         after: {
@@ -227,10 +238,13 @@ const content = {
           image: "/mining/cost-management-after.png",
           alt: "Cost management screen after the change",
           heading: "Improvements",
+          itemTitles: [
+            "Two-area layout for data entry",
+            "Minimizing the learning curve",
+          ],
           items: [
-            "Improvement content 1",
-            "Improvement content 1",
-            "Improvement content 1",
+            "Placed basic information such as \"Category\" and \"Amount\" on the left side of the table and consolidated \"daily quantity\" inputs in the right area. The basic information area can be collapsed to maximize the quantity input area, making large-volume data entry more efficient.",
+            "Supports direct cell editing, Undo/Redo, comments, filtering, and file export, providing the same familiar feel as Excel.",
           ],
         },
       },

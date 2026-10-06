@@ -15,7 +15,7 @@ function Improvement2({ before, hearing, after }) {
         <div className="flex gap-4">
           <div className="flex flex-col md:flex-row w-full gap-4">
             <div className="w-1/2 space-y-1">
-              <p className="font-medium text-sm">予算作成画面</p>
+              <p className="font-medium text-sm">{before.imageCaption}</p>
               <ZoomableImage
                 src={localizeImage(before.image, language)}
                 alt={before.alt}
@@ -32,9 +32,7 @@ function Improvement2({ before, hearing, after }) {
                   </li>
                 ))}
               </ul>
-              <p className="pt-4">
-                (※実際の画面では、上部に「予算作成」と「トラッキング」を切り替えるタブメニューが配置されていました)
-              </p>
+              <p className="pt-4">{before.note}</p>
             </div>
           </div>
         </div>
