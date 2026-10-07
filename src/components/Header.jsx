@@ -1,15 +1,23 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
+
+const navLabels = {
+  ja: { home: "ホーム", profile: "プロフィール" },
+  en: { home: "Home", profile: "Profile" },
+};
 
 function Header() {
   const location = useLocation();
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "profile", label: "Profile" },
+    { to: "/", label: navLabels[language].home },
+    { to: "profile", label: navLabels[language].profile },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -30,22 +38,25 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center py-8 px-[10vw]">
+      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[12vw]">
         <Link to="/" className="text-xl font-bold">
-          <img src="logo.svg" alt="logo" className="w-7 h-7 object-contain" />
+          <img src="logo.svg" alt="logo" className="w-6 h-6 object-contain" />
         </Link>
-        <button
-          onClick={toggleMenu}
-          className="sm:hidden focus:outline-none"
-          aria-label="Toggle navigation"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 sm:hidden">
+          <LanguageToggle />
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none"
+            aria-label="Toggle navigation"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Navigation */}
         <nav
           className={`
-            absolute top-16 w-1/4 right-6 px-[3vw] rounded border border-gray-300
+            absolute top-16 w-max min-w-[8rem] right-6 px-6 rounded border border-gray-300
             sm:static sm:block sm:bg-transparent sm:px-0 sm:py-0 sm:border-none sm:rounded-none
             transition-all duration-200
             ${
@@ -56,10 +67,9 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
-
               return (
                 <li
                   key={to}
@@ -73,25 +83,39 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      transition-all duration-600 decoration-[1.4px] hover:text-primary space-y-4 text-md block py-3 tracking-wide w-14
+                      group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide whitespace-nowrap
+                        ${active ? "font-medium" : ""}
                         ${
                           active && !isOpen
-                            ? "underline decoration-primary underline-offset-4 font-light"
-                            : "sm:decoration-transparent text-gray-600 font-light"
+                            ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
+                            : " "
                         }
                         ${
                           active && isOpen
-                            ? "text-primary text-start"
+                            ? "text-text text-start font-bold"
                             : "text-start"
                         }
                       `;
                     }}
                   >
-                    {label}
+                    <span className="relative block overflow-hidden">
+                      <span className="text-base block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
+                        {label}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="text-base absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                      >
+                        {label}
+                      </span>
+                    </span>
                   </NavLink>
                 </li>
               );
             })}
+            <li className="hidden sm:block">
+              <LanguageToggle />
+            </li>
           </ul>
         </nav>
       </div>

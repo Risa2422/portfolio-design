@@ -1,16 +1,42 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import WorkCard from "../components/WorkCard";
+import { useLanguage } from "../context/LanguageContext";
 import workData from "../data/workData";
 import useIsMobile from "../hooks/useIsMobile";
+import { localizeImage } from "../utils/localizeImage";
+
+const content = {
+  ja: {
+    tagline:
+      "エンジニアリングとデザインの架け橋になるデザイナーを目指しています。",
+  },
+  en: {
+    tagline:
+      "My goal is to become a designer who seamlessly connects engineering and design.",
+  },
+};
 
 const Home = () => {
   const isMobile = useIsMobile();
+  const { language } = useLanguage();
+  const t = content[language];
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("yamari2422@gmail.com");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("コピーに失敗しました:", err);
+    }
+  };
 
   useEffect(() => {
     const savedPosition = sessionStorage.getItem("scrollPosition");
@@ -27,8 +53,8 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[12vw]">
-        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[100px] h-[320px] md:h-[560px]">
-          <img
+        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[80px] h-[480px] md:h-[640px]">
+          {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
             className="absolute -top-10 -left-10 md:-top-36 md:-left-40 w-[200px] h-[200px] md:w-[600px] md:h-[600px]"
@@ -37,13 +63,13 @@ const Home = () => {
             src="/circle-green.png"
             alt="Green Circle"
             className="hidden lg:block absolute md:top-[80px] md:left-[800px] md:w-[420px] md:h-[420px]"
-          />
+          /> */}
           {/* <img
             src="/circle-red.png"
             alt="Red Circle"
             className="hidden md:block absolute md:top-36 md:left-[1000px] md:w-[240px] md:h-[240px]"
           /> */}
-          <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
+          {/* <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
             <div className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
               <div className="w-2/3 md:w-full ">
                 <p className="uppercase text-left">Risa</p>
@@ -51,18 +77,37 @@ const Home = () => {
               </div>
             </div>
             <p className="font-sans text-sm md:text-lg z-30 text-neutral-600">
-              {/* エンジニアリングとデザインの架け橋になるデザイナーを目指しています。 */}
-              My goal is to become a designer who seamlessly connects
-              engineering and design.
+              {t.tagline}
               <br />
+            </p>
+          </div> */}
+          <div className="space-y-2">
+            <p className="font-leaguescript tracking-wider font-bold text-4xl md:text-5xl">
+              Risa's
+            </p>
+            <img src="/fv.svg" alt="" className="w-full md:w-[650px]" />
+          </div>
+          <div className="flex flex-col items-start md:flex-row justify-between pt-16 md:pt-40 gap-4 md:gap-0">
+            <p className="tracking-wide text-xl font-medium">
+              I believe every dot finds its place,
+              <br />
+              and every detail has a reason.
+            </p>
+            <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-wide font-geist">
+              2026
             </p>
           </div>
         </section>
         <div className="space-y-40">
           {/* works */}
           <section className="space-y-10">
-            <SectionTitle title="Works" jp="制作物" />
-            <div className="flex flex-col gap-10 md:gap-32 mt-4">
+            <SectionTitle
+              title="Works"
+              subtitle="Featured Projects"
+              jpSubtitle="制作実績"
+              jp="Works"
+            />
+            <div className="flex flex-col gap-32 md:gap-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div
                   key={index}
@@ -72,10 +117,11 @@ const Home = () => {
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <WorkCard
-                    imageSrc={work.imageSrc}
-                    title={work.title}
-                    description={work.description}
-                    tags={work.tags}
+                    imageSrc={localizeImage(work.imageSrc)}
+                    date={work.date}
+                    title={work.title[language]}
+                    description={work.description[language]}
+                    tags={work.tags[language]}
                     reverse={index % 2 === 1}
                     to={work.to}
                   />
@@ -137,6 +183,7 @@ const Home = () => {
               </div>
             </div>
           </section> */}
+
           {/* contact */}
           <Contact />
         </div>

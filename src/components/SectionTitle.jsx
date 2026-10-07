@@ -1,25 +1,38 @@
-const SectionTitle = ({ title, jp, sub = false }) => {
+import { useLanguage } from "../context/LanguageContext";
+
+const SectionTitle = ({
+  title,
+  jp,
+  subtitle = "Subtitle",
+  jpSubtitle,
+  sub = false,
+}) => {
+  const { language } = useLanguage();
+  const isJa = language === "ja";
+  const displayText = isJa && jp ? jp : title;
+  const displaySubtitle = isJa && jpSubtitle ? jpSubtitle : subtitle;
+
   return (
-    <div>
-      {/* <p className="text-xs pl-5 text-gray-600">{jp}</p> */}
+    <div className="md:pb-6">
+      <div className="flex items-center gap-2">
+        <span
+          className={`w-2.5 h-2.5 rounded-full ${
+            sub ? "bg-[#4F7A4A]" : "bg-[#C4633F]"
+          }`}
+        />
+        <p className="text-ms md:text-sm font-medium text-text-sub tracking-wider">
+          {displaySubtitle}
+        </p>
+      </div>
       <div className="flex items-center space-x-4">
-        <div className="relative">
-          <h2
-            className={`relative z-10 font-raleway whitespace-nowrap pl-4 font-medium text-gray-800 ${
-              sub
-                ? "text-xl md:text-2xl pt-0 md:pt-1"
-                : "text-2xl md:text-3xl pt-0 md:pt-[0.8px]"
-            }`}
-          >
-            {title}
-          </h2>
-          <div
-            className={`absolute top-0 left-0 md:-left-1 w-7 h-7 md:w-9 md:h-9 rounded-full z-0 ${
-              sub ? "bg-secondary-light" : "bg-primary-light"
-            }`}
-          ></div>
-        </div>
-        <div className="flex-1 h-[0.8px] bg-border" />
+        <h2
+          className={`whitespace-nowrap font-bold tracking-wide  ${
+            sub ? "text-4xl md:text-5xl" : "text-4xl md:text-5xl"
+          }`}
+        >
+          {displayText}
+        </h2>
+        {/* <div className="flex-1 h-[1px] bg-[#A89E8D]" /> */}
       </div>
     </div>
   );

@@ -1,16 +1,17 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext.jsx";
 import "./index.css";
 import { RootLayout } from "./layouts/root-layout.jsx";
 import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile.jsx";
 import EventManagement from "./pages/works/EventManagement.jsx";
+import WebDesign from "./pages/works/Fill.jsx";
 import GoogleMapsAlbum from "./pages/works/Googlemaps.jsx";
 import Mahjong from "./pages/works/Mahjong.jsx";
-import Quiz from "./pages/works/Quiz.jsx";
 import MiningProject from "./pages/works/MiningProject.jsx";
-import WebDesign from "./pages/works/WebDesign.jsx";
+import Quiz from "./pages/works/Quiz.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
       { path: "works/mahjong", element: <Mahjong /> },
       { path: "works/quiz", element: <Quiz /> },
       { path: "works/mining-project", element: <MiningProject /> },
-      { path: "works/web-design", element: <WebDesign /> },
+      { path: "works/fill", element: <WebDesign /> },
     ],
   },
 ]);
@@ -33,7 +34,9 @@ const rootElement = document.getElementById("root");
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>
+      <LanguageProvider>
+        <RouterProvider router={router} />
+      </LanguageProvider>
+    </StrictMode>,
   );
 }

@@ -1,6 +1,6 @@
 const SkillItem = ({ icon, label, size = "w-10 h-10", cover = false }) => (
   <li className="flex flex-col items-center gap-2">
-    <div className="w-20 h-20 border-[0.5px] border-border rounded-md bg-white flex items-center justify-center overflow-hidden">
+    <div className="w-20 h-20 rounded-full bg-[#f7f3e9] flex items-center justify-center overflow-hidden">
       <img
         src={icon}
         alt={label}

@@ -61,6 +61,7 @@ import { Link } from "react-router-dom";
 function WorkCard({
   imageSrc,
   title,
+  date,
   description,
   tags = [],
   reverse = false,
@@ -89,27 +90,23 @@ function WorkCard({
           />
         </div>
 
-        <div
-          className={`md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200 ${
-            reverse ? "md:pl-14" : "md:pr-14"
-          }`}
-        >
+        <div className="md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-3">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="text-md text-text-sub">{description}</p>
+            <p className="pt-3 text-text-sub">{description}</p>
           </div>
-
-          <ul className="flex gap-2 text-sm flex-wrap">
+          <ul className="flex gap-2 pt-3 flex-wrap">
             {tags.map((tag, index) => (
               <li
                 key={index}
                 className="flex items-center justify-center px-3 py-1.5 
                 bg-[#F0EEEA] border border-[#F0EEEA] rounded-full"
               >
-                <span className="text-xs">{tag}</span>
+                <span className="text-sm">{tag}</span>
               </li>
             ))}
           </ul>
+          <p className="pt-2 text-base">{date}</p>
         </div>
       </div>
     </Link>

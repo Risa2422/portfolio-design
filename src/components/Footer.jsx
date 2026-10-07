@@ -1,10 +1,8 @@
-import React from "react";
-
 function Footer() {
   return (
-    <footer className="h-8 bg-[#C9B68A] flex items-center justify-center">
-      <p className="text-[10px] text-text-sub">
-        All Rights Reserved 2025 ©︎ Risa Yamamoto
+    <footer className="flex items-center justify-center py-8">
+      <p className="text-[13px] font-medium">
+        All Rights Reserved 2026 ©︎ Risa Yamamoto
       </p>
     </footer>
   );
