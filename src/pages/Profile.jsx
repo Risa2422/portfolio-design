@@ -8,7 +8,7 @@ import skillData from "../data/skillData";
 
 const content = {
   ja: {
-    bio: "エンジニア経験を経て「継続的に愛されるプロダクトには優れたUI/UXが不可欠」と実感し、UI/UXデザイナーへ転向しました。\n\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
+    bio: "エンジニア経験を経て「継続的に愛されるプロダクトには優れたUI/UXが不可欠」と実感し、UI/UXデザイナーへ転向しました。\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -213,8 +213,8 @@ const Profile = () => {
             <section className="">
               <SectionTitle
                 title="Education"
-                subtitle="学歴"
-                jpSubtitle="Learning History"
+                subtitle="Learning History"
+                jpSubtitle="学歴"
                 sub
                 jp="Education"
               />
