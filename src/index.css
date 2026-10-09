@@ -8,6 +8,12 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* トラックパッドの横スワイプでブラウザの「戻る」が誤発火しないようにする */
+html,
+body {
+  overscroll-behavior-x: none;
+}
+
 body {
   @apply bg-background text-text font-sans;
 }

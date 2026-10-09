@@ -37,8 +37,10 @@ function Improvement2({ before, hearing, after }) {
           </div>
         </div>
         <ArrowDivider />
-        <div className="space-y-6 py-6">
-          <h5 className="text-xl font-medium">{hearing.heading}</h5>
+        <div className="space-y-10 py-6">
+          <h5 className="text-xl md:text-2xl text-center font-semibold">
+            {hearing.heading}
+          </h5>
           <div className="flex flex-col gap-6 px-12">
             {hearing.quotes.map((quote, index) => (
               <p key={index} className="flex text-lg gap-1 italic ">
@@ -61,7 +63,7 @@ function Improvement2({ before, hearing, after }) {
               alt={after.alt}
             />
             <div className="space-y-4">
-              <p className="text-lg font-medium">【{before.text}】</p>
+              <p className="text-lg font-medium">【{after.text}】</p>
               <ul className="list-disc list-outside space-y-3 pl-7">
                 {after.items.map((item, index) => (
                   <li key={index}>
@@ -72,7 +74,9 @@ function Improvement2({ before, hearing, after }) {
               </ul>
             </div>
           </div>
-          <DetailBox heading={after.heading} items={after.items} />
+          {after.details && (
+            <DetailBox heading={after.heading} items={after.details} />
+          )}
         </div>
       </div>
     </div>

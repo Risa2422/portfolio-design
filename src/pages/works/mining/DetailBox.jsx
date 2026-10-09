@@ -1,10 +1,10 @@
 function DetailBox({ heading, items }) {
   return (
-    <div className="space-y-2 py-3 px-4 border border-gray-600 rounded-lg w-full">
+    <div className="space-y-2 py-3 px-4 border border-gray-400 rounded-lg w-full">
       <div className="flex items-center gap-1">
         <h3 className="text-lg font-bold">{heading}</h3>
       </div>
-      <ul className="space-y-4 pl-1">
+      <ul className="space-y-3 pl-1">
         {items.map((item, index) => (
           <li key={index} className="flex gap-2">
             <span

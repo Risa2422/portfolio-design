@@ -2,12 +2,12 @@ const workData = [
   {
     imageSrc: "/mining-thumbnail.png",
     title: {
-      ja: "プロジェクト管理ツール(鉱山業界向け)",
+      ja: "プログラム管理ツール (鉱山業界向け)",
       en: "Project Management Tool for Mining Industry",
     },
     date: "2025 - 2026",
     description: {
-      ja: "ユーザーフローの再設計から新規機能のUI/UXデザイン、MVPプロトタイプの作成までを、一人デザイナーとして担当しました。",
+      ja: "既存ユーザーフローの再設計から新規機能のUI/UXデザインまで、デザイン工程全体を主導しました。",
       en: "As the sole designer, I handled everything from redesigning user flows to designing new feature UI/UX and creating MVP prototypes.",
     },
     tags: {
