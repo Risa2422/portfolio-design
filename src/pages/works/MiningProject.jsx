@@ -194,14 +194,14 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "Project Overview",
     ProductOverviewText:
-      "A project management platform for program managers in Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, tracking, and reporting, which tend to become complex, into one place to streamline operations.",
+      "A project management platform for Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, tracking, and reporting, which tend to become complex, into one place to streamline operations.",
     ProductOverviewApproach:
       "Considering that the industry tends to be slow to adopt IT tools, I pursued a stress-free UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "Selected designs of key screens and features",
     productFlowTitle: "Product Development Process",
     productFlowText:
-      "As this was MVP development, we ran short cycles from interviews through release. I was responsible for feature definition through design creation, and also collaborated on and supported the other phases.",
+      "The team consisted of five engineers, one PM, two operations members, and one designer (myself). Everyone was involved in every phase from interviews through release, and we ran short cycles as MVP development.\n\nI led the work from feature definition through design creation, while also collaborating on and supporting the phases before and after. To keep everyone aligned and the project moving smoothly in a multinational team, I placed strong emphasis on close communication.",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
     improvements: [
@@ -220,7 +220,7 @@ const content = {
           items: [
             "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
             'The "Create Project" and "Create Program" screens were separated, making it difficult to understand the relationship and structure between the features.',
-            "Because of page transitions, users couldn't refer to existing project (program) names while entering information.",
+            "Because of page transitions, users couldn't refer to existing project (program) names while entering a new project name.",
           ],
         },
         after: {
@@ -241,20 +241,20 @@ const content = {
         summary:
           "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
         description:
-          "In the early stage of the product, AI automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
+          "In the early stage of the product, the system automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
         before: {
           label: "Before",
           image: "/mining/cost-management-before.png",
           alt: "Cost management screen before the change",
           imageCaption: "Budget Creation Screen",
-          text: "Key Features of the Budget Creation Screen",
+          text: "Key Features of the Budget Creation Screen - Before",
           itemTitles: [
             "Automatic generation of budget items and costs",
             "Review and edit suggestions",
             "Budget creation and cost tracking in one place",
           ],
           items: [
-            "AI automatically generated the categories and estimated costs needed for program planning, such as workers' meals and accommodation.",
+            "The system automatically generated the categories and estimated costs needed for program planning, such as workers' meals and accommodation.",
             "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
             "Designed to cover not only initial budget planning but also tracking and managing actual costs after the project launched.",
           ],
@@ -263,9 +263,9 @@ const content = {
         hearing: {
           heading: "Feedback from the Client",
           quotes: [
-            "Mining projects involve many site-specific factors that AI can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
+            "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
             "We currently manage budgets in Excel, but errors from complex formulas and manual input are a constant problem.",
-            "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve probably won't stick.",
+            "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
           ],
         },
         after: {
@@ -273,28 +273,29 @@ const content = {
           image: "/mining/cost-management-after.png",
           alt: "Cost management screen after the change",
           heading: "Improvements",
-          text: "Key Features of the Budget Creation Screen",
+          text: "Key Features of the Budget Creation Screen - After",
           itemTitles: [
-            "Two-area layout for data entry",
             "Minimizing the learning curve",
+            "Two-area layout for data entry",
           ],
           items: [
-            'Placed basic information such as "Category" and "Amount" on the left side of the table and consolidated "daily quantity" inputs in the right area. The basic information area can be collapsed to maximize the quantity input area, making large-volume data entry more efficient.',
             "Supports direct cell editing, Undo/Redo, comments, filtering, and file export, providing the same familiar feel as Excel.",
+            'Placed basic information such as "Category" and "Amount" on the left side of the table and consolidated "daily quantity" inputs in the right area. The basic information area can be collapsed, making large-volume data entry more efficient.',
           ],
           details: [
-            "Shifted away from relying on automatic generation so that users can flexibly create and edit budget items themselves, reflecting on-site realities and the know-how of veteran staff.",
-            "By carrying over the familiar feel of Excel, which they already use, users who aren't comfortable with IT tools can switch over without a steep learning curve.",
+            'Rather than a minimal, hover-based table UI like Notion or Jira, I designed the icons for actions such as edit and delete to be always visible to suit the target users, prioritizing "intuitive, hard-to-get-lost operation" over "visual simplicity."',
+            "Moved the reporting feature, which had been on a separate screen, into a tab at the top of the screen so users can review information and work with data on a single screen.",
+            'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen.',
           ],
         },
       },
       {
         id: 3,
-        title: "Designing a Budget Simulation Feature",
+        title: "Adding a Budget Simulation Feature",
         summary:
           "Integrated a new feature while preserving the existing screen structure and interaction patterns.",
         description:
-          "Based on a request from the client, we decided to add a new feature for simulating budgets.",
+          "Based on a request from the client, we decided to add a budget simulation feature.",
         steps: [
           {
             badgeClass: "bg-[#746B60]",
@@ -340,16 +341,16 @@ const content = {
     aiUsageText: [
       "To prevent rework during development, I used generative AI from the early design stage to identify edge cases. This created a system for catching gaps that would often only surface right before implementation, which improved development efficiency.",
       "To select the best UI in a short time, I used generative AI to quickly create and test multiple design patterns. Being able to compare high-fidelity UIs from an early stage allowed us to make decisions at a level of detail close to the final implementation.",
-      'In client reviews, even when we had reached agreement on static prototypes, gaps often emerged between expectations and the actual feel after implementation. To address this, I introduced the AI tool "Alloy" before development began, creating and sharing interactive prototypes that the client could try out on real devices. This helped prevent rework caused by misaligned expectations.',
+      'In client reviews, even when we had reached agreement on static prototypes, gaps often emerged between expectations and the actual feel after implementation. To address this, I introduced the AI tool "Alloy" before development began, creating and sharing prototypes that the client could interact with directly. Compared to before, this helped prevent rework caused by misaligned expectations after implementation.',
     ],
     learnings: "Learnings",
     learningsText: [
-      "When I first joined the project, I found it challenging to identify latent issues the client themselves weren't aware of, as well as the solutions that would truly address them. However, by consistently digging deeper into problems and repeatedly asking \"Why?\", I believe I was ultimately able to contribute to a product definition and UI/UX design that captured users' true needs.",
+      "Working as the sole designer in an environment where I wasn't a native speaker, I let go of perfectionism and made a point of involving the team from an early stage. By actively seeking feedback while work was still unfinished, I kept rework to a minimum and delivered results quickly.",
+      "I learned firsthand how difficult it is to uncover latent issues the client themselves aren't aware of, and how important a thorough understanding of their business is for doing so. Going forward, I want to keep not just accepting requests as given, but engaging in dialogue with my own hypotheses to get to the root of the problem.",
     ],
     futureOutlook: "Future Outlook",
-    futureOutlookText: [
-      "Based on usage data and user feedback after release, I hope to verify where friction and burden still remain in day-to-day work, and turn those insights into continuous UI/UX improvements.",
-    ],
+    futureOutlookText:
+      "In design reviews, there were times when I couldn't fully convince the whole team of my intent and reasoning. Going forward, I want to not only improve my visual and UX skills but also sharpen my ability to explain \"why this design\" logically and structurally, so that I can become a designer who leads projects more effectively.",
     home: "Home",
   },
 };
