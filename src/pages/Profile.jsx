@@ -46,7 +46,7 @@ const content = {
     education: [
       {
         title: "Cornerstone International Community College of Canada",
-        date: "2024年 - 2026年",
+        date: "2024年 - 2025年",
         position: "Web開発専攻",
         place: "カナダ",
         description:
@@ -99,7 +99,7 @@ const content = {
     education: [
       {
         title: "Cornerstone International Community College of Canada",
-        date: "2024 - 2026",
+        date: "2024 - 2025",
         position: "Web Development",
         place: "Canada",
         description:
@@ -163,7 +163,7 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[10vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
+      <section className="flex-1 px-[5vw] sm:px-[12vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
         <div>
           <div>
             <SectionTitle
