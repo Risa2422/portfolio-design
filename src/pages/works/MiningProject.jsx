@@ -24,14 +24,14 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロジェクト概要",
     ProductOverviewText:
-      "カナダの鉱山採掘業界を対象としたプロジェクト管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
+      "カナダの鉱山採掘業界を対象にしたプログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
-      "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったストレスフリーなUI/UXデザインを追求しました。",
+      "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "主要画面・機能のデザイン抜粋",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
-      "チーム構成は、エンジニア5名、PM1名、オペレーション2名、デザイナー（自身）1名で、全員がヒアリングからリリースまでの全工程に関わる体制のもと、MVP開発として短いサイクルで運用しました。\n\n私は機能定義からデザイン作成までを主導しつつ、前後の工程にも協働・サポートとして関わりました。多国籍なチーム環境においても認識を揃えてスムーズに進行できるよう、密なコミュニケーションを重視してプロジェクトを推進しました。",
+      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。プロダクトが一定程度立ち上がっている状態での参画でしたが、全員がヒアリングからリリースまで関わる体制のもと、MVP開発として短サイクルで運用しました。機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポート。多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
     improvements: [
@@ -41,9 +41,9 @@ const content = {
         summary:
           "不要な画面遷移を廃止し、最速で予算作成へ到達できる入力体験を目指しました。",
         description:
-          "最もユーザーニーズが高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。(１つのプロジェクト配下に、複数のプログラムを紐づけて作成・管理できる構造になっています。)",
+          "最も利用頻度が高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。(１つのプロジェクト配下に、複数のプログラムを紐づけて作成・管理できる構造でした。)",
         before: {
-          label: "改善前",
+          label: "【改善前】プロジェクト作成から予算作成までのユーザーフロー",
           image: "/mining/creation-flow-before.svg",
           alt: "改善前のプログラム作成フロー",
           heading: "課題",
@@ -54,12 +54,12 @@ const content = {
           ],
         },
         after: {
-          label: "改善後",
+          label: "【改善後】予算作成までのユーザーフロー",
           image: "/mining/creation-flow-after.svg",
           alt: "変更後のプログラム作成フロー",
           heading: "改善内容",
           items: [
-            "ヒアリングを通して、必ずしも「１プロジェクト = 複数プログラム」ではないことが判明したため、プログラム単体での作成を選択可能にし、プログラム作成時後はダイレクトに予算作成画面へ遷移できる設計に変更しました。",
+            "クライアントへのヒアリングを通して、必ずしも「１プロジェクト = 複数プログラム」ではないことが判明したため、これまでは必須だったプロジェクト作成のプロセスをスキップし、プログラム単体での作成を選択可能にしました。\nこれにより、プログラム作成後はダイレクトに予算作成画面へ遷移できる設計に変更しました。",
             "画面遷移の代わりにモーダルUIを採用することで、元のコンテキストを維持したまま入力を完結できるフローへ改善しました。",
             "入力必須項目をプロジェクト(プログラム)名のみに絞り込むことで、最速で予算作成を開始できるようにしました。",
           ],
@@ -67,17 +67,17 @@ const content = {
       },
       {
         id: 2,
-        title: "学習コストをかけない業務効率化",
+        title: "ユーザーの学習コストを極力抑えたUI設計",
         summary:
           "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
         description:
-          "プロダクト初期段階では、ユーザーが事前入力した条件（プログラム期間や採掘場所など）に基づき、システムが自動で予算項目の作成・試算を行う仕様となっていました。",
+          "参入時点の仕様では、プロジェクト（プログラム）作成時に設定されたプログラム期間や採掘場所などの条件に基づき、システム側で予算項目の作成および試算が自動で行われる仕組みになっていました。",
         before: {
-          label: "改善前",
+          label: "【改善前】予算作成画面",
           image: "/mining/cost-management-before.png",
           alt: "改善前のコスト管理画面",
           imageCaption: "予算作成画面",
-          text: "予算作成画面の特徴 - 改善前",
+          text: "予算作成画面の特徴",
           itemTitles: [
             "予算項目およびコストの自動算出",
             "提案内容の確認・編集",
@@ -88,7 +88,7 @@ const content = {
             "AIが提示した予算項目数や算出金額を、ユーザーが確認・修正",
             "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
           ],
-          note: "(※実際の画面では、上部に「予算作成」と「トラッキング」を切り替えるタブメニューが配置されていました)",
+          note: "(※実際の画面では、上部に「予算作成」と「予算トラッキング」を切り替えるタブメニューが配置されていました)",
         },
         hearing: {
           heading: "クライアントからのフィードバック",
@@ -99,11 +99,11 @@ const content = {
           ],
         },
         after: {
-          label: "改善後",
+          label: "【改善後】予算作成画面",
           image: "/mining/cost-management-after.png",
           alt: "改善後のコスト管理画面",
           heading: "改善内容",
-          text: "予算作成画面の特徴 - 改善後",
+          text: "予算作成画面の特徴",
           itemTitles: ["学習コストの最小化", "2エリア構成のデータ入力"],
           items: [
             "セルの直接編集やUndo/Redo、コメント、フィルタリング、ファイル出力（Export）などに対応しており、使い慣れたExcelと同等の操作感を提供",
@@ -122,13 +122,13 @@ const content = {
         summary:
           "既存の画面構成や操作感を維持したまま、新機能を組み込みました。",
         description:
-          "クライアントからの要望を受け、予算の試算機能を追加することになりました。",
+          "クライアントからの要望を受け、予算の試算機能を追加することになりました。すでに主要なUI構造が確定している段階であったため、既存のUIコンポーネントやレイアウトの整合性を壊すことなく、新機能を自然に組み込む設計を行いました。",
         steps: [
           {
             badgeClass: "bg-[#746B60]",
             label: "1. ヒアリング",
             intro:
-              "クライアントヒアリングで、以下の課題とニーズが明確になりました。",
+              "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
             items: [
               "現状は別のExcelファイルで試算を行っており、作成・転記の手間が発生している",
               "試算を行う頻度が高く、業務における重要度が高い",
@@ -152,7 +152,7 @@ const content = {
               "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化",
               "新規試算作成時は、適用中の予算データを初期値として自動継承",
               "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化",
-              "適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能",
+              "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能",
             ],
           },
         ],
@@ -201,7 +201,7 @@ const content = {
     productOverviewImageCaption: "Selected designs of key screens and features",
     productFlowTitle: "Product Development Process",
     productFlowText:
-      "The team consisted of five engineers, one PM, two operations members, and one designer (myself). Everyone was involved in every phase from interviews through release, and we ran short cycles as MVP development.\n\nI led the work from feature definition through design creation, while also collaborating on and supporting the phases before and after. To keep everyone aligned and the project moving smoothly in a multinational team, I placed strong emphasis on close communication.",
+      "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
     improvements: [
@@ -350,7 +350,7 @@ const content = {
     ],
     futureOutlook: "Future Outlook",
     futureOutlookText:
-      "In design reviews, there were times when I couldn't fully convince the whole team of my intent and reasoning. Going forward, I want to not only improve my visual and UX skills but also sharpen my ability to explain \"why this design\" logically and structurally, so that I can become a designer who leads projects more effectively.",
+      'In design reviews, there were times when I couldn\'t fully convince the whole team of my intent and reasoning. Going forward, I want to not only improve my visual and UX skills but also sharpen my ability to explain "why this design" logically and structurally, so that I can become a designer who leads projects more effectively.',
     home: "Home",
   },
 };

@@ -7,7 +7,7 @@ const workData = [
     },
     date: "2025 - 2026",
     description: {
-      ja: "既存ユーザーフローの再設計から新規機能のUI/UXデザインまで、デザイン工程全体を主導しました。",
+      ja: "カナダのスタートアップにて、既存ユーザーフローの再設計から新規機能のUI/UXデザインまで、デザインプロセス全体を主導しました。",
       en: "Led the entire design process, from redesigning existing user flows to designing the UI/UX for new features.",
     },
     tags: {
