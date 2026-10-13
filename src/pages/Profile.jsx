@@ -163,7 +163,7 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[12vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
+      <section className="flex-1 px-[5vw] sm:px-[8vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
         <div>
           <div>
             <SectionTitle
@@ -229,8 +229,8 @@ const Profile = () => {
                 jp="Skills"
               />
               <div className="mt-4 space-y-4">
-                <div className="flex justify-center md:justify-start">
-                  <ul className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-8 md:gap-8">
+                <div className="w-full">
+                  <ul className="mx-auto grid w-full max-w-[1100px] grid-cols-4 sm:grid-cols-6 lg:grid-cols-11 gap-x-3 gap-y-6 sm:gap-x-4 lg:gap-x-3">
                     {skillData.map((skill) => (
                       <SkillItem
                         key={skill.label}

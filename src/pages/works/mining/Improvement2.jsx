@@ -22,7 +22,7 @@ function Improvement2({ before, hearing, after }) {
                 className="object-contain"
               />
             </div>
-            <div className="md:w-1/2 space-y-4 pt-7">
+            <div className="md:w-1/2 space-y-8 pt-7">
               <p className="text-lg font-medium">【{before.text}】</p>
               <ul className="list-disc list-outside space-y-3 pl-5">
                 {before.items.map((item, index) => (

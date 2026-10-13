@@ -59,7 +59,7 @@ const Home = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="px-[5vw] sm:px-[12vw]">
+      <section className="px-[5vw] sm:px-[8vw]">
         <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[70px] h-[480px] md:h-[640px]">
           {/* <img
             src="/circle-yellow.png"

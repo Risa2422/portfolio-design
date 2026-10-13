@@ -158,7 +158,7 @@ const GoogleMapsAlbum = () => {
       <section className="space-y-10 md:space-y-4">
         <Arrow />
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/googlemaps-album/thumbnail.png", language)}
@@ -175,7 +175,7 @@ const GoogleMapsAlbum = () => {
           </div>
         </div>
         {/* Overview Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.overviewTitle}
           </h2>
@@ -184,7 +184,7 @@ const GoogleMapsAlbum = () => {
           </p>
         </div>
         {/* Background Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.backgroundTitle}
           </h2>
@@ -194,7 +194,7 @@ const GoogleMapsAlbum = () => {
         </div>
 
         {/* Problem Identification Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.problemTitle}
           </h2>
@@ -242,7 +242,7 @@ const GoogleMapsAlbum = () => {
         {/* UI Design Section */}
         <div
           id="final-ui"
-          className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background"
+          className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background"
         >
           <h2 className="text-2xl text-center text-accent font-medium">
             {t.finalUiTitle}
@@ -333,7 +333,7 @@ const GoogleMapsAlbum = () => {
           </div>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="text-2xl text-center text-accent font-medium">
             {t.learningsTitle}
           </h2>

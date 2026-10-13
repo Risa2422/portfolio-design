@@ -21,7 +21,7 @@
 //     <FadeInPageWrapper>
 //       <section className="space-y-10 md:space-y-4">
 //         <Arrow />
-//         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
+//         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
 //           <div className="md:w-1/2 md:h-[300px] flex-1 mb-4 md:mb-20">
 //             <img
 //               src="/mahjong/thumbnail.png"
@@ -41,7 +41,7 @@
 //             <InfoList items={infoItems} />
 //           </div>
 //         </div>
-//         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background-secondary">
+//         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background-secondary">
 //           <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
 //           <p className="text-sm md:text-base leading-relaxed text-gray-700">
 //             既存の
@@ -58,7 +58,7 @@
 //             より使いやすいアプリを開発したいとのことで、既存アプリの基本的な機能は引き継ぎつつもより直感的なUIデザインの制作に力を入れました。
 //           </p>
 //         </div>
-//         <div className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background">
+//         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-72 bg-background">
 //           <h2 className="text-lg md:text-xl text-accent font-medium">
 //             課題の洗い出し
 //           </h2>
@@ -125,7 +125,7 @@
 //         </div>
 //         <div
 //           id="final-ui"
-//           className="flex flex-col items-center gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-72 bg-background-secondary overflow-hidden scroll-mt-24"
+//           className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-72 bg-background-secondary overflow-hidden scroll-mt-24"
 //         >
 //           <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
 //           <div className="flex flex-col w-full gap-2">
@@ -305,7 +305,7 @@
 //             </div>
 //           </div>
 //         </div>
-//         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-10 min-h-56 bg-background">
+//         <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background">
 //           <h2 className="text-lg md:text-xl text-center text-accent font-medium">
 //             学び
 //           </h2>
@@ -453,7 +453,7 @@ const Mahjong = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-16 lg:px-32 xl:px-[218px]"
+          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
@@ -462,7 +462,7 @@ const Mahjong = () => {
             <p className="text-sm">{t.homeLabel}</p>
           </div>
         </Link>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/mahjong/thumbnail.png")}
@@ -480,7 +480,7 @@ const Mahjong = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
@@ -489,7 +489,7 @@ const Mahjong = () => {
             {t.overviewText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.problemTitle}
@@ -568,7 +568,7 @@ const Mahjong = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
+          className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
         >
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
@@ -759,7 +759,7 @@ const Mahjong = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learningsTitle}

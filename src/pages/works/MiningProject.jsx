@@ -18,6 +18,10 @@ const content = {
       { title: "プロジェクト区分", value: "クライアントワーク" },
       { title: "期間", value: "8ヶ月（2025年11月 - 2026年6月）" },
       { title: "担当領域", value: "主要機能設計・既存画面のUI/UX改善" },
+      {
+        title: "チーム構成",
+        value: "エンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）",
+      },
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
     title: "プログラム管理ツール (鉱山業界向け)",
@@ -31,9 +35,9 @@ const content = {
     productOverviewImageCaption: "主要画面・機能のデザイン抜粋",
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText:
-      "プロジェクト発足後、開発が先行していたものの、画面構造の整理やUIの一貫性が不足しており、ユーザーが迷わず運用できる品質に達していないという課題がありました。さらに、「そもそもユーザーが本当に必要としているツールになっているか」という根本的な前提の再定義から行う必要がある状態でした。",
+      "私が参画した時点では、すでにデザインの作成や開発実装が進行中でした。しかし、既存の画面構造の整理やUIの一貫性が不足しており、ユーザーが迷わず運用できる品質に達していませんでした。さらに、開発主導で進行していた背景もあり、「そもそもユーザーが本当に必要としているツールになっているか」という根本的な前提やUXの再定義から行う必要がある状態でした。",
     roleText:
-      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画。UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
+      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
       "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わる体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。\nまた、多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
@@ -68,7 +72,7 @@ const content = {
           items: [
             "クライアントへのヒアリングを通して、必ずしも「１プロジェクト = 複数プログラム」ではないことが判明したため、これまでは必須だったプロジェクト作成のプロセスをスキップし、プログラム単体での作成を選択可能にしました。\nこれにより、プログラム作成後はダイレクトに予算作成画面へ遷移できる設計に変更しました。",
             "画面遷移の代わりにモーダルUIを採用することで、元のコンテキストを維持したまま入力を完結できるフローへ改善しました。",
-            "入力必須項目をプロジェクト(プログラム)名のみに絞り込むことで、最速で予算作成を開始できるようにしました。",
+            "モーダルの入力必須項目をプロジェクト(プログラム)名のみに絞り込むことで、最速で予算作成を開始できるようにしました。",
           ],
         },
       },
@@ -195,6 +199,10 @@ const content = {
         title: "My Role",
         value: "Core Feature Design / UI/UX Improvements to Existing Screens",
       },
+      {
+        title: "Team Structure",
+        value: "5 Engineers, 1 PM, 2 Operations, 1 Designer (Myself)",
+      },
       { title: "Tools Used", value: "Figma, ChatGPT, Alloy" },
     ],
     title: "Program Management Tool (for the Mining Industry)",
@@ -208,10 +216,10 @@ const content = {
     productOverviewImageCaption: "Selected designs of key screens and features",
     backgroundTitle: "Project Background and Challenges",
     backgroundText:
-      "Although development had moved ahead after the project launched, the information architecture for complex B2B workflows was not well organized and the UI lacked consistency. As a result, the product had not yet reached release-ready quality, where users (on-site workers) could operate it without confusion.",
+      "When I joined the project, initial UI designs and front-end development were already underway. However, the screen architecture lacked clear organization and UI consistency, preventing the product from meeting standard usability and release quality. Additionally, because feature development had taken precedence, we needed to step back and redefine the core UX assumptions—questioning whether the tool truly met real user needs.",
     roleTitle: "My Role & Mission",
     roleText:
-      "To turn this situation around, I joined the project midway as a UI/UX designer. I led the effort to raise the product to release-ready quality by redefining the UX, optimizing the information architecture, and overhauling the UI with a design system.",
+      "To resolve these challenges, I stepped in as a UI/UX Designer to lead the quality elevation for the official release. I drove the end-to-end process, including redefining the UX, optimizing the information architecture, and establishing a scalable design system.",
     productFlowTitle: "Product Development Process",
     productFlowText:
       "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
@@ -396,7 +404,7 @@ const MiningProject = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-16 lg:px-32 xl:px-[218px]"
+          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
@@ -406,12 +414,12 @@ const MiningProject = () => {
           </div>
         </Link>
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-16 lg:px-32 xl:px-56 md:pt-12">
-          <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+          <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px] self-center">
             <ZoomableImage
               src={localizeImage(t.thumbnail)}
               alt="Mining Project Thumbnail"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain "
             />
           </div>
           <div className="space-y-4 flex-1">
@@ -423,7 +431,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* ProductOverview Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
@@ -448,7 +456,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Project Background Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.backgroundTitle}
@@ -466,7 +474,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Product Development Flow Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
@@ -483,7 +491,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
@@ -500,7 +508,7 @@ const MiningProject = () => {
                 isOpen={openSections[improvement.id]}
                 onToggle={() => toggleSection(improvement.id)}
               >
-                <p className="my-6">{improvement.description}</p>
+                <p className="my-8">{improvement.description}</p>
                 {improvement.id === 1 && (
                   <Improvement1
                     before={improvement.before}
@@ -523,7 +531,7 @@ const MiningProject = () => {
         </div>
 
         {/* AI Usage Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
@@ -542,7 +550,7 @@ const MiningProject = () => {
           </ul>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learnings}
@@ -558,7 +566,7 @@ const MiningProject = () => {
           </ul>
         </div>
         {/* Future Outlook Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.futureOutlook}

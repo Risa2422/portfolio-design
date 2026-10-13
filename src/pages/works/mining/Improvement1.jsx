@@ -10,7 +10,7 @@ function FlowStep({ label, badgeClass, image, alt, heading, items }) {
   return (
     <div className="space-y-4">
       <Badge colorClass={badgeClass}>{label}</Badge>
-      <div className="space-y-6">
+      <div className="space-y-8">
         <ZoomableImage
           src={localizeImage(image, language)}
           className="w-full h-full object-contain"
@@ -24,7 +24,7 @@ function FlowStep({ label, badgeClass, image, alt, heading, items }) {
 
 function Improvement1({ before, after }) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <FlowStep {...before} badgeClass="bg-[#746B60]" />
       <ArrowDivider />
       <FlowStep {...after} badgeClass="bg-[#4A5742]" />
