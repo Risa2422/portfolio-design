@@ -22,17 +22,22 @@ const content = {
     ],
     title: "プログラム管理ツール (鉱山業界向け)",
     thumbnail: "/mining/thumbnail.png",
-    ProductOverview: "プロジェクト概要",
+    ProductOverview: "プロダクト概要",
     ProductOverviewText:
       "カナダの鉱山採掘業界を対象にしたプログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "主要画面・機能のデザイン抜粋",
+    backgroundTitle: "プロジェクトの背景と課題",
+    backgroundText:
+      "プロジェクト発足後、開発が先行していたものの、画面構造の整理やUIの一貫性が不足しており、ユーザーが迷わず運用できる品質に達していないという課題がありました。さらに、「そもそもユーザーが本当に必要としているツールになっているか」という根本的な前提の再定義から行う必要がある状態でした。",
+    roleText:
+      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画。UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "プロダクト開発の流れ",
     productFlowText:
-      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。プロダクトが一定程度立ち上がっている状態での参画でしたが、全員がヒアリングからリリースまで関わる体制のもと、MVP開発として短サイクルで運用しました。機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポート。多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
-    productFlowImage: "/mining/product-flow.svg",
+      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わる体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。\nまた、多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
+    productFlowImage: "/mining/product-flow.png",
     improvementsTitle: "改善事例",
     improvementsText:
       "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例をご紹介します。",
@@ -194,17 +199,23 @@ const content = {
     ],
     title: "Program Management Tool (for the Mining Industry)",
     thumbnail: "/mining/thumbnail.png",
-    ProductOverview: "Project Overview",
+    ProductOverview: "Product Overview",
     ProductOverviewText:
       "A project management platform for Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, tracking, and reporting, which tend to become complex, into one place to streamline operations.",
     ProductOverviewApproach:
       "Considering that the industry tends to be slow to adopt IT tools, I pursued a stress-free UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "Selected designs of key screens and features",
+    backgroundTitle: "Project Background and Challenges",
+    backgroundText:
+      "Although development had moved ahead after the project launched, the information architecture for complex B2B workflows was not well organized and the UI lacked consistency. As a result, the product had not yet reached release-ready quality, where users (on-site workers) could operate it without confusion.",
+    roleTitle: "My Role & Mission",
+    roleText:
+      "To turn this situation around, I joined the project midway as a UI/UX designer. I led the effort to raise the product to release-ready quality by redefining the UX, optimizing the information architecture, and overhauling the UI with a design system.",
     productFlowTitle: "Product Development Process",
     productFlowText:
       "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
-    productFlowImage: "/mining/product-flow.svg",
+    productFlowImage: "/mining/product-flow.png",
     improvementsTitle: "Improvement Case Studies",
     improvementsText:
       "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are the UI/UX improvements I focused on most during my time on the project.",
@@ -436,8 +447,26 @@ const MiningProject = () => {
             </div>
           </div>
         </div>
-        {/* Product Development Flow Section */}
+        {/* Project Background Section */}
         <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
+            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+            {t.backgroundTitle}
+          </h2>
+          <p className="text-base leading-relaxed text-gray-700">
+            {t.backgroundText}
+          </p>
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-[#3B2707]">
+              {t.roleTitle}
+            </h3>
+            <p className="text-base leading-relaxed text-gray-700">
+              {t.roleText}
+            </p>
+          </div>
+        </div>
+        {/* Product Development Flow Section */}
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
@@ -454,7 +483,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
@@ -494,7 +523,7 @@ const MiningProject = () => {
         </div>
 
         {/* AI Usage Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
@@ -513,7 +542,7 @@ const MiningProject = () => {
           </ul>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.learnings}
@@ -529,7 +558,7 @@ const MiningProject = () => {
           </ul>
         </div>
         {/* Future Outlook Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20">
+        <div className="flex flex-col gap-6 px-6 md:px-16 lg:px-32 xl:px-56 py-20 bg-background-secondary">
           <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.futureOutlook}
