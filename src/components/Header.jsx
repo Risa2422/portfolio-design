@@ -38,7 +38,7 @@ function Header() {
         ${isScrolled ? "backdrop-blur shadow-sm" : ""}
       `}
     >
-      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[12vw]">
+      <div className="flex justify-between items-center h-[92px] sm:h-20 px-[5vw] md:px-[12vw]">
         <Link to="/" className="text-xl font-bold">
           <img src="logo.svg" alt="logo" className="w-6 h-6 object-contain" />
         </Link>

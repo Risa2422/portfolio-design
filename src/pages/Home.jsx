@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
+import TypingText from "../components/TypingText";
 import WorkCard from "../components/WorkCard";
 import { useLanguage } from "../context/LanguageContext";
 import workData from "../data/workData";
@@ -27,6 +28,12 @@ const Home = () => {
   const { language } = useLanguage();
   const t = content[language];
   const [copied, setCopied] = useState(false);
+  const worksRef = useRef(null);
+  const [typingDone, setTypingDone] = useState(false);
+
+  const scrollToWorks = () => {
+    worksRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const handleCopy = async () => {
     try {
@@ -53,7 +60,7 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[12vw]">
-        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[80px] h-[480px] md:h-[640px]">
+        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[70px] h-[480px] md:h-[640px]">
           {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
@@ -88,19 +95,45 @@ const Home = () => {
             <img src="/fv.svg" alt="" className="w-full md:w-[650px]" />
           </div>
           <div className="flex flex-col items-start md:flex-row justify-between pt-16 md:pt-40 gap-4 md:gap-0">
-            <p className="tracking-wide text-xl font-medium">
-              I believe every dot finds its place,
-              <br />
-              and every detail has a reason.
-            </p>
-            <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-wide font-geist">
+            <div className="flex flex-col items-start gap-10">
+              <TypingText
+                className="tracking-wider text-xl font-medium"
+                lines={[
+                  "I believe every dot finds its place,",
+                  "and every detail has a reason.",
+                ]}
+                onComplete={() => setTypingDone(true)}
+              />
+              <motion.button
+                type="button"
+                onClick={scrollToWorks}
+                aria-label="Scroll to Works"
+                tabIndex={typingDone ? 0 : -1}
+                initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+                animate={
+                  typingDone
+                    ? { opacity: 1, clipPath: "inset(0 0 0% 0)" }
+                    : { opacity: 0, clipPath: "inset(0 0 100% 0)" }
+                }
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className={`flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
+                  typingDone ? "" : "pointer-events-none"
+                }`}
+              >
+                <span className="text-xs tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
+                  Scroll
+                </span>
+                <span className="block w-px h-12 md:h-24 bg-text-sub" />
+              </motion.button>
+            </div>
+            <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-normal font-geist">
               2026
             </p>
           </div>
         </section>
         <div className="space-y-40">
           {/* works */}
-          <section className="space-y-10">
+          <section ref={worksRef} className="space-y-10 scroll-mt-24">
             <SectionTitle
               title="Works"
               subtitle="Featured Projects"

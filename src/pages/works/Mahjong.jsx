@@ -453,7 +453,7 @@ const Mahjong = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 px-6 md:px-16 lg:px-32 xl:px-[218px]"
+          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-16 lg:px-32 xl:px-[218px]"
         >
           <div className="flex items-center gap-1">
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">

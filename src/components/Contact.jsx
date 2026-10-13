@@ -17,7 +17,15 @@ const Contact = () => {
   };
   return (
     <section>
-      <div className="mt-24 mb-10 w-full flex justify-center">
+      <div className="mt-24 mb-10 w-full flex flex-col items-center justify-center gap-2">
+        <div className="w-full max-w-md flex items-center justify-center gap-1">
+          <span className="block w-2.5 h-2.5 rounded-full bg-primary" />
+          <p className="text-s font-medium">
+            {language === "ja"
+              ? "お気軽にお問い合わせください。"
+              : "Feel free to get in touch"}
+          </p>
+        </div>
         <button
           type="button"
           onClick={handleCopy}

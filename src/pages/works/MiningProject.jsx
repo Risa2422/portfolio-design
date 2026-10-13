@@ -34,6 +34,8 @@ const content = {
       "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。プロダクトが一定程度立ち上がっている状態での参画でしたが、全員がヒアリングからリリースまで関わる体制のもと、MVP開発として短サイクルで運用しました。機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポート。多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
+    improvementsText:
+      "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例をご紹介します。",
     improvements: [
       {
         id: 1,
@@ -204,6 +206,8 @@ const content = {
       "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
+    improvementsText:
+      "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are the UI/UX improvements I focused on most during my time on the project.",
     improvements: [
       {
         id: 1,
@@ -381,7 +385,7 @@ const MiningProject = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 px-6 md:px-16 lg:px-32 xl:px-[218px]"
+          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-16 lg:px-32 xl:px-[218px]"
         >
           <div className="flex items-center gap-1">
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
@@ -455,6 +459,9 @@ const MiningProject = () => {
             <span className="w-1.5 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
           </h2>
+          <p className="text-base leading-relaxed text-gray-700">
+            {t.improvementsText}
+          </p>
           <div className="space-y-4 w-full">
             {t.improvements.map((improvement) => (
               <Accordion
