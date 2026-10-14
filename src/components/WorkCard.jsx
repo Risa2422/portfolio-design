@@ -90,7 +90,11 @@ function WorkCard({
           />
         </div>
 
-        <div className="md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200">
+        <div
+          className={`md:w-1/2 space-y-3 px-4 hover:opacity-70 transition-opacity duration-200 ${
+            reverse ? "md:pl-10 md:pr-0" : "md:pr-10 md:pl-0"
+          }`}
+        >
           <div className="space-y-3">
             <h3 className="text-2xl font-semibold">{title}</h3>
             <p className="pt-3 text-text-sub">{description}</p>

@@ -5,7 +5,7 @@ import { useLanguage } from "../context/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 
 const navLabels = {
-  ja: { home: "ホーム", profile: "プロフィール" },
+  ja: { home: "Home", profile: "Profile" },
   en: { home: "Home", profile: "Profile" },
 };
 
@@ -46,7 +46,7 @@ function Header() {
           <LanguageToggle />
           <button
             onClick={toggleMenu}
-            className="focus:outline-none"
+            className="focus:outline-none "
             aria-label="Toggle navigation"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +84,7 @@ function Header() {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
                       group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide whitespace-nowrap
-                        ${active ? "font-medium" : ""}
+                        ${active ? "font-semibold" : ""}
                         ${
                           active && !isOpen
                             ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
@@ -92,19 +92,19 @@ function Header() {
                         }
                         ${
                           active && isOpen
-                            ? "text-text text-start font-bold"
+                            ? "text-text text-start font-semibold"
                             : "text-start"
                         }
                       `;
                     }}
                   >
                     <span className="relative block overflow-hidden">
-                      <span className="text-base block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
+                      <span className="text-sm block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none tracking-wider">
                         {label}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="text-base absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                        className="text-sm absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
                       >
                         {label}
                       </span>

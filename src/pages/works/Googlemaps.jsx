@@ -141,7 +141,7 @@ const content = {
     learningsTitle: "学び",
     learningsText:
       "このプロジェクトを通して、できる限り既存のコンポーネントを再利用して一貫性のあるデザインを保ちながら、本当に改善が必要な部分だけを見直し、全体的なユーザーフローを大きく変えないことを意識しました。この過程で、既存の情報設計やユーザーがすでに慣れ親しんでいる体験を尊重することの重要性を学びました。既存アプリを改善する際は、ユーザーの慣れを崩さないよう慎重に判断する必要があると実感しました。",
-    homeLabel: "ホーム",
+    homeLabel: "Home",
   },
 };
 
@@ -179,7 +179,7 @@ const GoogleMapsAlbum = () => {
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.overviewTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.overviewText}
           </p>
         </div>
@@ -188,7 +188,7 @@ const GoogleMapsAlbum = () => {
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.backgroundText}
           </p>
         </div>
@@ -200,7 +200,7 @@ const GoogleMapsAlbum = () => {
           </h2>
           <div className="space-y-8">
             <div className="space-y-6">
-              <p className="text-base leading-relaxed text-gray-700">
+              <p className="text-base leading-loose text-gray-700">
                 {t.problemIntro}
               </p>
               <div>
@@ -214,7 +214,7 @@ const GoogleMapsAlbum = () => {
             </div>
 
             <div className="space-y-4">
-              <p className="leading-relaxed text-gray-700">{t.analysisText}</p>
+              <p className="leading-loose text-gray-700">{t.analysisText}</p>
 
               {/* Existing Flow Images */}
               <div className="flex flex-col gap-24">
@@ -337,15 +337,15 @@ const GoogleMapsAlbum = () => {
           <h2 className="text-2xl text-center text-accent font-medium">
             {t.learningsTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.learningsText}
           </p>
           <Link to="/" className="hover:opacity-80 pt-10">
             <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-sm">{t.homeLabel}</p>
+              <p className="text-sm font-medium">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

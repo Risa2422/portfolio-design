@@ -303,7 +303,7 @@ const content = {
       "ペルソナを作成することで、ユーザーが本当に求めている機能を備えたサービスの提供につながるということを、身をもって実感することができました。特に複数の表示案がある場合には、ペルソナを具体的に設定していたことで、ペルソナの課題を解決できるかどうかを判断基準にすることができました。",
       "当初はフォントにFredokaを使用していましたが、ポップさが強く出すぎてしまい、全体としての締まりが失われてしまったため、フォントを選び直す必要がありました。フォントの選定は慎重に行う必要があると感じました。",
     ],
-    homeLabel: "ホーム",
+    homeLabel: "Home",
   },
 };
 
@@ -323,10 +323,10 @@ const Quiz = () => {
           className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-sm">{t.homeLabel}</p>
+            <p className="text-sm font-medium">{t.homeLabel}</p>
           </div>
         </Link>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
@@ -347,22 +347,22 @@ const Quiz = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.overviewText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.requirementsTitle}
           </h2>
           <div className="space-y-4">
-            <p className="text-sm leading-relaxed ">{t.requirementsNote}</p>
+            <p className="text-sm leading-loose ">{t.requirementsNote}</p>
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-3.5 h-3.5 bg-black"></div>
@@ -415,9 +415,9 @@ const Quiz = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.processTitle}
           </h2>
           <div className="flex flex-col w-full gap-6">
@@ -488,7 +488,7 @@ const Quiz = () => {
                   {t.wireframeTitle}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-gray-700 mb-3 ">
+                  <p className="text-base leading-loose text-gray-700 mb-3 ">
                     {t.wireframeIntro}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -507,7 +507,7 @@ const Quiz = () => {
                   4. Style Guide Creation
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-gray-700 mb-3 ">
+                  <p className="text-base leading-loose text-gray-700 mb-3 ">
                     As the app uses multiple near-primary colors to create a
                     playful and pop atmosphere, I adopted Open Sans for the font
                     due to its simplicity and excellent multilingual support.
@@ -532,10 +532,10 @@ const Quiz = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 scroll-mt-24"
+          className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 scroll-mt-24"
         >
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.finalUiTitle}
           </h2>
           <video
@@ -549,7 +549,7 @@ const Quiz = () => {
               <div className="flex-1 h-[1px] bg-border" />
             </div>
             <div className="space-y-4">
-              <p className="text-base leading-relaxed text-gray-700 mb-3 ">
+              <p className="text-base leading-loose text-gray-700 mb-3 ">
                 {t.designSummaryText}
               </p>
             </div>
@@ -568,7 +568,7 @@ const Quiz = () => {
                     />
                   </div>
 
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.homeScreenText}</p>
                   </div>
                 </div>
@@ -587,7 +587,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.levelScreenText}</p>
                   </div>
                 </div>
@@ -619,7 +619,7 @@ const Quiz = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.quizScreenText}</p>
                   </div>
                 </div>
@@ -646,7 +646,7 @@ const Quiz = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.correctScreenText}</p>
                   </div>
                 </div>
@@ -666,7 +666,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.resultScreenText}</p>
                   </div>
                 </div>
@@ -684,7 +684,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.rankingScreenText}</p>
                   </div>
                 </div>
@@ -704,7 +704,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain rounded"
                     />
                   </div>
-                  <div className="text-sm leading-relaxed text-gray-700">
+                  <div className="text-sm leading-loose text-gray-700">
                     <p>{t.quitScreenText}</p>
                   </div>
                 </div>
@@ -712,13 +712,13 @@ const Quiz = () => {
             </div>
           </section>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 bg-background-secondary overflow-hidden py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 bg-background-secondary overflow-hidden py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.learningsTitle}
           </h2>
           <div className="flex flex-col w-full gap-4">
-            <ul className="list-disc pl-6 space-y-8 text-base leading-relaxed text-gray-700">
+            <ul className="list-disc pl-6 space-y-8 text-base leading-loose text-gray-700">
               {t.learningsList.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -726,13 +726,13 @@ const Quiz = () => {
           </div>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className=" flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew
                   width={10}
-                  className="w-5 h-3 text-white"
+                  className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="pb-0.5 text-sm">{t.homeLabel}</p>
+              <p className="pb-0.5 text-sm font-medium">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

@@ -11,7 +11,7 @@ function Improvement2({ before, hearing, after }) {
   return (
     <div>
       <div className="space-y-4">
-        <Badge colorClass="bg-[#746B60]">{before.label}</Badge>
+        <Badge colorClass="text-[#554e49]">{before.label}</Badge>
         <div className="flex gap-4">
           <div className="flex flex-col md:flex-row w-full gap-4">
             <div className="md:w-1/2 space-y-1">
@@ -22,8 +22,8 @@ function Improvement2({ before, hearing, after }) {
                 className="object-contain"
               />
             </div>
-            <div className="md:w-1/2 space-y-8 pt-7">
-              <p className="text-lg font-medium">【{before.text}】</p>
+            <div className="md:w-1/2 space-y-4 pt-7">
+              <p className="text-lg font-bold">【{before.text}】</p>
               <ul className="list-disc list-outside space-y-3 pl-5">
                 {before.items.map((item, index) => (
                   <li key={index}>
@@ -38,7 +38,7 @@ function Improvement2({ before, hearing, after }) {
         </div>
         <ArrowDivider />
         <div className="space-y-10 py-6">
-          <h5 className="text-xl md:text-2xl text-center font-semibold">
+          <h5 className="text-xl md:text-2xl text-center font-semibold underline decoration-[10px] underline-offset-[-4px] decoration-primary/20 [text-decoration-skip-ink:none]">
             {hearing.heading}
           </h5>
           <div className="flex flex-col gap-6 px-12">
@@ -54,7 +54,7 @@ function Improvement2({ before, hearing, after }) {
       </div>
       <ArrowDivider />
       <div className="space-y-4 mt-6">
-        <Badge colorClass="bg-[#4A5742]">{after.label}</Badge>
+        <Badge colorClass="text-[#4A5742]">{after.label}</Badge>
         <div className="flex flex-col justify-center items-center gap-4 w-full">
           <div className="flex flex-col md:flex-row w-full gap-4">
             <ZoomableImage
@@ -63,7 +63,7 @@ function Improvement2({ before, hearing, after }) {
               alt={after.alt}
             />
             <div className="space-y-4">
-              <p className="text-lg font-medium">【{after.text}】</p>
+              <p className="text-lg font-bold">【{after.text}】</p>
               <ul className="list-disc list-outside space-y-3 pl-7">
                 {after.items.map((item, index) => (
                   <li key={index}>
@@ -75,7 +75,11 @@ function Improvement2({ before, hearing, after }) {
             </div>
           </div>
           {after.details && (
-            <DetailBox heading={after.heading} items={after.details} />
+            <DetailBox
+              heading={after.heading}
+              items={after.details}
+              color="#4A5742"
+            />
           )}
         </div>
       </div>

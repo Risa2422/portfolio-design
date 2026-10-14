@@ -14,6 +14,9 @@ function Improvement3({ steps }) {
           {index > 0 && <ArrowDivider />}
           <div className="space-y-4">
             <Badge colorClass={step.badgeClass}>{step.label}</Badge>
+            {step.scenario && (
+              <p className="text-gray-700 py-2">{step.scenario}</p>
+            )}
             {step.intro && (
               <div className="space-y-3">
                 <p>{step.intro}</p>
@@ -37,15 +40,19 @@ function Improvement3({ steps }) {
               </div>
             )}
             {step.heading && (
-              <>
+              <div className="space-y-12">
                 {step.image && (
                   <ZoomableImage
                     src={localizeImage(step.image, language)}
                     alt={step.alt}
                   />
                 )}
-                <DetailBox heading={step.heading} items={step.items} />
-              </>
+                <DetailBox
+                  heading={step.heading}
+                  items={step.items}
+                  color={step.badgeClass.match(/#[0-9a-fA-F]+/)?.[0]}
+                />
+              </div>
             )}
           </div>
         </div>

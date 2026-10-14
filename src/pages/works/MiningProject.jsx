@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 import Accordion from "../../components/Accordion";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import SkillItem from "../../components/SkillItem";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
 import Improvement1 from "./mining/Improvement1";
 import Improvement2 from "./mining/Improvement2";
 import Improvement3 from "./mining/Improvement3";
+
+const aiUsageSkills = [
+  { icon: "/alloy-icon.svg", label: "Alloy" },
+  { icon: "/openai-icon.svg", label: "ChatGPT", size: "w-full h-full" },
+  { icon: "/claude-icon.svg", label: "Claude Design" },
+  { icon: "/google-icon.svg", label: "Google Stitch" },
+];
 
 const content = {
   ja: {
@@ -28,20 +36,29 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロダクト概要",
     ProductOverviewText:
-      "カナダの鉱山採掘業界を対象にしたプログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
+      "カナダの鉱山採掘業界のプログラムマネージャーを対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "主要画面・機能のデザイン抜粋",
     backgroundTitle: "プロジェクトの背景と課題",
-    backgroundText:
-      "私が参画した時点では、すでにデザインの作成や開発実装が進行中でした。しかし、既存の画面構造の整理やUIの一貫性が不足しており、ユーザーが迷わず運用できる品質に達していませんでした。さらに、開発主導で進行していた背景もあり、「そもそもユーザーが本当に必要としているツールになっているか」という根本的な前提やUXの再定義から行う必要がある状態でした。",
+    backgroundText: (
+      <>
+        私が参画した時点では、すでにデザインの作成や開発実装が進行中でした。しかし、
+        <span className="font-bold">
+          既存の画面構造の整理やUIの一貫性が不足
+        </span>
+        しており、ユーザーが迷わず運用できる品質に達していませんでした。さらに、開発主導で進行していた背景もあり、「そもそもユーザーが本当に必要としているツールになっているか」という
+        <span className="font-bold">根本的な前提やUXの再定義</span>
+        から行う必要がある状態でした。
+      </>
+    ),
     roleText:
       "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
-    productFlowTitle: "プロダクト開発の流れ",
+    productFlowTitle: "担当領域とデザインプロセス",
     productFlowText:
-      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わる体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。\nまた、多国籍なチーム環境においても認識を揃えスムーズに進行できるよう、密なコミュニケーションを意識してプロジェクトを推進しました。",
-    productFlowImage: "/mining/product-flow.png",
+      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わる体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
+    productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
       "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例をご紹介します。",
@@ -136,8 +153,8 @@ const content = {
           "クライアントからの要望を受け、予算の試算機能を追加することになりました。すでに主要なUI構造が確定している段階であったため、既存のUIコンポーネントやレイアウトの整合性を壊すことなく、新機能を自然に組み込む設計を行いました。",
         steps: [
           {
-            badgeClass: "bg-[#746B60]",
-            label: "1. ヒアリング",
+            badgeClass: "text-[#554e49]",
+            label: "ヒアリング",
             intro:
               "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
             items: [
@@ -147,23 +164,25 @@ const content = {
             ],
           },
           {
-            badgeClass: "bg-[#4A6F8A]",
-            label: "2. ユーザーフローの作成",
-            text: "ユーザーフローを作成して多様な操作パターン（保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
+            badgeClass: "text-[#083954]",
+            label: "ユーザーフローの作成",
+            text: "ユーザーフローを作成して多様な操作パターン（試算データの保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
             image: "/mining/user-story.png",
             alt: "ユーザーフローの画像",
           },
           {
-            badgeClass: "bg-[#627d50]",
-            label: "3. 完成UI",
+            badgeClass: "text-[#445a37]",
+            label: "完成UI",
+            scenario:
+              "想定シナリオ： ユーザーが新規試算を行い、試算結果を保存する。",
             image: "/mining/draft-mode.svg",
             alt: "ドラフトモードUIの画像",
             heading: "主要機能とUIの工夫",
             items: [
-              "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化",
-              "新規試算作成時は、適用中の予算データを初期値として自動継承",
-              "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化",
-              "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能",
+              "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化しました。",
+              "新規試算作成時は、適用中の予算データを初期値として自動継承するようにしました。",
+              "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化しました。",
+              "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能です。",
             ],
           },
         ],
@@ -180,15 +199,16 @@ const content = {
       "短期間で最適なUIを選定するため、生成AIを活用して複数のデザインパターンを迅速に作成・検証しました。早い段階から高精度なUIで比較・検討できたことで、実装に近い解像度で意思決定を行うことができました。",
       "クライアントレビューにおいて、静的プロトタイプで合意を得ていても、実装後に実際の操作感とのギャップが生じる課題がありました。そこで開発前の段階でAIツール「Alloy」を導入し、クライアントが直接操作できるプロトタイプを作成・共有しました。これにより、以前に比べて実装後の認識ギャップによる手戻りを防ぐことができました。",
     ],
-    learnings: "振り返り",
+    learnings: "結果・振り返り",
     learningsText: [
+      "本リリース直前までの参画でしたが、当初の目標であった「リリース可能な品質・状態への引き上げ」を達成しました。",
       "一人デザイナーかつ非ネイティブ環境という制約下で、完璧主義を捨て早期からチームを巻き込むアプローチを徹底しました。未完成な段階で積極的にフィードバックを得ることで、手戻りを最小限に抑えスピーディーに成果へ繋げました。",
       "クライアント自身も自覚していない潜在的課題を発見することの難しさと、そのための徹底した業務理解の重要性を痛感しました。単に要望を受け取るだけでなく、自ら仮説を持って対話し、本質的な課題へアプローチする姿勢を今後も意識したいと思います。",
     ],
     futureOutlook: "今後の展望",
     futureOutlookText:
       "デザインレビューにおいて、意図や根拠をチーム全体へ説得しきれない場面を経験しました。今後はビジュアルやUXの表現力を高めるだけでなく、「なぜこのデザインなのか」を論理的・構造的に説明する言語化能力を磨き、より強力にプロジェクトをリードできるデザイナーを目指したいです。",
-    home: "ホーム",
+    home: "Home",
   },
   en: {
     infoLabels: [
@@ -215,15 +235,27 @@ const content = {
     productOverviewImage: "/mining/blurred_medium.png",
     productOverviewImageCaption: "Selected designs of key screens and features",
     backgroundTitle: "Project Background and Challenges",
-    backgroundText:
-      "When I joined the project, initial UI designs and front-end development were already underway. However, the screen architecture lacked clear organization and UI consistency, preventing the product from meeting standard usability and release quality. Additionally, because feature development had taken precedence, we needed to step back and redefine the core UX assumptions—questioning whether the tool truly met real user needs.",
+    backgroundText: (
+      <>
+        When I joined the project, initial UI designs and front-end development
+        were already underway. However,{" "}
+        <span className="font-bold">
+          the screen architecture lacked clear organization and UI consistency
+        </span>
+        , preventing the product from meeting standard usability and release
+        quality. Additionally, because feature development had taken precedence,
+        we needed to step back and{" "}
+        <span className="font-bold">redefine the core UX assumptions</span>
+        —questioning whether the tool truly met real user needs.
+      </>
+    ),
     roleTitle: "My Role & Mission",
     roleText:
       "To resolve these challenges, I stepped in as a UI/UX Designer to lead the quality elevation for the official release. I drove the end-to-end process, including redefining the UX, optimizing the information architecture, and establishing a scalable design system.",
     productFlowTitle: "Product Development Process",
     productFlowText:
       "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
-    productFlowImage: "/mining/product-flow.png",
+    productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
     improvementsText:
       "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are the UI/UX improvements I focused on most during my time on the project.",
@@ -321,7 +353,7 @@ const content = {
           "Based on a request from the client, we decided to add a budget simulation feature.",
         steps: [
           {
-            badgeClass: "bg-[#746B60]",
+            badgeClass: "text-[#746B60]",
             label: "1. Interviews",
             intro:
               "Client interviews clarified the following challenges and needs.",
@@ -332,15 +364,17 @@ const content = {
             ],
           },
           {
-            badgeClass: "bg-[#4A6F8A]",
+            badgeClass: "text-[#4A6F8A]",
             label: "2. Creating a User Flow",
             text: "Created a user flow to visualize the various interaction patterns (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the feature scope smoothly.",
             image: "/mining/user-story.png",
             alt: "Image of the user flow",
           },
           {
-            badgeClass: "bg-[#627d50]",
+            badgeClass: "text-[#627d50]",
             label: "3. Final UI",
+            scenario:
+              "Scenario: The user creates a new simulation and saves the result.",
             image: "/mining/draft-mode.svg",
             alt: "Image of the draft mode UI",
             heading: "Key Features and UI Considerations",
@@ -368,6 +402,7 @@ const content = {
     ],
     learnings: "Learnings",
     learningsText: [
+      "Although my involvement wrapped up just prior to the official launch, I successfully achieved the primary goal of elevating the product to a release-ready standard.",
       "Working as the sole designer in an environment where I wasn't a native speaker, I let go of perfectionism and made a point of involving the team from an early stage. By actively seeking feedback while work was still unfinished, I kept rework to a minimum and delivered results quickly.",
       "I learned firsthand how difficult it is to uncover latent issues the client themselves aren't aware of, and how important a thorough understanding of their business is for doing so. Going forward, I want to keep not just accepting requests as given, but engaging in dialogue with my own hypotheses to get to the root of the problem.",
     ],
@@ -407,10 +442,10 @@ const MiningProject = () => {
           className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-base">{t.home}</p>
+            <p className="text-base font-medium">{t.home}</p>
           </div>
         </Link>
         {/* Header Section */}
@@ -431,17 +466,15 @@ const MiningProject = () => {
           </div>
         </div>
         {/* ProductOverview Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.ProductOverview}
           </h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center">
             <div className="w-full md:w-1/2 md:pt-4">
-              <p className="text-base leading-relaxed text-gray-700 ">
-                {t.ProductOverviewText}
-              </p>
-              <p className="pt-4">{t.ProductOverviewApproach}</p>
+              <p className="text-base leading-loose">{t.ProductOverviewText}</p>
+              <p className="pt-4 leading-loose">{t.ProductOverviewApproach}</p>
             </div>
             <div className="md:w-1/2 space-y-2">
               <ZoomableImage
@@ -449,38 +482,34 @@ const MiningProject = () => {
                 className="w-full object-contain"
                 alt="ProductOverview"
               />
-              <p className="text-xs text-gray-700 text-center">
+              <p className="text-xs  text-center">
                 {t.productOverviewImageCaption}
               </p>
             </div>
           </div>
         </div>
         {/* Project Background Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.backgroundText}
-          </p>
+          <p className="text-base leading-loose ">{t.backgroundText}</p>
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-[#3B2707]">
               {t.roleTitle}
             </h3>
-            <p className="text-base leading-relaxed text-gray-700">
-              {t.roleText}
-            </p>
+            <p className="text-base leading-loose ">{t.roleText}</p>
           </div>
         </div>
         {/* Product Development Flow Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-8">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.productFlowTitle}
           </h2>
-          <div className="flex flex-col gap-8">
-            <p className="text-base leading-relaxed text-gray-700 whitespace-pre-line">
+          <div className="flex flex-col gap-2">
+            <p className="text-base leading-loose  whitespace-pre-line">
               {t.productFlowText}
             </p>
             <ZoomableImage
@@ -491,14 +520,12 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.improvementsTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
-            {t.improvementsText}
-          </p>
+          <p className="text-base leading-loose ">{t.improvementsText}</p>
           <div className="space-y-4 w-full">
             {t.improvements.map((improvement) => (
               <Accordion
@@ -508,7 +535,7 @@ const MiningProject = () => {
                 isOpen={openSections[improvement.id]}
                 onToggle={() => toggleSection(improvement.id)}
               >
-                <p className="my-8">{improvement.description}</p>
+                <p className="my-8 leading-loose">{improvement.description}</p>
                 {improvement.id === 1 && (
                   <Improvement1
                     before={improvement.before}
@@ -531,53 +558,66 @@ const MiningProject = () => {
         </div>
 
         {/* AI Usage Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
-          <ul className="flex flex-col gap-6 list-disc pl-5">
-            {t.aiUsageSubTitle.map((subTitle, index) => (
-              <li key={subTitle} className="space-y-2">
-                <h3 className="text-lg font-semibold text-[#3B2707]">
-                  {subTitle}
-                </h3>
-                <p className="text-base leading-relaxed">
-                  {t.aiUsageText[index]}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+            <ul className="md:w-1/3 grid grid-cols-4 content-end gap-x-3 gap-y-6">
+              {aiUsageSkills.map((skill) => (
+                <SkillItem
+                  key={skill.label}
+                  icon={skill.icon}
+                  label={skill.label}
+                  size={skill.size}
+                  cover={skill.cover}
+                />
+              ))}
+            </ul>
+            <ul className="md:w-2/3 flex flex-col gap-6 list-disc pl-5">
+              {t.aiUsageSubTitle.map((subTitle, index) => (
+                <li key={subTitle} className="space-y-2">
+                  <h3 className="text-lg font-semibold text-[#3B2707]">
+                    {subTitle}
+                  </h3>
+                  <p className="text-base leading-loose">
+                    {t.aiUsageText[index]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-16">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.learnings}
           </h2>
-          {/* <p className="text-base leading-relaxed">{t.learningsText}</p> */}
+          {/* <p className="text-base leading-loose">{t.learningsText}</p> */}
 
           <ul className="flex flex-col gap-6 list-disc pl-5">
             {t.learningsText.map((text, index) => (
               <li key={index} className="space-y-2">
-                <p className="text-base leading-relaxed">{text}</p>
+                <p className="text-base leading-loose">{text}</p>
               </li>
             ))}
           </ul>
         </div>
         {/* Future Outlook Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-16">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.futureOutlook}
           </h2>
-          <p className="text-base leading-relaxed">{t.futureOutlookText}</p>
+          <p className="text-base leading-loose">{t.futureOutlookText}</p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-base">{t.home}</p>
+              <p className="text-base font-medium">{t.home}</p>
             </div>
           </Link>
         </div>

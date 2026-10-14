@@ -43,7 +43,7 @@
 //         </div>
 //         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background-secondary">
 //           <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
-//           <p className="text-sm md:text-base leading-relaxed text-gray-700">
+//           <p className="text-sm md:text-base leading-loose text-gray-700">
 //             既存の
 //             <a
 //               href="https://apps.apple.com/jp/app/%E9%9B%80%E3%83%AD%E3%82%B0-%E9%BA%BB%E9%9B%80%E3%81%AE%E6%88%90%E7%B8%BE-%E5%8F%8E%E6%94%AF%E3%82%92%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E5%B8%B3%E7%B0%BF%E3%82%A2%E3%83%97%E3%83%AA/id1439070045"
@@ -63,13 +63,13 @@
 //             課題の洗い出し
 //           </h2>
 //           <div className="space-y-8">
-//             <p className="text-sm md:text-base leading-relaxed text-gray-700">
+//             <p className="text-sm md:text-base leading-loose text-gray-700">
 //               既存アプリは、機能面では充実している一方で、デザインが機能的すぎるため、麻雀アプリとしての世界観や雰囲気に乏しい印象を受けました。
 //               実際にヒアリングを行った際、依頼者も「機能には特に不満はないが、使いづらさや見た目の古さを感じる」と話しており、UIの使いやすさと視覚的な魅力の両立が求められていると判断しました。
 //             </p>
 
 //             <div className="flex flex-col gap-4">
-//               <p className="text-sm md:text-base leading-relaxed text-gray-700">
+//               <p className="text-sm md:text-base leading-loose text-gray-700">
 //                 そこでまずはじめに、既存アプリの課題をページごとに洗い出しました。
 //               </p>
 //               <div className="space-y-4">
@@ -286,7 +286,7 @@
 //                   <div className="flex-1 h-[0.8px] bg-border" />
 //                 </div>
 //                 <div className="space-y-4">
-//                   <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-3">
+//                   <p className="text-sm md:text-base leading-loose text-gray-700 mb-3">
 //                     麻雀牌を連想させる「赤・緑・青」を基調にすることで、麻雀らしさを視覚的に表現しました。背景色には落ち着いたベージュ（#F7F1E1）を採用することで和の雰囲気を保ちながら、親しみやすさを感じられる配色を意識しました。
 //                     <br />
 //                     また、イラストは知人に依頼しました。
@@ -305,11 +305,11 @@
 //             </div>
 //           </div>
 //         </div>
-//         <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background">
+//         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background">
 //           <h2 className="text-lg md:text-xl text-center text-accent font-medium">
 //             学び
 //           </h2>
-//           <p className="text-sm md:text-base leading-relaxed text-gray-700">
+//           <p className="text-sm md:text-base leading-loose text-gray-700">
 //             色数が多いにも関わらず配色の優先順位を明確に定義できていなかったため、統一感を持たせるのに時間を要しました。
 //             <br />
 //             今後は、背景色や主役カラーの役割を明確にした上で配色の優先順位を整理し、よりスムーズにデザインを進めることを目指します。
@@ -437,7 +437,7 @@ const content = {
     learningsTitle: "学び",
     learningsText:
       "色数が多いにもかかわらず配色の優先順位を明確に定義できていなかったため、全体に統一感を持たせるのに時間がかかりました。今後は、背景色やメインカラーの役割を明確にしたうえで配色の優先順位を整理し、よりスムーズにデザインを進めていきたいと考えています。",
-    homeLabel: "ホーム",
+    homeLabel: "Home",
   },
 };
 
@@ -456,10 +456,10 @@ const Mahjong = () => {
           className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-sm">{t.homeLabel}</p>
+            <p className="text-sm font-medium">{t.homeLabel}</p>
           </div>
         </Link>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
@@ -480,27 +480,27 @@ const Mahjong = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.overviewText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.problemTitle}
           </h2>
           <div className="space-y-8">
-            <p className="text-base leading-relaxed text-gray-700">
+            <p className="text-base leading-loose text-gray-700">
               {t.problemIntro}
             </p>
 
             <div className="flex flex-col gap-4">
-              <p className="text-base leading-relaxed text-gray-700">
+              <p className="text-base leading-loose text-gray-700">
                 {t.analysisIntro}
               </p>
               <div className="space-y-4">
@@ -568,10 +568,10 @@ const Mahjong = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
+          className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
         >
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.uiDesignTitle}
           </h2>
           <div className="flex flex-col w-full gap-2">
@@ -739,7 +739,7 @@ const Mahjong = () => {
                   <div className="flex-1 h-[0.8px] bg-border" />
                 </div>
                 <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-gray-700 mb-3">
+                  <p className="text-base leading-loose text-gray-700 mb-3">
                     {t.colorIllustrationText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -759,23 +759,23 @@ const Mahjong = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.learningsTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.learningsText}
           </p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew
                   width={10}
-                  className="w-5 h-3 text-white"
+                  className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="text-sm">{t.homeLabel}</p>
+              <p className="text-sm font-medium">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

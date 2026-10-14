@@ -7,7 +7,7 @@ const workData = [
     },
     date: "2025 - 2026",
     description: {
-      ja: "カナダのスタートアップにて、既存ユーザーフローの再設計から新規機能のUI/UXデザインまで、デザインプロセス全体を主導しました。",
+      ja: "カナダのスタートアップにて、既存ユーザーフローの再設計から新規機能のUI/UX設計までのデザインプロセス全体を主導しました。",
       en: "Led the entire design process, from redesigning existing user flows to designing the UI/UX for new features.",
     },
     tags: {
@@ -21,7 +21,7 @@ const workData = [
     title: { ja: "Webサイトリニューアル", en: "Website Redesign" },
     date: "2025",
     description: {
-      ja: "インターンとして自社Webサイトリニューアルに参画し、デザインシステムを用いた派生画面のUI設計およびコンポーネント展開を一貫して担当しました。",
+      ja: "インターンとして自社Webサイトのリニューアルプロジェクトに参画し、デザインシステムを活用した派生画面のUI設計およびコンポーネント展開を一貫して担当しました。",
       en: "As an intern, I participated in our corporate website redesign and handled the UI design for derivative pages and component expansion using the design system.",
     },
     tags: {

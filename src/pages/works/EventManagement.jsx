@@ -281,7 +281,7 @@ const content = {
         text: "デザインの理想と実装の現実の間で柔軟に調整する力が必要だと感じました。例えば、ホーム画面に子どもの絵や写真を表示する案がありましたが、DB設計の都合で実現が難しく、デザインを見直す必要がありました。今後は、デザイン段階から実装の制約を意識し、より現実的な設計を心がけたいです。",
       },
     ],
-    homeLabel: "ホーム",
+    homeLabel: "Home",
   },
 };
 
@@ -301,10 +301,10 @@ const EventManagement = () => {
           className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-sm">{t.homeLabel}</p>
+            <p className="text-sm font-medium">{t.homeLabel}</p>
           </div>
         </Link>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
@@ -327,29 +327,29 @@ const EventManagement = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
-          <p className="leading-relaxed text-gray-700">{t.overviewText}</p>
+          <p className="leading-loose text-gray-700">{t.overviewText}</p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.backgroundText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.problemTitle}
           </h2>
           <div className="space-y-2">
-            <p className="text-base leading-relaxed text-gray-700">
+            <p className="text-base leading-loose text-gray-700">
               {t.problemIntro}
             </p>
             <div className="md:w-1/2 self-start">
@@ -390,16 +390,16 @@ const EventManagement = () => {
               </div>
             </div>
           </div>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.problemSummaryText}
           </p>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.mvpTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">{t.mvpText}</p>
+          <p className="text-base leading-loose text-gray-700">{t.mvpText}</p>
           <div className="md:w-1/2">
             <ZoomableImage
               src={localizeImage("/event-management/mvp.png", language)}
@@ -408,9 +408,9 @@ const EventManagement = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.uiDesignTitle}
           </h2>
           <div>
@@ -421,7 +421,7 @@ const EventManagement = () => {
                   {t.wireframeHeading}
                 </h3>
                 <div className="flex flex-col gap-4">
-                  <p className="text-base leading-relaxed text-gray-700">
+                  <p className="text-base leading-loose text-gray-700">
                     {t.wireframeText}
                   </p>
                   <div className="md:w-1/2">
@@ -446,7 +446,7 @@ const EventManagement = () => {
                   {t.moodboardHeading}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-gray-700 mb-3">
+                  <p className="text-base leading-loose text-gray-700 mb-3">
                     {t.moodboardText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -469,7 +469,7 @@ const EventManagement = () => {
                     ))}
                   </div>
 
-                  <p className="text-base leading-relaxed text-gray-700">
+                  <p className="text-base leading-loose text-gray-700">
                     {t.moodboardStyleText}
                   </p>
                 </div>
@@ -718,9 +718,9 @@ const EventManagement = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.takeawaysTitle}
           </h2>
           <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">
@@ -735,13 +735,13 @@ const EventManagement = () => {
           </ul>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew
                   width={10}
-                  className="w-5 h-3 text-white"
+                  className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="pb-0.5 text-sm">{t.homeLabel}</p>
+              <p className="pb-0.5 text-sm font-medium">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

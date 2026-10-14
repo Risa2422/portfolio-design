@@ -1,8 +1,9 @@
 function Badge({ colorClass, children }) {
   return (
     <div
-      className={`flex items-center gap-1 w-fit py-1 px-3 border text-white font-medium rounded-full ${colorClass}`}
+      className={`flex gap-1 items-center w-fit text-xl font-semibold ${colorClass}`}
     >
+      <span className="w-3 h-3 shrink-0 rounded-full bg-current" />
       {children}
     </div>
   );

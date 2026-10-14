@@ -3,6 +3,21 @@ import "lenis/dist/lenis.css";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
+let lenisInstance = null;
+
+export function scrollToElement(element) {
+  if (!element) return;
+  if (lenisInstance) {
+    // Lenis デフォルトの easeOutExpo は序盤で一気に進み瞬間移動に見えるため、ease-in-out にする
+    lenisInstance.scrollTo(element, {
+      duration: 1.4,
+      easing: (t) => (t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2),
+    });
+  } else {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export function useSmoothScroll() {
   const lenisRef = useRef(null);
   const { pathname } = useLocation();
@@ -15,6 +30,7 @@ export function useSmoothScroll() {
       wheelMultiplier: 0.8,
     });
     lenisRef.current = lenis;
+    lenisInstance = lenis;
 
     let rafId;
     const raf = (time) => {
@@ -27,6 +43,7 @@ export function useSmoothScroll() {
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
+      lenisInstance = null;
     };
   }, []);
 

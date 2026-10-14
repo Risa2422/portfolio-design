@@ -10,6 +10,7 @@ import WorkCard from "../components/WorkCard";
 import { useLanguage } from "../context/LanguageContext";
 import workData from "../data/workData";
 import useIsMobile from "../hooks/useIsMobile";
+import { scrollToElement } from "../hooks/useSmoothScroll";
 import { localizeImage } from "../utils/localizeImage";
 
 const content = {
@@ -32,7 +33,7 @@ const Home = () => {
   const [typingDone, setTypingDone] = useState(false);
 
   const scrollToWorks = () => {
-    worksRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToElement(worksRef.current);
   };
 
   const handleCopy = async () => {
@@ -60,7 +61,7 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[8vw]">
-        <section className="relative z-20 space-y-2 sm:space-y-2 mt-20 md:mt-[70px] h-[480px] md:h-[640px]">
+        <section className="relative z-20 flex flex-col justify-between mt-20 md:mt-[40px] pt-2 pb-10 md:pb-16 h-[calc(100svh-80px)] md:h-[calc(100svh-0px)] min-h-[680px] md:min-h-[750px]">
           {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
@@ -88,47 +89,47 @@ const Home = () => {
               <br />
             </p>
           </div> */}
-          <div className="space-y-2">
-            <p className="font-leaguescript tracking-wider font-bold text-4xl md:text-5xl">
-              Risa's
-            </p>
+          <div className="flex flex-col gap-3 md:flex-row md:gap-0 justify-between items-start">
             <img src="/fv.svg" alt="" className="w-full md:w-[650px]" />
+            <p className="md:[writing-mode:vertical-rl] tracking-wider font-semibold text-xl md:text-lg">
+              UI/UX Designer
+            </p>
           </div>
-          <div className="flex flex-col items-start md:flex-row justify-between pt-16 md:pt-40 gap-4 md:gap-0">
-            <div className="flex flex-col items-start gap-10">
+          <div className="flex flex-col items-start gap-10">
+            <div className="flex w-full flex-col items-start md:flex-row md:items-end justify-between gap-4 md:gap-0">
               <TypingText
-                className="tracking-wider text-xl font-medium"
+                className="tracking-widest font-semibold leading-relaxed"
                 lines={[
                   "I believe every dot finds its place,",
                   "and every detail has a reason.",
                 ]}
                 onComplete={() => setTypingDone(true)}
               />
-              <motion.button
-                type="button"
-                onClick={scrollToWorks}
-                aria-label="Scroll to Works"
-                tabIndex={typingDone ? 0 : -1}
-                initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
-                animate={
-                  typingDone
-                    ? { opacity: 1, clipPath: "inset(0 0 0% 0)" }
-                    : { opacity: 0, clipPath: "inset(0 0 100% 0)" }
-                }
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className={`flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
-                  typingDone ? "" : "pointer-events-none"
-                }`}
-              >
-                <span className="text-xs tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
-                  Scroll
-                </span>
-                <span className="block w-px h-12 md:h-24 bg-text-sub" />
-              </motion.button>
+              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-normal font-geist">
+                2026
+              </p>
             </div>
-            <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-normal font-geist">
-              2026
-            </p>
+            <motion.button
+              type="button"
+              onClick={scrollToWorks}
+              aria-label="Scroll to Works"
+              tabIndex={typingDone ? 0 : -1}
+              initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+              animate={
+                typingDone
+                  ? { opacity: 1, clipPath: "inset(0 0 0% 0)" }
+                  : { opacity: 0, clipPath: "inset(0 0 100% 0)" }
+              }
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className={`flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
+                typingDone ? "" : "pointer-events-none"
+              }`}
+            >
+              <span className="text-gray-500 text-xs tracking-[0.2em] font-bold uppercase [writing-mode:vertical-rl]">
+                Scroll
+              </span>
+              <span className="block w-px h-12 md:h-32 bg-gray-500" />
+            </motion.button>
           </div>
         </section>
         <div className="space-y-40">

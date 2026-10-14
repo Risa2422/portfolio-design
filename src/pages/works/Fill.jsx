@@ -67,7 +67,7 @@ const content = {
     resultsTitle: "学び",
     resultsText:
       "実務におけるデザインシステムの運用・理解が深まっただけでなく、「チームで働くデザイナー」として、仮説を持ったコミュニケーションや効率的なレビュープロセスの重要性を身をもって学ぶことができました。",
-    home: "ホーム",
+    home: "Home",
   },
   en: {
     infoLabels: [
@@ -154,10 +154,10 @@ const WebDesign = () => {
           className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
           <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-base">{t.home}</p>
+            <p className="text-base font-medium">{t.home}</p>
           </div>
         </Link>
         {/* Header Section */}
@@ -178,13 +178,13 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Overview Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.overviewTitle}
           </h2>
           <div className="flex flex-col gap-8 justify-center items-center">
-            <p className="text-base leading-relaxed text-gray-700">
+            <p className="text-base leading-loose text-gray-700">
               {t.overviewText}
               <span>
                 {t.siteLinkPrefix}
@@ -202,9 +202,9 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Output Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.outputTitle}
           </h2>
           <div className="grid gap-10 items-start md:grid-cols-3">
@@ -221,9 +221,9 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Design Process Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.processTitle}
           </h2>
           <div className="space-y-8">
@@ -236,13 +236,13 @@ const WebDesign = () => {
                 {item.paragraphs?.map((paragraph, idx) => (
                   <p
                     key={idx}
-                    className="text-base leading-relaxed text-gray-700"
+                    className="text-base leading-loose text-gray-700"
                   >
                     {paragraph}
                   </p>
                 ))}
                 {item.intro && (
-                  <p className="text-base leading-relaxed text-gray-700">
+                  <p className="text-base leading-loose text-gray-700">
                     {item.intro}
                   </p>
                 )}
@@ -253,7 +253,7 @@ const WebDesign = () => {
                         <p className="text-sm md:text-base font-semibold text-gray-900">
                           {point.heading}
                         </p>
-                        <p className="text-base leading-relaxed text-gray-700">
+                        <p className="text-base leading-loose text-gray-700">
                           {point.text}
                         </p>
                       </div>
@@ -265,20 +265,20 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Results & Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-3 text-2xl font-semibold text-[#3B2707]">
-            <span className="w-1.5 bg-current shrink-0 rounded-full" />
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
+            <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.resultsTitle}
           </h2>
-          <p className="text-base leading-relaxed text-gray-700">
+          <p className="text-base leading-loose text-gray-700">
             {t.resultsText}
           </p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-primary">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-white" />
+              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
+                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-base">{t.home}</p>
+              <p className="text-base font-medium">{t.home}</p>
             </div>
           </Link>
         </div>

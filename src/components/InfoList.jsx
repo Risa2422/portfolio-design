@@ -1,18 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { Fragment } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { scrollToElement } from "../hooks/useSmoothScroll";
 
 function InfoList({ items, visible = true }) {
   const { language } = useLanguage();
   const scrollToFinalUI = (e) => {
     e.preventDefault();
-    const element = document.getElementById("final-ui");
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    scrollToElement(document.getElementById("final-ui"));
   };
 
   return (
