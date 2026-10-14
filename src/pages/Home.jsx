@@ -61,7 +61,7 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[8vw]">
-        <section className="relative z-20 flex flex-col justify-between mt-20 md:mt-[40px] pt-2 pb-10 md:pb-16 h-[calc(100svh-80px)] md:h-[calc(100svh-0px)] min-h-[680px] md:min-h-[750px]">
+        <section className="relative z-20 flex flex-col justify-between mt-20 md:mt-[60px] pt-2 pb-10 md:pb-16 h-[calc(100svh-80px)] md:h-[calc(100svh-0px)] min-h-[680px] md:min-h-[750px]">
           {/* <img
             src="/circle-yellow.png"
             alt="Yellow Circle"
@@ -90,7 +90,7 @@ const Home = () => {
             </p>
           </div> */}
           <div className="flex flex-col gap-3 md:flex-row md:gap-0 justify-between items-start">
-            <img src="/fv.svg" alt="" className="w-full md:w-[650px]" />
+            <img src="/fv.svg" alt="" className="w-full md:w-[600px]" />
             <p className="md:[writing-mode:vertical-rl] tracking-wider font-semibold text-xl md:text-lg">
               UI/UX Designer
             </p>
@@ -105,7 +105,7 @@ const Home = () => {
                 ]}
                 onComplete={() => setTypingDone(true)}
               />
-              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-4xl tracking-normal font-geist">
+              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-2xl tracking-wider font-geist">
                 2026
               </p>
             </div>

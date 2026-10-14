@@ -535,7 +535,7 @@ const MiningProject = () => {
                 isOpen={openSections[improvement.id]}
                 onToggle={() => toggleSection(improvement.id)}
               >
-                <p className="my-8 leading-loose">{improvement.description}</p>
+                <p className="my-12 leading-loose">{improvement.description}</p>
                 {improvement.id === 1 && (
                   <Improvement1
                     before={improvement.before}

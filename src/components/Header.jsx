@@ -67,7 +67,7 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
               return (
@@ -75,7 +75,7 @@ function Header() {
                   key={to}
                   className={`${
                     index === 1 ? "border-t border-gray-300 sm:border-none" : ""
-                  }`}
+                  } sm:w-16`}
                 >
                   <NavLink
                     to={to}
@@ -95,6 +95,7 @@ function Header() {
                             ? "text-text text-start font-semibold"
                             : "text-start"
                         }
+                        sm:text-center
                       `;
                     }}
                   >
@@ -104,7 +105,7 @@ function Header() {
                       </span>
                       <span
                         aria-hidden="true"
-                        className="text-sm absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                        className="text-sm absolute left-0 top-full w-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
                       >
                         {label}
                       </span>

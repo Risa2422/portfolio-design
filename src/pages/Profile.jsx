@@ -185,7 +185,7 @@ const Profile = () => {
                     と申します。
                   </p>
                 )}
-                <p className="text-gray-700 whitespace-pre-line">{t.bio}</p>
+                <p className="whitespace-pre-line">{t.bio}</p>
               </div>
               <div className="hidden md:block md:w-1/3">
                 <img

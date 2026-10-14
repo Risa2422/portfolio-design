@@ -38,7 +38,7 @@ function Improvement2({ before, hearing, after }) {
         </div>
         <ArrowDivider />
         <div className="space-y-10 py-6">
-          <h5 className="text-xl md:text-2xl text-center font-semibold underline decoration-[10px] underline-offset-[-4px] decoration-primary/20 [text-decoration-skip-ink:none]">
+          <h5 className="text-xl md:text-2xl text-center font-semibold underline decoration-[10px] underline-offset-[-4px] decoration-primary/30 [text-decoration-skip-ink:none]">
             {hearing.heading}
           </h5>
           <div className="flex flex-col gap-6 px-12">
