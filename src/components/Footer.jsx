@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="flex items-center justify-center py-8">
-      <p className="text-[13px] font-medium">
+      <p className="text-[11px] font-semibold text-text-sub">
         All Rights Reserved 2026 ©︎ Risa Yamamoto
       </p>
     </footer>
