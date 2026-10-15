@@ -90,7 +90,7 @@ const Home = () => {
             </p>
           </div> */}
           <div className="flex flex-col gap-3 md:flex-row md:gap-0 justify-between items-start">
-            <img src="/fv.svg" alt="" className="w-full md:w-[600px]" />
+            <img src="/fv.svg" alt="" className="w-full md:w-[700px]" />
             <p className="md:[writing-mode:vertical-rl] tracking-wider font-semibold text-xl md:text-lg">
               UI/UX Designer
             </p>
