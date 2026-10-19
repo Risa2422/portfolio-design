@@ -10,7 +10,7 @@ function Accordion({ title, summary, isOpen, onToggle, children }) {
         className="group w-full flex justify-between items-center gap-4 cursor-pointer"
       >
         <div className="flex flex-col items-start justify-start transition-opacity duration-200 group-hover:opacity-90">
-          <h2 className="text-lg md:text-xl font-semibold">{title}</h2>
+          <h2 className="text-lg md:text-lg font-semibold">{title}</h2>
           <p className="text-gray-600 text-sm p-1 text-left">{summary}</p>
         </div>
         <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#5C554C] shrink-0 transition-opacity duration-200 group-hover:opacity-90">

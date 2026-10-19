@@ -3,6 +3,7 @@ import { useLanguage } from "../../../context/LanguageContext";
 import { localizeImage } from "../../../utils/localizeImage";
 import { caseThemes } from "./caseThemes";
 import MarkerList from "./MarkerList";
+import DotList from "./DotList";
 
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 
@@ -20,7 +21,7 @@ export function CaseBox({
   return (
     <div className="relative pt-2">
       <div
-        className={`relative flex flex-col gap-12 pt-8 pb-6 pr-0 md:pr-6 ${
+        className={`relative flex flex-col gap-6 pt-8 pb-6 pr-0 md:pr-6 ${
           indent ? "pl-4 md:pl-8" : ""
         }`}
       >
@@ -168,22 +169,7 @@ function CaseSection({ section, line }) {
                     </p>
                   )}
                 </div>
-                <ul className="flex flex-col gap-1.5 pl-4">
-                  {study.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex gap-3 items-start">
-                      <img
-                        src="/mining/list-dot.svg"
-                        alt=""
-                        width="8"
-                        height="26.25"
-                        className="shrink-0"
-                      />
-                      <p className="flex-1 min-w-0 text-[15px] leading-[1.75]">
-                        {item}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+                <DotList items={study.items} />
                 {study.insight && (
                   <div className="flex flex-col items-start gap-3">
                     {study.insightLabel && (
@@ -252,12 +238,16 @@ function CaseSection({ section, line }) {
           )}
         </div>
       )}
-      {section.list && (
-        <MarkerList
-          {...section.list}
-          color={colors.accent}
-          dividerColor={colors.divider}
-        />
+      {section.list?.marker === "dot" ? (
+        <DotList items={section.list.items.map((item) => item.text)} />
+      ) : (
+        section.list && (
+          <MarkerList
+            {...section.list}
+            color={colors.accent}
+            dividerColor={colors.divider}
+          />
+        )
       )}
       {section.footnote && (
         <p className="-mt-6 text-xs leading-normal">{section.footnote}</p>
