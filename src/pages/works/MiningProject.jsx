@@ -405,7 +405,7 @@ const content = {
     ProductOverviewApproach:
       "Considering that the industry tends to be slow to adopt IT tools, I pursued a stress-free UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
     productOverviewImage: "/mining/blurred_medium.png",
-    productOverviewImageCaption: "Selected designs of key screens and features",
+    productOverviewImageCaption: "Selected designs (excerpt)",
     backgroundTitle: "Project Background and Challenges",
     backgroundText: (
       <>
@@ -439,12 +439,11 @@ const content = {
         summary:
           "Eliminated unnecessary page transitions to create an input experience that gets users to budget creation as quickly as possible.",
         background: [
-          "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the feature users needed most, lacked intuitiveness, causing drop-offs and confusion during operation.",
-          "With their existing workflow, users could start a budget right away just by opening Excel, yet the system made that impossible.",
+          "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the most frequently used feature, lacked intuitiveness, causing drop-offs and confusion during operation.",
         ],
         backgroundFigure: {
           caption:
-            "The structure allows multiple programs to be created and managed under a single project.",
+            "The information architecture used a hierarchy in which multiple child programs were linked to a single parent project, so that the budgets tied to them could be created and managed in one place. As a result, creating a budget required users to first create a project and then a program, in that order.",
           image: "/mining/diagram.svg",
           alt: "Diagram of the project and program structure",
         },
@@ -461,49 +460,48 @@ const content = {
               marker: "letter",
               items: [
                 {
-                  title: "Too many inputs",
-                  text: "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
+                  title: "Fragmented screens obscured the structure",
+                  text: "Because project creation and program creation lived on separate screens, users struggled to grasp the relationship and hierarchy between the two, which led to hesitation during operation.",
                 },
                 {
-                  title: "Fragmented screens",
-                  text: 'The "Create Project" and "Create Program" screens were separated, making it difficult to understand the relationship and structure between the features.',
+                  title: "A long path to start budgeting",
+                  text: "Before reaching the Budget Creation screen, the most frequently used feature, users had to fill in many required fields across two steps (project and program), which kept them from getting to their actual work quickly.",
                 },
                 {
-                  title: "Existing names aren't visible",
-                  text: "Because of page transitions, users couldn't refer to existing project (program) names while entering a new project name.",
+                  title: "No way to reference existing data",
+                  text: "Users couldn't refer to existing project or program names while setting a new name.",
                 },
               ],
             },
           },
           {
             theme: "hearing",
-            label: "Interviews",
-            caption: "What we learned from interviews",
+            label: "Interviews & Specification",
+            caption:
+              "Going beyond identifying UI/UX issues, I interviewed the client about their actual workflows and usage context.",
             pairs: {
-              findingHeading: "What we learned",
-              decisionHeading: "What we decided",
+              findingHeading: "User behavior & workflow challenges",
+              decisionHeading: "How it shaped the UI/UX",
               items: [
                 {
                   finding:
-                    "A project doesn't always contain multiple programs. In many cases, programs were run on their own.",
+                    "A project doesn't always contain multiple programs; in many cases, a program is run on its own.",
                   decision:
-                    'Turn project creation from "a step everyone must go through" into "a feature used only when needed."',
+                    'Changed project creation from "a required preliminary step" to "an optional feature."',
                 },
                 {
                   finding:
-                    "When creating a budget in Excel, program details (dates, duration, staffing, etc.) are usually not decided yet.",
+                    "In the early budget planning stage, program details (duration, staffing, etc.) are often not yet decided.",
                   decision:
-                    "Make the program name the only required field, and let users fill in the details later.",
+                    "Minimized the required fields to the name only and allowed details to be added later (*after discussing with engineers to define the minimum data structure the system required, then optimizing the specification).",
                 },
               ],
             },
-            summary:
-              "The information the system needs, and the way users actually work. Balancing the two became the starting point for the flow improvements below.",
           },
           {
             theme: "after",
             label: "After",
-            flowLabel: "User flow to budget creation",
+            flowLabel: "User flow to budget creation (when creating a program)",
             image: "/mining/creation-flow-after.svg",
             alt: "Program creation flow after the change",
             list: {
@@ -512,25 +510,24 @@ const content = {
               marker: "letter",
               items: [
                 {
-                  title: "Program name as the only required field",
-                  text: "Reduced the required fields to just the project (program) name so users can start creating a budget as quickly as possible.",
+                  title: "Making project creation optional",
+                  text: "Based on insights from the interviews, I made the previously required project creation optional, enabling users to create a standalone program.\n After a program is created, users are taken directly to the Budget Creation screen.",
                 },
                 {
-                  title: "Combined into a single list",
-                  text: "Interviews revealed that a project doesn't always contain multiple programs, so I made it possible to create a standalone program and redesigned the flow to take users directly to the Budget Creation screen after creating a program.",
+                  title: "Keeping context with a modal",
+                  text: "By replacing page transitions with a modal UI, users can complete their input without losing the context of the original screen. They can also set a new name while referring to existing names in the list behind the modal.",
                 },
                 {
-                  title: "Input in place with a modal",
-                  text: "Replaced page transitions with a modal UI, allowing users to complete their input without losing the original context.",
+                  title: "Minimizing required fields",
+                  text: "Narrowed the required fields in the modal down to the program name only, allowing other details to be entered later. This lets users start creating a budget with the fewest possible steps.",
                 },
               ],
             },
           },
         ],
         reflection: {
-          headline:
-            'The importance of questioning the assumption that "a project must always be created"',
-          text: "I had been thinking about improvements based on the existing specification, but interviews revealed gaps with how the tool was actually used. Questioning the specification itself led to simplifying the entire flow, not just individual screens.",
+          headline: "The importance of questioning assumptions",
+          text: "When the issue of an unintuitive flow first came up, I treated it as a UI problem while taking the existing specification for granted. Through interviews with the client, however, it became clear that there was a gap between the specification and how the tool was actually used. Questioning the specification itself allowed us to go beyond screen-level fixes and simplify the entire flow.",
         },
       },
       {
@@ -539,7 +536,7 @@ const content = {
         summary:
           "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
         background:
-          "In the early stage of the product, the system automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
+          "In the initial specification at the time I joined, the system automatically generated budget items and initial estimates on the Budget Creation screen, based on conditions such as \"duration\" and \"mining location\" that users specified when creating a project.",
         sections: [
           {
             theme: "before",
@@ -567,7 +564,7 @@ const content = {
               ],
             },
             footnote:
-              '(*In the actual screen, a tab menu at the top let users switch between "Budget Creation" and "Tracking.")',
+              '(*In the actual screen, a tab menu at the top let users switch between "Budget Creation" and "Budget Tracking.")',
           },
           {
             theme: "hearing",
@@ -578,7 +575,7 @@ const content = {
               {
                 title: "Client Interviews",
                 description:
-                  "I interviewed the client about the background of their work and the challenges they currently face.",
+                  "I gathered feedback on the Budget Creation screen proposed in the early stage and asked about the challenges they currently face.",
                 items: [
                   "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
                   "Budgets are currently managed in Excel, but errors from complex formulas and manual input are a constant problem.",
@@ -586,16 +583,15 @@ const content = {
                 ],
                 insightLabel: "What users needed",
                 insight:
-                  "Rather than automation, users needed a way to reduce errors without breaking their familiar Excel workflow.",
+                  "Not automation of their daily work, but a way to reduce mistakes without disrupting their familiar Excel workflow.",
               },
               {
                 title: "Screen Recordings of Daily Work",
                 description:
-                  "To uncover habits that are hard to put into words, I had users record their daily work and analyzed it.",
+                  "To accurately understand how the work was actually done, I analyzed screen recordings of their everyday Excel operations, looking for latent issues and habits that are hard to see through interviews alone. \n Below are some of the findings.",
                 items: [
-                  "Basic information for each budget item is listed on the left side.",
-                  "Usually only the name is needed; other information is rarely looked at.",
-                  "Data is frequently duplicated by drag and drop.",
+                  "Reusing existing Excel sheets to create new budgets was common practice, which frequently caused formula and function errors.",
+                  "Budget data was frequently exported as reports (PDF, Excel, etc.) to share progress.",
                 ],
               },
             ],
@@ -604,8 +600,8 @@ const content = {
             theme: "process",
             label: "Reference UI Research",
             text: [
-              "I looked for UIs to use as references.",
-              'Rather than a minimal, hover-based table UI like Notion or Jira, I designed the icons for actions such as edit and delete to be always visible to suit the target users, prioritizing "intuitive, hard-to-get-lost operation" over "visual simplicity."',
+              "I analyzed services that use table UIs to examine the most suitable interface structure for table operations.",
+              'Instead of the "minimal, hover-based UI" common in modern tools such as Notion and Jira, I adopted "intuitive, always-visible action UI" to keep the target users from getting lost.',
             ],
             gallery: [
               { src: "/mining/reference-ui-1.png", alt: "Reference table UI" },
@@ -616,7 +612,7 @@ const content = {
           },
           {
             theme: "after",
-            label: "After",
+            label: "Final UI",
             image: "/mining/cost-management-after.png",
             alt: "Cost management screen after the change",
             imageWidth: "w-full md:w-3/5 self-center",
@@ -642,16 +638,15 @@ const content = {
                 },
                 {
                   title: "Days remaining and budget runway at a glance",
-                  text: 'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen.',
+                  text: 'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen. I also added tooltips showing the basis of each calculation to make the system more transparent and support users\' decision-making.',
                 },
               ],
             },
           },
         ],
         reflection: {
-          headline:
-            "Familiar interactions, not new mechanisms, are the key to adoption",
-          text: "I learned that following the familiar feel of Excel, rather than advanced automation, is what helps a tool take root at sites unfamiliar with IT tools. Understanding the reality of their work through interviews allowed us to rethink the value we should deliver.",
+          headline: 'The importance of "ownership" beyond interviews',
+          text: "I learned that to arrive at the solutions users truly need, careful interviews alone aren't enough. It's essential to develop a deep understanding of the users' work and context, define the problems myself, and propose improvements.",
         },
       },
       {
@@ -660,13 +655,13 @@ const content = {
         summary:
           "Integrated a new feature while preserving the existing screen structure and interaction patterns.",
         background:
-          "Based on a request from the client, we decided to add a budget simulation feature. Since the main UI structure had already been finalized, I designed the feature to blend in naturally without breaking the consistency of existing UI components and layouts.",
+          "Based on a request from the client, we decided to add a budget simulation feature.\nSince the main UI structure had already been finalized, I focused on designing the feature to blend in naturally without breaking the consistency of existing UI components and layouts.",
         sections: [
           {
             theme: "hearing",
             label: "Interviews",
-            caption: "What we learned from interviews",
-            text: "Client interviews clarified the following challenges and needs.",
+            caption:
+              "Interviews with the client brought the following challenges and needs to light.",
             list: {
               marker: "dot",
               items: [
@@ -701,16 +696,16 @@ const content = {
               heading: "Key Features and UI Considerations",
               items: [
                 {
-                  text: 'A "Budget versions" dropdown brings creating and viewing simulations and switching to the actual budget into one place.',
+                  text: 'To support frequent simulation work, I added a "Budget versions" dropdown that lets users create new simulations, view past versions, and apply them to the actual budget, all in one place.',
                 },
                 {
                   text: "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
                 },
                 {
-                  text: "The color theme of the entire screen changes so users can intuitively recognize when they are in simulation mode.",
+                  text: "Optimized the color theme of the entire screen so users can intuitively recognize when they are in simulation mode.",
                 },
                 {
-                  text: "The total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
+                  text: "During a simulation, the total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
                 },
               ],
             },

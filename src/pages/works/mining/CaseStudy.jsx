@@ -1,4 +1,6 @@
 import ZoomableImage from "../../../components/ZoomableImage";
+import { useLanguage } from "../../../context/LanguageContext";
+import { localizeImage } from "../../../utils/localizeImage";
 import CaseSection, { CaseBox } from "./CaseSection";
 
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
@@ -10,6 +12,8 @@ function CaseStudy({
   sections,
   reflection,
 }) {
+  const { language } = useLanguage();
+
   return (
     <div className="flex flex-col gap-12 pt-2 pl-6">
       <div className="flex flex-col gap-12">
@@ -27,7 +31,7 @@ function CaseStudy({
                 {backgroundFigure.caption}
               </figcaption>
               <ZoomableImage
-                src={backgroundFigure.image}
+                src={localizeImage(backgroundFigure.image, language)}
                 alt={backgroundFigure.alt}
                 className="w-full max-w-[720px] object-contain self-center"
               />
