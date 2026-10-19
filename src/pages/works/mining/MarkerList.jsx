@@ -29,12 +29,14 @@ function MarkerList({
   marker = "number",
   color,
   dividerColor,
+  size = "md",
 }) {
+  const small = size === "sm";
   return (
     <div className="flex flex-col gap-2">
       {heading && (
         <div className="flex flex-wrap items-center gap-x-2.5 leading-normal">
-          <h4 className="text-xl font-bold text-[#2e211a]">{heading}</h4>
+          <h4 className={`${small ? "text-lg" : "text-xl"} font-bold text-[#2e211a]`}>{heading}</h4>
           {note && <span className="text-xs text-[#7a6a5f]">{note}</span>}
         </div>
       )}
@@ -48,11 +50,15 @@ function MarkerList({
             <Marker marker={marker} index={index} color={color} />
             <div className="flex flex-col gap-1 min-w-0">
               {item.title && (
-                <p className="font-bold leading-normal text-[#2e211a]">
+                <p
+                  className={`${small ? "text-sm" : ""} font-bold leading-normal text-[#2e211a]`}
+                >
                   {item.title}
                 </p>
               )}
-              <p className="leading-[1.8] whitespace-pre-line text-[#5a4a40]">
+              <p
+                className={`${small ? "text-sm" : ""} leading-[1.8] whitespace-pre-line text-[#5a4a40]`}
+              >
                 {item.text}
               </p>
             </div>

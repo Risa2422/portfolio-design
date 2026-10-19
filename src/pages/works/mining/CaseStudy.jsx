@@ -47,10 +47,10 @@ function CaseStudy({
       {reflection && (
         <CaseBox label={labels.reflection} indent={false}>
           <div className="flex flex-col gap-2">
-            <p className="text-[17px] font-bold leading-[1.7] text-[#2e211a]">
+            <p className="text-[17px] font-bold leading-[1.7]">
               {reflection.headline}
             </p>
-            <div className="text-sm leading-[1.8] text-[#5a4a40]">
+            <div className="">
               {toParagraphs(reflection.text).map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}

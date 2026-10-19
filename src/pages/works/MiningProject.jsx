@@ -176,7 +176,9 @@ const content = {
             layout: "row",
             image: "/mining/cost-management-before.png",
             alt: "改善前のコスト管理画面",
+            mediaWidth: "md:w-2/5",
             list: {
+              size: "sm",
               heading: "予算作成画面の特徴",
               items: [
                 {
@@ -198,32 +200,69 @@ const content = {
           },
           {
             theme: "hearing",
-            label: "ヒアリング",
-            caption: "クライアントからのフィードバック",
-            headline:
-              "自動化よりも、使い慣れたExcelの運用を崩さずにミスを減らせることが求められていた。",
-            list: {
-              marker: "dot",
-              items: [
-                {
-                  text: "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
-                },
-                {
-                  text: "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
-                },
-                {
-                  text: "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
-                },
-              ],
-            },
+            label: "ヒアリング・既存ワークフローの分析",
+            caption:
+              "現場の課題を多角的に把握するため、2つの方法で調査を行いました。",
+            research: [
+              {
+                title: "クライアントへのヒアリング",
+                description:
+                  "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。",
+                items: [
+                  "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
+                  "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
+                  "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
+                ],
+                insightLabel: "求められていること",
+                insight:
+                  "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
+              },
+              {
+                title: "普段の作業の画面録画",
+                description:
+                  "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。ヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 \n 以下が分析結果の一部です。",
+                items: [
+                  "新規予算の作成時は既存のExcelシートを再利用する運用が定着しており、それに伴う数式・関数エラーが頻発していた。",
+                  "作成した予算データは、進捗共有のため高頻度でレポート（PDF/Excel等）としてエクスポートされていた。",
+                ],
+              },
+            ],
+          },
+          {
+            theme: "process",
+            label: "参考UI探し",
+            text: [
+              "テーブルUIを採用しているサービスを分析し、テーブル操作における最適なインターフェース構造を検証しました。",
+              "先進的ツール（NotionやJira等）で主流の「ホバー表示を中心としたミニマルUI」は避け、ターゲット層の操作迷いを防ぐ『常時視認性の高い、直感的なアクションUI』を採用しました。",
+            ],
+            gallery: [
+              {
+                src: "/mining/reference-ui-1.png",
+                alt: "参考にしたテーブルUI",
+              },
+              {
+                src: "/mining/reference-ui-2.png",
+                alt: "参考にしたテーブルUI",
+              },
+              {
+                src: "/mining/reference-ui-3.png",
+                alt: "参考にしたテーブルUI",
+              },
+              {
+                src: "/mining/reference-ui-4.png",
+                alt: "参考にしたテーブルUI",
+              },
+            ],
           },
           {
             theme: "after",
-            label: "改善後",
+            label: "完成UI",
             image: "/mining/cost-management-after.png",
             alt: "改善後のコスト管理画面",
+            imageWidth: "w-full md:w-3/5 self-center",
             list: {
               heading: "改善内容",
+              marker: "letter",
               items: [
                 {
                   title: "学習コストの最小化",
@@ -243,15 +282,15 @@ const content = {
                 },
                 {
                   title: "残日数・予算残量をひと目で",
-                  text: "クライアントとの対話を通じて「プログラムの残日数（Days Remaining）」や「予算残量（Budget Runway）」の即時把握に対する潜在ニーズを発見し、画面右上に配置しました。",
+                  text: "クライアントとの対話を通じて「プログラムの残日数（Days Remaining）」や「予算残量（Budget Runway）」の即時把握に対する潜在ニーズを発見し、画面右上に配置しました。また、計算根拠を確認できるツールチップを併設することでシステムの透明性を高め、ユーザーの判断支援を図りました。",
                 },
               ],
             },
           },
         ],
         reflection: {
-          headline: "新しい仕組みより「慣れた操作感」が定着の鍵になる",
-          text: "高度な自動化よりも、ユーザーが日常的に使い慣れたExcelの操作感を踏襲することが、ITツールに不慣れな現場での定着につながると学びました。ヒアリングで業務の実態を知ることで、提供すべき価値そのものを見直すことができました。",
+          headline: "ヒアリングの先にある「当事者意識」の重要性",
+          text: "ユーザーが真に求めている本質的な解決策を導き出すには、丁寧なヒアリングだけでなく、ユーザーの業務や文脈に対する深い解像度を持ち、自ら課題を定義して改善策を提案することが不可欠だと学びました。",
         },
       },
       {
@@ -507,7 +546,9 @@ const content = {
             layout: "row",
             image: "/mining/cost-management-before.png",
             alt: "Cost management screen before the change",
+            mediaWidth: "md:w-2/5",
             list: {
+              size: "sm",
               heading: "Key Features of the Budget Creation Screen",
               items: [
                 {
@@ -529,32 +570,58 @@ const content = {
           },
           {
             theme: "hearing",
-            label: "Interviews",
-            caption: "Feedback from the Client",
-            headline:
-              "Rather than automation, users needed a way to reduce errors without breaking their familiar Excel workflow.",
-            list: {
-              marker: "dot",
-              items: [
-                {
-                  text: "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
-                },
-                {
-                  text: "We currently manage budgets in Excel, but errors from complex formulas and manual input are a constant problem.",
-                },
-                {
-                  text: "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
-                },
-              ],
-            },
+            label: "Interviews & Workflow Analysis",
+            caption:
+              "To understand the on-site challenges from multiple angles, I conducted research in two ways.",
+            research: [
+              {
+                title: "Client Interviews",
+                description:
+                  "I interviewed the client about the background of their work and the challenges they currently face.",
+                items: [
+                  "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
+                  "Budgets are currently managed in Excel, but errors from complex formulas and manual input are a constant problem.",
+                  "Given the nature of the industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
+                ],
+                insightLabel: "What users needed",
+                insight:
+                  "Rather than automation, users needed a way to reduce errors without breaking their familiar Excel workflow.",
+              },
+              {
+                title: "Screen Recordings of Daily Work",
+                description:
+                  "To uncover habits that are hard to put into words, I had users record their daily work and analyzed it.",
+                items: [
+                  "Basic information for each budget item is listed on the left side.",
+                  "Usually only the name is needed; other information is rarely looked at.",
+                  "Data is frequently duplicated by drag and drop.",
+                ],
+              },
+            ],
+          },
+          {
+            theme: "process",
+            label: "Reference UI Research",
+            text: [
+              "I looked for UIs to use as references.",
+              'Rather than a minimal, hover-based table UI like Notion or Jira, I designed the icons for actions such as edit and delete to be always visible to suit the target users, prioritizing "intuitive, hard-to-get-lost operation" over "visual simplicity."',
+            ],
+            gallery: [
+              { src: "/mining/reference-ui-1.png", alt: "Reference table UI" },
+              { src: "/mining/reference-ui-2.png", alt: "Reference table UI" },
+              { src: "/mining/reference-ui-3.png", alt: "Reference table UI" },
+              { src: "/mining/reference-ui-4.png", alt: "Reference table UI" },
+            ],
           },
           {
             theme: "after",
             label: "After",
             image: "/mining/cost-management-after.png",
             alt: "Cost management screen after the change",
+            imageWidth: "w-full md:w-3/5 self-center",
             list: {
               heading: "Improvements",
+              marker: "letter",
               items: [
                 {
                   title: "Minimizing the learning curve",

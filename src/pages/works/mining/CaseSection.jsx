@@ -64,7 +64,7 @@ function CaseSection({ section, line }) {
         <ZoomableImage
           src={localizeImage(section.image, language)}
           alt={section.alt}
-          className="w-full object-contain"
+          className={`${section.imageWidth ?? "w-full"} object-contain`}
         />
       )}
     </div>
@@ -134,6 +134,105 @@ function CaseSection({ section, line }) {
     );
   }
 
+  // Research: several studies, each with its source, what was learned and
+  // an optional highlighted insight, separated by dashed rules.
+  if (section.research) {
+    return (
+      <CaseBox theme={section.theme} label={section.label} line={line}>
+        <div className="flex flex-col gap-6">
+          {section.caption && (
+            <p className="leading-[1.75]">{section.caption}</p>
+          )}
+          {section.research.map((study, index) => (
+            <div key={index} className="flex flex-col gap-6">
+              {index > 0 && (
+                <hr className="border-0 border-t-2 border-dashed border-[#d1d5db]" />
+              )}
+              <div className="flex flex-col gap-8">
+                <div>
+                  <div className="flex gap-2 items-center">
+                    <img
+                      src="/mining/summary-dot.svg"
+                      alt=""
+                      width="10"
+                      height="10"
+                      className="shrink-0"
+                    />
+                    <p className="text-[17px] font-bold leading-[1.6]">
+                      {study.title}
+                    </p>
+                  </div>
+                  {study.description && (
+                    <p className="text-sm pt-2 text-text-sub">
+                      {study.description}
+                    </p>
+                  )}
+                </div>
+                <ul className="flex flex-col gap-1.5 pl-4">
+                  {study.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex gap-3 items-start">
+                      <img
+                        src="/mining/list-dot.svg"
+                        alt=""
+                        width="8"
+                        height="26.25"
+                        className="shrink-0"
+                      />
+                      <p className="flex-1 min-w-0 text-[15px] leading-[1.75]">
+                        {item}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                {study.insight && (
+                  <div className="flex flex-col items-start gap-3">
+                    {study.insightLabel && (
+                      <span className="px-3 py-0.5 rounded-full border border-[#B37B19] bg-white text-[#B37B19] text-xs font-bold leading-[1.6]">
+                        {study.insightLabel}
+                      </span>
+                    )}
+                    <p className="text-[20px] font-bold leading-[1.65] text-[#2e211a]">
+                      <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(245,223,168,0.7)_56%,rgba(245,223,168,0.7)_92%,transparent_92%)]">
+                        {study.insight}
+                      </span>
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </CaseBox>
+    );
+  }
+
+  // Gallery: text beside a 2-column grid of reference screenshots.
+  if (section.gallery) {
+    return (
+      <CaseBox theme={section.theme} label={section.label} line={line}>
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex-1 min-w-0 text-base leading-6">
+            {toParagraphs(section.text).map((paragraph, index) => (
+              <p key={index} className="pb-6">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-x-[7px] gap-y-[10px] w-full md:w-[505px] md:shrink-0">
+            {section.gallery.map((image, index) => (
+              <ZoomableImage
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className="w-full object-cover object-top border"
+              />
+            ))}
+          </div>
+        </div>
+      </CaseBox>
+    );
+  }
+
   const content = (
     <>
       {hasMessage && (
@@ -172,7 +271,11 @@ function CaseSection({ section, line }) {
     return (
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col md:flex-row gap-12 md:gap-8 md:items-start">
-          {media && <div className="md:w-1/2 md:shrink-0">{media}</div>}
+          {media && (
+            <div className={`${section.mediaWidth ?? "md:w-1/2"} md:shrink-0`}>
+              {media}
+            </div>
+          )}
           <div className="flex flex-col gap-12 flex-1 min-w-0">{content}</div>
         </div>
       </CaseBox>
