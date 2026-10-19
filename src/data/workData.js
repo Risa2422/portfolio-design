@@ -30,6 +30,24 @@ const workData = [
     },
     to: "fill",
   },
+
+  {
+    imageSrc: "/mahjong-thumbnail.png",
+    title: {
+      ja: "麻雀対戦記録アプリ",
+      en: "Mahjong Match Record App",
+    },
+    date: "2025",
+    description: {
+      ja: "既存の麻雀対戦記録アプリをもとにリデザインを行いました。既存の構成を参考にしつつ、より直感的で使いやすいインターフェースを目指しました。",
+      en: "I redesigned a mahjong match tracking app based on an existing product. While referencing its original structure, I aimed to create a more intuitive and user-friendly interface.",
+    },
+    tags: {
+      ja: ["自主制作", "Webアプリ", "UIデザイン", "リデザイン"],
+      en: ["Personal Project", "Web App", "UI Design", "Redesign"],
+    },
+    to: "mahjong",
+  },
   {
     imageSrc: "/event-thumbnail.png",
     title: {
@@ -58,23 +76,6 @@ const workData = [
       ],
     },
     to: "event-management",
-  },
-  {
-    imageSrc: "/mahjong-thumbnail.png",
-    title: {
-      ja: "麻雀対戦記録アプリ",
-      en: "Mahjong Match Record App",
-    },
-    date: "2025",
-    description: {
-      ja: "既存の麻雀対戦記録アプリをもとにリデザインを行いました。既存の構成を参考にしつつ、より直感的で使いやすいインターフェースを目指しました。",
-      en: "I redesigned a mahjong match tracking app based on an existing product. While referencing its original structure, I aimed to create a more intuitive and user-friendly interface.",
-    },
-    tags: {
-      ja: ["自主制作", "Webアプリ", "UIデザイン", "リデザイン"],
-      en: ["Personal Project", "Web App", "UI Design", "Redesign"],
-    },
-    to: "mahjong",
   },
   {
     imageSrc: "/quiz-thumbnail.png",

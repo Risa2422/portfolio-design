@@ -158,7 +158,7 @@ const WebDesign = () => {
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
               <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-base font-medium">{t.home}</p>
+            <p className="text-base font-medium tracking-wider">{t.home}</p>
           </div>
         </Link>
         {/* Header Section */}
@@ -279,7 +279,7 @@ const WebDesign = () => {
               <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-base font-medium">{t.home}</p>
+              <p className="text-base font-medium tracking-wider">{t.home}</p>
             </div>
           </Link>
         </div>

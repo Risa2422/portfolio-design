@@ -11,7 +11,7 @@ const Arrow = () => {
         <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
           <MdOutlineArrowBackIosNew width={10} className="w-5 h-3 text-current" />
         </span>
-        <p className="pb-0.5 text-sm font-medium">Home</p>
+        <p className="pb-0.5 text-sm font-medium tracking-wider">Home</p>
       </div>
     </Link>
   );

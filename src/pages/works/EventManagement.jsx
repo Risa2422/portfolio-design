@@ -305,7 +305,7 @@ const EventManagement = () => {
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
               <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-sm font-medium">{t.homeLabel}</p>
+            <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
           </div>
         </Link>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
@@ -742,7 +742,7 @@ const EventManagement = () => {
                   className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="pb-0.5 text-sm font-medium">{t.homeLabel}</p>
+              <p className="pb-0.5 text-sm font-medium tracking-wider">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

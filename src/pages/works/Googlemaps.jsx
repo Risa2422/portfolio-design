@@ -345,7 +345,7 @@ const GoogleMapsAlbum = () => {
               <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-sm font-medium">{t.homeLabel}</p>
+              <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
             </div>
           </Link>
         </div>

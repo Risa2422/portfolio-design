@@ -26,14 +26,14 @@ function CaseStudy({
             ))}
           </div>
           {backgroundFigure && (
-            <figure className="flex gap-4">
-              <figcaption className="leading-[1.8] ">
+            <figure className="flex flex-col md:flex-row gap-6 md:gap-4">
+              <figcaption className="flex-1 min-w-0 leading-[1.8]">
                 {backgroundFigure.caption}
               </figcaption>
               <ZoomableImage
                 src={localizeImage(backgroundFigure.image, language)}
                 alt={backgroundFigure.alt}
-                className="w-full max-w-[720px] object-contain self-center"
+                className="w-full md:w-1/2 md:shrink-0 max-w-[720px] object-contain self-center"
               />
             </figure>
           )}

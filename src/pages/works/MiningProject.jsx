@@ -536,7 +536,7 @@ const content = {
         summary:
           "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
         background:
-          "In the initial specification at the time I joined, the system automatically generated budget items and initial estimates on the Budget Creation screen, based on conditions such as \"duration\" and \"mining location\" that users specified when creating a project.",
+          'In the initial specification at the time I joined, the system automatically generated budget items and initial estimates on the Budget Creation screen, based on conditions such as "duration" and "mining location" that users specified when creating a project.',
         sections: [
           {
             theme: "before",
@@ -775,7 +775,9 @@ const MiningProject = () => {
             <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
               <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
             </span>
-            <p className="text-base font-medium">{t.home}</p>
+            <p className="font-medium tracking-wider text-[#2E211A]">
+              {t.home}
+            </p>
           </div>
         </Link>
         {/* Header Section */}
@@ -937,7 +939,7 @@ const MiningProject = () => {
               <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
                 <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
               </span>
-              <p className="text-base font-medium">{t.home}</p>
+              <p className="text-base font-medium tracking-wider">{t.home}</p>
             </div>
           </Link>
         </div>
