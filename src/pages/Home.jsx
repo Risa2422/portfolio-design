@@ -105,7 +105,7 @@ const Home = () => {
                 ]}
                 onComplete={() => setTypingDone(true)}
               />
-              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-2xl tracking-wider font-geist">
+              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-2xl tracking-widest font-geist">
                 2026
               </p>
             </div>
@@ -121,11 +121,11 @@ const Home = () => {
                   : { opacity: 0, clipPath: "inset(0 0 100% 0)" }
               }
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className={`flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
+              className={`self-center flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
                 typingDone ? "" : "pointer-events-none"
               }`}
             >
-              <span className="text-gray-500 text-xs tracking-[0.2em] font-bold uppercase [writing-mode:vertical-rl]">
+              <span className="text-gray-600 text-xs tracking-[0.2em] font-bold uppercase [writing-mode:vertical-rl]">
                 Scroll
               </span>
               <span className="block w-px h-12 md:h-32 bg-gray-500" />

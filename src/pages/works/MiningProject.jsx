@@ -535,7 +535,9 @@ const MiningProject = () => {
                 isOpen={openSections[improvement.id]}
                 onToggle={() => toggleSection(improvement.id)}
               >
-                <p className="my-12 leading-loose">{improvement.description}</p>
+                <p className="mt-4 mb-8 leading-loose">
+                  {improvement.description}
+                </p>
                 {improvement.id === 1 && (
                   <Improvement1
                     before={improvement.before}
@@ -563,8 +565,8 @@ const MiningProject = () => {
             <span className="w-2 bg-current shrink-0 rounded-full" />
             {t.aiUsageTitle}
           </h2>
-          <div className="flex flex-col md:flex-row gap-10 md:gap-16">
-            <ul className="md:w-1/3 grid grid-cols-4 content-end gap-x-3 gap-y-6">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-32">
+            <ul className="md:w-1/2 grid grid-cols-4 content-end gap-9 gap-y-6">
               {aiUsageSkills.map((skill) => (
                 <SkillItem
                   key={skill.label}

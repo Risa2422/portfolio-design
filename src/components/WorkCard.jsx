@@ -97,7 +97,7 @@ function WorkCard({
         >
           <div className="space-y-3">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="pt-3 text-text-sub">{description}</p>
+            <p className="pt-3 leading-relaxed font-medium">{description}</p>
           </div>
           <ul className="flex gap-2 pt-3 flex-wrap">
             {tags.map((tag, index) => (

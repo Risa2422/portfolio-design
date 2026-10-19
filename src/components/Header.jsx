@@ -56,7 +56,7 @@ function Header() {
         {/* Navigation */}
         <nav
           className={`
-            absolute top-16 w-max min-w-[8rem] right-6 px-6 rounded border border-gray-300
+            font-geist absolute top-16 w-max min-w-[8rem] right-6 px-6 rounded border border-gray-300
             sm:static sm:block sm:bg-transparent sm:px-0 sm:py-0 sm:border-none sm:rounded-none
             transition-all duration-200
             ${
@@ -67,7 +67,7 @@ function Header() {
             sm:opacity-100 sm:scale-100 sm:visible
           `}
         >
-          <ul className="flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
+          <ul className="flex flex-col sm:flex-row sm:space-x-10 sm:space-y-0 sm:py-0 align-center sm:items-center justify-end">
             {navLinks.map(({ to, label }, index) => {
               const isWorkPath = location.pathname.startsWith("/works");
               return (
@@ -84,7 +84,7 @@ function Header() {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
                       group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3 tracking-wide whitespace-nowrap
-                        ${active ? "font-semibold" : ""}
+                        ${active ? "font-medium" : ""}
                         ${
                           active && !isOpen
                             ? "after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
@@ -92,20 +92,20 @@ function Header() {
                         }
                         ${
                           active && isOpen
-                            ? "text-text text-start font-semibold"
-                            : "text-start"
+                            ? "text-text text-start"
+                            : "text-start "
                         }
                         sm:text-center
                       `;
                     }}
                   >
-                    <span className="relative block overflow-hidden">
-                      <span className="text-sm block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none tracking-wider">
+                    <span className="relative block overflow-hidden ">
+                      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none tracking-widest">
                         {label}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="text-sm absolute left-0 top-full w-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none"
+                        className=" absolute left-0 top-full w-full block transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none tracking-widest"
                       >
                         {label}
                       </span>
