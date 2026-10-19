@@ -125,7 +125,7 @@ const Home = () => {
                 typingDone ? "" : "pointer-events-none"
               }`}
             >
-              <span className="text-gray-600 text-xs tracking-[0.2em] font-bold uppercase [writing-mode:vertical-rl]">
+              <span className="text-[11px] tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
                 Scroll
               </span>
               <span className="block w-px h-12 md:h-32 bg-gray-500" />

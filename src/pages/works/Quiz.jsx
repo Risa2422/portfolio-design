@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import SectionMark from "../../components/SectionMark";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
@@ -348,8 +349,8 @@ const Quiz = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.overviewTitle}
           </h2>
           <p className="text-base leading-loose text-gray-700">
@@ -357,8 +358,8 @@ const Quiz = () => {
           </p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.requirementsTitle}
           </h2>
           <div className="space-y-4">
@@ -416,8 +417,8 @@ const Quiz = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.processTitle}
           </h2>
           <div className="flex flex-col w-full gap-6">
@@ -534,8 +535,8 @@ const Quiz = () => {
           id="final-ui"
           className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 scroll-mt-24"
         >
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.finalUiTitle}
           </h2>
           <video
@@ -713,8 +714,8 @@ const Quiz = () => {
           </section>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 bg-background-secondary overflow-hidden py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.learningsTitle}
           </h2>
           <div className="flex flex-col w-full gap-4">

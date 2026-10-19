@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import SectionMark from "../../components/SectionMark";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
@@ -328,15 +329,15 @@ const EventManagement = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.overviewTitle}
           </h2>
           <p className="leading-loose text-gray-700">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.backgroundTitle}
           </h2>
           <p className="text-base leading-loose text-gray-700">
@@ -344,8 +345,8 @@ const EventManagement = () => {
           </p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.problemTitle}
           </h2>
           <div className="space-y-2">
@@ -395,8 +396,8 @@ const EventManagement = () => {
           </p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.mvpTitle}
           </h2>
           <p className="text-base leading-loose text-gray-700">{t.mvpText}</p>
@@ -409,8 +410,8 @@ const EventManagement = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.uiDesignTitle}
           </h2>
           <div>
@@ -719,8 +720,8 @@ const EventManagement = () => {
         </div>
 
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.takeawaysTitle}
           </h2>
           <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">

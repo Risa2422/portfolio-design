@@ -1,0 +1,51 @@
+// Color sets for each section box of an improvement case study.
+// "neutral" is shared by the background and reflection sections.
+export const caseThemes = {
+  neutral: {
+    border: "#82796e",
+    background: "#ffffff",
+    badgeBg: "#E6DED3",
+    badgeText: "#5a4a40",
+    pillBg: "#f7f0e6",
+    pillText: "#5a4a40",
+    accent: "#5a4a40",
+    divider: "#ece3d6",
+  },
+  before: {
+    border: "#5a4a40",
+    badgeBg: "#5a4a40",
+    badgeText: "#ffffff",
+    pillBg: "#f7f0e6",
+    pillText: "#5a4a40",
+    accent: "#5a4a40",
+    divider: "#ece3d6",
+  },
+  hearing: {
+    border: "#b37a19",
+    badgeBg: "#b37a19",
+    badgeText: "#ffffff",
+    pillBg: "#f7ecd9",
+    pillText: "#976211",
+    accent: "#976211",
+    divider: "#efe2c9",
+    summaryBg: "#fdf9ec",
+  },
+  process: {
+    border: "#3f5f73",
+    badgeBg: "#3f5f73",
+    badgeText: "#ffffff",
+    pillBg: "#e4ecf1",
+    pillText: "#2f4a5b",
+    accent: "#3f5f73",
+    divider: "#dde6ec",
+  },
+  after: {
+    border: "#b24a26",
+    badgeBg: "#b24a26",
+    badgeText: "#ffffff",
+    pillBg: "#f5e1db",
+    pillText: "#8f3b1e",
+    accent: "#b24a26",
+    divider: "#e6dccd",
+  },
+};

@@ -20,7 +20,7 @@ export default {
       colors: {
         background: "#FFFDF7",
         "background-secondary": "#FAF7F0",
-        primary: "#C74435",
+        primary: "#B24A26",
         "primary-light": "rgba(216, 178, 89, 0.48)",
         secondary: "rgba(168, 187, 162)",
         "secondary-light": "rgba(168, 187, 162, 0.48)",

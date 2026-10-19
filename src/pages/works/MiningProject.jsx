@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import Accordion from "../../components/Accordion";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
+import SectionMark from "../../components/SectionMark";
 import SkillItem from "../../components/SkillItem";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
-import Improvement1 from "./mining/Improvement1";
-import Improvement2 from "./mining/Improvement2";
-import Improvement3 from "./mining/Improvement3";
+import CaseStudy from "./mining/CaseStudy";
 
 const aiUsageSkills = [
   { icon: "/alloy-icon.svg", label: "Alloy" },
@@ -40,11 +39,11 @@ const content = {
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/blurred_medium.png",
-    productOverviewImageCaption: "主要画面・機能のデザイン抜粋",
+    productOverviewImageCaption: "制作デザイン (一部)",
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText: (
       <>
-        私が参画した時点では、すでにデザインの作成や開発実装が進行中でした。しかし、
+        参画時、すでにデザインの作成や開発実装が進行中でしたが、
         <span className="font-bold">
           既存の画面構造の整理やUIの一貫性が不足
         </span>
@@ -62,35 +61,105 @@ const content = {
     improvementsTitle: "改善事例",
     improvementsText:
       "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例をご紹介します。",
+    caseLabels: { background: "背景", reflection: "振り返り" },
     improvements: [
       {
         id: 1,
         title: "プログラム作成フローの簡略化",
         summary:
           "不要な画面遷移を廃止し、最速で予算作成へ到達できる入力体験を目指しました。",
-        description:
-          "最も利用頻度が高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。(１つのプロジェクト配下に、複数のプログラムを紐づけて作成・管理できる構造でした。)",
-        before: {
-          label: "【改善前】プロジェクト作成から予算作成までのユーザーフロー",
-          image: "/mining/creation-flow-before.svg",
-          alt: "改善前のプログラム作成フロー",
-          heading: "課題",
-          items: [
-            "プロジェクト作成から予算作成に至るまでの入力項目・必須項目が多く、予算作成ページ到達までに時間がかかっていました。",
-            "「プロジェクト作成」と「プログラム作成」の画面が分断されており、機能間の関連性や構造が分かりづらい状況でした。",
-            "画面遷移が発生することで、ユーザーが既存のプロジェクト(プログラム)名を確認しながら新規プロジェクト名を入力できませんでした。",
-          ],
+        background: [
+          "最も利用頻度が高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。",
+        ],
+        backgroundFigure: {
+          caption:
+            "情報構造としては、1つの親プロジェクトに複数の子プログラムを紐づける階層構造とし、それらに紐づく予算が一元的に作成・管理できる設計を採用していました。そのため、予算を作成するには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
+          image: "/mining/diagram.svg",
+          alt: "プロジェクトとプログラムの構造図",
         },
-        after: {
-          label: "【改善後】予算作成までのユーザーフロー",
-          image: "/mining/creation-flow-after.svg",
-          alt: "変更後のプログラム作成フロー",
-          heading: "改善内容",
-          items: [
-            "クライアントへのヒアリングを通して、必ずしも「１プロジェクト = 複数プログラム」ではないことが判明したため、これまでは必須だったプロジェクト作成のプロセスをスキップし、プログラム単体での作成を選択可能にしました。\nこれにより、プログラム作成後はダイレクトに予算作成画面へ遷移できる設計に変更しました。",
-            "画面遷移の代わりにモーダルUIを採用することで、元のコンテキストを維持したまま入力を完結できるフローへ改善しました。",
-            "モーダルの入力必須項目をプロジェクト(プログラム)名のみに絞り込むことで、最速で予算作成を開始できるようにしました。",
-          ],
+        sections: [
+          {
+            theme: "before",
+            label: "改善前",
+            flowLabel: "プロジェクト作成から予算作成までのユーザーフロー",
+            image: "/mining/creation-flow-before.svg",
+            alt: "改善前のプログラム作成フロー",
+            list: {
+              heading: "課題",
+              note: "(図中の A・B・C に対応)",
+              marker: "letter",
+              items: [
+                {
+                  title: "画面分断による構造理解の困難さ",
+                  text: "プロジェクト作成とプログラム作成が個別の画面に分かれていたことにより、ユーザーが両者の関係性や階層構造を把握しづらく、操作上の迷いを生む要因となっていました。",
+                },
+                {
+                  title: "予算作成着手までの導線の長さ",
+                  text: "最も利用頻度の高い予算作成画面へ至る前に、プロジェクトおよびプログラムの2段階で多数の必須項目を入力する必要があり、ユーザーが速やかに本来の業務へ着手できない状況にありました。",
+                },
+                {
+                  title: "既存データを参照できない入力環境",
+                  text: "ユーザーは既存のプロジェクト名・プログラム名を参照しながら新たな名称を設定することができませんでした。",
+                },
+              ],
+            },
+          },
+          {
+            theme: "hearing",
+            label: "ヒアリングと仕様定義",
+            caption:
+              "UI/UX上の課題抽出にとどまらず、実際の業務フローや利用コンテキストについてクライアントへヒアリングを実施しました。",
+            pairs: {
+              findingHeading: "ユーザー行動・実務の課題",
+              decisionHeading: "UI/UXへの落とし込み",
+              items: [
+                {
+                  finding:
+                    "1つのプロジェクト内に複数のプログラムが存在するとは限らず、プログラム単体で運用されるケースも多い。",
+                  decision:
+                    "プロジェクト作成を「必須の事前ステップ」から「任意の機能」へと変更",
+                },
+                {
+                  finding:
+                    "初期の予算策定段階では、プログラムの詳細（期間・人員など）が確定していないことが多い。",
+                  decision:
+                    "必須入力項目を名称のみに最小化し、詳細は後から登録可能な設計に変更（※エンジニアと協議し、システム上必須となる最小データ構造を定めた上で仕様を最適化）",
+                },
+              ],
+            },
+            // summary:
+            // "システムが要求するデータ構造と、ユーザーの実際の運用フロー。この2つのギャップを埋めることが、本フロー改善の起点となりました。",
+          },
+          {
+            theme: "after",
+            label: "改善後",
+            flowLabel: "予算作成までのユーザーフロー (プログラム作成の場合)",
+            image: "/mining/creation-flow-after.svg",
+            alt: "変更後のプログラム作成フロー",
+            list: {
+              heading: "改善内容",
+              note: "(図中の A・B・C に対応)",
+              marker: "letter",
+              items: [
+                {
+                  title: "プロジェクト作成の任意化",
+                  text: "ヒアリングで得た知見をもとに、これまで必須であったプロジェクト作成を任意とし、プログラム単体での作成を可能にしました。\n また、プログラム作成後は直接予算作成画面へ遷移する設計としました。",
+                },
+                {
+                  title: "モーダルによる入力体験の継続性確保",
+                  text: "画面遷移に代えてモーダルUIを採用したことで、ユーザーは元の画面の文脈を保ったまま入力を完結できるようになりました。背面の一覧で既存の名称を参照しながら、新たな名称を設定することも可能です。",
+                },
+                {
+                  title: "入力必須項目の最小化",
+                  text: "モーダル内の入力必須項目をプログラム名のみに絞り込み、その他の詳細情報は後から入力できる仕様としました。これにより、ユーザーが最短の操作で予算作成に着手できるようになりました。",
+                },
+              ],
+            },
+          },
+        ],
+        reflection: {
+          headline: "前提を疑うことの大切さ",
+          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかしクライアントへのヒアリングを通じて、仕様と実際の運用との間にズレがあることが明らかになりました。仕様そのものを問い直したことで、画面単位の改善にとどまらず、フロー全体の簡略化へとつなげることができました。",
         },
       },
       {
@@ -98,50 +167,91 @@ const content = {
         title: "ユーザーの学習コストを極力抑えたUI設計",
         summary:
           "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
-        description:
+        background:
           "参入時点の仕様では、プロジェクト（プログラム）作成時に設定されたプログラム期間や採掘場所などの条件に基づき、システム側で予算項目の作成および試算が自動で行われる仕組みになっていました。",
-        before: {
-          label: "【改善前】予算作成画面",
-          image: "/mining/cost-management-before.png",
-          alt: "改善前のコスト管理画面",
-          imageCaption: "予算作成画面",
-          text: "予算作成画面の特徴",
-          itemTitles: [
-            "予算項目およびコストの自動算出",
-            "提案内容の確認・編集",
-            "予算作成とコストトラッキングの両立",
-          ],
-          items: [
-            "作業員の食費・宿泊費など、プログラム計画に必要なカテゴリと概算コストをシステムが自動生成",
-            "AIが提示した予算項目数や算出金額を、ユーザーが確認・修正",
-            "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
-          ],
-          note: "(※実際の画面では、上部に「予算作成」と「予算トラッキング」を切り替えるタブメニューが配置されていました)",
-        },
-        hearing: {
-          heading: "クライアントからのフィードバック",
-          quotes: [
-            "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
-            "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
-            "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
-          ],
-        },
-        after: {
-          label: "【改善後】予算作成画面",
-          image: "/mining/cost-management-after.png",
-          alt: "改善後のコスト管理画面",
-          heading: "改善内容",
-          text: "予算作成画面の特徴",
-          itemTitles: ["学習コストの最小化", "2エリア構成のデータ入力"],
-          items: [
-            "セルの直接編集やUndo/Redo、コメント、フィルタリング、ファイル出力（Export）などに対応しており、使い慣れたExcelと同等の操作感を提供",
-            "テーブル左側に「カテゴリー」「金額」などの基本情報を配置し、右側エリアに「各日ごとの数量」入力を集約したレイアウトを採用。基本情報エリアの折りたたみ機能を備え、大量データ入力時の作業を効率化",
-          ],
-          details: [
-            "テーブルUIを採用している、NotionやJiraのようなホバー表示メインのミニマルUIではなく、ターゲットユーザーに合わせて編集・削除などのアイコンを常時露出させる設計を採用し、「視覚的シンプルさ」よりも「直感的な操作性・迷いにくさ」を優先しました。",
-            "別画面に独立していたレポート機能を画面上部のタブに追加することで、情報確認とデータ操作を一画面で完結できるようにしました。",
-            "クライアントとの対話を通じて「プログラムの残日数（Days Remaining）」や「予算残量（Budget Runway）」の即時把握に対する潜在ニーズを発見し、画面右上に配置しました。",
-          ],
+        sections: [
+          {
+            theme: "before",
+            label: "改善前",
+            layout: "row",
+            image: "/mining/cost-management-before.png",
+            alt: "改善前のコスト管理画面",
+            list: {
+              heading: "予算作成画面の特徴",
+              items: [
+                {
+                  title: "予算項目およびコストの自動算出",
+                  text: "作業員の食費・宿泊費など、プログラム計画に必要なカテゴリと概算コストをシステムが自動生成",
+                },
+                {
+                  title: "提案内容の確認・編集",
+                  text: "AIが提示した予算項目数や算出金額を、ユーザーが確認・修正",
+                },
+                {
+                  title: "予算作成とコストトラッキングの両立",
+                  text: "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
+                },
+              ],
+            },
+            footnote:
+              "(※実際の画面では、上部に「予算作成」と「予算トラッキング」を切り替えるタブメニューが配置されていました)",
+          },
+          {
+            theme: "hearing",
+            label: "ヒアリング",
+            caption: "クライアントからのフィードバック",
+            headline:
+              "自動化よりも、使い慣れたExcelの運用を崩さずにミスを減らせることが求められていた。",
+            list: {
+              marker: "dot",
+              items: [
+                {
+                  text: "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
+                },
+                {
+                  text: "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
+                },
+                {
+                  text: "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
+                },
+              ],
+            },
+          },
+          {
+            theme: "after",
+            label: "改善後",
+            image: "/mining/cost-management-after.png",
+            alt: "改善後のコスト管理画面",
+            list: {
+              heading: "改善内容",
+              items: [
+                {
+                  title: "学習コストの最小化",
+                  text: "セルの直接編集やUndo/Redo、コメント、フィルタリング、ファイル出力（Export）などに対応しており、使い慣れたExcelと同等の操作感を提供",
+                },
+                {
+                  title: "2エリア構成のデータ入力",
+                  text: "テーブル左側に「カテゴリー」「金額」などの基本情報を配置し、右側エリアに「各日ごとの数量」入力を集約したレイアウトを採用。基本情報エリアの折りたたみ機能を備え、大量データ入力時の作業を効率化",
+                },
+                {
+                  title: "操作アイコンを常時表示",
+                  text: "テーブルUIを採用している、NotionやJiraのようなホバー表示メインのミニマルUIではなく、ターゲットユーザーに合わせて編集・削除などのアイコンを常時露出させる設計を採用し、「視覚的シンプルさ」よりも「直感的な操作性・迷いにくさ」を優先しました。",
+                },
+                {
+                  title: "レポートを同じ画面のタブに",
+                  text: "別画面に独立していたレポート機能を画面上部のタブに追加することで、情報確認とデータ操作を一画面で完結できるようにしました。",
+                },
+                {
+                  title: "残日数・予算残量をひと目で",
+                  text: "クライアントとの対話を通じて「プログラムの残日数（Days Remaining）」や「予算残量（Budget Runway）」の即時把握に対する潜在ニーズを発見し、画面右上に配置しました。",
+                },
+              ],
+            },
+          },
+        ],
+        reflection: {
+          headline: "新しい仕組みより「慣れた操作感」が定着の鍵になる",
+          text: "高度な自動化よりも、ユーザーが日常的に使い慣れたExcelの操作感を踏襲することが、ITツールに不慣れな現場での定着につながると学びました。ヒアリングで業務の実態を知ることで、提供すべき価値そのものを見直すことができました。",
         },
       },
       {
@@ -149,43 +259,65 @@ const content = {
         title: "試算機能の追加",
         summary:
           "既存の画面構成や操作感を維持したまま、新機能を組み込みました。",
-        description:
+        background:
           "クライアントからの要望を受け、予算の試算機能を追加することになりました。すでに主要なUI構造が確定している段階であったため、既存のUIコンポーネントやレイアウトの整合性を壊すことなく、新機能を自然に組み込む設計を行いました。",
-        steps: [
+        sections: [
           {
-            badgeClass: "text-[#554e49]",
+            theme: "hearing",
             label: "ヒアリング",
-            intro:
-              "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
-            items: [
-              "現状は別のExcelファイルで試算を行っており、作成・転記の手間が発生している",
-              "試算を行う頻度が高く、業務における重要度が高い",
-              "作成した試算データをそのまま本番予算へ反映する場合もある",
-            ],
+            caption:
+              "クライアントへのヒアリングを通して以下のことがわかりました。",
+            text: "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
+            list: {
+              marker: "dot",
+              items: [
+                {
+                  text: "現状は別のExcelファイルで試算を行っており、作成・転記の手間が発生している",
+                },
+                { text: "試算を行う頻度が高く、業務における重要度が高い" },
+                {
+                  text: "作成した試算データをそのまま本番予算へ反映する場合もある",
+                },
+              ],
+            },
           },
           {
-            badgeClass: "text-[#083954]",
+            theme: "process",
             label: "ユーザーフローの作成",
-            text: "ユーザーフローを作成して多様な操作パターン（試算データの保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
             image: "/mining/user-story.png",
             alt: "ユーザーフローの画像",
+            text: "ユーザーフローを作成して多様な操作パターン（試算データの保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
           },
           {
-            badgeClass: "text-[#445a37]",
+            theme: "after",
             label: "完成UI",
-            scenario:
+            flowLabel:
               "想定シナリオ： ユーザーが新規試算を行い、試算結果を保存する。",
             image: "/mining/draft-mode.svg",
             alt: "ドラフトモードUIの画像",
-            heading: "主要機能とUIの工夫",
-            items: [
-              "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化しました。",
-              "新規試算作成時は、適用中の予算データを初期値として自動継承するようにしました。",
-              "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化しました。",
-              "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能です。",
-            ],
+            list: {
+              heading: "主要機能とUIの工夫",
+              items: [
+                {
+                  text: "「Budget versions」ドロップダウンにより、新規試算の作成・表示・本番予算の切り替えを一元化しました。",
+                },
+                {
+                  text: "新規試算作成時は、適用中の予算データを初期値として自動継承するようにしました。",
+                },
+                {
+                  text: "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化しました。",
+                },
+                {
+                  text: "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較が可能です。",
+                },
+              ],
+            },
           },
         ],
+        reflection: {
+          headline: "既存の一貫性を保ちながら、新機能を自然に組み込む",
+          text: "UI構造が確定した段階での機能追加だったため、ユーザーフローで操作パターンを先に可視化し、既存コンポーネントの組み合わせで表現できる範囲を見極めました。新しいUIを増やすよりも一貫性を保つことが、ユーザーの迷いにくさにつながると実感しました。",
+        },
       },
     ],
     aiUsageTitle: "AIを業務にどう取り入れたか",
@@ -259,35 +391,106 @@ const content = {
     improvementsTitle: "Improvement Case Studies",
     improvementsText:
       "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are the UI/UX improvements I focused on most during my time on the project.",
+    caseLabels: { background: "Background", reflection: "Reflection" },
     improvements: [
       {
         id: 1,
         title: "Simplifying the Program Creation Flow",
         summary:
           "Eliminated unnecessary page transitions to create an input experience that gets users to budget creation as quickly as possible.",
-        description:
-          "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the feature users needed most, lacked intuitiveness, causing drop-offs and confusion during operation. (The structure allows multiple programs to be created and managed under a single project.)",
-        before: {
-          label: "Before",
-          image: "/mining/creation-flow-before.svg",
-          alt: "Program creation flow before the change",
-          heading: "Challenges",
-          items: [
-            "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
-            'The "Create Project" and "Create Program" screens were separated, making it difficult to understand the relationship and structure between the features.',
-            "Because of page transitions, users couldn't refer to existing project (program) names while entering a new project name.",
-          ],
+        background: [
+          "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the feature users needed most, lacked intuitiveness, causing drop-offs and confusion during operation.",
+          "With their existing workflow, users could start a budget right away just by opening Excel, yet the system made that impossible.",
+        ],
+        backgroundFigure: {
+          caption:
+            "The structure allows multiple programs to be created and managed under a single project.",
+          image: "/mining/diagram.svg",
+          alt: "Diagram of the project and program structure",
         },
-        after: {
-          label: "After",
-          image: "/mining/creation-flow-after.svg",
-          alt: "Program creation flow after the change",
-          heading: "Improvements",
-          items: [
-            "Interviews revealed that a project doesn't always contain multiple programs, so I made it possible to create a standalone program and redesigned the flow to take users directly to the Budget Creation screen after creating a program.",
-            "Replaced page transitions with a modal UI, allowing users to complete their input without losing the original context.",
-            "Reduced the required fields to just the project (program) name so users can start creating a budget as quickly as possible.",
-          ],
+        sections: [
+          {
+            theme: "before",
+            label: "Before",
+            flowLabel: "User flow from project creation to budget creation",
+            image: "/mining/creation-flow-before.svg",
+            alt: "Program creation flow before the change",
+            list: {
+              heading: "Challenges",
+              note: "(Corresponds to A, B, C in the figure)",
+              marker: "letter",
+              items: [
+                {
+                  title: "Too many inputs",
+                  text: "There were many input fields and required fields between project creation and budget creation, so it took a long time to reach the Budget Creation page.",
+                },
+                {
+                  title: "Fragmented screens",
+                  text: 'The "Create Project" and "Create Program" screens were separated, making it difficult to understand the relationship and structure between the features.',
+                },
+                {
+                  title: "Existing names aren't visible",
+                  text: "Because of page transitions, users couldn't refer to existing project (program) names while entering a new project name.",
+                },
+              ],
+            },
+          },
+          {
+            theme: "hearing",
+            label: "Interviews",
+            caption: "What we learned from interviews",
+            pairs: {
+              findingHeading: "What we learned",
+              decisionHeading: "What we decided",
+              items: [
+                {
+                  finding:
+                    "A project doesn't always contain multiple programs. In many cases, programs were run on their own.",
+                  decision:
+                    'Turn project creation from "a step everyone must go through" into "a feature used only when needed."',
+                },
+                {
+                  finding:
+                    "When creating a budget in Excel, program details (dates, duration, staffing, etc.) are usually not decided yet.",
+                  decision:
+                    "Make the program name the only required field, and let users fill in the details later.",
+                },
+              ],
+            },
+            summary:
+              "The information the system needs, and the way users actually work. Balancing the two became the starting point for the flow improvements below.",
+          },
+          {
+            theme: "after",
+            label: "After",
+            flowLabel: "User flow to budget creation",
+            image: "/mining/creation-flow-after.svg",
+            alt: "Program creation flow after the change",
+            list: {
+              heading: "Improvements",
+              note: "(Corresponds to A, B, C in the figure)",
+              marker: "letter",
+              items: [
+                {
+                  title: "Program name as the only required field",
+                  text: "Reduced the required fields to just the project (program) name so users can start creating a budget as quickly as possible.",
+                },
+                {
+                  title: "Combined into a single list",
+                  text: "Interviews revealed that a project doesn't always contain multiple programs, so I made it possible to create a standalone program and redesigned the flow to take users directly to the Budget Creation screen after creating a program.",
+                },
+                {
+                  title: "Input in place with a modal",
+                  text: "Replaced page transitions with a modal UI, allowing users to complete their input without losing the original context.",
+                },
+              ],
+            },
+          },
+        ],
+        reflection: {
+          headline:
+            'The importance of questioning the assumption that "a project must always be created"',
+          text: "I had been thinking about improvements based on the existing specification, but interviews revealed gaps with how the tool was actually used. Questioning the specification itself led to simplifying the entire flow, not just individual screens.",
         },
       },
       {
@@ -295,53 +498,92 @@ const content = {
         title: "Streamlining Operations Without a Learning Curve",
         summary:
           "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
-        description:
+        background:
           "In the early stage of the product, the system automatically generated and estimated budget items based on conditions entered by the user in advance (such as program duration and mining location).",
-        before: {
-          label: "Before",
-          image: "/mining/cost-management-before.png",
-          alt: "Cost management screen before the change",
-          imageCaption: "Budget Creation Screen",
-          text: "Key Features of the Budget Creation Screen - Before",
-          itemTitles: [
-            "Automatic generation of budget items and costs",
-            "Review and edit suggestions",
-            "Budget creation and cost tracking in one place",
-          ],
-          items: [
-            "The system automatically generated the categories and estimated costs needed for program planning, such as workers' meals and accommodation.",
-            "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
-            "Designed to cover not only initial budget planning but also tracking and managing actual costs after the project launched.",
-          ],
-          note: '(*In the actual screen, a tab menu at the top let users switch between "Budget Creation" and "Tracking.")',
-        },
-        hearing: {
-          heading: "Feedback from the Client",
-          quotes: [
-            "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
-            "We currently manage budgets in Excel, but errors from complex formulas and manual input are a constant problem.",
-            "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
-          ],
-        },
-        after: {
-          label: "After",
-          image: "/mining/cost-management-after.png",
-          alt: "Cost management screen after the change",
-          heading: "Improvements",
-          text: "Key Features of the Budget Creation Screen - After",
-          itemTitles: [
-            "Minimizing the learning curve",
-            "Two-area layout for data entry",
-          ],
-          items: [
-            "Supports direct cell editing, Undo/Redo, comments, filtering, and file export, providing the same familiar feel as Excel.",
-            'Placed basic information such as "Category" and "Amount" on the left side of the table and consolidated "daily quantity" inputs in the right area. The basic information area can be collapsed, making large-volume data entry more efficient.',
-          ],
-          details: [
-            'Rather than a minimal, hover-based table UI like Notion or Jira, I designed the icons for actions such as edit and delete to be always visible to suit the target users, prioritizing "intuitive, hard-to-get-lost operation" over "visual simplicity."',
-            "Moved the reporting feature, which had been on a separate screen, into a tab at the top of the screen so users can review information and work with data on a single screen.",
-            'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen.',
-          ],
+        sections: [
+          {
+            theme: "before",
+            label: "Before",
+            layout: "row",
+            image: "/mining/cost-management-before.png",
+            alt: "Cost management screen before the change",
+            list: {
+              heading: "Key Features of the Budget Creation Screen",
+              items: [
+                {
+                  title: "Automatic generation of budget items and costs",
+                  text: "The system automatically generated the categories and estimated costs needed for program planning, such as workers' meals and accommodation.",
+                },
+                {
+                  title: "Review and edit suggestions",
+                  text: "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
+                },
+                {
+                  title: "Budget creation and cost tracking in one place",
+                  text: "Designed to cover not only initial budget planning but also tracking and managing actual costs after the project launched.",
+                },
+              ],
+            },
+            footnote:
+              '(*In the actual screen, a tab menu at the top let users switch between "Budget Creation" and "Tracking.")',
+          },
+          {
+            theme: "hearing",
+            label: "Interviews",
+            caption: "Feedback from the Client",
+            headline:
+              "Rather than automation, users needed a way to reduce errors without breaking their familiar Excel workflow.",
+            list: {
+              marker: "dot",
+              items: [
+                {
+                  text: "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
+                },
+                {
+                  text: "We currently manage budgets in Excel, but errors from complex formulas and manual input are a constant problem.",
+                },
+                {
+                  text: "Given the nature of our industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
+                },
+              ],
+            },
+          },
+          {
+            theme: "after",
+            label: "After",
+            image: "/mining/cost-management-after.png",
+            alt: "Cost management screen after the change",
+            list: {
+              heading: "Improvements",
+              items: [
+                {
+                  title: "Minimizing the learning curve",
+                  text: "Supports direct cell editing, Undo/Redo, comments, filtering, and file export, providing the same familiar feel as Excel.",
+                },
+                {
+                  title: "Two-area layout for data entry",
+                  text: 'Placed basic information such as "Category" and "Amount" on the left side of the table and consolidated "daily quantity" inputs in the right area. The basic information area can be collapsed, making large-volume data entry more efficient.',
+                },
+                {
+                  title: "Always-visible action icons",
+                  text: 'Rather than a minimal, hover-based table UI like Notion or Jira, I designed the icons for actions such as edit and delete to be always visible to suit the target users, prioritizing "intuitive, hard-to-get-lost operation" over "visual simplicity."',
+                },
+                {
+                  title: "Reports in a tab on the same screen",
+                  text: "Moved the reporting feature, which had been on a separate screen, into a tab at the top of the screen so users can review information and work with data on a single screen.",
+                },
+                {
+                  title: "Days remaining and budget runway at a glance",
+                  text: 'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen.',
+                },
+              ],
+            },
+          },
+        ],
+        reflection: {
+          headline:
+            "Familiar interactions, not new mechanisms, are the key to adoption",
+          text: "I learned that following the familiar feel of Excel, rather than advanced automation, is what helps a tool take root at sites unfamiliar with IT tools. Understanding the reality of their work through interviews allowed us to rethink the value we should deliver.",
         },
       },
       {
@@ -349,43 +591,67 @@ const content = {
         title: "Adding a Budget Simulation Feature",
         summary:
           "Integrated a new feature while preserving the existing screen structure and interaction patterns.",
-        description:
-          "Based on a request from the client, we decided to add a budget simulation feature.",
-        steps: [
+        background:
+          "Based on a request from the client, we decided to add a budget simulation feature. Since the main UI structure had already been finalized, I designed the feature to blend in naturally without breaking the consistency of existing UI components and layouts.",
+        sections: [
           {
-            badgeClass: "text-[#746B60]",
-            label: "1. Interviews",
-            intro:
-              "Client interviews clarified the following challenges and needs.",
-            items: [
-              "Simulations were currently done in separate Excel files, which required extra effort to create and transfer data.",
-              "Simulations were run frequently and played an important role in their work.",
-              "In some cases, simulation data was applied directly to the actual budget.",
-            ],
+            theme: "hearing",
+            label: "Interviews",
+            caption: "What we learned from interviews",
+            text: "Client interviews clarified the following challenges and needs.",
+            list: {
+              marker: "dot",
+              items: [
+                {
+                  text: "Simulations were currently done in separate Excel files, which required extra effort to create and transfer data.",
+                },
+                {
+                  text: "Simulations were run frequently and played an important role in their work.",
+                },
+                {
+                  text: "In some cases, simulation data was applied directly to the actual budget.",
+                },
+              ],
+            },
           },
           {
-            badgeClass: "text-[#4A6F8A]",
-            label: "2. Creating a User Flow",
-            text: "Created a user flow to visualize the various interaction patterns (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the feature scope smoothly.",
+            theme: "process",
+            label: "Creating a User Flow",
             image: "/mining/user-story.png",
             alt: "Image of the user flow",
+            text: "Created a user flow to visualize the various interaction patterns (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the feature scope smoothly.",
           },
           {
-            badgeClass: "text-[#627d50]",
-            label: "3. Final UI",
-            scenario:
+            theme: "after",
+            label: "Final UI",
+            flowLabel:
               "Scenario: The user creates a new simulation and saves the result.",
             image: "/mining/draft-mode.svg",
             alt: "Image of the draft mode UI",
-            heading: "Key Features and UI Considerations",
-            items: [
-              'A "Budget versions" dropdown brings creating and viewing simulations and switching to the actual budget into one place.',
-              "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
-              "The color theme of the entire screen changes so users can intuitively recognize when they are in simulation mode.",
-              "The total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
-            ],
+            list: {
+              heading: "Key Features and UI Considerations",
+              items: [
+                {
+                  text: 'A "Budget versions" dropdown brings creating and viewing simulations and switching to the actual budget into one place.',
+                },
+                {
+                  text: "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
+                },
+                {
+                  text: "The color theme of the entire screen changes so users can intuitively recognize when they are in simulation mode.",
+                },
+                {
+                  text: "The total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
+                },
+              ],
+            },
           },
         ],
+        reflection: {
+          headline:
+            "Blending a new feature in naturally while keeping consistency",
+          text: "Because the feature was added after the UI structure was finalized, I visualized the interaction patterns in a user flow first and identified what could be expressed by combining existing components. I realized that keeping consistency, rather than adding new UI, makes the product easier for users to navigate.",
+        },
       },
     ],
 
@@ -467,16 +733,16 @@ const MiningProject = () => {
         </div>
         {/* ProductOverview Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.ProductOverview}
           </h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center">
-            <div className="w-full md:w-1/2 md:pt-4">
+            <div className="w-full md:w-2/3 md:pt-4">
               <p className="text-base leading-loose">{t.ProductOverviewText}</p>
               <p className="pt-4 leading-loose">{t.ProductOverviewApproach}</p>
             </div>
-            <div className="md:w-1/2 space-y-2">
+            <div className="md:w-1/3 space-y-2">
               <ZoomableImage
                 src={localizeImage(t.productOverviewImage, language)}
                 className="w-full object-contain"
@@ -490,8 +756,8 @@ const MiningProject = () => {
         </div>
         {/* Project Background Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.backgroundTitle}
           </h2>
           <p className="text-base leading-loose ">{t.backgroundText}</p>
@@ -504,8 +770,8 @@ const MiningProject = () => {
         </div>
         {/* Product Development Flow Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-8">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.productFlowTitle}
           </h2>
           <div className="flex flex-col gap-2">
@@ -521,8 +787,8 @@ const MiningProject = () => {
         </div>
         {/* Improvement Proposals Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-3xl font-semibold">
+            <SectionMark />
             {t.improvementsTitle}
           </h2>
           <p className="text-base leading-loose ">{t.improvementsText}</p>
@@ -535,25 +801,13 @@ const MiningProject = () => {
                 isOpen={openSections[improvement.id]}
                 onToggle={() => toggleSection(improvement.id)}
               >
-                <p className="mt-4 mb-8 leading-loose">
-                  {improvement.description}
-                </p>
-                {improvement.id === 1 && (
-                  <Improvement1
-                    before={improvement.before}
-                    after={improvement.after}
-                  />
-                )}
-                {improvement.id === 2 && (
-                  <Improvement2
-                    before={improvement.before}
-                    hearing={improvement.hearing}
-                    after={improvement.after}
-                  />
-                )}
-                {improvement.id === 3 && (
-                  <Improvement3 steps={improvement.steps} />
-                )}
+                <CaseStudy
+                  labels={t.caseLabels}
+                  background={improvement.background}
+                  backgroundFigure={improvement.backgroundFigure}
+                  sections={improvement.sections}
+                  reflection={improvement.reflection}
+                />
               </Accordion>
             ))}
           </div>
@@ -561,8 +815,8 @@ const MiningProject = () => {
 
         {/* AI Usage Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.aiUsageTitle}
           </h2>
           <div className="flex flex-col md:flex-row gap-10 md:gap-32">
@@ -593,8 +847,8 @@ const MiningProject = () => {
         </div>
         {/* Learnings Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-16">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.learnings}
           </h2>
           {/* <p className="text-base leading-loose">{t.learningsText}</p> */}
@@ -609,8 +863,8 @@ const MiningProject = () => {
         </div>
         {/* Future Outlook Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-16">
-          <h2 className="flex items-stretch gap-2 text-2xl md:text-3xl font-semibold text-[#3B2707]">
-            <span className="w-2 bg-current shrink-0 rounded-full" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+            <SectionMark />
             {t.futureOutlook}
           </h2>
           <p className="text-base leading-loose">{t.futureOutlookText}</p>
