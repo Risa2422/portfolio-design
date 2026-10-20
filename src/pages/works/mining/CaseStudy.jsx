@@ -18,7 +18,7 @@ function CaseStudy({
     <div className="flex flex-col gap-12 pt-2 pl-6">
       <div className="flex flex-col gap-12">
         <CaseBox label={labels.background} line="connect">
-          <div className="text-base leading-8 text-[#2e211a]">
+          <div className="text-base leading-8">
             {toParagraphs(background).map((paragraph, index) => (
               <p key={index} className={index > 0 ? "mt-8" : undefined}>
                 {paragraph}
@@ -56,7 +56,9 @@ function CaseStudy({
             </p>
             <div className="">
               {toParagraphs(reflection.text).map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} className="leading-[1.8]">
+                  {paragraph}
+                </p>
               ))}
             </div>
           </div>

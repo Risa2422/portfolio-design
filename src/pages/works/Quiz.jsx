@@ -353,9 +353,7 @@ const Quiz = () => {
             <SectionMark />
             {t.overviewTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">
-            {t.overviewText}
-          </p>
+          <p className="text-base leading-loose ">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
@@ -426,7 +424,7 @@ const Quiz = () => {
               <h3 className="text-base md:text-lg font-semibold text-gray-900">
                 {t.personaTitle}
               </h3>
-              <p className="text-base text-gray-700">{t.personaIntro}</p>
+              <p className="text-base ">{t.personaIntro}</p>
             </div>
             <div className="space-y-8">
               <div className="flex flex-col lg:flex-row items-center md:justify-between gap-10">
@@ -436,9 +434,7 @@ const Quiz = () => {
                       src={localizeImage("/quiz/persona1.png", language)}
                       className="h-full object-contain rounded  border border-gray-300"
                     />
-                    <p className="text-xs text-gray-700 text-center">
-                      {t.persona1Caption}
-                    </p>
+                    <p className="text-xs  text-center">{t.persona1Caption}</p>
                   </div>
                 </div>
                 <div className="space-y-1.5">
@@ -447,9 +443,7 @@ const Quiz = () => {
                       src={localizeImage("/quiz/persona2.png", language)}
                       className="h-full object-contain rounded  border border-gray-300"
                     />
-                    <p className="text-xs text-gray-700 text-center">
-                      {t.persona2Caption}
-                    </p>
+                    <p className="text-xs  text-center">{t.persona2Caption}</p>
                   </div>
                 </div>
               </div>
@@ -462,7 +456,7 @@ const Quiz = () => {
                 <h3 className="text-base md:text-lg font-semibold text-gray-900">
                   {t.designOptionTitle}
                 </h3>
-                <p className="text-base text-gray-700">{t.designOptionIntro}</p>
+                <p className="text-base ">{t.designOptionIntro}</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-6">
                   {designOptionImages.map((images, index) => (
                     <div key={index} className="flex flex-col items-center">
@@ -489,7 +483,7 @@ const Quiz = () => {
                   {t.wireframeTitle}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-loose text-gray-700 mb-3 ">
+                  <p className="text-base leading-loose  mb-3 ">
                     {t.wireframeIntro}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -508,7 +502,7 @@ const Quiz = () => {
                   4. Style Guide Creation
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-loose text-gray-700 mb-3 ">
+                  <p className="text-base leading-loose  mb-3 ">
                     As the app uses multiple near-primary colors to create a
                     playful and pop atmosphere, I adopted Open Sans for the font
                     due to its simplicity and excellent multilingual support.
@@ -550,7 +544,7 @@ const Quiz = () => {
               <div className="flex-1 h-[1px] bg-border" />
             </div>
             <div className="space-y-4">
-              <p className="text-base leading-loose text-gray-700 mb-3 ">
+              <p className="text-base leading-loose  mb-3 ">
                 {t.designSummaryText}
               </p>
             </div>
@@ -569,7 +563,7 @@ const Quiz = () => {
                     />
                   </div>
 
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.homeScreenText}</p>
                   </div>
                 </div>
@@ -588,7 +582,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.levelScreenText}</p>
                   </div>
                 </div>
@@ -620,7 +614,7 @@ const Quiz = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.quizScreenText}</p>
                   </div>
                 </div>
@@ -647,7 +641,7 @@ const Quiz = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.correctScreenText}</p>
                   </div>
                 </div>
@@ -667,7 +661,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.resultScreenText}</p>
                   </div>
                 </div>
@@ -685,7 +679,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.rankingScreenText}</p>
                   </div>
                 </div>
@@ -705,7 +699,7 @@ const Quiz = () => {
                       className="h-full w-full object-contain rounded"
                     />
                   </div>
-                  <div className="text-sm leading-loose text-gray-700">
+                  <div className="text-sm leading-loose ">
                     <p>{t.quitScreenText}</p>
                   </div>
                 </div>
@@ -719,7 +713,7 @@ const Quiz = () => {
             {t.learningsTitle}
           </h2>
           <div className="flex flex-col w-full gap-4">
-            <ul className="list-disc pl-6 space-y-8 text-base leading-loose text-gray-700">
+            <ul className="list-disc pl-6 space-y-8 text-base leading-loose ">
               {t.learningsList.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -733,7 +727,9 @@ const Quiz = () => {
                   className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="pb-0.5 text-sm font-medium tracking-wider">{t.homeLabel}</p>
+              <p className="pb-0.5 text-sm font-medium tracking-wider">
+                {t.homeLabel}
+              </p>
             </div>
           </Link>
         </div>

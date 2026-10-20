@@ -404,16 +404,7 @@ const content = {
     overviewTitle: "概要",
     overviewText: (
       <>
-        既存の「
-        <a
-          href="https://apps.apple.com/jp/app/%E9%9B%80%E3%83%AD%E3%82%B0-%E9%BA%BB%E9%9B%80%E3%81%AE%E6%88%90%E7%B8%BE-%E5%8F%8E%E6%94%AF%E3%82%92%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E5%B8%B3%E7%B0%BF%E3%82%A2%E3%83%97%E3%83%AA/id1439070045"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline hover:text-blue-800"
-        >
-          麻雀記録アプリ
-        </a>
-        」をベースに、麻雀対戦記録アプリのUIデザインを担当しました。麻雀好きな知人のエンジニアから、普段使っている既存アプリの操作性に不満があり、より使いやすいアプリを開発したいという相談を受けたことがきっかけです。既存アプリの基本機能を引き継ぎつつ、より直感的なUIデザインの制作に力を注ぎました。
+        既存の麻雀記録アプリをベースに、麻雀対戦記録アプリのUIデザインを担当しました。麻雀好きな知人のエンジニアから、普段使っている既存アプリの操作性に不満があり、より使いやすいアプリを開発したいという相談を受けたことがきっかけです。既存アプリの基本機能を引き継ぎつつ、より直感的なUIデザインの制作に力を注ぎました。
       </>
     ),
     problemTitle: "課題の洗い出し",
@@ -486,9 +477,7 @@ const Mahjong = () => {
             <SectionMark />
             {t.overviewTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">
-            {t.overviewText}
-          </p>
+          <p className="text-base leading-loose">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
@@ -496,14 +485,10 @@ const Mahjong = () => {
             {t.problemTitle}
           </h2>
           <div className="space-y-8">
-            <p className="text-base leading-loose text-gray-700">
-              {t.problemIntro}
-            </p>
+            <p className="text-base leading-loose">{t.problemIntro}</p>
 
             <div className="flex flex-col gap-4">
-              <p className="text-base leading-loose text-gray-700">
-                {t.analysisIntro}
-              </p>
+              <p className="text-base leading-loose ">{t.analysisIntro}</p>
               <div className="space-y-4">
                 <div className="flex flex-col gap-10">
                   <div className="flex flex-col md:flex-row flex-1 gap-10">
@@ -589,7 +574,7 @@ const Mahjong = () => {
                 <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                   <div>
                     <div className="flex items-center gap-1 mb-1">
-                      <h4 className="text-sm text-gray-700 font-semibold">
+                      <h4 className="text-sm font-semibold">
                         {t.scoreHistoryVideoLabel}
                       </h4>
                     </div>
@@ -740,7 +725,7 @@ const Mahjong = () => {
                   <div className="flex-1 h-[0.8px] bg-border" />
                 </div>
                 <div className="space-y-4">
-                  <p className="text-base leading-loose text-gray-700 mb-3">
+                  <p className="text-base leading-loose  mb-3">
                     {t.colorIllustrationText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -765,9 +750,7 @@ const Mahjong = () => {
             <SectionMark />
             {t.learningsTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">
-            {t.learningsText}
-          </p>
+          <p className="text-base leading-loose">{t.learningsText}</p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
               <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
@@ -776,7 +759,9 @@ const Mahjong = () => {
                   className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
+              <p className="text-sm font-medium tracking-wider">
+                {t.homeLabel}
+              </p>
             </div>
           </Link>
         </div>

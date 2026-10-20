@@ -185,7 +185,7 @@ const WebDesign = () => {
             {t.overviewTitle}
           </h2>
           <div className="flex flex-col gap-8 justify-center items-center">
-            <p className="text-base leading-loose text-gray-700">
+            <p className="text-base leading-loose ">
               {t.overviewText}
               <span>
                 {t.siteLinkPrefix}
@@ -235,17 +235,12 @@ const WebDesign = () => {
                   {item.title}
                 </h3>
                 {item.paragraphs?.map((paragraph, idx) => (
-                  <p
-                    key={idx}
-                    className="text-base leading-loose text-gray-700"
-                  >
+                  <p key={idx} className="text-base leading-loose ">
                     {paragraph}
                   </p>
                 ))}
                 {item.intro && (
-                  <p className="text-base leading-loose text-gray-700">
-                    {item.intro}
-                  </p>
+                  <p className="text-base leading-loose ">{item.intro}</p>
                 )}
                 {item.points && (
                   <div className="space-y-6 pl-4 border-l-2 border-border">
@@ -254,9 +249,7 @@ const WebDesign = () => {
                         <p className="text-sm md:text-base font-semibold text-gray-900">
                           {point.heading}
                         </p>
-                        <p className="text-base leading-loose text-gray-700">
-                          {point.text}
-                        </p>
+                        <p className="text-base leading-loose ">{point.text}</p>
                       </div>
                     ))}
                   </div>
@@ -271,9 +264,7 @@ const WebDesign = () => {
             <SectionMark />
             {t.resultsTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">
-            {t.resultsText}
-          </p>
+          <p className="text-base leading-loose ">{t.resultsText}</p>
           <Link to="/" className="hover:opacity-80 pt-20">
             <div className="flex items-center gap-1">
               <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">

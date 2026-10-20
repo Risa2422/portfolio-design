@@ -8,7 +8,7 @@ import skillData from "../data/skillData";
 
 const content = {
   ja: {
-    bio: "エンジニア経験を経て「継続的に愛されるプロダクトには優れたUI/UXが不可欠」と実感し、UI/UXデザイナーへ転向しました。\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
+    bio: "エンジニアとしての開発経験を経て、「継続的に愛されるプロダクトには、優れたアルゴリズム以前に優れたUI/UXが不可欠である」と痛感し、UI/UXデザイナーへ転向。\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -122,7 +122,7 @@ const Timeline = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="flex gap-6 pb-8 border-b border-gray-300 last:pb-0 last:border-b-0"
+          className="flex gap-6 pb-8 border-b border-gray-300 last:pb-0 last:border-b-0 "
         >
           {/* <div className="pt-2">
             <span className="inline-block w-2.5 h-2.5 bg-gray-600 rounded-full"></span>
@@ -140,10 +140,10 @@ const Timeline = ({ items }) => {
                 </div>
               </div>
               <div>
-                <p className="text-sm text-text">{item.date}</p>
+                <p className="text-sm ">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm text-text w-full md:w-3/4">
+            <p className="text-sm leading-[1.7] w-full md:w-3/4">
               {item.description}
             </p>
           </div>
@@ -185,7 +185,7 @@ const Profile = () => {
                     と申します。
                   </p>
                 )}
-                <p className="whitespace-pre-line">{t.bio}</p>
+                <p className="whitespace-pre-line leading-[1.8]">{t.bio}</p>
               </div>
               <div className="hidden md:block md:w-1/3">
                 <img

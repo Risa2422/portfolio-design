@@ -104,7 +104,7 @@ function WorkCard({
               <li
                 key={index}
                 className="flex items-center justify-center px-3 py-1.5 
-                border border-[#D9CDBD] rounded-full"
+                border border-[#a39889] rounded-full"
               >
                 <span className="text-xs text-[#5A4A40]">{tag}</span>
               </li>

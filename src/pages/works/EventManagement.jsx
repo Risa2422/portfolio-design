@@ -333,16 +333,14 @@ const EventManagement = () => {
             <SectionMark />
             {t.overviewTitle}
           </h2>
-          <p className="leading-loose text-gray-700">{t.overviewText}</p>
+          <p className="leading-loose ">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">
-            {t.backgroundText}
-          </p>
+          <p className="text-base leading-loose ">{t.backgroundText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
@@ -350,9 +348,7 @@ const EventManagement = () => {
             {t.problemTitle}
           </h2>
           <div className="space-y-2">
-            <p className="text-base leading-loose text-gray-700">
-              {t.problemIntro}
-            </p>
+            <p className="text-base leading-loose ">{t.problemIntro}</p>
             <div className="md:w-1/2 self-start">
               <ZoomableImage
                 src={localizeImage(
@@ -391,16 +387,14 @@ const EventManagement = () => {
               </div>
             </div>
           </div>
-          <p className="text-base leading-loose text-gray-700">
-            {t.problemSummaryText}
-          </p>
+          <p className="text-base leading-loose ">{t.problemSummaryText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.mvpTitle}
           </h2>
-          <p className="text-base leading-loose text-gray-700">{t.mvpText}</p>
+          <p className="text-base leading-loose ">{t.mvpText}</p>
           <div className="md:w-1/2">
             <ZoomableImage
               src={localizeImage("/event-management/mvp.png", language)}
@@ -422,9 +416,7 @@ const EventManagement = () => {
                   {t.wireframeHeading}
                 </h3>
                 <div className="flex flex-col gap-4">
-                  <p className="text-base leading-loose text-gray-700">
-                    {t.wireframeText}
-                  </p>
+                  <p className="text-base leading-loose ">{t.wireframeText}</p>
                   <div className="md:w-1/2">
                     <ZoomableImage
                       src={localizeImage(
@@ -447,7 +439,7 @@ const EventManagement = () => {
                   {t.moodboardHeading}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-base leading-loose text-gray-700 mb-3">
+                  <p className="text-base leading-loose  mb-3">
                     {t.moodboardText}
                   </p>
                   <div className="flex flex-col md:flex-row items-center gap-10 flex-wrap">
@@ -470,7 +462,7 @@ const EventManagement = () => {
                     ))}
                   </div>
 
-                  <p className="text-base leading-loose text-gray-700">
+                  <p className="text-base leading-loose ">
                     {t.moodboardStyleText}
                   </p>
                 </div>
@@ -508,7 +500,7 @@ const EventManagement = () => {
                               <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.organizerBadge}
                               </span>
-                              <h4 className="text-sm font-semibold text-gray-700">
+                              <h4 className="text-sm font-semibold ">
                                 {t.invitationFlowHeading}
                               </h4>
                             </div>
@@ -524,7 +516,7 @@ const EventManagement = () => {
                             />
                           </div>
 
-                          <p className="text-sm text-gray-700 pt-2">
+                          <p className="text-sm  pt-2">
                             {t.invitationFlowText}
                           </p>
                         </div>
@@ -542,7 +534,7 @@ const EventManagement = () => {
                               <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.organizerBadge}
                               </span>
-                              <h4 className="text-sm font-semibold text-gray-700">
+                              <h4 className="text-sm font-semibold ">
                                 {t.eventPrepFlowHeading}
                               </h4>
                             </div>
@@ -557,9 +549,7 @@ const EventManagement = () => {
                               className="h-full object-contain rounded"
                             />
                           </div>
-                          <p className="text-sm text-gray-700 pt-2">
-                            {t.eventPrepFlowText}
-                          </p>
+                          <p className="text-sm  pt-2">{t.eventPrepFlowText}</p>
                         </div>
                       </div>
 
@@ -571,7 +561,7 @@ const EventManagement = () => {
                               <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.attendeeBadge}
                               </span>
-                              <h4 className="text-sm font-semibold text-gray-700">
+                              <h4 className="text-sm font-semibold ">
                                 {t.rsvpFlowHeading}
                               </h4>
                             </div>
@@ -586,9 +576,7 @@ const EventManagement = () => {
                               className="h-full object-contain rounded"
                             />
                           </div>
-                          <p className="text-sm text-gray-700 pt-2">
-                            {t.rsvpFlowText}
-                          </p>
+                          <p className="text-sm  pt-2">{t.rsvpFlowText}</p>
                         </div>
                         <img
                           src={localizeImage(
@@ -604,7 +592,7 @@ const EventManagement = () => {
                               <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.attendeeBadge}
                               </span>
-                              <h4 className="text-sm font-semibold text-gray-700">
+                              <h4 className="text-sm font-semibold ">
                                 {t.eventPageFlowHeading}
                               </h4>
                             </div>
@@ -619,9 +607,7 @@ const EventManagement = () => {
                               className="h-full object-contain rounded"
                             />
                           </div>
-                          <p className="text-sm text-gray-700 pt-2">
-                            {t.eventPageFlowText}
-                          </p>
+                          <p className="text-sm  pt-2">{t.eventPageFlowText}</p>
                         </div>
                       </div>
                     </div>
@@ -640,7 +626,7 @@ const EventManagement = () => {
                             <span className="bg-primary text-white text-xs px-2 py-[2px] rounded-full">
                               {t.organizerBadge}
                             </span>
-                            <h4 className="text-sm font-semibold text-gray-700">
+                            <h4 className="text-sm font-semibold ">
                               {t.dayOfOperationHeading}
                             </h4>
                           </div>
@@ -655,9 +641,7 @@ const EventManagement = () => {
                             className="h-full object-contain rounded"
                           />
                         </div>
-                        <p className="text-sm text-gray-700 pt-2">
-                          {t.dayOfOperationText}
-                        </p>
+                        <p className="text-sm  pt-2">{t.dayOfOperationText}</p>
                       </div>
                     </div>
                   </div>
@@ -675,7 +659,7 @@ const EventManagement = () => {
                             <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
                               {t.attendeeBadge}
                             </span>
-                            <h4 className="text-sm text-gray-700 font-semibold">
+                            <h4 className="text-sm  font-semibold">
                               {t.postEventReviewHeading}
                             </h4>
                           </div>
@@ -690,9 +674,7 @@ const EventManagement = () => {
                             className="h-full object-contain rounded"
                           />
                         </div>
-                        <p className="text-sm text-gray-700 pt-2">
-                          {t.postEventReviewText}
-                        </p>
+                        <p className="text-sm  pt-2">{t.postEventReviewText}</p>
                       </div>
                     </div>
                   </div>
@@ -702,7 +684,7 @@ const EventManagement = () => {
                     <h3 className="text-base md:text-lg font-semibold text-gray-900">
                       {t.keyPrinciplesHeading}
                     </h3>
-                    <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">
+                    <ul className="list-disc pl-5 space-y-6 text-base ">
                       {t.keyPrinciples.map((item, idx) => (
                         <li key={idx}>
                           <div className="flex flex-col">
@@ -724,7 +706,7 @@ const EventManagement = () => {
             <SectionMark />
             {t.takeawaysTitle}
           </h2>
-          <ul className="list-disc pl-5 space-y-6 text-base text-gray-700">
+          <ul className="list-disc pl-5 space-y-6 text-base ">
             {t.takeaways.map((item, idx) => (
               <li key={idx}>
                 <div className="flex flex-col">
@@ -742,7 +724,9 @@ const EventManagement = () => {
                   className="w-5 h-3 text-current"
                 />
               </span>
-              <p className="pb-0.5 text-sm font-medium tracking-wider">{t.homeLabel}</p>
+              <p className="pb-0.5 text-sm font-medium tracking-wider">
+                {t.homeLabel}
+              </p>
             </div>
           </Link>
         </div>

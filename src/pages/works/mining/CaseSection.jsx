@@ -77,7 +77,7 @@ function CaseSection({ section, line }) {
     const { findingHeading, decisionHeading, items } = section.pairs;
     return (
       <CaseBox theme={section.theme} label={section.label} line={line}>
-        <div className="flex flex-col gap-8 md:gap-16">
+        <div className="flex flex-col gap-8 md:gap-12">
           {section.caption && (
             <p className="text-base leading-6">{section.caption}</p>
           )}
@@ -164,20 +164,20 @@ function CaseSection({ section, line }) {
                     </p>
                   </div>
                   {study.description && (
-                    <p className="text-sm pt-2 text-text-sub">
+                    <p className="text-sm pt-1 text-text-sub">
                       {study.description}
                     </p>
                   )}
                 </div>
                 <DotList items={study.items} />
                 {study.insight && (
-                  <div className="flex flex-col items-start gap-3">
+                  <div className="flex flex-col items-start gap-2">
                     {study.insightLabel && (
                       <span className="px-3 py-0.5 rounded-full border border-[#B37B19] bg-white text-[#B37B19] text-xs font-bold leading-[1.6]">
                         {study.insightLabel}
                       </span>
                     )}
-                    <p className="text-[20px] font-bold leading-[1.65] text-[#2e211a]">
+                    <p className="text-[20px] font-bold leading-[1.65]">
                       <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(245,223,168,0.7)_56%,rgba(245,223,168,0.7)_92%,transparent_92%)]">
                         {study.insight}
                       </span>
@@ -196,7 +196,7 @@ function CaseSection({ section, line }) {
   if (section.gallery) {
     return (
       <CaseBox theme={section.theme} label={section.label} line={line}>
-        <div className="flex flex-col md:flex-row gap-8 items-start">
+        <div className="flex flex-col md:flex-row gap-4 items-start">
           <div className="flex-1 min-w-0 text-base leading-6">
             {toParagraphs(section.text).map((paragraph, index) => (
               <p key={index} className="pb-6">
@@ -230,7 +230,7 @@ function CaseSection({ section, line }) {
             </p>
           )}
           {section.text && (
-            <div className="text-sm leading-[1.8]">
+            <div className="leading-[1.8]">
               {toParagraphs(section.text).map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -238,7 +238,7 @@ function CaseSection({ section, line }) {
           )}
         </div>
       )}
-      {section.list?.marker === "dot" ? (
+      {section.list?.marker === "dot" && !section.list.heading ? (
         <DotList items={section.list.items.map((item) => item.text)} />
       ) : (
         section.list && (

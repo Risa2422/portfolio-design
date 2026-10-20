@@ -43,12 +43,15 @@ const content = {
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText: (
       <>
-        参画時、すでにデザインの作成や開発実装が進行中でしたが、
-        <span className="font-bold">
+        参画時、すでにデザインの制作や実装が進行中でしたが、
+        <span className="font-bold text-[#B24A26]">
           既存の画面構造の整理やUIの一貫性が不足
         </span>
-        しており、ユーザーが迷わず運用できる品質に達していませんでした。さらに、開発主導で進行していた背景もあり、「そもそもユーザーが本当に必要としているツールになっているか」という
-        <span className="font-bold">根本的な前提やUXの再定義</span>
+        しており、ユーザーが迷わず運用できる品質に達していませんでした。
+        さらに、「そもそもユーザーが本当に必要としているツールになっているか」という
+        <span className="font-bold text-[#B24A26]">
+          根本的な前提やUXの再定義
+        </span>
         から行う必要がある状態でした。
       </>
     ),
@@ -56,12 +59,12 @@ const content = {
       "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "担当領域とデザインプロセス",
     productFlowText:
-      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わる体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
+      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
-      "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例をご紹介します。",
-    caseLabels: { background: "背景", reflection: "振り返り" },
+      "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例を3つご紹介します。",
+    caseLabels: { background: "背景", reflection: "学び" },
     improvements: [
       {
         id: 1,
@@ -73,7 +76,7 @@ const content = {
         ],
         backgroundFigure: {
           caption:
-            "情報構造としては、1つの親プロジェクトに複数の子プログラムを紐づける階層構造とし、それらに紐づく予算が一元的に作成・管理できる設計を採用していました。そのため、予算を作成するには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
+            "情報構造としては、1つの親プロジェクトに複数の子プログラムが紐づけてあり、それらに各予算が紐づいていました。そのため、新規で予算を作成するためには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
           image: "/mining/diagram.svg",
           alt: "プロジェクトとプログラムの構造図",
         },
@@ -95,7 +98,7 @@ const content = {
                 },
                 {
                   title: "予算作成着手までの導線の長さ",
-                  text: "最も利用頻度の高い予算作成画面へ至る前に、プロジェクトおよびプログラムの2段階で多数の必須項目を入力する必要があり、ユーザーが速やかに本来の業務へ着手できない状況にありました。",
+                  text: "多数の必須項目を入力する必要があり、ユーザーが速やかに予算作成できない状況でした。",
                 },
                 {
                   title: "既存データを参照できない入力環境",
@@ -108,7 +111,7 @@ const content = {
             theme: "hearing",
             label: "ヒアリングと仕様定義",
             caption:
-              "UI/UX上の課題抽出にとどまらず、実際の業務フローや利用コンテキストについてクライアントへヒアリングを実施しました。",
+              "UI上の課題抽出にとどまらず、実際の業務フローについてクライアントへヒアリングを実施しました。",
             pairs: {
               findingHeading: "ユーザー行動・実務の課題",
               decisionHeading: "UI/UXへの落とし込み",
@@ -143,7 +146,7 @@ const content = {
               items: [
                 {
                   title: "プロジェクト作成の任意化",
-                  text: "ヒアリングで得た知見をもとに、これまで必須であったプロジェクト作成を任意とし、プログラム単体での作成を可能にしました。\n また、プログラム作成後は直接予算作成画面へ遷移する設計としました。",
+                  text: "これまで必須であったプロジェクト作成を任意とし、プログラム単体での作成を可能にしました。また、プログラム作成後は直接予算作成画面へ遷移する設計としました。",
                 },
                 {
                   title: "モーダルによる入力体験の継続性確保",
@@ -151,7 +154,7 @@ const content = {
                 },
                 {
                   title: "入力必須項目の最小化",
-                  text: "モーダル内の入力必須項目をプログラム名のみに絞り込み、その他の詳細情報は後から入力できる仕様としました。これにより、ユーザーが最短の操作で予算作成に着手できるようになりました。",
+                  text: "モーダル内の入力必須項目をプロジェクト・プログラム名のみに絞り込み、その他の詳細情報は後から入力できる仕様としました。これにより、ユーザーが最短の操作で予算作成に着手できるようになりました。",
                 },
               ],
             },
@@ -159,7 +162,7 @@ const content = {
         ],
         reflection: {
           headline: "前提を疑うことの大切さ",
-          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかしクライアントへのヒアリングを通じて、仕様と実際の運用との間にズレがあることが明らかになりました。仕様そのものを問い直したことで、画面単位の改善にとどまらず、フロー全体の簡略化へとつなげることができました。",
+          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかしクライアントへのヒアリングを通じて、仕様と実際の運用との間にズレがあることが明らかになり、仕様そのものを問い直したことで、画面単位の改善にとどまらず、フロー全体の簡略化へとつなげることができました。",
         },
       },
       {
@@ -168,7 +171,7 @@ const content = {
         summary:
           "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
         background:
-          "参入時の初期仕様では、ユーザーがプロジェクト作成時に指定した「期間」や「採掘場所」等の条件に基づき、システムが予算作成画面にて、予算項目の自動作成と初期試算を行う仕様になっていました。",
+          "プロジェクト参入時の初期仕様では、ユーザーがプロジェクト作成時に指定した「期間」や「採掘場所」等の条件に基づき、システム側で予算項目の自動作成と初期試算を行う仕組みとなっていました。しかし、初期プロトタイプを用いたクライアント検証を実施したところ、自動生成された画面の操作性や視認性において期待した反応が得られず、業務実態とのギャップが浮き彫りとなりました。そのため、UI/UXの再設計へと着手しました。",
         sections: [
           {
             theme: "before",
@@ -179,6 +182,7 @@ const content = {
             mediaWidth: "md:w-2/5",
             list: {
               size: "sm",
+              marker: "dot",
               heading: "予算作成画面の特徴",
               items: [
                 {
@@ -207,18 +211,18 @@ const content = {
               {
                 title: "クライアントへのヒアリング",
                 description:
-                  "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。",
+                  "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。以下、ヒアリング内容(一部) です。",
                 items: [
                   "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
                   "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
                   "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
                 ],
-                insightLabel: "求められていること",
+                insightLabel: "システムに求められていること",
                 insight:
                   "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
               },
               {
-                title: "普段の作業の画面録画",
+                title: "画面録画分析",
                 description:
                   "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。ヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 \n 以下が分析結果の一部です。",
                 items: [
@@ -315,7 +319,7 @@ const content = {
                 },
                 { text: "試算を行う頻度が高く、業務における重要度が高い" },
                 {
-                  text: "作成した試算データをそのまま本番予算へ反映する場合もある",
+                  text: "作成した試算データをそのまま本番予算へ反映する場合がある",
                 },
               ],
             },
@@ -326,7 +330,10 @@ const content = {
             layout: "row",
             image: "/mining/user-story.png",
             alt: "ユーザーフローの画像",
-            text: "ユーザーフローを作成することで、多様な操作パターン（試算データの保存・破棄・本番反映）を可視化し、チーム内の認識共有と機能スコープの定義をスムーズに行いました。",
+            text: [
+              "ユーザーフローを作成し、試算データの保存・破棄・本番反映などの分岐パターンを可視化することで、チーム内の認識共有とスコープ定義を円滑に進行しました。",
+              "整理した結果、開発規模のコンパクトさと他機能への影響の少なさが証明されたため、予算管理画面への試算機能の統合を決定しました。",
+            ],
           },
           {
             theme: "after",
@@ -337,6 +344,7 @@ const content = {
             alt: "ドラフトモードUIの画像",
             list: {
               heading: "主要機能とUIの工夫",
+              marker: "letter",
               items: [
                 {
                   text: "頻繁に行われるシミュレーション業務に対応するため、『Budget versions』ドロップダウンを配置。新規試算の作成から過去バージョンの参照、本番予算への反映までを完結可能にしました。",
@@ -374,7 +382,7 @@ const content = {
     learnings: "結果・振り返り",
     learningsText: [
       "本リリース直前までの参画でしたが、当初の目標であった「リリース可能な品質・状態への引き上げ」を達成しました。",
-      "一人デザイナーかつ非ネイティブ環境という制約下で、完璧主義を捨て早期からチームを巻き込むアプローチを徹底しました。未完成な段階で積極的にフィードバックを得ることで、手戻りを最小限に抑えスピーディーに成果へ繋げました。",
+      "一人デザイナーかつ非ネイティブ環境という制約下で、早期からチームを巻き込むアプローチを徹底しました。未完成な段階で積極的にフィードバックを得ることで、手戻りを最小限に抑えスピーディーに成果へ繋げました。",
       "クライアント自身も自覚していない潜在的課題を発見することの難しさと、そのための徹底した業務理解の重要性を痛感しました。単に要望を受け取るだけでなく、自ら仮説を持って対話し、本質的な課題へアプローチする姿勢を今後も意識したいと思います。",
     ],
     futureOutlook: "今後の展望",
@@ -547,6 +555,7 @@ const content = {
             mediaWidth: "md:w-2/5",
             list: {
               size: "sm",
+              marker: "dot",
               heading: "Key Features of the Budget Creation Screen",
               items: [
                 {
@@ -694,6 +703,7 @@ const content = {
             alt: "Image of the draft mode UI",
             list: {
               heading: "Key Features and UI Considerations",
+              marker: "letter",
               items: [
                 {
                   text: 'To support frequent simulation work, I added a "Budget versions" dropdown that lets users create new simulations, view past versions, and apply them to the actual budget, all in one place.',
@@ -822,21 +832,19 @@ const MiningProject = () => {
         </div>
         {/* Project Background Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
             <SectionMark />
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-loose ">{t.backgroundText}</p>
-          <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-[#3B2707]">
-              {t.roleTitle}
-            </h3>
+          <p className="text-base leading-loose">{t.backgroundText}</p>
+          <div className="">
+            <h3 className="text-lg font-semibold">{t.roleTitle}</h3>
             <p className="text-base leading-loose ">{t.roleText}</p>
           </div>
         </div>
         {/* Product Development Flow Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-8">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
             <SectionMark />
             {t.productFlowTitle}
           </h2>
@@ -859,9 +867,10 @@ const MiningProject = () => {
           </h2>
           <p className="text-base leading-loose ">{t.improvementsText}</p>
           <div className="space-y-4 w-full">
-            {t.improvements.map((improvement) => (
+            {t.improvements.map((improvement, index) => (
               <Accordion
                 key={improvement.id}
+                number={String(index + 1).padStart(2, "0")}
                 title={improvement.title}
                 summary={improvement.summary}
                 isOpen={openSections[improvement.id]}
