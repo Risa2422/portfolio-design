@@ -28,7 +28,7 @@ export function CaseBox({
         }`}
       >
         <span
-          className="absolute -left-[22px] -top-4 px-4 py-[2px] rounded-full font-semibold leading-loose whitespace-nowrap"
+          className="absolute z-10 -left-[22px] -top-4 px-4 py-[2px] rounded-full font-semibold leading-loose whitespace-nowrap"
           style={{ backgroundColor: colors.badgeBg, color: colors.badgeText }}
         >
           {label}
@@ -203,7 +203,7 @@ function CaseSection({ section, line }) {
                       </p>
                     </div>
                     {study.description && (
-                      <p className="pt-2 leading-loose">{study.description}</p>
+                      <p className="pt-2 leading-loose whitespace-pre-line">{study.description}</p>
                     )}
                   </div>
                   <DotList items={study.items} />

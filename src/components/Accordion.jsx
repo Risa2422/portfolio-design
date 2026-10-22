@@ -20,11 +20,11 @@ function Accordion({ number, title, summary, isOpen, onToggle, children }) {
           </h2>
           <p className="text-text-sub text-sm p-1 text-left">{summary}</p>
         </div>
-        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4A3540] shrink-0 transition-opacity duration-200 group-hover:opacity-90">
+        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-text shrink-0 transition-opacity duration-200 group-hover:opacity-90">
           {isOpen ? (
-            <FaMinus className="w-4 h-4 text-white" />
+            <FaMinus className="w-3 h-3 text-white" />
           ) : (
-            <FaPlus className="w-4 h-4 text-white" />
+            <FaPlus className="w-3 h-3 text-white" />
           )}
         </span>
       </button>

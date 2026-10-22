@@ -216,18 +216,18 @@ const content = {
                   "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
                   "業界柄、ITツールに対する苦手意識を持つユーザーが多く、学習コストの高いツールは定着しにくい可能性が高い",
                 ],
-                insightLabel: "システムに求められていること",
-                insight:
-                  "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
               },
               {
                 title: "② 画面録画分析",
                 description:
-                  "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。\nヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 \n 以下が分析結果の一部です。",
+                  "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。ヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 以下が分析結果の一部です。",
                 items: [
                   "新規予算の作成時は既存のExcelシートを再利用する運用が定着しており、それに伴う数式・関数エラーが頻発していた",
                   "作成した予算データは、進捗共有のため高頻度でレポート（PDF/Excel等）としてエクスポートされていた",
                 ],
+                insightLabel: "システムに求められていること",
+                insight:
+                  "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
               },
             ],
           },
@@ -628,9 +628,6 @@ const content = {
                   "Budgets are currently managed in Excel, but errors from complex formulas and manual input are a constant problem.",
                   "Given the nature of the industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
                 ],
-                insightLabel: "What the system needed to deliver",
-                insight:
-                  "Not automation of their daily work, but a way to reduce mistakes without disrupting their familiar Excel workflow.",
               },
               {
                 title: "② Screen Recording Analysis",
@@ -640,6 +637,9 @@ const content = {
                   "Reusing existing Excel sheets to create new budgets was common practice, which frequently caused formula and function errors.",
                   "Budget data was frequently exported as reports (PDF, Excel, etc.) to share progress.",
                 ],
+                insightLabel: "What the system needed to deliver",
+                insight:
+                  "Not automation of their daily work, but a way to reduce mistakes without disrupting their familiar Excel workflow.",
               },
             ],
           },
@@ -726,7 +726,8 @@ const content = {
                     text: "I made required cells more visible, with a design focused on preventing missing input.",
                   },
                   {
-                    title: "Error navigation that saves users from hunting for errors",
+                    title:
+                      "Error navigation that saves users from hunting for errors",
                     text: "I placed an error banner at the top of the screen that shows the error details along with a button that jumps straight to the affected cell, removing the effort and stress of searching for where the error is.",
                   },
                   {
@@ -740,7 +741,7 @@ const content = {
         ],
         reflection: {
           headline: 'The importance of "ownership" beyond interviews',
-          text: 'Receiving feedback from the client that "this is exactly what we wanted" made me realize that arriving at a truly effective solution requires more than surface-level interviews: it\'s essential to develop a deep, high-resolution understanding of the users\' work and context.',
+          text: "Receiving feedback from the client that \"this is exactly what we wanted\" made me realize that arriving at a truly effective solution requires more than surface-level interviews: it's essential to develop a deep, high-resolution understanding of the users' work and context.",
         },
       },
       {
@@ -922,9 +923,7 @@ const MiningProject = () => {
             {t.backgroundTitle}
           </h2>
           <div>
-            <p className="text-base leading-loose">
-              {t.backgroundText}
-            </p>
+            <p className="text-base leading-loose">{t.backgroundText}</p>
             <p className="text-base leading-loose ">{t.roleText}</p>
           </div>
         </div>
