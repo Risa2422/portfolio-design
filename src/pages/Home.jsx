@@ -149,7 +149,7 @@ const Home = () => {
                 </svg>
               </div>
               <TypingText
-                className="text-center text-xs md:text-base tracking-wider md:tracking-[2px] font-semibold leading-[1.8] whitespace-nowrap"
+                className="text-center text-xs md:text-base tracking-wider md:tracking-[2px] font-semibold leading-loose whitespace-nowrap"
                 lines={["UI/UX Designer", t.fvLead]}
                 onComplete={() => setTypingDone(true)}
               />
@@ -173,7 +173,7 @@ const Home = () => {
               }`}
             >
               <span className="block w-1.5 h-1.5 rounded-full bg-text" />
-              <span className="text-[14px] tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
+              <span className="text-[12px] tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
                 Scroll
               </span>
               <span className="block w-px h-12 md:h-32 bg-gray-500" />

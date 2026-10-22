@@ -26,7 +26,7 @@ const Contact = () => {
             <DotMark />
           )}
           <p
-            className={`font-medium ${copied ? "text-primary font-semibold" : ""}`}
+            className={`font-medium text-sm ${copied ? "text-primary font-semibold" : ""}`}
             aria-live="polite"
           >
             {copied
@@ -34,7 +34,7 @@ const Contact = () => {
                 ? "\\ コピーしました！ /"
                 : "Copied!"
               : language === "ja"
-                ? "お気軽にお問い合わせください。"
+                ? "お気軽にご連絡ください。"
                 : "Feel free to get in touch"}
           </p>
         </div>
@@ -49,11 +49,7 @@ const Contact = () => {
           }
         >
           <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] active:scale-x-[1.02]">
-            <img
-              src="/contact.svg"
-              alt="contact info"
-              className="w-full"
-            />
+            <img src="/contact.svg" alt="contact info" className="w-full" />
             <img
               src="/contact-hover.svg"
               alt=""

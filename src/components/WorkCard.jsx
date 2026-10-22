@@ -23,7 +23,7 @@ function WorkCard({ imageSrc, title, date, description, tags = [], to }) {
         <div className="space-y-2 px-4 md:px-0 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-3">
             <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="pt-3 leading-relaxed">{description}</p>
+            <p className="pt-3 leading-loose">{description}</p>
           </div>
           <ul className="flex gap-2 pt-5 flex-wrap">
             {tags.map((tag, index) => (

@@ -2,14 +2,16 @@ import ZoomableImage from "../../../components/ZoomableImage";
 import { useLanguage } from "../../../context/LanguageContext";
 import { localizeImage } from "../../../utils/localizeImage";
 import { caseThemes } from "./caseThemes";
-import MarkerList from "./MarkerList";
 import DotList from "./DotList";
+import MarkerList from "./MarkerList";
 
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 
 // Timeline item: a pill badge on the left rail with content beside it.
 // line: "connect" runs the rail down to the next badge, "end" stops at the
-// bottom of this item, and null draws no rail.
+// bottom of this item, and null draws no rail. The connect length reaches the
+// next badge across CaseStudy's gap-20; across the shorter gap-12 before the
+// reflection, the overshoot is hidden behind the next (opaque) badge.
 export function CaseBox({
   theme = "neutral",
   label,
@@ -26,7 +28,7 @@ export function CaseBox({
         }`}
       >
         <span
-          className="absolute -left-[22px] -top-4 px-4 py-[2px] rounded-full font-semibold leading-7 whitespace-nowrap"
+          className="absolute -left-[22px] -top-4 px-4 py-[2px] rounded-full font-semibold leading-loose whitespace-nowrap"
           style={{ backgroundColor: colors.badgeBg, color: colors.badgeText }}
         >
           {label}
@@ -37,7 +39,7 @@ export function CaseBox({
         <span
           aria-hidden="true"
           className={`absolute -left-1.5 top-6 w-[2px] ${
-            line === "connect" ? "-bottom-10" : "bottom-1.5"
+            line === "connect" ? "-bottom-[72px]" : "bottom-1.5"
           }`}
           style={{ backgroundColor: `${colors.border}4D` }}
         />
@@ -52,7 +54,11 @@ function CaseSection({ section, line }) {
   const hasMessage = section.caption || section.headline || section.text;
 
   const media = (section.flowLabel || section.image) && (
-    <div className="flex flex-col gap-4 items-start">
+    <div
+      className={`flex flex-col items-start ${
+        section.flowLabel ? "gap-6" : "gap-16"
+      }`}
+    >
       {section.flowLabel && (
         <p
           className="px-3 py-1 rounded-full font-bold text-sm"
@@ -80,7 +86,7 @@ function CaseSection({ section, line }) {
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col gap-8 md:gap-12">
           {section.caption && (
-            <p className="text-base leading-6">{section.caption}</p>
+            <p className="text-base leading-loose">{section.caption}</p>
           )}
           <div>
             <div
@@ -95,7 +101,7 @@ function CaseSection({ section, line }) {
               {items.map((item, index) => (
                 <li
                   key={index}
-                  className="flex flex-col md:flex-row gap-2 md:gap-4 py-[18px] border-b md:border-b-0 last:border-b-0 text-sm leading-[1.8]"
+                  className="flex flex-col md:flex-row gap-2 md:gap-4 py-[18px] border-b md:border-b-0 last:border-b-0 text-sm leading-loose"
                   style={{ borderColor: colors.divider }}
                 >
                   <div className="flex flex-1 gap-3 items-start min-w-0">
@@ -126,7 +132,7 @@ function CaseSection({ section, line }) {
                 height="10"
                 className="shrink-0 mt-[9px] md:mt-0"
               />
-              <p className="flex-1 min-w-0 text-[15px] font-medium leading-[1.8]">
+              <p className="flex-1 min-w-0 text-[15px] font-medium leading-loose">
                 {section.summary}
               </p>
             </div>
@@ -144,21 +150,16 @@ function CaseSection({ section, line }) {
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-7 text-[#2e211a]">
+            <h4 className="text-xl font-bold leading-loose text-[#2e211a]">
               {problem.heading}
             </h4>
-            <p className="leading-[1.8]">{problem.text}</p>
+            <p className="leading-loose">{problem.text}</p>
           </div>
           <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-7 text-[#2e211a]">
+            <h4 className="text-xl font-bold leading-loose text-[#2e211a]">
               {solution.heading}
             </h4>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-              <ZoomableImage
-                src={localizeImage(solution.image, language)}
-                alt={solution.alt}
-                className="w-full md:w-1/2 md:shrink-0 rounded-md object-contain"
-              />
               <div className="flex-1 min-w-0">
                 <MarkerList
                   items={solution.items}
@@ -167,6 +168,11 @@ function CaseSection({ section, line }) {
                   dividerColor={colors.divider}
                 />
               </div>
+              <ZoomableImage
+                src={localizeImage(solution.image, language)}
+                alt={solution.alt}
+                className="w-full md:w-1/2 md:shrink-0  object-contain"
+              />
             </div>
           </div>
         </div>
@@ -181,34 +187,27 @@ function CaseSection({ section, line }) {
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col gap-6">
           {section.caption && (
-            <p className="leading-[1.75]">{section.caption}</p>
+            <p className="leading-loose">{section.caption}</p>
           )}
           {section.research.map((study, index) => (
-            <div key={index} className="flex flex-col gap-6">
+            <div key={index} className="flex flex-col gap-10">
               {index > 0 && (
                 <hr className="border-0 border-t-2 border-dashed border-[#d1d5db]" />
               )}
               <div className="flex flex-col gap-8">
-                <div>
-                  <div className="flex gap-2 items-center">
-                    <img
-                      src="/mining/summary-dot.svg"
-                      alt=""
-                      width="10"
-                      height="10"
-                      className="shrink-0"
-                    />
-                    <p className="text-[17px] font-bold leading-[1.6]">
-                      {study.title}
-                    </p>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex gap-2 items-center">
+                      <p className="text-[16px] font-bold leading-loose">
+                        {study.title}
+                      </p>
+                    </div>
+                    {study.description && (
+                      <p className="pt-2 leading-loose">{study.description}</p>
+                    )}
                   </div>
-                  {study.description && (
-                    <p className="text-sm pt-1 text-text-sub">
-                      {study.description}
-                    </p>
-                  )}
+                  <DotList items={study.items} />
                 </div>
-                <DotList items={study.items} />
                 {study.insight && (
                   <div className="flex flex-col items-start gap-2">
                     {study.insightLabel && (
@@ -216,7 +215,7 @@ function CaseSection({ section, line }) {
                         {study.insightLabel}
                       </span>
                     )}
-                    <p className="text-[20px] font-bold leading-[1.65]">
+                    <p className="text-[20px] font-bold leading-loose">
                       <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(245,223,168,0.7)_56%,rgba(245,223,168,0.7)_92%,transparent_92%)]">
                         {study.insight}
                       </span>
@@ -236,7 +235,7 @@ function CaseSection({ section, line }) {
     return (
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col md:flex-row gap-4 items-start">
-          <div className="flex-1 min-w-0 text-base leading-6">
+          <div className="flex-1 min-w-0 text-base leading-loose">
             {toParagraphs(section.text).map((paragraph, index) => (
               <p key={index} className="pb-6">
                 {paragraph}
@@ -270,12 +269,12 @@ function CaseSection({ section, line }) {
         <div className="flex flex-col gap-4">
           {section.caption && <p>{section.caption}</p>}
           {section.headline && (
-            <p className="text-[20px] font-bold leading-[1.7] ">
+            <p className="text-[20px] font-bold leading-loose">
               {section.headline}
             </p>
           )}
           {section.text && (
-            <div className="leading-[1.8]">
+            <div className="leading-loose">
               {toParagraphs(section.text).map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}

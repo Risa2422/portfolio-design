@@ -13,7 +13,7 @@ const content = {
     infoLabels: [
       {
         title: "担当範囲",
-        value: "ワイヤーフレーム作成、派生画面の完成UI展開",
+        value: "ワイヤーフレーム作成、派生画面のUIデザイン展開",
       },
       { title: "使用ツール", value: "Figma" },
       { title: "制作期間", value: "3ヶ月（2026年10月〜12月）" },
@@ -164,7 +164,7 @@ const WebDesign = () => {
           </div>
         </Link>
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:justify-between px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:apx-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/fill/thumbnail.png")}

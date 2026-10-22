@@ -4,7 +4,7 @@ export const caseThemes = {
   neutral: {
     border: "#82796e",
     background: "#ffffff",
-    badgeBg: "#d9cdbd",
+    badgeBg: "#E4DDD5",
     badgeText: "#5a4a40",
     pillBg: "#f7f0e6",
     pillText: "#5a4a40",

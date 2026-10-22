@@ -83,7 +83,7 @@ function Header() {
                     className={({ isActive }) => {
                       const active = isActive || (to === "/" && isWorkPath);
                       return `
-                      group relative transition-all duration-600 space-y-4 text-md leading-6 block py-3  whitespace-nowrap
+                      group relative transition-all duration-600 space-y-4 text-md leading-loose block py-3  whitespace-nowrap
                         ${active ? "font-semibold" : ""}
                         ${
                           active && !isOpen

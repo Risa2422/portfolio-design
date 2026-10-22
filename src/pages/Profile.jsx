@@ -50,7 +50,7 @@ const content = {
         position: "Web開発専攻",
         place: "カナダ",
         description:
-          "Web開発の基礎からNext.jsなどのモダンな技術を用いたアプリ開発までを体系的に学びました。授業外ではWordPress（Elementor）を用いたクライアントワークや、絵画オークションサービスのデザインをボランティアとして担当しました。",
+          "Web開発の基礎から、Next.jsなどのモダンな技術を用いたアプリケーション開発までを体系的に学びました。授業外では、WordPress（Elementor）を用いたクライアントワークに携わったほか、絵画オークションサービスのプロジェクトにボランティアのデザイナーとして参加しました。",
       },
       {
         title: "鹿児島大学",
@@ -143,7 +143,7 @@ const Timeline = ({ items }) => {
                 <p className="text-sm ">{item.date}</p>
               </div>
             </div>
-            <p className="text-sm leading-[1.7] w-full md:w-3/4">
+            <p className="text-sm leading-loose w-full md:w-3/4">
               {item.description}
             </p>
           </div>
@@ -184,7 +184,7 @@ const Profile = () => {
                     </span> */}
                   </p>
                 )}
-                <p className="whitespace-pre-line leading-[1.8]">{t.bio}</p>
+                <p className="whitespace-pre-line leading-loose">{t.bio}</p>
               </div>
               <div className="hidden md:block md:w-1/3">
                 <img

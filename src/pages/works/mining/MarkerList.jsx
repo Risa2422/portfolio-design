@@ -61,7 +61,7 @@ function MarkerList({
                 </p>
               )}
               <p
-                className={`${small ? "text-base" : ""} leading-[1.8] whitespace-pre-line`}
+                className={`${small ? "text-base" : ""} leading-loose whitespace-pre-line`}
               >
                 {item.text}
               </p>

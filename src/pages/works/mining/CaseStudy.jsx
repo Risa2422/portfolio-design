@@ -15,10 +15,10 @@ function CaseStudy({
   const { language } = useLanguage();
 
   return (
-    <div className="flex flex-col gap-12 pt-2 pl-6">
-      <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12 pt-6 pb-8 pl-6 pr-4 md:pl-8 md:pr-8">
+      <div className="flex flex-col gap-20">
         <CaseBox label={labels.background} line="connect">
-          <div className="text-base leading-8">
+          <div className="text-base leading-loose">
             {toParagraphs(background).map((paragraph, index) => (
               <p key={index} className={index > 0 ? "mt-8" : undefined}>
                 {paragraph}
@@ -27,14 +27,21 @@ function CaseStudy({
           </div>
           {backgroundFigure && (
             <figure className="flex flex-col md:flex-row gap-6 md:gap-4">
-              <figcaption className="flex-1 min-w-0 leading-[1.8]">
+              <figcaption className="flex-1 min-w-0 leading-loose">
                 {backgroundFigure.caption}
               </figcaption>
-              <ZoomableImage
-                src={localizeImage(backgroundFigure.image, language)}
-                alt={backgroundFigure.alt}
-                className="w-full md:w-1/2 md:shrink-0 max-w-[720px] object-contain self-center"
-              />
+              <div className="flex flex-col gap-1 w-full md:w-1/2 md:shrink-0 max-w-[720px] self-center">
+                <ZoomableImage
+                  src={localizeImage(backgroundFigure.image, language)}
+                  alt={backgroundFigure.alt}
+                  className="w-full object-contain"
+                />
+                {backgroundFigure.imageCaption && (
+                  <p className="text-xs text-text-sub py-1 text-center">
+                    {backgroundFigure.imageCaption}
+                  </p>
+                )}
+              </div>
             </figure>
           )}
         </CaseBox>
@@ -51,12 +58,12 @@ function CaseStudy({
       {reflection && (
         <CaseBox label={labels.reflection} indent={false}>
           <div className="flex flex-col gap-2">
-            <p className="text-[17px] font-bold leading-[1.7]">
+            <p className="text-[17px] font-bold leading-loose">
               {reflection.headline}
             </p>
             <div className="">
               {toParagraphs(reflection.text).map((paragraph, index) => (
-                <p key={index} className="leading-[1.8]">
+                <p key={index} className="leading-loose">
                   {paragraph}
                 </p>
               ))}

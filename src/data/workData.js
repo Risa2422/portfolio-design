@@ -43,7 +43,7 @@ const workData = [
       en: "I redesigned a mahjong match tracking app based on an existing product. While referencing its original structure, I aimed to create a more intuitive and user-friendly interface.",
     },
     tags: {
-      ja: ["自主制作", "Webアプリ", "完成UI", "リデザイン"],
+      ja: ["自主制作", "Webアプリ", "UIデザイン", "リデザイン"],
       en: ["Personal Project", "Web App", "UI Design", "Redesign"],
     },
     to: "mahjong",
@@ -60,7 +60,13 @@ const workData = [
       en: "I designed and developed a birthday party management app targeted at parents with young children. I handled everything from identifying user needs to defining the MVP, designing the UI, and implementing the frontend.",
     },
     tags: {
-      ja: ["学校課題", "Webアプリ", "完成UI", "フロントエンド", "チーム開発"],
+      ja: [
+        "学校課題",
+        "Webアプリ",
+        "UIデザイン",
+        "フロントエンド",
+        "チーム開発",
+      ],
       en: [
         "Web App",
         "UI Design",
@@ -83,7 +89,7 @@ const workData = [
       en: "I designed a quiz app that helps international users learn about Japanese culture and etiquette. To enhance user engagement, I incorporated interactive elements and visual appeal while meeting the project requirements.",
     },
     tags: {
-      ja: ["Webアプリ", "クライアントワーク", "完成UI"],
+      ja: ["クライアントワーク", "Webアプリ", "UIデザイン"],
       en: ["Web App", "Client Work", "UI Design"],
     },
     to: "quiz",

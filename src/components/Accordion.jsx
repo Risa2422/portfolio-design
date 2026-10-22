@@ -12,13 +12,15 @@ function Accordion({ number, title, summary, isOpen, onToggle, children }) {
         <div className="flex flex-col items-start justify-start transition-opacity duration-200 group-hover:opacity-90">
           <h2 className="flex items-baseline gap-1 text-lg md:text-lg font-semibold text-left">
             {number && (
-              <span className="font-bold tabular-nums">{number}.</span>
+              <span className="font-bold tabular-nums text-xl tracking-wider">
+                {number}.
+              </span>
             )}
             {title}
           </h2>
           <p className="text-text-sub text-sm p-1 text-left">{summary}</p>
         </div>
-        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#5C554C] shrink-0 transition-opacity duration-200 group-hover:opacity-90">
+        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4A3540] shrink-0 transition-opacity duration-200 group-hover:opacity-90">
           {isOpen ? (
             <FaMinus className="w-4 h-4 text-white" />
           ) : (

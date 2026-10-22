@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import Accordion from "../../components/Accordion";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import SectionMark from "../../components/SectionMark";
@@ -35,7 +35,7 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロダクト概要",
     ProductOverviewText:
-      "カナダの鉱山採掘業界のプログラムマネージャーを対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
+      "カナダの鉱山採掘業界のプログラムマネージャーを対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・実績管理・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/program_overview.svg",
@@ -48,16 +48,16 @@ const content = {
           既存の画面構造の整理やUIの一貫性が不足
         </span>
         しており、ユーザーが迷わず運用できる品質に達していませんでした。
-        さらに、「そもそもユーザーが本当に必要としているツールになっているか」という
+        さらに、「そもそもユーザーが本当に必要としているサービスになっているか」という
         <span className="font-bold text-primary">根本的な前提やUXの再定義</span>
         から行う必要がある状態でした。
       </>
     ),
     roleText:
-      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、UXの再定義・情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
+      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "担当領域とデザインプロセス",
     productFlowText:
-      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）。全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
+      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）でした。\n全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
@@ -74,8 +74,9 @@ const content = {
         ],
         backgroundFigure: {
           caption:
-            "情報構造としては、1つの親プロジェクトに複数の子プログラムが紐づけてあり、それらに各予算が紐づいていました。そのため、新規で予算を作成するためには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
+            "データ構造としては、1つの親プロジェクトに複数の子プログラムが紐づけてあり、それらに各予算が紐づいていました。そのため、新規で予算を作成するためには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
           image: "/mining/diagram.svg",
+          imageCaption: "データ構造",
           alt: "プロジェクトとプログラムの構造図",
         },
         sections: [
@@ -116,7 +117,7 @@ const content = {
               items: [
                 {
                   finding:
-                    "1つのプロジェクト内に複数のプログラムが存在するとは限らず、プログラム単体で運用されるケースも多い。",
+                    "一つのプロジェクト内に複数のプログラムが存在するとは限らず、プログラム単体で運用されるケースも多い。",
                   decision:
                     "プロジェクト作成を「必須の事前ステップ」から「任意の機能」へと変更",
                 },
@@ -160,7 +161,7 @@ const content = {
         ],
         reflection: {
           headline: "前提を疑うことの大切さ",
-          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかしクライアントへのヒアリングを通じて、仕様と実際の運用との間にズレがあることが明らかになり、仕様そのものを問い直したことで、画面単位の改善にとどまらず、フロー全体の簡略化へとつなげることができました。",
+          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかし、クライアントへのヒアリングを通じて仕様と実際の運用との間にズレがあることが明らかになり、仕様そのものを問い直したことで、フロー全体の簡略化へとつなげることができました。",
         },
       },
       {
@@ -189,10 +190,10 @@ const content = {
                 },
                 {
                   title: "提案内容の確認・編集",
-                  text: "AIが提示した予算項目数や算出金額を、ユーザーが確認・修正",
+                  text: "システムが提示した予算項目数や算出金額を、ユーザーが確認・修正",
                 },
                 {
-                  title: "予算作成とコストトラッキングの両立",
+                  title: "予算作成と実績管理の両立",
                   text: "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
                 },
               ],
@@ -207,7 +208,7 @@ const content = {
               "現場の課題を多角的に把握するため、2つの方法で調査を行いました。",
             research: [
               {
-                title: "クライアントおよび鉱山業界の業務担当者へのヒアリング",
+                title: "① クライアントおよび鉱山業界の業務担当者へのヒアリング",
                 description:
                   "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。以下、ヒアリング内容(一部) です。",
                 items: [
@@ -220,9 +221,9 @@ const content = {
                   "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
               },
               {
-                title: "画面録画分析",
+                title: "② 画面録画分析",
                 description:
-                  "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。ヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 \n 以下が分析結果の一部です。",
+                  "実際の作業状況を正しく把握するため、日常的なExcel操作の録画データを分析しました。\nヒアリングだけでは見えにくい潜在的な課題や操作の癖を調べました。 \n 以下が分析結果の一部です。",
                 items: [
                   "新規予算の作成時は既存のExcelシートを再利用する運用が定着しており、それに伴う数式・関数エラーが頻発していた",
                   "作成した予算データは、進捗共有のため高頻度でレポート（PDF/Excel等）としてエクスポートされていた",
@@ -234,8 +235,8 @@ const content = {
             theme: "process",
             label: "参考UI探し",
             text: [
-              "テーブルUIを採用しているサービスを分析し、テーブル操作における最適なインターフェース構造を検証しました。",
-              "先進的ツール（NotionやJira等）で主流の「ホバー表示を中心としたミニマルUI」は避け、ターゲット層の操作迷いを防ぐ『常時視認性の高い、直感的なアクションUI』を採用しました。",
+              "Excelだけでなく、テーブルUIを採用しているサービスを分析し、テーブル操作における最適なインターフェース構造を検証しました。",
+              "多くのサービスで利用されている「ホバー表示を中心としたミニマルUI」は避け、常時視認性の高いUIを採用しました。",
             ],
             gallery: [
               {
@@ -264,10 +265,10 @@ const content = {
             theme: "after",
             label: "完成UI",
             imageLead:
-              "以下が完成したUIです。現場で使い慣れたExcelテンプレートのレイアウトを継承することで、ユーザーの学習コストを抑えつつ、より直感的な操作性を実現しました。",
-            image: "/mining/cost-management-after.png",
+              "以下が完成UIです。現場で使い慣れたExcelテンプレートのレイアウトを継承することで、ユーザーの学習コストを抑えつつ、より直感的な操作性を実現しました。",
+            image: "/mining/cost-management-after.svg",
             alt: "改善後のコスト管理画面",
-            imageWidth: "w-full md:w-3/5 self-center",
+            imageWidth: "w-full self-center",
             list: {
               heading: "改善内容",
               marker: "letter",
@@ -365,7 +366,7 @@ const content = {
             alt: "ユーザーフローの画像",
             text: [
               "ユーザーフローを作成し、試算データの保存・破棄・本番反映などの分岐パターンを可視化することで、チーム内の認識共有とスコープ定義を円滑に進行しました。",
-              "整理した結果、開発規模のコンパクトさと他機能への影響の少なさが証明されたため、予算管理画面への試算機能の統合を決定しました。",
+              "その結果、開発規模を小さく抑えられ、他機能への影響も少ないことが確認できたため、試算機能を予算管理画面に統合する方針に決定しました。",
             ],
           },
           {
@@ -486,6 +487,7 @@ const content = {
           caption:
             "The information architecture used a hierarchy in which multiple child programs were linked to a single parent project, so that the budgets tied to them could be created and managed in one place. As a result, creating a budget required users to first create a project and then a program, in that order.",
           image: "/mining/diagram.svg",
+          imageCaption: "Data structure",
           alt: "Diagram of the project and program structure",
         },
         sections: [
@@ -672,9 +674,9 @@ const content = {
             theme: "after",
             label: "Final UI",
             imageLead: "Below is the final UI.",
-            image: "/mining/cost-management-after.png",
+            image: "/mining/cost-management-after.svg",
             alt: "Cost management screen after the change",
-            imageWidth: "w-full md:w-3/5 self-center",
+            imageWidth: "w-full self-center",
             list: {
               heading: "Improvements",
               marker: "letter",
@@ -895,7 +897,7 @@ const MiningProject = () => {
           <div className="flex flex-col md:flex-row gap-8 justify-center">
             <div className="w-full md:w-1/2 md:pt-4">
               <p className="text-base leading-loose">{t.ProductOverviewText}</p>
-              <p className="pt-4 leading-loose">{t.ProductOverviewApproach}</p>
+              <p className="pt-2 leading-loose">{t.ProductOverviewApproach}</p>
             </div>
             <div className="w-full md:w-1/2 space-y-2">
               <ZoomableImage
@@ -912,9 +914,10 @@ const MiningProject = () => {
             <SectionMark />
             {t.backgroundTitle}
           </h2>
-          <p className="text-base leading-loose">{t.backgroundText}</p>
-          <div className="">
-            <h3 className="text-lg font-semibold">{t.roleTitle}</h3>
+          <div>
+            <p className="text-base leading-loose">
+              {t.backUXの再定義・groundText}
+            </p>
             <p className="text-base leading-loose ">{t.roleText}</p>
           </div>
         </div>
@@ -924,7 +927,7 @@ const MiningProject = () => {
             <SectionMark />
             {t.productFlowTitle}
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-10">
             <p className="text-base leading-loose  whitespace-pre-line">
               {t.productFlowText}
             </p>
