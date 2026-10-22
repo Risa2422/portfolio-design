@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import DotMark from "./DotMark";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -19,86 +20,53 @@ const Contact = () => {
     <section>
       <div className="mt-56 mb-10 w-full flex flex-col items-center justify-center gap-2">
         <div className="w-full max-w-md flex items-center justify-center gap-1">
-          <span className="block w-2.5 h-2.5 rounded-full bg-primary" />
-          <p className="text-s font-medium">
-            {language === "ja"
-              ? "お気軽にお問い合わせください。"
-              : "Feel free to get in touch"}
+          {copied ? (
+            <span aria-hidden="true" className="text-sm leading-none"></span>
+          ) : (
+            <DotMark />
+          )}
+          <p
+            className={`font-medium ${copied ? "text-primary font-semibold" : ""}`}
+            aria-live="polite"
+          >
+            {copied
+              ? language === "ja"
+                ? "\\ コピーしました！ /"
+                : "Copied!"
+              : language === "ja"
+                ? "お気軽にお問い合わせください。"
+                : "Feel free to get in touch"}
           </p>
         </div>
         <button
           type="button"
           onClick={handleCopy}
-          className="w-full max-w-md cursor-pointer"
+          className="group w-full max-w-md cursor-pointer"
           aria-label={
             language === "ja"
               ? "メールアドレスをクリップボードにコピー"
               : "Copy email address to clipboard"
           }
         >
-          <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] hover:brightness-125 active:scale-x-[1.02]">
-            <img src="/contact.svg" alt="contact info" className="w-full" />
-            <span
-              className={`absolute left-[4.0%] top-[10%] h-[80%] w-[76.3%] bg-text flex items-center justify-center text-white font-semibold text-base sm:text-xl transition-opacity duration-300 ${
-                copied ? "opacity-100" : "opacity-0"
-              }`}
+          <div className="relative transition duration-300 ease-out hover:scale-x-[1.01] active:scale-x-[1.02]">
+            <img
+              src="/contact.svg"
+              alt="contact info"
+              className="w-full"
+            />
+            <img
+              src="/contact-hover.svg"
+              alt=""
               aria-hidden="true"
-            >
-              {language === "ja" ? "コピーしました！" : "Copied!"}
-            </span>
+              className={`absolute inset-0 w-full h-full [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] group-focus-visible:[clip-path:inset(0_0_0_0)] ${
+                copied
+                  ? "transition-none"
+                  : "transition-[clip-path] duration-500 ease-out"
+              }`}
+            />
           </div>
         </button>
       </div>
-      {/* <SectionTitle title="Contact" jp="お問い合わせ" />
-      <div className="space-y-10 md:space-y-20 mt-4 mb-14 px-4">
-        <ul className="flex flex-col md:flex-row gap-4 md:gap-20 md:h-16">
-          <li className="flex items-center md:flex-col md:w-56 gap-4 md:gap-1 md:items-start">
-            <div
-              className="flex items-center gap-2 cursor-pointer select-text hover:opacity-70 transition text-sm"
-              onClick={handleCopy}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleCopy();
-                }
-              }}
-              aria-label={
-                language === "ja"
-                  ? "メールアドレスをクリップボードにコピー"
-                  : "Click to Copy"
-              }
-            >
-              <VscMail size={24} />
-              <p className="text-base leading-none">yamari2422@gmail.com</p>
-            </div>
-            {copied ? (
-              <p className="text-sm w-full">
-                {language === "ja" ? "コピーしました！✅" : "Copied!✅"}
-              </p>
-            ) : (
-              <p className="text-sm text-neutral-700 w-full ">
-                {language === "ja" ? "※クリックでコピーできます" : "※ Click to Copy"}
-              </p>
-            )}
-          </li>
-          <li className="hover:opacity-70 transition">
-            <a
-              href="https://www.linkedin.com/in/risa-yamamoto-profile/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 "
-            >
-              <img
-                src="/linkedin-icon.png"
-                alt="LinkedIn"
-                className="w-6 h-5 mt-0.5 object-cover"
-              />
-              <p className="leading-none text-base">risa-yamamoto-profile</p>
-            </a>
-          </li>
-        </ul>
-      </div> */}
     </section>
   );
 };

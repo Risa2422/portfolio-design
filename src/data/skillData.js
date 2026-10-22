@@ -15,6 +15,7 @@ const skillData = [
   { icon: "/tailwind-css-icon.svg", label: "Tailwind CSS" },
   { icon: "/c-sharp-icon.svg", label: "C#", cover: true },
   { icon: "/microsoft-sql-server-icon.svg", label: "SQL Server", cover: true },
+  { icon: "/git-icon.svg", label: "Git" },
 ];
 
 export default skillData;

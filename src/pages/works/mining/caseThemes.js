@@ -4,7 +4,7 @@ export const caseThemes = {
   neutral: {
     border: "#82796e",
     background: "#ffffff",
-    badgeBg: "#E6DED3",
+    badgeBg: "#d9cdbd",
     badgeText: "#5a4a40",
     pillBg: "#f7f0e6",
     pillText: "#5a4a40",
@@ -28,7 +28,6 @@ export const caseThemes = {
     pillText: "#976211",
     accent: "#976211",
     divider: "#efe2c9",
-    summaryBg: "#fdf9ec",
   },
   process: {
     border: "#3f5f73",

@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import DotMark from "./DotMark";
 
 const SectionTitle = ({
   title,
@@ -14,19 +15,15 @@ const SectionTitle = ({
 
   return (
     <div className="md:pb-4 space-y-2">
-      <div className="flex items-center gap-2">
-        <span
-          className={`w-2.5 h-2.5 rounded-full ${
-            sub ? "bg-[#4F7A4A]" : "bg-[#C4633F]"
-          }`}
-        />
-        <p className="text-ms md:text-sm font-medium tracking-wider">
+      <div className="flex items-center gap-1.5">
+        <DotMark colorClass={sub ? "bg-[#245377]" : "bg-primary"} />
+        <p className="text-xs font-semibold tracking-widest text-text-sub">
           {displaySubtitle}
         </p>
       </div>
       <div className="flex items-center space-x-4">
         <h2
-          className={`whitespace-nowrap font-bold tracking-wide  ${
+          className={`whitespace-nowrap font-bold  uppercase ${
             sub ? "text-3xl md:text-4xl" : "text-3xl md:text-4xl"
           }`}
         >

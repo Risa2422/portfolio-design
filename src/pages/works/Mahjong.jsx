@@ -1,6 +1,7 @@
 // import { useEffect } from "react";
 // import { MdOutlineArrowBackIosNew } from "react-icons/md";
 // import { Link } from "react-router-dom";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 // import Arrow from "../../components/Arrow";
 // import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 // import InfoList from "../../components/InfoList";
@@ -10,7 +11,7 @@
 //     { title: "サービス種別", value: "Webアプリ(モバイル版)" },
 //     { title: "制作形態", value: "チーム開発" },
 //     { title: "制作期間", value: "1週間" },
-//     { title: "担当領域", value: "UIデザイン" },
+//     { title: "担当領域", value: "完成UI" },
 //     { title: "使用ツール", value: "Figma" },
 //   ];
 
@@ -41,7 +42,7 @@
 //             <InfoList items={infoItems} />
 //           </div>
 //         </div>
-//         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 bg-background-secondary">
+//         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-56 ">
 //           <h2 className="text-lg md:text-xl text-accent font-medium">概要</h2>
 //           <p className="text-sm md:text-base leading-loose text-gray-700">
 //             既存の
@@ -55,7 +56,7 @@
 //             </a>
 //             をベースとした麻雀対戦記録アプリのデザインを担当しました。
 //             背景としては、麻雀好きな知人のエンジニアが、普段対戦結果を記録するために使用している既存アプリが使い辛く、
-//             より使いやすいアプリを開発したいとのことで、既存アプリの基本的な機能は引き継ぎつつもより直感的なUIデザインの制作に力を入れました。
+//             より使いやすいアプリを開発したいとのことで、既存アプリの基本的な機能は引き継ぎつつもより直感的な完成UIの制作に力を入れました。
 //           </p>
 //         </div>
 //         <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-72 bg-background">
@@ -125,7 +126,7 @@
 //         </div>
 //         <div
 //           id="final-ui"
-//           className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-72 bg-background-secondary overflow-hidden scroll-mt-24"
+//           className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-10 min-h-72  overflow-hidden scroll-mt-24"
 //         >
 //           <h2 className="text-lg md:text-xl text-accent font-medium">UI設計</h2>
 //           <div className="flex flex-col w-full gap-2">
@@ -328,7 +329,6 @@
 
 // export default Mahjong;
 import { useEffect } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
@@ -372,10 +372,10 @@ const content = {
       'While the existing application was feature-rich, the design was overly functional, giving the impression that it lacked the visual world or atmosphere of a Mahjong app. During the initial interview, the requester also mentioned, "I have no specific complaints about the functions, but I find it difficult to use and the look feels outdated." Thus, I determined that balancing ease of use with visual appeal was required.',
     analysisIntro:
       "First, I analyzed the issues of the existing app page by page.",
-    scoreCaption: "Score Page",
+    scoreCaption: "Result Page",
     historyCaption: "History Page",
     scoreInputCaption: "Score Input Page",
-    accountCaption: "Account Page",
+    accountCaption: "My Page",
     friendManagementCaption: "Friend Management Page",
     uiDesignTitle: "UI Design",
     finalUiLabel: "Final UI",
@@ -395,16 +395,19 @@ const content = {
   ja: {
     infoItems: [
       { title: "サービス種別", value: "Webアプリ（モバイル版）" },
-      { title: "プロジェクト区分", value: "チーム開発" },
+      {
+        title: "プロジェクト区分",
+        value: "チーム開発 (エンジニア 2名、デザイナー(自身)1名)",
+      },
       { title: "期間", value: "1週間" },
-      { title: "担当領域", value: "UIデザイン" },
+      { title: "担当領域", value: "UI/UXデザイン" },
       { title: "使用ツール", value: "Figma" },
     ],
     heading: "麻雀対戦記録アプリ",
     overviewTitle: "概要",
     overviewText: (
       <>
-        既存の麻雀記録アプリをベースに、麻雀対戦記録アプリのUIデザインを担当しました。麻雀好きな知人のエンジニアから、普段使っている既存アプリの操作性に不満があり、より使いやすいアプリを開発したいという相談を受けたことがきっかけです。既存アプリの基本機能を引き継ぎつつ、より直感的なUIデザインの制作に力を注ぎました。
+        既存の麻雀記録アプリをベースに、麻雀対戦記録アプリの完成UIを担当しました。麻雀好きな知人のエンジニアから、普段使っている既存アプリの操作性に不満があり、より使いやすいアプリを開発したいという相談を受けたことがきっかけです。既存アプリの基本機能を引き継ぎつつ、より直感的な完成UIの制作に力を注ぎました。
       </>
     ),
     problemTitle: "課題の洗い出し",
@@ -416,7 +419,7 @@ const content = {
     scoreInputCaption: "成績入力ページ",
     accountCaption: "アカウントページ",
     friendManagementCaption: "友達管理ページ",
-    uiDesignTitle: "UI設計",
+    uiDesignTitle: "完成UI",
     finalUiLabel: "完成UI",
     scoreHistoryVideoLabel: "成績/履歴ページ",
     scoreInputVideoLabel: "成績入力ページ",
@@ -445,16 +448,18 @@ const Mahjong = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
+          className="group block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
-          <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <div className="flex items-center">
+            <span className="flex items-center justify-center w-14 h-10">
+              <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
             </span>
-            <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
+            <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+              {t.homeLabel}
+            </p>
           </div>
         </Link>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:justify-between  px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/mahjong/thumbnail.png")}
@@ -472,7 +477,7 @@ const Mahjong = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.overviewTitle}
@@ -554,7 +559,7 @@ const Mahjong = () => {
         </div>
         <div
           id="final-ui"
-          className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden scroll-mt-24"
+          className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20  overflow-hidden scroll-mt-24"
         >
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
@@ -751,15 +756,12 @@ const Mahjong = () => {
             {t.learningsTitle}
           </h2>
           <p className="text-base leading-loose">{t.learningsText}</p>
-          <Link to="/" className="hover:opacity-80 pt-20">
-            <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew
-                  width={10}
-                  className="w-5 h-3 text-current"
-                />
+          <Link to="/" className="group hover:opacity-80 pt-20">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="text-sm font-medium tracking-wider">
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
                 {t.homeLabel}
               </p>
             </div>

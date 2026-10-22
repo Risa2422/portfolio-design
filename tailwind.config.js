@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         sans: [
+          '"poppins"',
+          "Noto Sans",
           "heisei-kaku-gothic-std",
           '"Hiragino Kaku Gothic Pro"',
           "メイリオ",
@@ -18,14 +20,14 @@ export default {
         kurenaido: ['"Zen Kurenaido"', "sans-serif"],
       },
       colors: {
-        background: "#FFFDF7",
-        "background-secondary": "#FAF7F0",
-        primary: "#B24A26",
+        background: "#FAFAFA",
+        "background-secondary": "#F1EEEC",
+        primary: "#E54C30",
         "primary-light": "rgba(216, 178, 89, 0.48)",
         secondary: "rgba(168, 187, 162)",
         "secondary-light": "rgba(168, 187, 162, 0.48)",
         tertiary: "#D69F7E",
-        text: "#131313",
+        text: "#1C1619",
         "text-sub": "#3D3833",
         border: "#BFC0C0",
         accent: "#CD6D34",

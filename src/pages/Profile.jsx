@@ -8,7 +8,7 @@ import skillData from "../data/skillData";
 
 const content = {
   ja: {
-    bio: "エンジニアとしての開発経験を経て、「継続的に愛されるプロダクトには、優れたアルゴリズム以前に優れたUI/UXが不可欠である」と痛感し、UI/UXデザイナーへ転向。\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
+    bio: "エンジニアとしてシステム開発を行う中、ユーザーから「使いづらい」というフィードバックをいただいたことをきっかけに、「どんなに優れたアルゴリズムであっても、直感的なUI/UXが伴わなければ継続的に愛されるプロダクトにはならない」と痛感し、UI/UXデザイナーへ転向しました。\n\n直近ではカナダのスタートアップに参画し、英語環境かつ唯一のデザイナーという挑戦的な環境の中でユーザーの課題発見から機能定義、UI作成まで一元的に主導し、自走力を磨きました。",
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -32,7 +32,7 @@ const content = {
         position: "UI/UXデザイナー",
         place: "東京 (リモート)",
         description:
-          "新規サービスのユーザーストーリーとユーザーフローを作成し、ユーザーニーズを明確化しました。ワイヤーフレームの作成やUIデザインの検討を通じて一貫性のある使いやすいインターフェースを目指し、海外メンバーを含むチームと円滑に連携しながらデザインの意思決定を進めました。",
+          "新規サービスのユーザーストーリーとユーザーフローを作成し、ユーザーニーズを明確化しました。ワイヤーフレームの作成や完成UIの検討を通じて一貫性のある使いやすいインターフェースを目指し、海外メンバーを含むチームと円滑に連携しながらデザインの意思決定を進めました。",
       },
       {
         title: "株式会社 ARS",
@@ -163,7 +163,7 @@ const Profile = () => {
 
   return (
     <FadeInPageWrapper>
-      <section className="flex-1 px-[5vw] sm:px-[8vw] pt-12 md:mt-0 space-y-12 md:space-y-40">
+      <section className="flex-1 px-[5vw] sm:px-[8vw] pt-16 md:pt-4 space-y-12 md:space-y-10">
         <div>
           <div>
             <SectionTitle
@@ -172,17 +172,16 @@ const Profile = () => {
               jpSubtitle="私について"
               jp="Profile"
             />
-            <div className="flex flex-col justify-center md:flex-row items-center md:gap-24 py-8 md:py-12">
+            <div className="flex flex-col justify-center md:flex-row items-center md:gap-24 py-8">
               <div className="space-y-8 md:w-2/3">
                 {language === "en" ? (
-                  <p className="text-5xl font-bold">Hi, it's Risa</p>
+                  <p className="text-3xl font-bold">Hi, it's Risa !</p>
                 ) : (
                   <p>
-                    はじめまして。
-                    <span className="font-kurenaido text-4xl font-extrabold pr-2">
+                    ポートフォリオをご覧いただき、ありがとうございます。山元里紗と申します。
+                    {/* <span className="font-kurenaido text-4xl font-extrabold pr-2">
                       山元里紗
-                    </span>
-                    と申します。
+                    </span> */}
                   </p>
                 )}
                 <p className="whitespace-pre-line leading-[1.8]">{t.bio}</p>
@@ -230,7 +229,7 @@ const Profile = () => {
               />
               <div className="mt-4 space-y-4">
                 <div className="w-full">
-                  <ul className="mx-auto grid w-full max-w-[1100px] grid-cols-4 sm:grid-cols-6 lg:grid-cols-11 gap-x-3 gap-y-6 sm:gap-x-4 lg:gap-x-3">
+                  <ul className="mx-auto grid w-full grid-cols-4 sm:grid-cols-6 lg:grid-cols-12  gap-y-6 ">
                     {skillData.map((skill) => (
                       <SkillItem
                         key={skill.label}

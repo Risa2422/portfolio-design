@@ -61,6 +61,7 @@ function CaseSection({ section, line }) {
           {section.flowLabel}
         </p>
       )}
+      {section.imageLead && <p>{section.imageLead}</p>}
       {section.image && (
         <ZoomableImage
           src={localizeImage(section.image, language)}
@@ -130,6 +131,44 @@ function CaseSection({ section, line }) {
               </p>
             </div>
           )}
+        </div>
+      </CaseBox>
+    );
+  }
+
+  // Constraint: a problem statement followed by a solution that pairs a
+  // screenshot with a numbered list of what was designed.
+  if (section.constraint) {
+    const { problem, solution } = section.constraint;
+    return (
+      <CaseBox theme={section.theme} label={section.label} line={line}>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-2">
+            <h4 className="text-xl font-bold leading-7 text-[#2e211a]">
+              {problem.heading}
+            </h4>
+            <p className="leading-[1.8]">{problem.text}</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <h4 className="text-xl font-bold leading-7 text-[#2e211a]">
+              {solution.heading}
+            </h4>
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+              <ZoomableImage
+                src={localizeImage(solution.image, language)}
+                alt={solution.alt}
+                className="w-full md:w-1/2 md:shrink-0 rounded-md object-contain"
+              />
+              <div className="flex-1 min-w-0">
+                <MarkerList
+                  items={solution.items}
+                  marker="letter"
+                  color={colors.accent}
+                  dividerColor={colors.divider}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </CaseBox>
     );
@@ -206,12 +245,18 @@ function CaseSection({ section, line }) {
           </div>
           <div className="grid grid-cols-2 gap-x-[7px] gap-y-[10px] w-full md:w-[505px] md:shrink-0">
             {section.gallery.map((image, index) => (
-              <ZoomableImage
-                key={index}
-                src={image.src}
-                alt={image.alt}
-                className="w-full object-cover object-top border"
-              />
+              <figure key={index} className="flex flex-col gap-1">
+                <ZoomableImage
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full object-cover object-top border"
+                />
+                {image.caption && (
+                  <figcaption className="text-xs text-text-sub py-1">
+                    {image.caption}
+                  </figcaption>
+                )}
+              </figure>
             ))}
           </div>
         </div>

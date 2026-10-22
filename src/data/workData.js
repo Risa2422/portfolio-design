@@ -43,7 +43,7 @@ const workData = [
       en: "I redesigned a mahjong match tracking app based on an existing product. While referencing its original structure, I aimed to create a more intuitive and user-friendly interface.",
     },
     tags: {
-      ja: ["自主制作", "Webアプリ", "UIデザイン", "リデザイン"],
+      ja: ["自主制作", "Webアプリ", "完成UI", "リデザイン"],
       en: ["Personal Project", "Web App", "UI Design", "Redesign"],
     },
     to: "mahjong",
@@ -56,17 +56,11 @@ const workData = [
     },
     date: "2025",
     description: {
-      ja: "子育て世代をターゲットにした誕生日会管理アプリのデザインと実装を担当しました。ユーザーニーズの発見からMVP定義、UIデザイン、フロントエンド実装まで一貫して行いました。",
+      ja: "子育て世代をターゲットにした誕生日会管理アプリのデザインと実装を担当しました。ユーザーニーズの発見からMVP定義、完成UI、フロントエンド実装まで一貫して行いました。",
       en: "I designed and developed a birthday party management app targeted at parents with young children. I handled everything from identifying user needs to defining the MVP, designing the UI, and implementing the frontend.",
     },
     tags: {
-      ja: [
-        "学校課題",
-        "Webアプリ",
-        "UIデザイン",
-        "フロントエンド",
-        "チーム開発",
-      ],
+      ja: ["学校課題", "Webアプリ", "完成UI", "フロントエンド", "チーム開発"],
       en: [
         "Web App",
         "UI Design",
@@ -89,7 +83,7 @@ const workData = [
       en: "I designed a quiz app that helps international users learn about Japanese culture and etiquette. To enhance user engagement, I incorporated interactive elements and visual appeal while meeting the project requirements.",
     },
     tags: {
-      ja: ["Webアプリ", "クライアントワーク", "UIデザイン"],
+      ja: ["Webアプリ", "クライアントワーク", "完成UI"],
       en: ["Web App", "Client Work", "UI Design"],
     },
     to: "quiz",
@@ -102,11 +96,11 @@ const workData = [
   //   },
   //   date: "2025",
   //   description: {
-  //     ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、UIデザイン、ワイヤーフレーム作成に取り組みました。",
+  //     ja: "Google Mapsの既存のリスト機能を拡張し、新しいアルバム機能をデザインしました。ユーザーニーズの発見、完成UI、ワイヤーフレーム作成に取り組みました。",
   //     en: "I designed a new album feature for Google Maps, enhancing the existing Lists functionality. I focused on identifying user needs, designing the UI, and creating wireframes.",
   //   },
   //   tags: {
-  //     ja: ["自主制作", "UIデザイン", "機能デザイン"],
+  //     ja: ["自主制作", "完成UI", "機能デザイン"],
   //     en: ["Personal Project", "UI Design", "Feature Design"],
   //   },
   //   to: "googleMaps-album",

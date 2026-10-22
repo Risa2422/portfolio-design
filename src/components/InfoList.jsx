@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { Fragment } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { scrollToElement } from "../hooks/useSmoothScroll";
@@ -15,8 +15,8 @@ function InfoList({ items, visible = true }) {
       <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 ">
         {items.map(({ title, value }, index) => (
           <Fragment key={index}>
-            <dt className="font-semibold">{title}</dt>
-            <dd>{value}</dd>
+            <dt className="font-semibold text-sm">{title}</dt>
+            <dd className="text-sm">{value}</dd>
           </Fragment>
         ))}
       </dl>
@@ -25,10 +25,10 @@ function InfoList({ items, visible = true }) {
           <a
             href="#final-ui"
             onClick={scrollToFinalUI}
-            className="group flex items-center gap-1 px-4 py-1.5 text-white  rounded-full text-sm transition  bg-accent"
+            className="group flex items-center gap-1 px-4 py-1.5 text-white  rounded-full text-sm transition  bg-primary"
           >
             {language === "ja" ? "完成UIを見る" : "Check the Final UI"}
-            <ArrowRight className="w-5 h-4 transform duration-200 group-hover:translate-x-0.5 text-white" />
+            <ArrowDown className="w-5 h-4 transform duration-200 group-hover:translate-y-0.5 text-white" />
           </a>
         </div>
       )}

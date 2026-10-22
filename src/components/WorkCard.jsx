@@ -1,116 +1,42 @@
-// import { Link } from "react-router-dom";
-
-// function WorkCard({
-//   imageSrc,
-//   title,
-//   description,
-//   tags = [],
-//   reverse = false,
-//   to,
-// }) {
-//   return (
-//     <Link
-//       to={`/works/${to}`}
-//       onClick={() => {
-//         sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-//       }}
-//     >
-//       <div
-//         className={`flex flex-col md:flex-row gap-10 md:h-[300px] ${
-//           reverse ? "md:flex-row-reverse" : ""
-//         }`}
-//       >
-//         <div className="md:w-1/2 overflow-hidden">
-//           <img
-//             src={imageSrc}
-//             alt={title}
-//             width={560}
-//             height={560}
-//             className="transition-transform duration-300 ease-in-out hover:scale-105 rounded"
-//           />
-//         </div>
-//         <div
-//           className={`md:w-1/2 space-y-3 hover:opacity-70 transition-opacity duration-200 ${
-//             reverse ? "md:pl-14" : "md:pr-20"
-//           }`}
-//         >
-//           <div className="space-y-3">
-//             <h3 className="text-2xl font-semibold">{title}</h3>
-//             <p className="text-md  text-text-sub">{description}</p>
-//           </div>
-//           <ul className="flex gap-2 text-sm flex-wrap">
-//             {tags.map((tag, index) => (
-//               <li
-//                 key={index}
-//                 className="flex items-center justify-center px-3 py-1.5
-//                  bg-[#F0EEEA] border border-[#F0EEEA] rounded-full"
-//               >
-//                 <span className="text-xs">{tag}</span>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     </Link>
-//   );
-// }
-
-// export default WorkCard;
 import { Link } from "react-router-dom";
 
-function WorkCard({
-  imageSrc,
-  title,
-  date,
-  description,
-  tags = [],
-  reverse = false,
-  to,
-}) {
+function WorkCard({ imageSrc, title, date, description, tags = [], to }) {
   return (
     <Link
       to={`/works/${to}`}
       onClick={() => {
         sessionStorage.setItem("scrollPosition", window.scrollY.toString());
       }}
-      className="group"
+      className="group block h-full"
     >
-      <div
-        className={`flex flex-col md:flex-row gap-20 md:h-[300px] ${
-          reverse ? "md:flex-row-reverse" : ""
-        }`}
-      >
-        <div className="md:w-1/2 overflow-hidden">
+      <div className="flex flex-col gap-8 h-full">
+        <div className="overflow-hidden rounded">
           <img
             src={imageSrc}
             alt={title}
             width={560}
             height={560}
-            className="transition-transform duration-300 ease-in-out rounded group-hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 ease-in-out rounded group-hover:scale-105"
           />
         </div>
 
-        <div
-          className={`md:w-1/2 space-y-3 px-4 hover:opacity-70 transition-opacity duration-200 ${
-            reverse ? "md:pl-10 md:pr-0" : "md:pr-10 md:pl-0"
-          }`}
-        >
+        <div className="space-y-2 px-4 md:px-0 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-3">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="pt-3 leading-relaxed font-medium">{description}</p>
+            <h3 className="text-xl font-semibold">{title}</h3>
+            <p className="pt-3 leading-relaxed">{description}</p>
           </div>
-          <ul className="flex gap-2 pt-3 flex-wrap">
+          <ul className="flex gap-2 pt-5 flex-wrap">
             {tags.map((tag, index) => (
               <li
                 key={index}
                 className="flex items-center justify-center px-3 py-1.5 
-                border border-[#a39889] rounded-full"
+                border-[1px] border-[#351E28] rounded-full"
               >
-                <span className="text-xs text-[#5A4A40]">{tag}</span>
+                <span className="text-xs text-text">{tag}</span>
               </li>
             ))}
           </ul>
-          <p className="pt-2 text-sm  text-[#5A4A40]">{date}</p>
+          <p className="pt-2 text-sm">{date}</p>
         </div>
       </div>
     </Link>

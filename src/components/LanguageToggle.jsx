@@ -11,17 +11,17 @@ function LanguageToggle() {
       aria-checked={isEn}
       aria-label="Switch language / 言語を切り替える"
       onClick={toggleLanguage}
-      className="relative inline-flex h-7 w-[52px] shrink-0 items-center rounded-full bg-[#E6DFD2] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+      className="relative inline-flex h-7 w-[52px] shrink-0 items-center rounded-full bg-[#e7e6e6] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute left-2 text-[14px] font-semibold leading-none text-gray-700"
+        className="pointer-events-none absolute left-2 text-[14px] font-semibold leading-none "
       >
         あ
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute right-2.5 text-[14px] font-semibold leading-none text-gray-700"
+        className="pointer-events-none absolute right-[11px] text-[14px] font-semibold leading-none"
       >
         A
       </span>

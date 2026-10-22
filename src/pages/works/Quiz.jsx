@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import SectionMark from "../../components/SectionMark";
@@ -179,14 +179,14 @@ const content = {
       { title: "サービス種別", value: "Webアプリ(モバイル版)" },
       { title: "プロジェクト区分", value: "クライアントワーク" },
       { title: "期間", value: "1週間" },
-      { title: "担当領域", value: "UIデザイン" },
+      { title: "担当領域", value: "完成UI" },
       { title: "使用ツール", value: "Figma" },
     ],
     heading: "Japan Quiz Journey",
     overviewTitle: "Overview",
     overviewText: (
       <>
-        訪日外国人観光客や海外在住者を対象に、日本文化やマナーを楽しく学べるクイズ形式の学習アプリのUIデザインを担当しました。
+        訪日外国人観光客や海外在住者を対象に、日本文化やマナーを楽しく学べるクイズ形式の学習アプリの完成UIを担当しました。
         <br />
         提示された要件を満たすだけでなく、ターゲットユーザーにとって使いやすいサービスとなるよう心がけました。
       </>
@@ -220,7 +220,7 @@ const content = {
     processTitle: "制作プロセス",
     personaTitle: "1. ペルソナ作成",
     personaIntro:
-      "ターゲットユーザーはあらかじめ定義されていましたが、より具体的なユーザーの課題やニーズを導き出し、実用的なUIデザインを実現するためにペルソナを作成しました。",
+      "ターゲットユーザーはあらかじめ定義されていましたが、より具体的なユーザーの課題やニーズを導き出し、実用的な完成UIを実現するためにペルソナを作成しました。",
     persona1Caption: "ペルソナ1",
     persona2Caption: "ペルソナ2",
     personaQuote: (
@@ -241,7 +241,7 @@ const content = {
     wireframeTitle: "3. ワイヤーフレーム作成",
     wireframeIntro:
       "ワイヤーフレームの作成では、要件を満たしながらも直感的に操作できることを意識しました。",
-    finalUiTitle: "最終UIデザイン",
+    finalUiTitle: "最終完成UI",
     designSummaryTitle: "デザイン概要",
     designSummaryText:
       "ターゲットユーザーが成人であることを踏まえ、クイズらしいポップさを取り入れつつも、全体としてはシンプルで直感的なUIを目指しました。また、ユーザーのモチベーションを維持し継続的な学習を促すため、声かけのような対話的な要素も取り入れています。",
@@ -321,16 +321,18 @@ const Quiz = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
+          className="group block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
-          <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <div className="flex items-center">
+            <span className="flex items-center justify-center w-14 h-10">
+              <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
             </span>
-            <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
+            <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+              {t.homeLabel}
+            </p>
           </div>
         </Link>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:justify-between  px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/quiz/thumbnail.png")}
@@ -348,7 +350,7 @@ const Quiz = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.overviewTitle}
@@ -414,7 +416,7 @@ const Quiz = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20  overflow-hidden">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.processTitle}
@@ -707,7 +709,7 @@ const Quiz = () => {
             </div>
           </section>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 bg-background-secondary overflow-hidden py-20">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40  overflow-hidden py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.learningsTitle}
@@ -719,15 +721,12 @@ const Quiz = () => {
               ))}
             </ul>
           </div>
-          <Link to="/" className="hover:opacity-80 pt-20">
-            <div className=" flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew
-                  width={10}
-                  className="w-5 h-3 text-current"
-                />
+          <Link to="/" className="group hover:opacity-80 pt-20">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="pb-0.5 text-sm font-medium tracking-wider">
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
                 {t.homeLabel}
               </p>
             </div>

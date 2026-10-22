@@ -17,11 +17,29 @@ const content = {
   ja: {
     tagline:
       "エンジニアリングとデザインの架け橋になるデザイナーを目指しています。",
+    fvLead: "開発とデザインの視点で、使いやすさを形にします。",
   },
   en: {
     tagline:
       "My goal is to become a designer who seamlessly connects engineering and design.",
+    fvLead: "Shaping usability through engineering and design.",
   },
+};
+
+// FV の pill が arch から抜け出し始めるまでの秒数（pill の移動と arch の塗り消しで共有）
+const EMERGE_DELAY = 0.5;
+
+// 抜け出す図形の輪郭。モーフィングのため両方とも同じ順序・同じ数の C コマンド（直線も C で表現）で書く
+// arch の形（arch の輪郭そのもの）
+const EMERGE_ARCH_D =
+  "M0.844 24.478C0.844 11.479 11.479 0.844 24.478 0.844C37.608 0.844 50.737 0.844 63.867 0.844C76.866 0.844 87.501 11.479 87.501 24.478C87.501 53.364 87.501 82.249 87.501 111.135C87.501 120.982 78.638 125.906 70.957 120.588C61.898 114.286 53.232 109.165 44.173 109.165C35.113 109.165 26.447 114.286 17.388 120.588C9.707 125.906 0.844 120.982 0.844 111.135C0.844 82.249 0.844 53.364 0.844 24.478Z";
+// 最終的な縦長の円（pill）の形
+const EMERGE_PILL_D =
+  "M0 39.39C0 17.635 17.635 0 39.39 0C42.016 0 44.641 0 47.267 0C69.022 0 86.657 17.635 86.657 39.39C86.657 55.146 86.657 70.901 86.657 86.657C86.657 108.411 69.022 126.046 47.267 126.046C45.954 126.046 44.641 126.046 43.328 126.046C42.015 126.046 40.702 126.046 39.39 126.046C17.635 126.046 0 108.411 0 86.657C0 70.901 0 55.146 0 39.39Z";
+const EMERGE_TRANSITION = {
+  delay: EMERGE_DELAY,
+  duration: 1.8,
+  ease: [0.22, 1, 0.36, 1],
 };
 
 const Home = () => {
@@ -61,54 +79,83 @@ const Home = () => {
   return (
     <FadeInPageWrapper>
       <section className="px-[5vw] sm:px-[8vw]">
-        <section className="relative z-20 flex flex-col justify-between mt-20 md:mt-[60px] pt-2 pb-10 md:pb-16 h-[calc(100svh-80px)] md:h-[calc(100svh-0px)] min-h-[680px] md:min-h-[750px]">
-          {/* <img
-            src="/circle-yellow.png"
-            alt="Yellow Circle"
-            className="absolute -top-10 -left-10 md:-top-36 md:-left-40 w-[200px] h-[200px] md:w-[600px] md:h-[600px]"
-          />
-          <img
-            src="/circle-green.png"
-            alt="Green Circle"
-            className="hidden lg:block absolute md:top-[80px] md:left-[800px] md:w-[420px] md:h-[420px]"
-          /> */}
-          {/* <img
-            src="/circle-red.png"
-            alt="Red Circle"
-            className="hidden md:block absolute md:top-36 md:left-[1000px] md:w-[240px] md:h-[240px]"
-          /> */}
-          {/* <div className="font-lustria gap-2 flex flex-col px-4 text-center items-center justify-center">
-            <div className="text-5xl gap-3.5 sm:text-[88px] md:text-[100px] lg:text-[110px] flex flex-col z-10 mt-10">
-              <div className="w-2/3 md:w-full ">
-                <p className="uppercase text-left">Risa</p>
-                <p className="uppercase text-left">Yamamoto</p>
+        <section className="relative z-20 flex flex-col items-center gap-10 mt-20 md:mt-0 pt-2 pb-10 md:pb-16 min-h-[calc(100svh-80px)] md:min-h-[calc(100svh-60px)]">
+          <div className="flex flex-col items-center gap-10 w-full">
+            <div className="flex flex-col items-center gap-6 w-full max-w-[280px] md:max-w-[480px]">
+              <p className="text-xs md:text-base font-medium tracking-[0.2em]">
+                {/* UI/UX Designer */}
+              </p>
+              <div className="space-y-3">
+                <img
+                  src="/fv-portfolio.svg"
+                  alt="Portfolio"
+                  width="692.798"
+                  height="116.594"
+                  className="w-full h-auto"
+                />
+                {/* 文字を均等配置して Portfolio と同じ幅にする */}
+                <p
+                  aria-label="Risa Yamamoto"
+                  className="flex justify-between w-full font-semibold text-sm uppercase text-[#77]"
+                >
+                  {"Risa Yamamoto".split("").map((char, i) => (
+                    <span key={i} aria-hidden="true">
+                      {char === " " ? " " : char}
+                    </span>
+                  ))}
+                </p>
               </div>
             </div>
-            <p className="font-sans text-sm md:text-lg z-30 text-neutral-600">
-              {t.tagline}
-              <br />
-            </p>
-          </div> */}
-          <div className="flex flex-col gap-3 md:flex-row md:gap-0 justify-between items-start">
-            <img src="/fv.svg" alt="" className="w-full md:w-[700px]" />
-            <p className="md:[writing-mode:vertical-rl] tracking-wider font-semibold text-xl md:text-lg">
-              UI/UX Designer
-            </p>
-          </div>
-          <div className="flex flex-col items-start gap-10">
-            <div className="flex w-full flex-col items-start md:flex-row md:items-end justify-between gap-4 md:gap-0">
+
+            <div className="flex flex-col items-center gap-10 w-full">
+              <div
+                className="relative shrink-0 w-[240px] aspect-[225.083/168.812]"
+                aria-hidden="true"
+              >
+                {/* 位置・サイズは親の幅に対する割合なので、親の w を変えるだけで全体が拡縮する */}
+                {/* arch と重なる arch 形から、左下の定位置へ移動しながら pill の形に変わる */}
+                {/* x / y は arch の位置へのずれ（37.41, -16.61）を自身の幅・高さに対する割合にしたもの */}
+                <motion.svg
+                  viewBox="0 0 86.6568 126.046"
+                  fill="none"
+                  overflow="visible"
+                  className="absolute left-[22.25%] top-[17.33%] w-[38.5%] h-auto will-change-transform"
+                  initial={{ x: "43.17%", y: "-13.18%" }}
+                  animate={{ x: 0, y: 0 }}
+                  transition={EMERGE_TRANSITION}
+                >
+                  <motion.path
+                    fill="#E54B30"
+                    initial={{ d: EMERGE_ARCH_D }}
+                    animate={{ d: EMERGE_PILL_D }}
+                    transition={EMERGE_TRANSITION}
+                  />
+                </motion.svg>
+                {/* arch は最初から primary で塗られていて、pill が抜けると線だけになる */}
+                <svg
+                  viewBox="0 0 88.3449 126.89"
+                  fill="none"
+                  overflow="visible"
+                  className="absolute left-[38.87%] top-[7.49%] w-[39.25%] h-auto"
+                >
+                  <motion.path
+                    d="M0.84406 24.4777C0.84406 11.4792 11.4792 0.84406 24.4777 0.84406H63.8672C76.8657 0.84406 87.5009 11.4792 87.5009 24.4777V111.135C87.5009 120.982 78.6383 125.906 70.9573 120.588C61.8977 114.286 53.2321 109.165 44.1725 109.165C35.1129 109.165 26.4472 114.286 17.3876 120.588C9.70669 125.906 0.84406 120.982 0.84406 111.135V24.4777Z"
+                    strokeWidth="1.68812"
+                    stroke="#1C1619"
+                    initial={{ fill: "rgba(229, 75, 48, 1)" }}
+                    animate={{ fill: "rgba(229, 75, 48, 0)" }}
+                    transition={{ delay: EMERGE_DELAY, duration: 0.5 }}
+                  />
+                </svg>
+              </div>
               <TypingText
-                className="tracking-widest font-semibold leading-relaxed"
-                lines={[
-                  "I believe every dot finds its place,",
-                  "and every detail has a reason.",
-                ]}
+                className="text-center text-xs md:text-base tracking-wider md:tracking-[2px] font-semibold leading-[1.8] whitespace-nowrap"
+                lines={["UI/UX Designer", t.fvLead]}
                 onComplete={() => setTypingDone(true)}
               />
-              <p className="self-end md:self-auto font-bold text-2xl text-right md:text-2xl tracking-widest font-geist">
-                2026
-              </p>
             </div>
+          </div>
+          <div className="flex flex-col items-center">
             <motion.button
               type="button"
               onClick={scrollToWorks}
@@ -121,11 +168,12 @@ const Home = () => {
                   : { opacity: 0, clipPath: "inset(0 0 100% 0)" }
               }
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className={`self-center flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
+              className={`flex flex-col items-center gap-2 hover:opacity-70 transition-opacity ${
                 typingDone ? "" : "pointer-events-none"
               }`}
             >
-              <span className="text-[11px] tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
+              <span className="block w-1.5 h-1.5 rounded-full bg-text" />
+              <span className="text-[14px] tracking-[0.2em] font-semibold uppercase [writing-mode:vertical-rl]">
                 Scroll
               </span>
               <span className="block w-px h-12 md:h-32 bg-gray-500" />
@@ -141,13 +189,17 @@ const Home = () => {
               jpSubtitle="制作実績"
               jp="Works"
             />
-            <div className="flex flex-col gap-32 md:gap-32 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-24 md:gap-y-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeOut",
+                    delay: isMobile ? 0 : (index % 2) * 0.15,
+                  }}
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <WorkCard
@@ -156,7 +208,6 @@ const Home = () => {
                     title={work.title[language]}
                     description={work.description[language]}
                     tags={work.tags[language]}
-                    reverse={index % 2 === 1}
                     to={work.to}
                   />
                 </motion.div>

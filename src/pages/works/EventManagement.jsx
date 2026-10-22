@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import SectionMark from "../../components/SectionMark";
@@ -168,7 +168,7 @@ const content = {
       { title: "サービス種別", value: "Webアプリ (モバイル版)" },
       { title: "制作種類", value: "チーム開発 (4人)" },
       { title: "期間", value: "1週間 (デザイン) / 3週間 (コーディング)" },
-      { title: "担当", value: "UIデザイン / フロントエンド開発" },
+      { title: "担当", value: "完成UI / フロントエンド開発" },
       { title: "使用ツール (デザイン)", value: "Figma" },
       { title: "開発言語", value: "Next.js, Tailwind CSS, shadcn/ui" },
     ],
@@ -195,7 +195,7 @@ const content = {
     mvpTitle: "MVP設定",
     mvpText:
       "今回はデザインから実装までの期間が4週間と短かったこともあり、MVPを設定し開発を行いました。",
-    uiDesignTitle: "UIデザイン",
+    uiDesignTitle: "完成UI",
     wireframeHeading: "1. ワイヤーフレーム作成",
     wireframeText: (
       <>
@@ -211,7 +211,7 @@ const content = {
     moodboardItems: ["イメージボード", "カラーシステム"],
     moodboardStyleText:
       "カラーについては、ターゲットが子育て層であることを踏まえ、「安心感」「親しみやすさ」「つながり」を表現するオレンジ（#FF8549）をテーマカラーとして採用しました。また、余白や文字サイズは8の倍数のルールに基づいてあらかじめ決定し、デザインの一貫性を保つようにしました。",
-    finalUiHeading: "3. 最終UIデザイン",
+    finalUiHeading: "3. 最終完成UI",
     figmaLinkLabel: "Figmaでデザインを見る",
     preEventLabel: "イベント前",
     organizerBadge: "主催者",
@@ -299,16 +299,18 @@ const EventManagement = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
+          className="group block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
-          <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <div className="flex items-center">
+            <span className="flex items-center justify-center w-14 h-10">
+              <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
             </span>
-            <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
+            <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+              {t.homeLabel}
+            </p>
           </div>
         </Link>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:justify-between  px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px] overflow-hidden object-top">
             <ZoomableImage
               src={localizeImage("/event-management/thumbnail.png")}
@@ -328,7 +330,7 @@ const EventManagement = () => {
             <InfoList items={t.infoItems} />
           </div>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.overviewTitle}
@@ -342,7 +344,7 @@ const EventManagement = () => {
           </h2>
           <p className="text-base leading-loose ">{t.backgroundText}</p>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.problemTitle}
@@ -403,7 +405,7 @@ const EventManagement = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary overflow-hidden">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20  overflow-hidden">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.uiDesignTitle}
@@ -558,7 +560,7 @@ const EventManagement = () => {
                         <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                           <div>
                             <div className="flex items-center gap-1 mb-1">
-                              <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                              <span className="text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.attendeeBadge}
                               </span>
                               <h4 className="text-sm font-semibold ">
@@ -589,7 +591,7 @@ const EventManagement = () => {
                         <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                           <div>
                             <div className="flex items-center gap-1 mb-1">
-                              <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                              <span className=" text-white text-xs px-2 py-[2px] rounded-full">
                                 {t.attendeeBadge}
                               </span>
                               <h4 className="text-sm font-semibold ">
@@ -656,7 +658,7 @@ const EventManagement = () => {
                       <div className="w-full max-w-[420px] space-y-1.5 h-[520px]">
                         <div>
                           <div className="flex items-center gap-1 mb-1">
-                            <span className="bg-secondary text-white text-xs px-2 py-[2px] rounded-full">
+                            <span className="text-white text-xs px-2 py-[2px] rounded-full">
                               {t.attendeeBadge}
                             </span>
                             <h4 className="text-sm  font-semibold">
@@ -716,15 +718,12 @@ const EventManagement = () => {
               </li>
             ))}
           </ul>
-          <Link to="/" className="hover:opacity-80 pt-20">
-            <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew
-                  width={10}
-                  className="w-5 h-3 text-current"
-                />
+          <Link to="/" className="group hover:opacity-80 pt-20">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="pb-0.5 text-sm font-medium tracking-wider">
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
                 {t.homeLabel}
               </p>
             </div>

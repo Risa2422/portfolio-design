@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Arrow from "../../components/Arrow";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import ZoomableImage from "../../components/ZoomableImage";
@@ -126,7 +126,7 @@ const content = {
         （赤字部分が、今回のデザインに反映された箇所です。）
       </>
     ),
-    finalUiTitle: "最終UIデザイン",
+    finalUiTitle: "最終完成UI",
     newScreensLabel: "新しい画面",
     newScreensCaption: "デザインしたアルバム機能はこちらです。",
     moreDetailsLabel: "詳細",
@@ -175,7 +175,7 @@ const GoogleMapsAlbum = () => {
           </div>
         </div>
         {/* Overview Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.overviewTitle}
           </h2>
@@ -194,7 +194,7 @@ const GoogleMapsAlbum = () => {
         </div>
 
         {/* Problem Identification Section */}
-        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col items-center gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="text-lg md:text-2xl text-accent font-medium">
             {t.problemTitle}
           </h2>
@@ -333,19 +333,21 @@ const GoogleMapsAlbum = () => {
           </div>
         </div>
         {/* Learnings Section */}
-        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-6 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="text-2xl text-center text-accent font-medium">
             {t.learningsTitle}
           </h2>
           <p className="text-base leading-loose text-gray-700">
             {t.learningsText}
           </p>
-          <Link to="/" className="hover:opacity-80 pt-10">
-            <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <Link to="/" className="group hover:opacity-80 pt-10">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="text-sm font-medium tracking-wider">{t.homeLabel}</p>
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+                {t.homeLabel}
+              </p>
             </div>
           </Link>
         </div>

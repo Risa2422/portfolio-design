@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
 import SectionMark from "../../components/SectionMark";
@@ -13,7 +13,7 @@ const content = {
     infoLabels: [
       {
         title: "担当範囲",
-        value: "ワイヤーフレーム作成、派生画面のUIデザイン展開",
+        value: "ワイヤーフレーム作成、派生画面の完成UI展開",
       },
       { title: "使用ツール", value: "Figma" },
       { title: "制作期間", value: "3ヶ月（2026年10月〜12月）" },
@@ -152,17 +152,19 @@ const WebDesign = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
+          className="group block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
-          <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <div className="flex items-center">
+            <span className="flex items-center justify-center w-14 h-10">
+              <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
             </span>
-            <p className="text-base font-medium tracking-wider">{t.home}</p>
+            <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+              {t.home}
+            </p>
           </div>
         </Link>
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
+        <div className="flex flex-col md:flex-row gap-8 md:justify-between px-6 md:px-12 lg:px-24 xl:px-40 md:pt-12">
           <div className="md:w-1/2 flex-1 mb-4 md:mb-20 h-[300px]">
             <ZoomableImage
               src={localizeImage("/fill/thumbnail.png")}
@@ -179,7 +181,7 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Overview Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.overviewTitle}
@@ -222,7 +224,7 @@ const WebDesign = () => {
           </div>
         </div>
         {/* Design Process Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.processTitle}
@@ -265,12 +267,14 @@ const WebDesign = () => {
             {t.resultsTitle}
           </h2>
           <p className="text-base leading-loose ">{t.resultsText}</p>
-          <Link to="/" className="hover:opacity-80 pt-20">
-            <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <Link to="/" className="group hover:opacity-80 pt-20">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="text-base font-medium tracking-wider">{t.home}</p>
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+                {t.home}
+              </p>
             </div>
           </Link>
         </div>

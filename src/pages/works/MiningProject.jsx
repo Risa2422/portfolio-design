@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
+import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import Accordion from "../../components/Accordion";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
@@ -38,20 +38,18 @@ const content = {
       "カナダの鉱山採掘業界のプログラムマネージャーを対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・トラッキング・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
-    productOverviewImage: "/mining/blurred_medium.png",
+    productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "制作デザイン (一部)",
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText: (
       <>
         参画時、すでにデザインの制作や実装が進行中でしたが、
-        <span className="font-bold text-[#B24A26]">
+        <span className="font-bold text-primary">
           既存の画面構造の整理やUIの一貫性が不足
         </span>
         しており、ユーザーが迷わず運用できる品質に達していませんでした。
         さらに、「そもそもユーザーが本当に必要としているツールになっているか」という
-        <span className="font-bold text-[#B24A26]">
-          根本的な前提やUXの再定義
-        </span>
+        <span className="font-bold text-primary">根本的な前提やUXの再定義</span>
         から行う必要がある状態でした。
       </>
     ),
@@ -209,7 +207,7 @@ const content = {
               "現場の課題を多角的に把握するため、2つの方法で調査を行いました。",
             research: [
               {
-                title: "クライアントへのヒアリング",
+                title: "クライアントおよび鉱山業界の業務担当者へのヒアリング",
                 description:
                   "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。以下、ヒアリング内容(一部) です。",
                 items: [
@@ -243,24 +241,30 @@ const content = {
               {
                 src: "/mining/reference-ui-1.png",
                 alt: "参考にしたテーブルUI",
+                caption: "Snowflake",
               },
               {
                 src: "/mining/reference-ui-2.png",
                 alt: "参考にしたテーブルUI",
+                caption: "Notion",
               },
               {
                 src: "/mining/reference-ui-3.png",
                 alt: "参考にしたテーブルUI",
+                caption: "Jira",
               },
               {
                 src: "/mining/reference-ui-4.png",
                 alt: "参考にしたテーブルUI",
+                caption: "Jasper",
               },
             ],
           },
           {
             theme: "after",
             label: "完成UI",
+            imageLead:
+              "以下が完成したUIです。現場で使い慣れたExcelテンプレートのレイアウトを継承することで、ユーザーの学習コストを抑えつつ、より直感的な操作性を実現しました。",
             image: "/mining/cost-management-after.png",
             alt: "改善後のコスト管理画面",
             imageWidth: "w-full md:w-3/5 self-center",
@@ -291,10 +295,39 @@ const content = {
               ],
             },
           },
+          {
+            theme: "process",
+            label: "技術的制約を考慮したUX設計",
+            constraint: {
+              problem: {
+                heading: "課題（技術的制約）",
+                text: "バックエンドの仕様上、テーブル内の必須項目が未入力のまま離脱すると行全体のデータが保存されず、ユーザーが気づかないうちにデータが消失するリスクがありました。",
+              },
+              solution: {
+                heading: "解決策",
+                image: "/mining/error.svg",
+                alt: "エラーバナーと必須セルの強調表示",
+                items: [
+                  {
+                    title: "未入力リスクの可視化",
+                    text: "入力必須セルの視認性を高め、入力漏れを防ぐデザインを意識しました。",
+                  },
+                  {
+                    title: "エラー特定の手間を解消するエラーナビゲーション",
+                    text: "画面上部にエラーバナーを設置し、エラー内容の表示に加え、該当セルへ即座に移動できるボタンを配置。ユーザーがエラー箇所を探す手間やストレスを解消しました。",
+                  },
+                  {
+                    title: "視覚的ノイズを抑えたエラー表示",
+                    text: "情報密度の高い画面における視覚的ノイズを抑えるため、エラーの詳細は該当セルへのホバー時にのみツールチップ等で表示する設計を採用しました。",
+                  },
+                ],
+              },
+            },
+          },
         ],
         reflection: {
           headline: "ヒアリングの先にある「当事者意識」の重要性",
-          text: "ユーザーが真に求めている本質的な解決策を導き出すには、丁寧なヒアリングだけでなく、ユーザーの業務や文脈に対する深い解像度を持ち、自ら課題を定義して改善策を提案することが不可欠だと学びました。",
+          text: "クライアントから「まさにこれが欲しかった」と評価をいただいた経験を通じ、本質的な解決策を導くためには、表面的なヒアリングにとどまらず、ユーザーの業務や文脈に対する深い解像度を持つことが不可欠だと実感しました。",
         },
       },
       {
@@ -412,7 +445,7 @@ const content = {
       "A project management platform for Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, tracking, and reporting, which tend to become complex, into one place to streamline operations.",
     ProductOverviewApproach:
       "Considering that the industry tends to be slow to adopt IT tools, I pursued a stress-free UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
-    productOverviewImage: "/mining/blurred_medium.png",
+    productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "Selected designs (excerpt)",
     backgroundTitle: "Project Background and Challenges",
     backgroundText: (
@@ -613,15 +646,32 @@ const content = {
               'Instead of the "minimal, hover-based UI" common in modern tools such as Notion and Jira, I adopted "intuitive, always-visible action UI" to keep the target users from getting lost.',
             ],
             gallery: [
-              { src: "/mining/reference-ui-1.png", alt: "Reference table UI" },
-              { src: "/mining/reference-ui-2.png", alt: "Reference table UI" },
-              { src: "/mining/reference-ui-3.png", alt: "Reference table UI" },
-              { src: "/mining/reference-ui-4.png", alt: "Reference table UI" },
+              {
+                src: "/mining/reference-ui-1.png",
+                alt: "Reference table UI",
+                caption: "Snowflake",
+              },
+              {
+                src: "/mining/reference-ui-2.png",
+                alt: "Reference table UI",
+                caption: "Notion",
+              },
+              {
+                src: "/mining/reference-ui-3.png",
+                alt: "Reference table UI",
+                caption: "Jira",
+              },
+              {
+                src: "/mining/reference-ui-4.png",
+                alt: "Reference table UI",
+                caption: "Jasper",
+              },
             ],
           },
           {
             theme: "after",
             label: "Final UI",
+            imageLead: "Below is the final UI.",
             image: "/mining/cost-management-after.png",
             alt: "Cost management screen after the change",
             imageWidth: "w-full md:w-3/5 self-center",
@@ -650,6 +700,35 @@ const content = {
                   text: 'Through conversations with the client, I uncovered a latent need to see "Days Remaining" in the program and "Budget Runway" at a glance, and placed them in the upper right of the screen. I also added tooltips showing the basis of each calculation to make the system more transparent and support users\' decision-making.',
                 },
               ],
+            },
+          },
+          {
+            theme: "process",
+            label: "UX designed around technical constraints",
+            constraint: {
+              problem: {
+                heading: "Problem (technical constraint)",
+                text: "Due to the backend specification, if a user left a row with required fields still empty, the entire row would not be saved, risking data loss without the user noticing.",
+              },
+              solution: {
+                heading: "Solution",
+                image: "/mining/error.svg",
+                alt: "Error banner and highlighted required cells",
+                items: [
+                  {
+                    title: "Making missing-input risk visible",
+                    text: "I added clear visual cues (badges, icons, etc.) to cells that require input.",
+                  },
+                  {
+                    title: "Detecting errors and guiding recovery",
+                    text: "I placed an error banner at the top of the screen that describes the errors and includes a jump button that takes users straight to the affected cell. This removes the stress of hunting for errors and helps ensure data is saved reliably.",
+                  },
+                  {
+                    title: "Hover",
+                    text: "I placed an error banner at the top of the screen that describes the errors and includes a jump button that takes users straight to the affected cell. This removes the stress of hunting for errors and helps ensure data is saved reliably.",
+                  },
+                ],
+              },
             },
           },
         ],
@@ -779,13 +858,13 @@ const MiningProject = () => {
       <section className="space-y-10 md:space-y-4">
         <Link
           to="/"
-          className="block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
+          className="group block w-fit hover:opacity-80 pt-16 md:pt-0 px-6 md:px-12 lg:px-24 xl:px-[154px]"
         >
-          <div className="flex items-center gap-1">
-            <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-              <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <div className="flex items-center">
+            <span className="flex items-center justify-center w-14 h-10">
+              <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
             </span>
-            <p className="font-medium tracking-wider text-[#2E211A]">
+            <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
               {t.home}
             </p>
           </div>
@@ -808,25 +887,22 @@ const MiningProject = () => {
           </div>
         </div>
         {/* ProductOverview Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.ProductOverview}
           </h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center">
-            <div className="w-full md:w-2/3 md:pt-4">
+            <div className="w-full md:w-1/2 md:pt-4">
               <p className="text-base leading-loose">{t.ProductOverviewText}</p>
               <p className="pt-4 leading-loose">{t.ProductOverviewApproach}</p>
             </div>
-            <div className="md:w-1/3 space-y-2">
+            <div className="w-full md:w-1/2 space-y-2">
               <ZoomableImage
                 src={localizeImage(t.productOverviewImage, language)}
                 className="w-full object-contain"
                 alt="ProductOverview"
               />
-              <p className="text-xs  text-center">
-                {t.productOverviewImageCaption}
-              </p>
             </div>
           </div>
         </div>
@@ -860,7 +936,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 bg-background-secondary">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-3xl font-semibold">
             <SectionMark />
             {t.improvementsTitle}
@@ -890,12 +966,12 @@ const MiningProject = () => {
 
         {/* AI Usage Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold">
             <SectionMark />
             {t.aiUsageTitle}
           </h2>
-          <div className="flex flex-col md:flex-row gap-10 md:gap-32">
-            <ul className="md:w-1/2 grid grid-cols-4 content-end gap-9 gap-y-6">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+            <ul className="md:w-1/3 grid grid-cols-4 content-end gap-9 gap-y-6">
               {aiUsageSkills.map((skill) => (
                 <SkillItem
                   key={skill.label}
@@ -943,12 +1019,14 @@ const MiningProject = () => {
             {t.futureOutlook}
           </h2>
           <p className="text-base leading-loose">{t.futureOutlookText}</p>
-          <Link to="/" className="hover:opacity-80 pt-20">
-            <div className="flex items-center gap-1">
-              <span className="flex items-center justify-center rounded-full w-6 h-6 bg-white">
-                <MdOutlineArrowBackIosNew className="w-5 h-3 text-current" />
+          <Link to="/" className="group hover:opacity-80 pt-20">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-14 h-10">
+                <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
               </span>
-              <p className="text-base font-medium tracking-wider">{t.home}</p>
+              <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
+                {t.home}
+              </p>
             </div>
           </Link>
         </div>
