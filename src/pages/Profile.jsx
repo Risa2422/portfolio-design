@@ -61,7 +61,7 @@ const content = {
     ],
   },
   en: {
-    bio: "With a background in software engineering, I realized that exceptional UI/UX is essential for building products that users truly love, which motivated my transition to UI/UX design.\n\n Most recently, I served as the sole designer at a Canadian startup. Working in an English-speaking environment, I independently led the process from user research and feature definition to UI design, honing my ability to take ownership and drive projects forward.",
+    bio: 'While developing systems as an engineer, I received user feedback that our product was "hard to use." That made me realize that no matter how good the algorithm is, a product won\'t be loved over time without intuitive UI/UX, which led me to transition to UI/UX design.\n\nMost recently, I served as the sole designer at a Canadian startup. Working in an English-speaking environment, I independently led the process from user research and feature definition to UI design, honing my ability to take ownership and drive projects forward.',
     experiences: [
       {
         title: "Clause Technology Inc.",
@@ -93,7 +93,7 @@ const content = {
         position: "Engineer, Customer Support",
         place: "Kagoshima",
         description:
-          "I was involved in the implementation, development, and maintenance of the company's proprietary POS systems and patient flow management systems. During system implementation and maintenance, I focused on accurately understanding customer needs through communication and responding as quickly as possible. Working with various specifications and operational needs for each client, I cultivated the ability to flexibly adapt to diverse requests.",
+          "I was involved in the implementation, development, and maintenance of the company's proprietary POS systems and patient flow management systems. During system implementation and maintenance, I focused on accurately understanding customer needs through communication and responding as quickly as possible.",
       },
     ],
     education: [

@@ -443,36 +443,38 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "Product Overview",
     ProductOverviewText:
-      "A project management platform for Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, tracking, and reporting, which tend to become complex, into one place to streamline operations.",
+      "A program management platform for program managers in Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, actuals tracking, and reporting, which tend to become complex, into one place to streamline operations.",
     ProductOverviewApproach:
-      "Considering that the industry tends to be slow to adopt IT tools, I pursued a stress-free UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
+      "Considering that the industry tends to be slow to adopt IT tools, I pursued a UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
     productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "Selected designs (excerpt)",
     backgroundTitle: "Project Background and Challenges",
     backgroundText: (
       <>
-        When I joined the project, initial UI designs and front-end development
-        were already underway. However,{" "}
-        <span className="font-bold">
-          the screen architecture lacked clear organization and UI consistency
+        When I joined the project, design and implementation were already
+        underway. However,{" "}
+        <span className="font-bold text-primary">
+          the existing screen structure lacked organization and UI consistency
         </span>
-        , preventing the product from meeting standard usability and release
-        quality. Additionally, because feature development had taken precedence,
-        we needed to step back and{" "}
-        <span className="font-bold">redefine the core UX assumptions</span>
-        —questioning whether the tool truly met real user needs.
+        , and the product had not reached a level of quality where users could
+        operate it without confusion. On top of that, we needed to start by{" "}
+        <span className="font-bold text-primary">
+          redefining the fundamental assumptions and the UX
+        </span>
+        —asking whether the service was what users truly needed in the first
+        place.
       </>
     ),
     roleTitle: "My Role & Mission",
     roleText:
-      "To resolve these challenges, I stepped in as a UI/UX Designer to lead the quality elevation for the official release. I drove the end-to-end process, including redefining the UX, optimizing the information architecture, and establishing a scalable design system.",
-    productFlowTitle: "Product Development Process",
+      "To turn this situation around, I joined the project as a UI/UX Designer and led the effort to raise the product to release quality by optimizing the information architecture and introducing a design system.",
+    productFlowTitle: "My Role and Design Process",
     productFlowText:
-      "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself). Although I joined when the product was already partially established, we operated in short MVP development cycles where all members were involved in the entire process, from user interviews to release. I led the feature definitions and UI/UX design while also supporting adjacent stages. In a multinational team environment, I drove the project forward through close communication to keep everyone aligned and ensure smooth execution.",
+      "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself).\nIn an agile setup where every member was involved from user interviews through release, I led everything from feature definition to UI/UX design while also supporting the stages before and after.",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
     improvementsText:
-      "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are the UI/UX improvements I focused on most during my time on the project.",
+      "Due to a non-disclosure agreement (NDA), I'm unable to show all deliverables and design screens, but here are three UI/UX improvements I focused on most during my time on the project.",
     caseLabels: { background: "Background", reflection: "Reflection" },
     improvements: [
       {
@@ -485,7 +487,7 @@ const content = {
         ],
         backgroundFigure: {
           caption:
-            "The information architecture used a hierarchy in which multiple child programs were linked to a single parent project, so that the budgets tied to them could be created and managed in one place. As a result, creating a budget required users to first create a project and then a program, in that order.",
+            "In the data structure, multiple child programs were linked to a single parent project, and each budget was linked to those programs. As a result, creating a new budget required users to first create a project and then a program, in that order.",
           image: "/mining/diagram.svg",
           imageCaption: "Data structure",
           alt: "Diagram of the project and program structure",
@@ -508,7 +510,7 @@ const content = {
                 },
                 {
                   title: "A long path to start budgeting",
-                  text: "Before reaching the Budget Creation screen, the most frequently used feature, users had to fill in many required fields across two steps (project and program), which kept them from getting to their actual work quickly.",
+                  text: "Users had to fill in many required fields, which kept them from creating a budget quickly.",
                 },
                 {
                   title: "No way to reference existing data",
@@ -521,7 +523,7 @@ const content = {
             theme: "hearing",
             label: "Interviews & Specification",
             caption:
-              "Going beyond identifying UI/UX issues, I interviewed the client about their actual workflows and usage context.",
+              "Going beyond identifying UI issues, I interviewed the client about their actual workflows.",
             pairs: {
               findingHeading: "User behavior & workflow challenges",
               decisionHeading: "How it shaped the UI/UX",
@@ -554,7 +556,7 @@ const content = {
               items: [
                 {
                   title: "Making project creation optional",
-                  text: "Based on insights from the interviews, I made the previously required project creation optional, enabling users to create a standalone program.\n After a program is created, users are taken directly to the Budget Creation screen.",
+                  text: "Made the previously required project creation optional, enabling users to create a standalone program. After a program is created, users are taken directly to the Budget Creation screen.",
                 },
                 {
                   title: "Keeping context with a modal",
@@ -562,7 +564,7 @@ const content = {
                 },
                 {
                   title: "Minimizing required fields",
-                  text: "Narrowed the required fields in the modal down to the program name only, allowing other details to be entered later. This lets users start creating a budget with the fewest possible steps.",
+                  text: "Narrowed the required fields in the modal down to the project or program name only, allowing other details to be entered later. This lets users start creating a budget with the fewest possible steps.",
                 },
               ],
             },
@@ -570,16 +572,16 @@ const content = {
         ],
         reflection: {
           headline: "The importance of questioning assumptions",
-          text: "When the issue of an unintuitive flow first came up, I treated it as a UI problem while taking the existing specification for granted. Through interviews with the client, however, it became clear that there was a gap between the specification and how the tool was actually used. Questioning the specification itself allowed us to go beyond screen-level fixes and simplify the entire flow.",
+          text: "When the issue of an unintuitive flow first came up, I treated it as a UI problem while taking the existing specification for granted. Through interviews with the client, however, it became clear that there was a gap between the specification and how the tool was actually used. Questioning the specification itself allowed us to simplify the entire flow.",
         },
       },
       {
         id: 2,
-        title: "Streamlining Operations Without a Learning Curve",
+        title: "UI Design That Minimizes the Learning Curve",
         summary:
           "By retaining familiar interaction patterns, we minimized the learning curve for users and streamlined the entire budget management process.",
         background:
-          'In the initial specification at the time I joined, the system automatically generated budget items and initial estimates on the Budget Creation screen, based on conditions such as "duration" and "mining location" that users specified when creating a project.',
+          'In the initial specification at the time I joined, the system automatically generated budget items and initial estimates on the Budget Creation screen, based on conditions such as "duration" and "mining location" that users specified when creating a project. However, when we validated an early prototype with the client, the auto-generated screen did not get the response we expected in terms of usability and readability, revealing a gap with how the work was actually done. This led us to redesign the UI/UX.',
         sections: [
           {
             theme: "before",
@@ -599,7 +601,7 @@ const content = {
                 },
                 {
                   title: "Review and edit suggestions",
-                  text: "Users reviewed and adjusted the number of budget items and amounts suggested by the AI.",
+                  text: "Users reviewed and adjusted the number of budget items and amounts suggested by the system.",
                 },
                 {
                   title: "Budget creation and cost tracking in one place",
@@ -617,20 +619,21 @@ const content = {
               "To understand the on-site challenges from multiple angles, I conducted research in two ways.",
             research: [
               {
-                title: "Client Interviews",
+                title:
+                  "① Interviews with the client and mining industry practitioners",
                 description:
-                  "I gathered feedback on the Budget Creation screen proposed in the early stage and asked about the challenges they currently face.",
+                  "I gathered feedback on the Budget Creation screen proposed in the early stage and asked about the challenges they currently face. Below are some of the interview findings.",
                 items: [
                   "Mining projects involve many site-specific factors that a system can't fully cover. Budget planning in particular relies heavily on past results and the experience of veteran staff.",
                   "Budgets are currently managed in Excel, but errors from complex formulas and manual input are a constant problem.",
                   "Given the nature of the industry, many users aren't comfortable with IT tools, so a tool with a steep learning curve is unlikely to stick.",
                 ],
-                insightLabel: "What users needed",
+                insightLabel: "What the system needed to deliver",
                 insight:
                   "Not automation of their daily work, but a way to reduce mistakes without disrupting their familiar Excel workflow.",
               },
               {
-                title: "Screen Recordings of Daily Work",
+                title: "② Screen Recording Analysis",
                 description:
                   "To accurately understand how the work was actually done, I analyzed screen recordings of their everyday Excel operations, looking for latent issues and habits that are hard to see through interviews alone. \n Below are some of the findings.",
                 items: [
@@ -644,8 +647,8 @@ const content = {
             theme: "process",
             label: "Reference UI Research",
             text: [
-              "I analyzed services that use table UIs to examine the most suitable interface structure for table operations.",
-              'Instead of the "minimal, hover-based UI" common in modern tools such as Notion and Jira, I adopted "intuitive, always-visible action UI" to keep the target users from getting lost.',
+              "Beyond Excel, I analyzed services that use table UIs to examine the most suitable interface structure for table operations.",
+              'I avoided the "minimal, hover-based UI" used in many services and adopted a UI that stays highly visible at all times.',
             ],
             gallery: [
               {
@@ -673,7 +676,8 @@ const content = {
           {
             theme: "after",
             label: "Final UI",
-            imageLead: "Below is the final UI.",
+            imageLead:
+              "Below is the final UI. By carrying over the layout of the Excel templates users were already familiar with on site, I kept the learning curve low while making operation more intuitive.",
             image: "/mining/cost-management-after.svg",
             alt: "Cost management screen after the change",
             imageWidth: "w-full self-center",
@@ -719,15 +723,15 @@ const content = {
                 items: [
                   {
                     title: "Making missing-input risk visible",
-                    text: "I added clear visual cues (badges, icons, etc.) to cells that require input.",
+                    text: "I made required cells more visible, with a design focused on preventing missing input.",
                   },
                   {
-                    title: "Detecting errors and guiding recovery",
-                    text: "I placed an error banner at the top of the screen that describes the errors and includes a jump button that takes users straight to the affected cell. This removes the stress of hunting for errors and helps ensure data is saved reliably.",
+                    title: "Error navigation that saves users from hunting for errors",
+                    text: "I placed an error banner at the top of the screen that shows the error details along with a button that jumps straight to the affected cell, removing the effort and stress of searching for where the error is.",
                   },
                   {
-                    title: "Hover",
-                    text: "I placed an error banner at the top of the screen that describes the errors and includes a jump button that takes users straight to the affected cell. This removes the stress of hunting for errors and helps ensure data is saved reliably.",
+                    title: "Error display with minimal visual noise",
+                    text: "To reduce visual noise on an information-dense screen, error details appear in a tooltip only when users hover over the affected cell.",
                   },
                 ],
               },
@@ -736,7 +740,7 @@ const content = {
         ],
         reflection: {
           headline: 'The importance of "ownership" beyond interviews',
-          text: "I learned that to arrive at the solutions users truly need, careful interviews alone aren't enough. It's essential to develop a deep understanding of the users' work and context, define the problems myself, and propose improvements.",
+          text: 'Receiving feedback from the client that "this is exactly what we wanted" made me realize that arriving at a truly effective solution requires more than surface-level interviews: it\'s essential to develop a deep, high-resolution understanding of the users\' work and context.',
         },
       },
       {
@@ -773,7 +777,10 @@ const content = {
             layout: "row",
             image: "/mining/user-story.png",
             alt: "Image of the user flow",
-            text: "Created a user flow to visualize the various interaction patterns (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the feature scope smoothly.",
+            text: [
+              "Created a user flow to visualize the branching patterns for simulation data (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the scope smoothly.",
+              "As a result, we confirmed that the development effort could be kept small with little impact on other features, so we decided to integrate the simulation feature into the budget management screen.",
+            ],
           },
           {
             theme: "after",
@@ -821,10 +828,10 @@ const content = {
       "To select the best UI in a short time, I used generative AI to quickly create and test multiple design patterns. Being able to compare high-fidelity UIs from an early stage allowed us to make decisions at a level of detail close to the final implementation.",
       'In client reviews, even when we had reached agreement on static prototypes, gaps often emerged between expectations and the actual feel after implementation. To address this, I introduced the AI tool "Alloy" before development began, creating and sharing prototypes that the client could interact with directly. Compared to before, this helped prevent rework caused by misaligned expectations after implementation.',
     ],
-    learnings: "Learnings",
+    learnings: "Results & Reflection",
     learningsText: [
       "Although my involvement wrapped up just prior to the official launch, I successfully achieved the primary goal of elevating the product to a release-ready standard.",
-      "Working as the sole designer in an environment where I wasn't a native speaker, I let go of perfectionism and made a point of involving the team from an early stage. By actively seeking feedback while work was still unfinished, I kept rework to a minimum and delivered results quickly.",
+      "Working under the constraints of being the sole designer in an environment where I wasn't a native speaker, I made a point of involving the team from an early stage. By actively seeking feedback while work was still unfinished, I kept rework to a minimum and delivered results quickly.",
       "I learned firsthand how difficult it is to uncover latent issues the client themselves aren't aware of, and how important a thorough understanding of their business is for doing so. Going forward, I want to keep not just accepting requests as given, but engaging in dialogue with my own hypotheses to get to the root of the problem.",
     ],
     futureOutlook: "Future Outlook",
@@ -916,7 +923,7 @@ const MiningProject = () => {
           </h2>
           <div>
             <p className="text-base leading-loose">
-              {t.backUXの再定義・groundText}
+              {t.backgroundText}
             </p>
             <p className="text-base leading-loose ">{t.roleText}</p>
           </div>

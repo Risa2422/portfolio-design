@@ -56,7 +56,7 @@ const content = {
         cultural context of my current residence in Canada, where children's
         birthday parties are hosted casually and frequently. We hypothesized
         that by specializing in this particular, high-demand niche, we could
-        create a service with significantly greater practical utility
+        create a service with significantly greater practical utility.
       </>
     ),
     mvpTitle: "MVP Definition",
@@ -66,8 +66,9 @@ const content = {
     wireframeHeading: "1. Wireframing",
     wireframeText: (
       <>
-        I was responsible for designing the event management screens for both
-        the organizer and the attendee.
+        I was responsible for the event management screens for both the
+        organizer and the attendee, and created wireframes based on the MVP's
+        core features with usability for both sides in mind.
         <br />
         The event management interface was designed to centralize the overview
         and critical information on the home screen, allowing users to easily
@@ -82,7 +83,7 @@ const content = {
       "Working with a fellow designer, we collected design references and compiled a mood board.",
     moodboardItems: ["Mood Board", "Color Palette System"],
     moodboardStyleText:
-      'Considering our target audience of parents with young children, we adopted orange as our main theme color to express feelings of "safety," "approachability," and "connection." Furthermore, to ensure design consistency, we pre-determined the use of padding and font sizes based on the 8-point grid system rule (multiples of 8)',
+      'Considering our target audience of parents with young children, we adopted orange (#FF8549) as our main theme color to express feelings of "safety," "approachability," and "connection." Furthermore, to ensure design consistency, we pre-determined the use of padding and font sizes based on the 8-point grid system rule (multiples of 8).',
     finalUiHeading: "3. Final UI Design",
     figmaLinkLabel: "View Design in Figma",
     preEventLabel: "Pre-Event",

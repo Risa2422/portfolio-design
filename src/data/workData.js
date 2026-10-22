@@ -8,7 +8,7 @@ const workData = [
     date: "2025 - 2026",
     description: {
       ja: "カナダのスタートアップにて、既存ユーザーフローの再設計から新規機能のUI/UX設計までのデザインプロセス全体を主導しました。",
-      en: "Led the entire design process, from redesigning existing user flows to designing the UI/UX for new features.",
+      en: "At a Canadian startup, I led the entire design process, from redesigning existing user flows to designing the UI/UX for new features.",
     },
     tags: {
       ja: ["Webアプリ", "B2B SaaS", "UI/UXデザイン", "MVP作成"],
@@ -68,11 +68,11 @@ const workData = [
         "チーム開発",
       ],
       en: [
+        "School Project",
         "Web App",
         "UI Design",
         "Frontend",
         "Team Project",
-        "School Project",
       ],
     },
     to: "event-management",
@@ -90,7 +90,7 @@ const workData = [
     },
     tags: {
       ja: ["クライアントワーク", "Webアプリ", "UIデザイン"],
-      en: ["Web App", "Client Work", "UI Design"],
+      en: ["Client Work", "Web App", "UI Design"],
     },
     to: "quiz",
   },

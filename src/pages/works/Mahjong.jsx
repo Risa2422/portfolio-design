@@ -341,9 +341,12 @@ const content = {
   en: {
     infoItems: [
       { title: "Service Type", value: "Web App (Mobile Version)" },
-      { title: "Project Format", value: "Team Development" },
+      {
+        title: "Project Format",
+        value: "Team Development (2 Engineers, 1 Designer (Myself))",
+      },
       { title: "Duration", value: "1 Week" },
-      { title: "My Role", value: "UI Design" },
+      { title: "My Role", value: "UI/UX Design" },
       { title: "Tools Used", value: "Figma" },
     ],
     heading: "Mahjong Match Record App",
@@ -375,9 +378,9 @@ const content = {
     scoreCaption: "Result Page",
     historyCaption: "History Page",
     scoreInputCaption: "Score Input Page",
-    accountCaption: "My Page",
+    accountCaption: "Account Page",
     friendManagementCaption: "Friend Management Page",
-    uiDesignTitle: "UI Design",
+    uiDesignTitle: "Final UI",
     finalUiLabel: "Final UI",
     scoreHistoryVideoLabel: "Score / History Page",
     scoreInputVideoLabel: "Score Input Page",

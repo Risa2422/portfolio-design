@@ -35,7 +35,7 @@ const Contact = () => {
                 : "Copied!"
               : language === "ja"
                 ? "お気軽にご連絡ください。"
-                : "Feel free to get in touch"}
+                : "Feel free to get in touch."}
           </p>
         </div>
         <button
