@@ -87,7 +87,7 @@ function Header() {
                         ${active ? "font-semibold" : ""}
                         ${
                           active && !isOpen
-                            ? "after:content-[''] after:absolute text-[#064778] after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
+                            ? "after:content-[''] after:absolute text-[#0a3352] after:left-1/2 after:-translate-x-1/2 after:bottom-0.5 after:w-2 after:h-2 after:rounded-full"
                             : " "
                         }
                         ${active && isOpen ? "text-start" : "text-start "}
