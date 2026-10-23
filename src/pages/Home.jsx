@@ -189,7 +189,7 @@ const Home = () => {
               jpSubtitle="制作実績"
               jp="Works"
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-24 md:gap-y-32 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-36 gap-y-24 md:gap-y-32 mt-4">
               {workData.map((work, index) => (
                 <motion.div
                   key={index}
