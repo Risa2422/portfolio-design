@@ -149,7 +149,7 @@ const Home = () => {
                 </svg>
               </div>
               <TypingText
-                className="text-center text-xs md:text-base tracking-wider md:tracking-[2px] font-semibold leading-loose whitespace-nowrap"
+                className="text-center text-xs md:text-sm tracking-wider md:tracking-[2px] font-semibold leading-loose whitespace-nowrap"
                 lines={["UI/UX Designer", t.fvLead]}
                 onComplete={() => setTypingDone(true)}
               />

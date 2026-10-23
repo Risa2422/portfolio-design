@@ -76,7 +76,7 @@ const TypingText = ({
         {renderLines(fullText)}
       </span>
       <span
-        className="col-start-1 row-start-1 flex flex-col gap-3 md:gap-4"
+        className="col-start-1 row-start-1 flex flex-col gap-3"
         aria-hidden="true"
       >
         {renderLines(fullText.slice(0, count), true)}
