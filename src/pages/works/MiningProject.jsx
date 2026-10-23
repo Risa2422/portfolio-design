@@ -897,7 +897,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* ProductOverview Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
             <SectionMark />
             {t.ProductOverview}
@@ -917,7 +917,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Project Background Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
             <SectionMark />
             {t.backgroundTitle}
@@ -945,7 +945,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Improvement Proposals Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20 ">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-3xl font-semibold">
             <SectionMark />
             {t.improvementsTitle}
@@ -974,7 +974,7 @@ const MiningProject = () => {
         </div>
 
         {/* AI Usage Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold">
             <SectionMark />
             {t.aiUsageTitle}

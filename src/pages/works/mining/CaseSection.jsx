@@ -109,11 +109,11 @@ function CaseSection({ section, line }) {
                   </div>
                   <span
                     aria-hidden="true"
-                    className="pl-[30px] md:pl-0 text-base leading-normal shrink-0 rotate-90 md:rotate-0 self-start md:self-auto font-bold"
+                    className="md:pl-0 text-base leading-normal shrink-0 rotate-90 md:rotate-0 self-start md:self-auto font-bold"
                   >
                     →
                   </span>
-                  <p className="flex-1 min-w-0 pl-[30px] md:pl-0 font-bold">
+                  <p className="flex-1 min-w-0 md:pl-0 font-bold">
                     {item.decision}
                   </p>
                 </li>
@@ -203,7 +203,9 @@ function CaseSection({ section, line }) {
                       </p>
                     </div>
                     {study.description && (
-                      <p className="pt-2 leading-loose whitespace-pre-line">{study.description}</p>
+                      <p className="pt-2 leading-loose whitespace-pre-line">
+                        {study.description}
+                      </p>
                     )}
                   </div>
                   <DotList items={study.items} />
