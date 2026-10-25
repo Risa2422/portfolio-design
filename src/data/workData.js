@@ -77,23 +77,23 @@ const workData = [
     },
     to: "event-management",
   },
-  {
-    imageSrc: "/quiz-thumbnail.png",
-    title: {
-      ja: "Japan Quiz Journey",
-      en: "Japan Quiz Journey",
-    },
-    date: "2025",
-    description: {
-      ja: "外国人ユーザー向けに、日本の文化やマナーを学べるクイズアプリをデザインしました。要件を満たしながらユーザーの学習意欲を高めるため、インタラクティブな仕組みと視覚的な工夫を取り入れました。",
-      en: "I designed a quiz app that helps international users learn about Japanese culture and etiquette. To enhance user engagement, I incorporated interactive elements and visual appeal while meeting the project requirements.",
-    },
-    tags: {
-      ja: ["クライアントワーク", "Webアプリ", "UIデザイン"],
-      en: ["Client Work", "Web App", "UI Design"],
-    },
-    to: "quiz",
-  },
+  // {
+  //   imageSrc: "/quiz-thumbnail.png",
+  //   title: {
+  //     ja: "Japan Quiz Journey",
+  //     en: "Japan Quiz Journey",
+  //   },
+  //   date: "2025",
+  //   description: {
+  //     ja: "外国人ユーザー向けに、日本の文化やマナーを学べるクイズアプリをデザインしました。要件を満たしながらユーザーの学習意欲を高めるため、インタラクティブな仕組みと視覚的な工夫を取り入れました。",
+  //     en: "I designed a quiz app that helps international users learn about Japanese culture and etiquette. To enhance user engagement, I incorporated interactive elements and visual appeal while meeting the project requirements.",
+  //   },
+  //   tags: {
+  //     ja: ["クライアントワーク", "Webアプリ", "UIデザイン"],
+  //     en: ["Client Work", "Web App", "UI Design"],
+  //   },
+  //   to: "quiz",
+  // },
   // {
   //   imageSrc: "/googlemaps-thumbnail.png",
   //   title: {
