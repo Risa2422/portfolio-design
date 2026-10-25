@@ -8,10 +8,10 @@ import MarkerList from "./MarkerList";
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 
 // Timeline item: a pill badge on the left rail with content beside it.
-// line: "connect" runs the rail down to the next badge, "end" stops at the
-// bottom of this item, and null draws no rail. The connect length reaches the
-// next badge across CaseStudy's gap-20; across the shorter gap-12 before the
-// reflection, the overshoot is hidden behind the next (opaque) badge.
+// line: "connect" runs the rail down to the next badge across CaseStudy's
+// gap-20, "reflection" does the same across the shorter gap-6 before the
+// reflection, "end" stops at the bottom of this item, and null draws no rail.
+// Each length ends inside the next (opaque) badge so the join is hidden.
 export function CaseBox({
   theme = "neutral",
   label,
@@ -39,7 +39,11 @@ export function CaseBox({
         <span
           aria-hidden="true"
           className={`absolute -left-1.5 top-6 w-[2px] ${
-            line === "connect" ? "-bottom-[72px]" : "bottom-1.5"
+            {
+              connect: "-bottom-[72px]",
+              reflection: "-bottom-10",
+              end: "bottom-1.5",
+            }[line]
           }`}
           style={{ backgroundColor: `${colors.border}4D` }}
         />
@@ -56,7 +60,7 @@ function CaseSection({ section, line }) {
   const media = (section.flowLabel || section.image) && (
     <div
       className={`flex flex-col items-start ${
-        section.flowLabel ? "gap-6" : "gap-16"
+        section.flowLabel ? "gap-2" : "gap-16"
       }`}
     >
       {section.flowLabel && (
@@ -105,6 +109,13 @@ function CaseSection({ section, line }) {
                   style={{ borderColor: colors.divider }}
                 >
                   <div className="flex flex-1 gap-3 items-start min-w-0">
+                    <img
+                      src="/mining/list-dot.svg"
+                      alt=""
+                      width="8"
+                      height="26.25"
+                      className="shrink-0 mt-px"
+                    />
                     <p className="flex-1 min-w-0">{item.finding}</p>
                   </div>
                   <span

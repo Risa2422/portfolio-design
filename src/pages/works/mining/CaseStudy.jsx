@@ -15,8 +15,8 @@ function CaseStudy({
   const { language } = useLanguage();
 
   return (
-    <div className="flex flex-col gap-12 pt-6 pb-8 pl-6 pr-4 md:pl-8 md:pr-8">
-      <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-6 pt-6 pb-8 pl-6 pr-4 md:pl-8 md:pr-8">
+      <div className="flex flex-col gap-14">
         <CaseBox label={labels.background} line="connect">
           <div className="text-base leading-loose">
             {toParagraphs(background).map((paragraph, index) => (
@@ -50,7 +50,11 @@ function CaseStudy({
             key={index}
             section={section}
             line={
-              index === sections.length - 1 && !reflection ? "end" : "connect"
+              index === sections.length - 1
+                ? reflection
+                  ? "reflection"
+                  : "end"
+                : "connect"
             }
           />
         ))}

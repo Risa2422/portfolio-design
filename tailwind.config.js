@@ -27,7 +27,7 @@ export default {
         secondary: "rgba(168, 187, 162)",
         "secondary-light": "rgba(168, 187, 162, 0.48)",
         tertiary: "#D69F7E",
-        text: "#1C1619",
+        text: "#2F252A",
         "text-sub": "#3D3833",
         border: "#BFC0C0",
         accent: "#CD6D34",

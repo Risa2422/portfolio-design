@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import TypingText from "../components/TypingText";
@@ -269,8 +268,6 @@ const Home = () => {
             </div>
           </section> */}
 
-          {/* contact */}
-          <Contact />
         </div>
       </section>
     </FadeInPageWrapper>

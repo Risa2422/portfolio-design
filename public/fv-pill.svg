@@ -1,5 +1,14 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="86.6568" height="126.046" viewBox="0 0 86.6568 126.046" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="noise" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+</filter>
+<clipPath id="pill">
+<path d="M47.2674 0H39.3895C17.6353 0 0 17.6353 0 39.3895V86.6568C0 108.411 17.6353 126.046 39.3895 126.046H47.2674C69.0216 126.046 86.6568 108.411 86.6568 86.6568V39.3895C86.6568 17.6353 69.0216 0 47.2674 0Z"/>
+</clipPath>
+</defs>
 <g id="Shape &#226;&#128;&#148; Pill (fill)">
 <path id="Shape" d="M47.2674 0H39.3895C17.6353 0 0 17.6353 0 39.3895V86.6568C0 108.411 17.6353 126.046 39.3895 126.046H47.2674C69.0216 126.046 86.6568 108.411 86.6568 86.6568V39.3895C86.6568 17.6353 69.0216 0 47.2674 0Z" fill="#E54B30"/>
+<rect width="100%" height="100%" clip-path="url(#pill)" filter="url(#noise)" opacity="0.3" style="mix-blend-mode: overlay;"/>
 </g>
 </svg>

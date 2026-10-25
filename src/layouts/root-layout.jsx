@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 import Header from "../components/Header.jsx";
 import { useSmoothScroll } from "../hooks/useSmoothScroll.jsx";
 import { useSwipeBack } from "../hooks/useSwipeBack.jsx";
@@ -14,7 +14,7 @@ export function RootLayout() {
       <main className="font-sans flex-1 mt-14 md:mt-28">
         <Outlet />
       </main>
-      <Footer />
+      <Contact />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Contact from "../components/Contact";
 import FadeInPageWrapper from "../components/FadeInPageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import SkillItem from "../components/SkillItem";
@@ -245,7 +244,6 @@ const Profile = () => {
             </section>
           </div>
         </div>
-        <Contact />
       </section>
     </FadeInPageWrapper>
   );
