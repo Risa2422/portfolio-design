@@ -60,7 +60,7 @@ function CaseSection({ section, line }) {
   const media = (section.flowLabel || section.image) && (
     <div
       className={`flex flex-col items-start ${
-        section.flowLabel ? "gap-2" : "gap-16"
+        section.flowLabel ? "gap-2" : "gap-8"
       }`}
     >
       {section.flowLabel && (
@@ -161,13 +161,13 @@ function CaseSection({ section, line }) {
       <CaseBox theme={section.theme} label={section.label} line={line}>
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-loose text-[#2e211a]">
+            <h4 className="text-xl font-bold leading-loose">
               {problem.heading}
             </h4>
             <p className="leading-loose">{problem.text}</p>
           </div>
           <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-loose text-[#2e211a]">
+            <h4 className="text-xl font-bold leading-loose">
               {solution.heading}
             </h4>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
@@ -243,19 +243,17 @@ function CaseSection({ section, line }) {
     );
   }
 
-  // Gallery: text beside a 2-column grid of reference screenshots.
+  // Gallery: text above a single row of reference screenshots.
   if (section.gallery) {
     return (
       <CaseBox theme={section.theme} label={section.label} line={line}>
-        <div className="flex flex-col md:flex-row gap-4 items-start">
-          <div className="flex-1 min-w-0 text-base leading-loose">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 text-base leading-loose">
             {toParagraphs(section.text).map((paragraph, index) => (
-              <p key={index} className="pb-6">
-                {paragraph}
-              </p>
+              <p key={index}>{paragraph}</p>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-x-[7px] gap-y-[10px] w-full md:w-[505px] md:shrink-0">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-[7px] gap-y-[10px] w-full">
             {section.gallery.map((image, index) => (
               <figure key={index} className="flex flex-col gap-1">
                 <ZoomableImage

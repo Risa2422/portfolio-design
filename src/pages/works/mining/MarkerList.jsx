@@ -36,9 +36,7 @@ function MarkerList({
     <div className="flex flex-col gap-2">
       {heading && (
         <div className="flex flex-wrap items-center gap-x-2.5 leading-normal">
-          <h4
-            className={`${small ? "text-lg" : "text-xl"} font-bold text-[#2e211a]`}
-          >
+          <h4 className={`${small ? "text-lg" : "text-xl"} font-bold`}>
             {heading}
           </h4>
           {note && <span className="text-xs text-[#7a6a5f]">{note}</span>}
