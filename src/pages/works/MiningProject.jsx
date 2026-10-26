@@ -27,7 +27,8 @@ const content = {
       { title: "担当領域", value: "主要機能設計・既存画面のUI/UX改善" },
       {
         title: "チーム構成",
-        value: "エンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）",
+        value:
+          "エンジニア5名、PdM1名、オペレーション2名、デザイナー1名（自身）",
       },
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
@@ -35,7 +36,7 @@ const content = {
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロダクト概要",
     ProductOverviewText:
-      "カナダの鉱山採掘業界のプログラムマネージャーを対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する現場において、複雑化しやすい予算策定・実績管理・レポート作成を一元化し、業務効率化を実現します。",
+      "カナダの鉱山採掘業界を対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する採掘現場において、複雑化しやすい予算策定・実績管理・レポート作成を一元化し、業務効率化を実現します。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/program_overview.svg",
@@ -57,12 +58,12 @@ const content = {
       "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "担当領域とデザインプロセス",
     productFlowText:
-      "チーム構成はエンジニア5名、PM1名、オペレーション2名、デザイナー1名（自身）でした。\n全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
+      "チーム構成はエンジニア5名、PdM1名、オペレーション2名、デザイナー1名（自身）でした。\n全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
       "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例を3つご紹介します。",
-    caseLabels: { background: "背景", reflection: "学び" },
+    caseLabels: { background: "課題・背景", reflection: "学び" },
     improvements: [
       {
         id: 1,
@@ -112,7 +113,7 @@ const content = {
             caption:
               "UI上の課題抽出にとどまらず、実際の業務フローについてクライアントへヒアリングを実施しました。",
             pairs: {
-              findingHeading: "ユーザー行動・実務の課題",
+              findingHeading: "実態",
               decisionHeading: "UI/UXへの落とし込み",
               items: [
                 {
@@ -170,7 +171,7 @@ const content = {
         summary:
           "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
         background:
-          "プロジェクト参入時の初期仕様では、ユーザーがプロジェクト作成時に指定した「期間」や「採掘場所」等の条件に基づき、システム側で予算項目の自動作成と初期試算を行う仕組みとなっていました。しかし、初期プロトタイプを用いたクライアント検証を実施したところ、自動生成された画面の操作性や視認性において期待した反応が得られなかったため、UI/UXの再設計が必要でした。",
+          "プロジェクト参入時の初期仕様では、ユーザーがシステム上でプロジェクト作成時に指定した「期間」や「採掘場所」等の条件に基づき、システム側で予算項目の自動作成と初期試算を行う仕組みとなっていました。しかし、初期プロトタイプを用いたクライアント検証を実施したところ、自動生成された画面の操作性や視認性において期待した反応が得られなかったため、UI/UXの再設計が必要でした。",
         sections: [
           {
             theme: "before",
@@ -432,7 +433,7 @@ const content = {
       },
       {
         title: "Team Structure",
-        value: "5 Engineers, 1 PM, 2 Operations, 1 Designer (Myself)",
+        value: "5 Engineers, 1 PdM, 2 Operations, 1 Designer (Myself)",
       },
       { title: "Tools Used", value: "Figma, ChatGPT, Alloy" },
     ],
@@ -467,7 +468,7 @@ const content = {
       "To turn this situation around, I joined the project as a UI/UX Designer and led the effort to raise the product to release quality by optimizing the information architecture and introducing a design system.",
     productFlowTitle: "My Role and Design Process",
     productFlowText:
-      "The team consisted of 5 engineers, 1 PM, 2 operations staff, and 1 designer (myself).\nIn an agile setup where every member was involved from user interviews through release, I led everything from feature definition to UI/UX design while also supporting the stages before and after.",
+      "The team consisted of 5 engineers, 1 PdM, 2 operations staff, and 1 designer (myself).\nIn an agile setup where every member was involved from user interviews through release, I led everything from feature definition to UI/UX design while also supporting the stages before and after.",
     productFlowImage: "/mining/product-flow.svg",
     improvementsTitle: "Improvement Case Studies",
     improvementsText:
@@ -928,7 +929,7 @@ const MiningProject = () => {
           </div>
         </div>
         {/* Product Development Flow Section */}
-        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-8">
+        <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
             <SectionMark />
             {t.productFlowTitle}
