@@ -51,7 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <footer className="relative isolate bg-primary text-white px-[5vw] mt-32 py-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+    <footer className="relative isolate bg-[#ee9f01] text-white px-[5vw] mt-32 py-4 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
       <span
         aria-hidden="true"
         style={{ backgroundImage: NOISE_SVG }}
@@ -68,36 +68,43 @@ const Contact = () => {
           className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay"
         />
       </motion.span>
-      <ul className="flex flex-col gap-[6px]">
-        <li>
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-          >
-            <img src="/icons/linkedin-logo.svg" alt="" width="24" height="24" />
-            <span className="underline">linkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-          >
-            <img
-              src="/icons/envelope-simple.svg"
-              alt=""
-              width="24"
-              height="24"
-            />
-            <span className="underline">{EMAIL}</span>
-          </a>
-        </li>
+      <ul className="flex gap-[32px] items-center w-full justify-between ">
+        <div className="flex gap-4 ">
+          <li>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity text-sm"
+            >
+              <img
+                src="/icons/linkedin-logo.svg"
+                alt=""
+                width="20"
+                height="20"
+              />
+              <span className="underline">linkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity text-sm"
+            >
+              <img
+                src="/icons/envelope-simple.svg"
+                alt=""
+                width="20"
+                height="20"
+              />
+              <span className="underline">{EMAIL}</span>
+            </a>
+          </li>
+        </div>
+        <p className="text-xs">All Rights Reserved 2026 ©︎ Risa Yamamoto</p>
       </ul>
-      <p className="text-xs">All Rights Reserved 2026 ©︎ Risa Yamamoto</p>
     </footer>
   );
 };

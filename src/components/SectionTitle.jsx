@@ -23,7 +23,7 @@ const SectionTitle = ({
       </div>
       <div className="flex items-center space-x-4">
         <h2
-          className={`whitespace-nowrap font-bold  uppercase ${
+          className={`whitespace-nowrap font-poppins font-bold uppercase leading-relaxed${
             sub ? "text-3xl md:text-4xl" : "text-3xl md:text-4xl"
           }`}
         >

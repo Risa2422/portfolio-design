@@ -7,52 +7,29 @@ import MarkerList from "./MarkerList";
 
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 
-// Timeline item: a pill badge on the left rail with content beside it.
-// line: "connect" runs the rail down to the next badge across CaseStudy's
-// gap-20, "reflection" does the same across the shorter gap-6 before the
-// reflection, "end" stops at the bottom of this item, and null draws no rail.
-// Each length ends inside the next (opaque) badge so the join is hidden.
-export function CaseBox({
-  theme = "neutral",
-  label,
-  line = null,
-  indent = true,
-  children,
-}) {
-  const colors = caseThemes[theme];
+// One row of a case study: an English eyebrow and the section title on the
+// left, the content on the right (stacked on mobile). CaseStudy separates
+// rows with horizontal rules.
+export function CaseRow({ eyebrow, label, note, children }) {
   return (
-    <div className="relative pt-2">
-      <div
-        className={`relative flex flex-col gap-6 pt-8 pb-6 pr-0 md:pr-6 ${
-          indent ? "pl-4 md:pl-8" : ""
-        }`}
-      >
-        <span
-          className="absolute z-10 -left-[22px] -top-4 px-4 py-[2px] rounded-full font-semibold leading-loose whitespace-nowrap"
-          style={{ backgroundColor: colors.badgeBg, color: colors.badgeText }}
-        >
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6 py-8">
+      <div className="flex flex-col gap-0.5 md:w-[160px] md:shrink-0">
+        {eyebrow && (
+          <p className="text-[10.5px] font-bold tracking-wider text-primary uppercase leading-normal">
+            {eyebrow}
+          </p>
+        )}
+        <h3 className="text-[15px] font-bold text-[#222] leading-normal">
           {label}
-        </span>
-        {children}
+        </h3>
+        {note && <p className="pt-1 text-xs text-[#7a6a5f]">{note}</p>}
       </div>
-      {line && (
-        <span
-          aria-hidden="true"
-          className={`absolute -left-1.5 top-6 w-[2px] ${
-            {
-              connect: "-bottom-[72px]",
-              reflection: "-bottom-10",
-              end: "bottom-1.5",
-            }[line]
-          }`}
-          style={{ backgroundColor: `${colors.border}4D` }}
-        />
-      )}
+      <div className="flex flex-col gap-6 flex-1 min-w-0">{children}</div>
     </div>
   );
 }
 
-function CaseSection({ section, line }) {
+function CaseSection({ section }) {
   const { language } = useLanguage();
   const colors = caseThemes[section.theme];
   const hasMessage = section.caption || section.headline || section.text;
@@ -64,12 +41,7 @@ function CaseSection({ section, line }) {
       }`}
     >
       {section.flowLabel && (
-        <p
-          className="px-3 py-1 rounded-full font-bold text-sm"
-          style={{ backgroundColor: colors.pillBg, color: colors.pillText }}
-        >
-          {section.flowLabel}
-        </p>
+        <p className="leading-loose">{section.flowLabel}</p>
       )}
       {section.imageLead && <p>{section.imageLead}</p>}
       {section.image && (
@@ -87,7 +59,7 @@ function CaseSection({ section, line }) {
   if (section.pairs) {
     const { findingHeading, decisionHeading, items } = section.pairs;
     return (
-      <CaseBox theme={section.theme} label={section.label} line={line}>
+      <CaseRow eyebrow={section.eyebrow} label={section.label}>
         <div className="flex flex-col gap-8 md:gap-12">
           {section.caption && (
             <p className="text-base leading-loose">{section.caption}</p>
@@ -149,7 +121,7 @@ function CaseSection({ section, line }) {
             </div>
           )}
         </div>
-      </CaseBox>
+      </CaseRow>
     );
   }
 
@@ -158,7 +130,7 @@ function CaseSection({ section, line }) {
   if (section.constraint) {
     const { problem, solution } = section.constraint;
     return (
-      <CaseBox theme={section.theme} label={section.label} line={line}>
+      <CaseRow eyebrow={section.eyebrow} label={section.label}>
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
             <h4 className="text-xl font-bold leading-loose">
@@ -187,7 +159,7 @@ function CaseSection({ section, line }) {
             </div>
           </div>
         </div>
-      </CaseBox>
+      </CaseRow>
     );
   }
 
@@ -195,7 +167,7 @@ function CaseSection({ section, line }) {
   // an optional highlighted insight, separated by dashed rules.
   if (section.research) {
     return (
-      <CaseBox theme={section.theme} label={section.label} line={line}>
+      <CaseRow eyebrow={section.eyebrow} label={section.label}>
         <div className="flex flex-col gap-6">
           {section.caption && (
             <p className="leading-loose">{section.caption}</p>
@@ -239,14 +211,14 @@ function CaseSection({ section, line }) {
             </div>
           ))}
         </div>
-      </CaseBox>
+      </CaseRow>
     );
   }
 
   // Gallery: text above a single row of reference screenshots.
   if (section.gallery) {
     return (
-      <CaseBox theme={section.theme} label={section.label} line={line}>
+      <CaseRow eyebrow={section.eyebrow} label={section.label}>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-6 text-base leading-loose">
             {toParagraphs(section.text).map((paragraph, index) => (
@@ -270,9 +242,28 @@ function CaseSection({ section, line }) {
             ))}
           </div>
         </div>
-      </CaseBox>
+      </CaseRow>
     );
   }
+
+  // A column-layout section whose list has its own heading and eyebrow is
+  // split into two rows: the flow/image first, then the list (e.g. BEFORE → ISSUES).
+  const splitList =
+    section.layout !== "row" && section.list?.heading && section.list?.eyebrow;
+
+  const listNode =
+    section.list &&
+    (section.list.marker === "dot" && !section.list.heading ? (
+      <DotList items={section.list.items.map((item) => item.text)} />
+    ) : (
+      <MarkerList
+        {...section.list}
+        heading={splitList ? undefined : section.list.heading}
+        note={splitList ? undefined : section.list.note}
+        color={colors.accent}
+        dividerColor={colors.divider}
+      />
+    ));
 
   const content = (
     <>
@@ -293,17 +284,7 @@ function CaseSection({ section, line }) {
           )}
         </div>
       )}
-      {section.list?.marker === "dot" && !section.list.heading ? (
-        <DotList items={section.list.items.map((item) => item.text)} />
-      ) : (
-        section.list && (
-          <MarkerList
-            {...section.list}
-            color={colors.accent}
-            dividerColor={colors.divider}
-          />
-        )
-      )}
+      {!splitList && listNode}
       {section.footnote && (
         <p className="-mt-6 text-xs leading-normal">{section.footnote}</p>
       )}
@@ -314,7 +295,7 @@ function CaseSection({ section, line }) {
   // "row" places them side by side on md and up.
   if (section.layout === "row") {
     return (
-      <CaseBox theme={section.theme} label={section.label} line={line}>
+      <CaseRow eyebrow={section.eyebrow} label={section.label}>
         <div className="flex flex-col md:flex-row gap-12 md:gap-8 md:items-start">
           {media && (
             <div className={`${section.mediaWidth ?? "md:w-1/2"} md:shrink-0`}>
@@ -323,15 +304,33 @@ function CaseSection({ section, line }) {
           )}
           <div className="flex flex-col gap-12 flex-1 min-w-0">{content}</div>
         </div>
-      </CaseBox>
+      </CaseRow>
+    );
+  }
+
+  if (splitList) {
+    return (
+      <>
+        <CaseRow eyebrow={section.eyebrow} label={section.label}>
+          {media}
+          {content}
+        </CaseRow>
+        <CaseRow
+          eyebrow={section.list.eyebrow}
+          label={section.list.heading}
+          note={section.list.note}
+        >
+          {listNode}
+        </CaseRow>
+      </>
     );
   }
 
   return (
-    <CaseBox theme={section.theme} label={section.label} line={line}>
+    <CaseRow eyebrow={section.eyebrow} label={section.label}>
       {media}
       {content}
-    </CaseBox>
+    </CaseRow>
   );
 }
 

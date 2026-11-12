@@ -12,6 +12,7 @@ export default {
           "メイリオ",
           "sans-serif",
         ],
+        poppins: ['"Poppins"', "sans-serif"],
         geist: ['"Geist"', "sans-serif"],
         roboto: ['"Roboto"', "sans-serif"],
         raleway: ['"Raleway"', "sans-serif"],

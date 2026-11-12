@@ -110,9 +110,7 @@ function Header() {
                 </li>
               );
             })}
-            <li className="hidden sm:block">
-              <LanguageToggle />
-            </li>
+            <li className="hidden sm:block">{/* <LanguageToggle /> */}</li>
           </ul>
         </nav>
       </div>
