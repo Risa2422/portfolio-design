@@ -80,7 +80,7 @@ const Home = () => {
       <section className="px-[5vw] sm:px-[8vw]">
         <section className="relative z-20 flex flex-col items-center gap-10 mt-20 md:mt-0 pt-2 pb-10 md:pb-16 min-h-[calc(100svh-80px)] md:min-h-[calc(100svh-60px)]">
           <div className="flex flex-col items-center gap-10 w-full">
-            <div className="flex flex-col items-center gap-6 w-full max-w-[280px] md:max-w-[480px]">
+            <div className="flex flex-col items-center gap-6 w-full max-w-[280px] md:max-w-[440px]">
               <p className="text-xs md:text-base font-medium tracking-[0.2em]">
                 {/* UI/UX Designer */}
               </p>
@@ -267,7 +267,6 @@ const Home = () => {
               </div>
             </div>
           </section> */}
-
         </div>
       </section>
     </FadeInPageWrapper>

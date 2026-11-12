@@ -11,6 +11,24 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/risa-yamamoto-profile/";
 const EMAIL = "yamari2422@gmail.com";
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 
+// SVGをマスクとして使い、テキストと同じ色(currentColor)で塗る
+const Icon = ({ src }) => (
+  <span
+    aria-hidden="true"
+    className="inline-block w-5 h-5 shrink-0 bg-current transition-colors"
+    style={{
+      maskImage: `url(${src})`,
+      WebkitMaskImage: `url(${src})`,
+      maskSize: "contain",
+      WebkitMaskSize: "contain",
+      maskRepeat: "no-repeat",
+      WebkitMaskRepeat: "no-repeat",
+      maskPosition: "center",
+      WebkitMaskPosition: "center",
+    }}
+  />
+);
+
 const Contact = () => {
   // ページ最下部に到達したら半円が沈み、バネで持ち上がる
   const { scrollY } = useScroll();
@@ -51,38 +69,28 @@ const Contact = () => {
   };
 
   return (
-    <footer className="relative isolate bg-[#ee9f01] text-white px-[5vw] mt-32 py-4 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-      <span
-        aria-hidden="true"
-        style={{ backgroundImage: NOISE_SVG }}
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.3] mix-blend-overlay"
-      />
-      <motion.span
+    <footer className="relative isolate px-[5vw] sm:px-[8vw] mt-40 py-4 flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+      {/* <motion.span
         aria-hidden="true"
         style={{ scaleY, x: offsetX }}
         onMouseEnter={handleEscape}
-        className="absolute top-0 left-[calc(50%-1.5rem)] w-12 h-6 origin-top rounded-b-full bg-background overflow-hidden"
+        className="absolute top-0 left-[calc(50%-1.5rem)] w-12 h-6 origin-top rounded-b-full overflow-hidden"
       >
         <span
           style={{ backgroundImage: NOISE_SVG }}
           className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay"
         />
-      </motion.span>
-      <ul className="flex gap-[32px] items-center w-full justify-between ">
-        <div className="flex gap-4 ">
+      </motion.span> */}
+      <ul className="flex gap-[40px] items-center w-full justify-between ">
+        <div className="flex gap-12 ">
           <li>
             <a
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity text-sm"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors text-sm"
             >
-              <img
-                src="/icons/linkedin-logo.svg"
-                alt=""
-                width="20"
-                height="20"
-              />
+              <Icon src="/icons/linkedin-logo.svg" />
               <span className="underline">linkedIn</span>
             </a>
           </li>
@@ -91,14 +99,9 @@ const Contact = () => {
               href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity text-sm"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors text-sm"
             >
-              <img
-                src="/icons/envelope-simple.svg"
-                alt=""
-                width="20"
-                height="20"
-              />
+              <Icon src="/icons/envelope-simple.svg" />
               <span className="underline">{EMAIL}</span>
             </a>
           </li>

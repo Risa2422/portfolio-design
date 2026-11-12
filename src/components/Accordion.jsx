@@ -10,7 +10,7 @@ function Accordion({ number, title, summary, isOpen, onToggle, children }) {
         className="group w-full flex justify-between items-center gap-4 cursor-pointer"
       >
         <div className="flex flex-col items-start justify-start transition-opacity duration-200 group-hover:opacity-90">
-          <h2 className="flex items-baseline gap-1 text-lg md:text-lg font-semibold text-left">
+          <h2 className="flex items-baseline gap-1 text-lg md:text-xl font-semibold text-left">
             {number && (
               <span className="font-bold tabular-nums text-xl tracking-wider">
                 {number}.
@@ -34,7 +34,7 @@ function Accordion({ number, title, summary, isOpen, onToggle, children }) {
         }`}
       >
         <div className="overflow-hidden">
-          <hr className="border-t-2 border-dotted border-gray-300 my-4" />
+          <hr className="border-t border-solid border-gray-300 my-3" />
           {children}
         </div>
       </div>

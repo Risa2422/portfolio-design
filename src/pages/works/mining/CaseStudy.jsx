@@ -15,7 +15,7 @@ function CaseStudy({
   const { language } = useLanguage();
 
   return (
-    <div className="flex flex-col divide-y divide-[#E2E2E2] md:px-4">
+    <div className="case-study flex flex-col [&>*+*]:bg-[linear-gradient(to_right,#C2C2C2_6px,transparent_6px)] [&>*+*]:bg-[length:10px_1px] [&>*+*]:bg-repeat-x [&>*+*]:bg-top">
       <CaseRow eyebrow={labels.backgroundEyebrow} label={labels.background}>
         <div className="text-base leading-loose">
           {toParagraphs(background).map((paragraph, index) => (

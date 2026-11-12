@@ -22,7 +22,7 @@ function WorkCard({ imageSrc, title, date, description, tags = [], to }) {
 
         <div className="space-y-2 px-4 md:px-0 hover:opacity-70 transition-opacity duration-200">
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold">{title}</h3>
+            <h3 className="md:text-2xl font-semibold">{title}</h3>
             <p className="pt-3 leading-loose">{description}</p>
           </div>
           <ul className="flex gap-2 pt-5 flex-wrap">
@@ -32,7 +32,7 @@ function WorkCard({ imageSrc, title, date, description, tags = [], to }) {
                 className="flex items-center justify-center px-3 py-1.5 
                 border-[1px] border-[#351E28] rounded-full"
               >
-                <span className="text-xs text-text">{tag}</span>
+                <span className="text-xs">{tag}</span>
               </li>
             ))}
           </ul>

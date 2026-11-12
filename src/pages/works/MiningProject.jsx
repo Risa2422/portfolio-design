@@ -1,4 +1,3 @@
-import { CornerDownRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Accordion from "../../components/Accordion";
@@ -34,61 +33,64 @@ const content = {
       },
       { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
     ],
-    title: "プログラム管理ツール (鉱山業界向け)",
+    title: "鉱山開発の予算・進捗管理システム",
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロダクト概要",
     ProductOverviewText:
-      "カナダの鉱山採掘業界を対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する採掘現場において、複雑化しやすい予算策定・実績管理・レポート作成を一元化し、業務効率化を実現します。",
+      "世界有数の資源大国であるカナダの基幹産業です。広大で過酷な環境の中、資源の調査から環境評価、採掘まで、長期・大規模なプロジェクトが同時進行しています。そのため、フェーズごとの人員移動や、複雑な予算・実績の管理が欠かせない業界です。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "制作デザイン (一部)",
-    industryTitle: "鉱山業界とは？⛰️⛏️",
+    industryTitle: "カナダの鉱山業界",
     industryFlowImage: "/mining/industory_flow.svg",
     clientTitle: "クライアントの立ち位置",
     clientText:
-      "カナダの鉱山採掘業界を対象にした、プログラム管理プラットフォームです。複数の採掘プログラムが同時進行する採掘現場において、複雑化しやすい予算策定・実績管理・レポート作成を一元化し、業務効率化を実現します。",
+      "発足した各プロジェクトには、基本的に「依頼企業（鉱業企業）」「運用マネジメント会社」「現場」の3者が関わります。 \n本プロジェクトのクライアントは、その中心に立つ採掘運用マネジメント会社です。依頼企業からの委託を受け、輸送・人員・宿泊・機材などの予算作成と提案を行い、承認後は実際の現場や各業者への手配・依頼を進めます。プロジェクト開始後も現場の実績を管理し、依頼企業への予実報告までを担います。本システムは、この予算作成から手配・報告までの一連の業務をサポートします。",
     clientFlowImage: "/mining/client_flow.svg",
     challengesTitle: "クライアントの課題とシステムが解決すること",
     challengesText:
-      "このシステムが解決するユーザーの課題は、Excelに依存した予算業務の「非効率・属人化・ヒューマンエラー」です。大きな問題ではないものの、小さな積み重ねがウンタラカンタラ",
+      "カナダの鉱山業界ではExcelを中心とした手作業での管理が一般的であり、そこに起因する「非効率さ・属人化・ヒューマンエラーの常態化」が大きな課題でした。日々の業務の中で見過ごされがちなこれらの問題が現場の負担となっていたため、本システムでは業務の統一と自動化によって課題の解決を目指しました。",
     challengesHeaders: ["課題", "具体例", "システムが提供する解決策"],
     challenges: [
       {
         issue: "非効率さ",
         before: "依頼企業への報告レポートを毎回作成",
-        solution: "集計・報告書作成を自動化",
+        solution: "集計・報告書作成の自動化",
       },
       {
         issue: "属人化",
-        before: "担当者ごとに作り方・管理方法が異なる",
-        solution: "入力形式と業務フローを統一",
+        before: "担当者ごとにExcelのフォーマットや管理方法が異なる",
+        solution: "入力形式と業務フローの統一",
       },
       {
         issue: "ヒューマンエラーの常態化",
-        before: "使い回しやコピペで入力ミスが常態化",
+        before: "過去ファイルの使い回しやコピペによる入力ミス",
         solution: "テンプレート化と入力チェック",
       },
     ],
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText:
-      "参画時、すでにデザインの制作や実装が進行中でしたが、以下のような課題があり、その状況を打開するため、私がUIUXデザイナーとして参画しました。",
+      "私が参画した時点では、すでにデザイン制作や実装が進行していましたが、プロダクトには以下のような課題がありました。これらを解消するため、UI/UXの全面的な見直しが必要でした。",
     backgroundIssues: [
       {
-        title: "導線が統一されていない",
-        detail: "具体的には、、、、、、、、、、",
+        title: "動線の不備と画面の分断",
+        detail:
+          "ホーム画面から予算作成・管理画面へ直接遷移できる導線がありませんでした。また、予算と報告書（レポート）は実際の業務で連動して扱うことが多いにもかかわらず、それぞれ独立したページに分断されている状態でした。そのため、画面間の行き来が煩雑になり、業務をスムーズに進められないという操作性（ユーザビリティ）の課題がありました。",
       },
-      { title: "UXの根本的改善", detail: "具体的には、、、、、、、、、、" },
+      {
+        title: "現場のフローと乖離したAI機能",
+        detail:
+          "複数のAI機能が実装されていたものの、実際の業務の流れと一致しておらず、出力の精度も低いことから、ユーザーの信頼を得られていませんでした。",
+      },
     ],
-    roleText:
-      "この状況を打開するため、UI/UXデザイナーとしてプロジェクトへ参画し、情報設計の最適化・デザインシステムを取り入れ、本リリースに向けた製品クオリティへの引き上げを主導しました。",
     productFlowTitle: "担当領域と開発プロセス",
     productFlowText:
-      "チーム構成はPdM1名、エンジニア5名、オペレーション2名、デザイナー1名（自身）でした。\n全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
+      "全員がヒアリングからリリースまで関わるアジャイル体制のもと、機能定義からUI/UXデザインまでを主導しつつ前後の工程もサポートしました。",
     productFlowImage: "/product_development_flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
-      "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例を3つご紹介します。",
+      "守秘義務契約（NDA）の都合上、すべての成果物やデザイン画面はお見せできませんが、参画期間中に特に注力して取り組んだUI/UX改善事例を2つご紹介します。",
     caseLabels: {
       background: "課題・背景",
       backgroundEyebrow: "Background",
@@ -114,7 +116,6 @@ const content = {
         sections: [
           {
             theme: "before",
-            eyebrow: "Before",
             label: "改善前",
             flowLabel: "プロジェクト作成から予算作成までのユーザーフロー",
             image: "/mining/creation-flow-before.svg",
@@ -211,8 +212,8 @@ const content = {
         sections: [
           {
             theme: "before",
-            eyebrow: "Before",
-            label: "改善前",
+            joinPrevious: true,
+            label: "予算管理画面の特徴 (改善前)",
             layout: "row",
             image: "/mining/cost-management-before.png",
             alt: "改善前のコスト管理画面",
@@ -220,7 +221,6 @@ const content = {
             list: {
               size: "sm",
               marker: "dot",
-              heading: "予算作成画面の特徴",
               items: [
                 {
                   title: "予算項目およびコストの自動算出",
@@ -232,12 +232,10 @@ const content = {
                 },
                 {
                   title: "予算作成と実績管理の両立",
-                  text: "初期の予算策定だけでなく、プロジェクト発足後の実コストの追跡・管理までを一貫して行える設計",
+                  text: "初期の予算策定だけでなく、プロジェクト発足後の実コストの管理までを一貫して行える設計",
                 },
               ],
             },
-            footnote:
-              "(※実際の画面では、上部に「予算作成」と「予算トラッキング」を切り替えるタブメニューが配置されていました)",
           },
           {
             theme: "hearing",
@@ -249,7 +247,8 @@ const content = {
               {
                 title: "① クライアントおよび鉱山業界の業務担当者へのヒアリング",
                 description:
-                  "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。以下、ヒアリング内容(一部) です。",
+                  "初期段階で提案した予算作成画面へのフィードバックや、現在抱えている課題をヒアリングしました。",
+                itemsImage: "/mining/feedback.svg",
                 items: [
                   "鉱山採掘プロジェクトではシステムでカバーしきれない現場特有の要素が多く、特に予算策定には過去の実績や熟練者の経験則が不可欠",
                   "現状はExcelで予算管理を行っているが、複雑な関数エラーや手入力によるヒューマンエラーが常態化している",
@@ -260,38 +259,45 @@ const content = {
                 title: "② 画面録画分析",
                 description:
                   "実際の作業状況を正しく把握するため、クライアントに普段のExcel操作の録画を依頼し、分析を行いました。以下が分析結果の一部です。",
+                image: "/mining/excel.png",
+                alt: "クライアントが使用しているExcelの画面",
+                imageCaption: "※ 実際の画面を基に再現したイメージです",
                 items: [
                   "新規予算の作成時は既存のExcelシートを再利用する運用が定着しており、それに伴う関数エラーが頻発していた",
-                  "作成した予算データは、進捗共有のため高頻度でレポート（PDF/Excel等）としてエクスポートされていた",
+                  "現場の稼働中は日々更新される実績データを基にレポートを作成し、依頼企業への進捗共有として頻繁に出力・提出していた",
                 ],
                 insightLabel: "システムに求められていること",
                 insight:
-                  "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らせること",
+                  "通常業務の自動化ではなく、使い慣れたExcelの運用を崩さずにミスを減らすこと",
               },
             ],
           },
           {
             theme: "process",
             eyebrow: "Reference",
-            label: "参考UI探し",
+            label: "参考UI分析",
             text: [
-              "Excelだけでなく、テーブルUIを採用しているサービスを分析し、テーブル操作における最適なインターフェース構造を検証しました。",
+              "Excelの表の形式や操作感は残しつつ、手作業の煩雑さを解消する方法を探るため、テーブルUIを採用しているサービスを分析しました。",
             ],
             gallery: [
               {
-                src: "/mining/reference-ui-1.png",
-                alt: "参考にしたテーブルUI",
-                caption: "Snowflake",
-              },
-              {
                 src: "/mining/reference-ui-2.png",
-                alt: "参考にしたテーブルUI",
-                caption: "Notion",
-              },
-              {
-                src: "/mining/reference-ui-3.png",
-                alt: "参考にしたテーブルUI",
-                caption: "Jira",
+                alt: "参考にしたテーブルUI（Notion）",
+                title: "Notion",
+                points: {
+                  label: "参考にした点",
+                  items: [
+                    {
+                      title: "折りたたみ機能",
+                      text: "ヒアリングでは「膨大なデータの中から、必要な情報を見やすく整理したい」という要望がありました。そこで、関連する行をまとめて開閉できる仕組みを参考にしました。",
+                      highlight: {
+                        top: "39.7%",
+                        height: "3.7%",
+                        left: "24.6%",
+                      },
+                    },
+                  ],
+                },
               },
             ],
           },
@@ -300,34 +306,26 @@ const content = {
             eyebrow: "After",
             label: "完成UI",
             imageLead:
-              "以下が完成UIです。現場で使い慣れたExcelテンプレートのレイアウトを継承することで、ユーザーの学習コストを抑えつつ、より直感的な操作性を実現しました。",
+              "現場で使い慣れたExcelテンプレートのレイアウトを継承することで、ユーザーの学習コストを抑えつつ、より直感的な操作性を実現しました。",
             image: "/mining/cost-management-after.svg",
             alt: "改善後のコスト管理画面",
             imageWidth: "w-full self-center",
             list: {
               heading: "改善内容",
-              eyebrow: "Solution",
+              joinPrevious: true,
               marker: "letter",
               items: [
                 {
                   title: "学習コストの最小化",
-                  text: "セルの直接編集やUndo/Redo、コメント、フィルタリング、ファイル出力（Export）などに対応しており、使い慣れたExcelと同等の操作感を目指しました。",
+                  text: "「新しいITツールへの苦手意識」という現場の課題を解消するため、既存の操作習慣を活かす「ヤコブの法則」を適用しました。セルの直接編集やUndo/Redo、コメント、フィルタリング、ファイル出力（Export）など、使い慣れたExcelと同等の操作感を実現しています。",
                 },
                 {
-                  title: "既存テンプレートのレイアウト継承",
-                  text: "現場で慣れ親しんだレイアウトを継承しつつ、基本情報エリアの折りたたみ機能を追加しました。",
+                  title: "レポート機能のタブ化による一画面集約",
+                  text: "ユーザーの行動観察によって、実績管理の過程でレポート作成・出力を頻繁に行う実態が判明したため、別画面にあったレポート機能を画面上部のタブに統合しました。データの入力からレポートの自動生成・確認・出力までが一画面で完結するようUIを再設計しました。",
                 },
                 {
-                  title: "操作アイコンを常時表示",
-                  text: "テーブルUIを採用している、NotionやJiraのようなホバー表示メインのミニマルUIではなく、ターゲットユーザーに合わせて編集・削除などのアイコンを常時露出させる設計を採用し、「視覚的シンプルさ」よりも「直感的な操作性・迷いにくさ」を優先しました。",
-                },
-                {
-                  title: "レポートを同じ画面のタブに",
-                  text: "別画面に独立していたレポート機能を画面上部のタブに追加することで、情報確認とデータ操作を一画面で完結できるようにしました。",
-                },
-                {
-                  title: "残り枠（日数・予算）を表示",
-                  text: "クライアントとの対話を通じて「プログラムの残日数（Days Remaining）」や「予算残量（Budget Runway）」の即時把握に対する潜在ニーズを発見し、画面右上に配置しました。また、計算根拠を確認できるツールチップを併設することでシステムの透明性を高め、ユーザーの判断支援を図りました。",
+                  title: "残り枠（日数・予算）の視覚化",
+                  text: "クライアントとの対話を通じて、プロジェクト稼働後に「プログラムの残日数」や「予算残存日数」を即座に把握したいという潜在ニーズを発見しました。これに応えるため、各残日数を示す指標を視認性の高い画面右上に配置し、算出根拠を確認できるツールチップを併設することでシステムの透明性と信頼性を高めるようにしました。",
                 },
               ],
             },
@@ -365,7 +363,7 @@ const content = {
         ],
         reflection: {
           headline: "ヒアリングの先にある「当事者意識」の重要性",
-          text: "クライアントから「まさにこれが欲しかった」と評価をいただいた経験を通じ、本質的な解決策を導くためには、表面的なヒアリングにとどまらず、既存の業務に対する深い解像度を持つことが不可欠だと実感しました。",
+          text: "クライアントから「まさにこういうツールが欲しかった」と評価をいただいた経験を通じ、本質的な解決策を導くためには、表面的なヒアリングにとどまらず、既存の業務に対する深い解像度を持つことが不可欠だと実感しました。",
         },
       },
       {
@@ -374,7 +372,7 @@ const content = {
         summary:
           "既存の画面構成や操作感を維持したまま、新機能を組み込みました。",
         background:
-          "クライアントからの要望を受け、予算の試算機能を追加することになりました。\n既に主要なUI構造が確定している段階であったため、既存のUIコンポーネントやレイアウトの整合性を壊すことなく、新機能を自然に組み込む設計を意識しました。",
+          "開発の後半でクライアントから予算試算機能の追加要望を受けました。主要なUI構造が既に固まっていたため、既存のコンポーネントルールや操作の一貫性を維持しながら、ユーザーが違和感なく使えるよう新機能を自然に組み込みました。",
         sections: [
           {
             theme: "hearing",
@@ -382,9 +380,9 @@ const content = {
             label: "ヒアリング",
             caption:
               "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
-            // text: "クライアントへのヒアリングを通じて、以下の課題およびニーズが浮き彫りとなりました。",
             list: {
               marker: "dot",
+              itemsImage: "/mining/feedback_2.svg",
               items: [
                 {
                   text: "現状は別のExcelファイルで試算を行っており、作成・転記の手間が発生している",
@@ -417,8 +415,6 @@ const content = {
             image: "/mining/draft-mode.svg",
             alt: "ドラフトモードUIの画像",
             list: {
-              heading: "主要機能とUIの工夫",
-              eyebrow: "Features",
               marker: "letter",
               items: [
                 {
@@ -441,7 +437,7 @@ const content = {
           },
         ],
         reflection: {
-          headline: "既存の一貫性を保ちながら、新機能を自然に組み込む",
+          headline: "既存UIとの一貫性を損なわない、自然な機能統合",
           text: "UI構造が確定した段階での機能追加だったため、ユーザーフローで操作パターンを先に可視化し、既存コンポーネントの組み合わせで表現できる範囲を見極めました。新しいUIを増やすよりも一貫性を保つことが、ユーザーの迷いにくさにつながると実感しました。",
         },
       },
@@ -569,7 +565,6 @@ const content = {
         sections: [
           {
             theme: "before",
-            eyebrow: "Before",
             label: "Before",
             flowLabel: "User flow from project creation to budget creation",
             image: "/mining/creation-flow-before.svg",
@@ -664,8 +659,8 @@ const content = {
         sections: [
           {
             theme: "before",
-            eyebrow: "Before",
-            label: "Before",
+            joinPrevious: true,
+            label: "Key Features of the Budget Creation Screen",
             layout: "row",
             image: "/mining/cost-management-before.png",
             alt: "Cost management screen before the change",
@@ -673,7 +668,6 @@ const content = {
             list: {
               size: "sm",
               marker: "dot",
-              heading: "Key Features of the Budget Creation Screen",
               items: [
                 {
                   title: "Automatic generation of budget items and costs",
@@ -714,6 +708,10 @@ const content = {
                 title: "② Screen Recording Analysis",
                 description:
                   "To accurately understand how the work was actually done, I analyzed screen recordings of their everyday Excel operations, looking for latent issues and habits that are hard to see through interviews alone. \n Below are some of the findings.",
+                image: "/mining/excel.png",
+                alt: "The client's Excel spreadsheet",
+                imageCaption:
+                  "* A recreation of the actual screen using dummy data.",
                 items: [
                   "Reusing existing Excel sheets to create new budgets was common practice, which frequently caused formula and function errors.",
                   "Budget data was frequently exported as reports (PDF, Excel, etc.) to share progress.",
@@ -729,29 +727,29 @@ const content = {
             eyebrow: "Reference",
             label: "Reference UI Research",
             text: [
-              "Beyond Excel, I analyzed services that use table UIs to examine the most suitable interface structure for table operations.",
-              'I avoided the "minimal, hover-based UI" used in many services and adopted a UI that stays highly visible at all times.',
+              'To "reduce mistakes without disrupting the familiar Excel workflow," I analyzed services that use table UIs.',
+              "I explored how to keep the shape of an Excel sheet while supporting the parts that had been manual work in Excel.",
             ],
             gallery: [
               {
-                src: "/mining/reference-ui-1.png",
-                alt: "Reference table UI",
-                caption: "Snowflake",
-              },
-              {
                 src: "/mining/reference-ui-2.png",
-                alt: "Reference table UI",
-                caption: "Notion",
-              },
-              {
-                src: "/mining/reference-ui-3.png",
-                alt: "Reference table UI",
-                caption: "Jira",
-              },
-              {
-                src: "/mining/reference-ui-4.png",
-                alt: "Reference table UI",
-                caption: "Jasper",
+                alt: "Reference table UI (Notion)",
+                title: "Notion",
+                points: {
+                  label: "What I referenced",
+                  items: [
+                    {
+                      title: "Groups of rows can be expanded and collapsed",
+                      text: "Related rows are grouped into one and toggled open or closed with ▶.",
+                      // Position of the highlighted row, as % of the image.
+                      highlight: {
+                        top: "39.7%",
+                        height: "3.7%",
+                        left: "24.6%",
+                      },
+                    },
+                  ],
+                },
               },
             ],
           },
@@ -766,7 +764,7 @@ const content = {
             imageWidth: "w-full self-center",
             list: {
               heading: "Improvements",
-              eyebrow: "Solution",
+              joinPrevious: true,
               marker: "letter",
               items: [
                 {
@@ -879,8 +877,6 @@ const content = {
             image: "/mining/draft-mode.svg",
             alt: "Image of the draft mode UI",
             list: {
-              heading: "Key Features and UI Considerations",
-              eyebrow: "Features",
               marker: "letter",
               items: [
                 {
@@ -1020,23 +1016,21 @@ const MiningProject = () => {
               <SectionMark />
               {t.challengesTitle}
             </h2>
-            <p className="">{t.challengesText}</p>
-            <div className="w-full overflow-x-auto bg-[#F9F9F9] py-5">
+            <p className="text-base leading-loose">{t.challengesText}</p>
+            <div className="w-full overflow-x-auto">
               <table className="w-full min-w-[720px] table-fixed border-collapse text-left">
                 <colgroup>
-                  <col className="w-1/3" />
-                  <col className="w-1/3" />
-                  <col className="w-1/3" />
+                  <col className="w-1/4" />
+                  <col className="w-[37.5%]" />
+                  <col className="w-[37.5%]" />
                 </colgroup>
                 <thead>
-                  <tr className="h-[48px] border-b border-[#CFCFCF]">
+                  <tr className="h-[40px] border-b border-[#bdbdbd]">
                     {t.challengesHeaders.map((header, i) => (
-                      <th key={header} scope="col" className="pb-1 font-normal">
+                      <th key={header} scope="col" className="pb-1 ">
                         <span
-                          className={`inline-flex items-center justify-center px-2 py-px rounded-full border text-[11.5px] font-bold text-white whitespace-nowrap ${
-                            i < 2
-                              ? "bg-[#7e8284] border-[#969B9E]"
-                              : "bg-[#005989] border-[#005989]"
+                          className={`items-center justify-center px-3 py-1 rounded-full border text-xs font-bold text-white whitespace-nowrap ${
+                            i < 2 ? "bg-[#7e8284] " : "bg-[#005989]"
                           }`}
                         >
                           {header}
@@ -1049,17 +1043,17 @@ const MiningProject = () => {
                   {t.challenges.map((row, i) => (
                     <tr
                       key={row.issue}
-                      className={`h-[62px] ${
+                      className={`h-[70px] ${
                         i < t.challenges.length - 1
-                          ? "border-b border-[#E2E2E2]"
+                          ? "border-b border-dashed border-[#bab9b9]"
                           : ""
                       }`}
                     >
-                      <th scope="row" className="pr-4 text-[15px] font-bold">
+                      <th scope="row" className="pr-4 font-bold text-sm">
                         {row.issue}
                       </th>
-                      <td className="pr-4 text-sm text-text">{row.before}</td>
-                      <td className="text-[15px] font-bold">{row.solution}</td>
+                      <td className="pr-4 text-sm ">{row.before}</td>
+                      <td className=" font-semibold text-sm">{row.solution}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1072,24 +1066,28 @@ const MiningProject = () => {
               <SectionMark />
               {t.backgroundTitle}
             </h2>
-            <div className="text-base leading-loose">
+            <div className="text-base leading-relaxed">
               <p>{t.backgroundText}</p>
               <p>{t.roleText}</p>
             </div>
-            <ul className="flex flex-col gap-8">
-              {t.backgroundIssues.map((issue) => (
-                <li key={issue.title} className="text-[15px] text-[#222]">
-                  <p className="flex items-center gap-2.5 pl-2 font-bold">
-                    <span className="size-1 shrink-0 rounded-full bg-[#222]" />
+            <ul className="flex flex-col gap-12">
+              {t.backgroundIssues.map((issue, index) => (
+                <li key={issue.title} className="">
+                  <p className="flex items-center gap-2 font-bold  text-lg">
+                    <span className="shrink-0 text-primary">
+                      {String(index + 1).padStart(2, "0")}.
+                    </span>
                     {issue.title}
                   </p>
-                  <div className="flex items-center gap-2 pl-12 pt-1">
-                    <CornerDownRight
+                  <div className="flex items-center gap-2 pl-8 pt-2">
+                    {/* <CornerDownRight
                       aria-hidden="true"
                       strokeWidth={1.5}
-                      className="size-5 shrink-0 text-[#222]"
-                    />
-                    <p className="font-medium">{issue.detail}</p>
+                      className="size-5 shrink-0"
+                    /> */}
+                    <p className="font-medium leading-relaxed">
+                      {issue.detail}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -1122,24 +1120,26 @@ const MiningProject = () => {
               {t.improvementsText}
             </p>
             <div className="space-y-4 w-full">
-              {t.improvements.map((improvement, index) => (
-                <Accordion
-                  key={improvement.id}
-                  number={String(index + 1).padStart(2, "0")}
-                  title={improvement.title}
-                  summary={improvement.summary}
-                  isOpen={openSections[improvement.id]}
-                  onToggle={() => toggleSection(improvement.id)}
-                >
-                  <CaseStudy
-                    labels={t.caseLabels}
-                    background={improvement.background}
-                    backgroundFigure={improvement.backgroundFigure}
-                    sections={improvement.sections}
-                    reflection={improvement.reflection}
-                  />
-                </Accordion>
-              ))}
+              {/* id: 1 は一時的に非表示 */}
+              {t.improvements
+                .filter((improvement) => improvement.id !== 1)
+                .map((improvement) => (
+                  <Accordion
+                    key={improvement.id}
+                    title={improvement.title}
+                    summary={improvement.summary}
+                    isOpen={openSections[improvement.id]}
+                    onToggle={() => toggleSection(improvement.id)}
+                  >
+                    <CaseStudy
+                      labels={t.caseLabels}
+                      background={improvement.background}
+                      backgroundFigure={improvement.backgroundFigure}
+                      sections={improvement.sections}
+                      reflection={improvement.reflection}
+                    />
+                  </Accordion>
+                ))}
             </div>
           </div>
 

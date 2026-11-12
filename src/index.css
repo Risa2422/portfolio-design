@@ -22,3 +22,12 @@ html:lang(en) body,
 html:lang(en) .font-sans {
   font-family: "Inter", "Zen Kaku Gothic New", sans-serif;
 }
+
+/* Case study: number each row title as 01., 02., ... */
+.case-study {
+  counter-reset: case-row;
+}
+.case-study .case-row-title::before {
+  counter-increment: case-row;
+  content: counter(case-row, decimal-leading-zero) ". ";
+}

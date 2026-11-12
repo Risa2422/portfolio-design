@@ -2,7 +2,7 @@ const workData = [
   {
     imageSrc: "/mining-thumbnail.png",
     title: {
-      ja: "プログラム管理ツール (鉱山業界向け)",
+      ja: "鉱山開発の予算・進捗管理システム",
       en: "Program Management Tool (for the Mining Industry)",
     },
     date: "2025 - 2026",
@@ -34,7 +34,7 @@ const workData = [
   {
     imageSrc: "/mahjong-thumbnail.png",
     title: {
-      ja: "麻雀対戦記録アプリ",
+      ja: "麻雀対戦記録アプリのUI/UX改善",
       en: "Mahjong Match Record App",
     },
     date: "2025",

@@ -44,7 +44,7 @@ export const caseThemes = {
     badgeText: "#ffffff",
     pillBg: "#f5e1db",
     pillText: "#8f3b1e",
-    accent: "#b24a26",
+    accent: "#E54C30", // primary
     divider: "#e6dccd",
   },
 };

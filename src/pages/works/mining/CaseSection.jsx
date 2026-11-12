@@ -7,24 +7,32 @@ import MarkerList from "./MarkerList";
 
 const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 
-// One row of a case study: an English eyebrow and the section title on the
-// left, the content on the right (stacked on mobile). CaseStudy separates
-// rows with horizontal rules.
-export function CaseRow({ eyebrow, label, note, children }) {
+// One row of a case study: an English eyebrow and the section title above
+// the content. CaseStudy separates rows with horizontal rules; a `joined`
+// row continues the previous one without a rule.
+export function CaseRow({ eyebrow, label, note, joined, children }) {
   return (
-    <div className="flex flex-col md:flex-row gap-4 md:gap-6 py-8">
-      <div className="flex flex-col gap-0.5 md:w-[160px] md:shrink-0">
+    <div
+      className={`flex flex-col gap-4 py-12 px-6 ${
+        joined ? "!bg-none !pt-0" : ""
+      }`}
+    >
+      <div className="flex flex-col">
         {eyebrow && (
-          <p className="text-[10.5px] font-bold tracking-wider text-primary uppercase leading-normal">
+          <p className="text-xs font-semibold text-[#005989] uppercase">
             {eyebrow}
           </p>
         )}
-        <h3 className="text-[15px] font-bold text-[#222] leading-normal">
+        <h3
+          className={`font-bold ${
+            joined ? "text-lg" : "text-xl case-row-title"
+          }`}
+        >
           {label}
         </h3>
         {note && <p className="pt-1 text-xs text-[#7a6a5f]">{note}</p>}
       </div>
-      <div className="flex flex-col gap-6 flex-1 min-w-0">{children}</div>
+      <div className="flex flex-col flex-1 min-w-0">{children}</div>
     </div>
   );
 }
@@ -43,7 +51,9 @@ function CaseSection({ section }) {
       {section.flowLabel && (
         <p className="leading-loose">{section.flowLabel}</p>
       )}
-      {section.imageLead && <p>{section.imageLead}</p>}
+      {section.imageLead && (
+        <p className="leading-loose">{section.imageLead}</p>
+      )}
       {section.image && (
         <ZoomableImage
           src={localizeImage(section.image, language)}
@@ -59,7 +69,11 @@ function CaseSection({ section }) {
   if (section.pairs) {
     const { findingHeading, decisionHeading, items } = section.pairs;
     return (
-      <CaseRow eyebrow={section.eyebrow} label={section.label}>
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
         <div className="flex flex-col gap-8 md:gap-12">
           {section.caption && (
             <p className="text-base leading-loose">{section.caption}</p>
@@ -130,16 +144,20 @@ function CaseSection({ section }) {
   if (section.constraint) {
     const { problem, solution } = section.constraint;
     return (
-      <CaseRow eyebrow={section.eyebrow} label={section.label}>
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
         <div className="flex flex-col gap-10">
-          <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-loose">
+          <div className="flex flex-col gap-1">
+            <h4 className="text-lg font-bold leading-normal">
               {problem.heading}
             </h4>
             <p className="leading-loose">{problem.text}</p>
           </div>
-          <div className="flex flex-col gap-2">
-            <h4 className="text-xl font-bold leading-loose">
+          <div className="flex flex-col gap-1">
+            <h4 className="text-lg font-bold leading-normal">
               {solution.heading}
             </h4>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
@@ -167,41 +185,81 @@ function CaseSection({ section }) {
   // an optional highlighted insight, separated by dashed rules.
   if (section.research) {
     return (
-      <CaseRow eyebrow={section.eyebrow} label={section.label}>
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
         <div className="flex flex-col gap-6">
           {section.caption && (
             <p className="leading-loose">{section.caption}</p>
           )}
           {section.research.map((study, index) => (
             <div key={index} className="flex flex-col gap-10">
-              {index > 0 && (
-                <hr className="border-0 border-t-2 border-dashed border-[#d1d5db]" />
-              )}
+              {index > 0 && <hr className="border-[0.5px] border-[#d1d5db]" />}
               <div className="flex flex-col gap-8">
                 <div className="space-y-6">
                   <div>
                     <div className="flex gap-2 items-center">
-                      <p className="text-[16px] font-bold leading-loose">
-                        {study.title}
-                      </p>
+                      <p className="font-bold leading-normal">{study.title}</p>
                     </div>
                     {study.description && (
-                      <p className="pt-2 leading-loose whitespace-pre-line">
+                      <p className="pt-1 leading-loose whitespace-pre-line">
                         {study.description}
                       </p>
                     )}
                   </div>
-                  <DotList items={study.items} />
+                  <div
+                    className={
+                      study.image
+                        ? "flex flex-col md:flex-row gap-6 md:items-start"
+                        : ""
+                    }
+                  >
+                    {study.image && (
+                      <figure
+                        className={`${study.imageWidth ?? "w-full md:w-1/2"} md:shrink-0 flex flex-col gap-1`}
+                      >
+                        <ZoomableImage
+                          src={study.image}
+                          alt={study.alt}
+                          className="w-full h-auto block border border-[#98999b]"
+                        />
+                        {study.imageCaption && (
+                          <figcaption className="text-xs text-text-sub py-1">
+                            {study.imageCaption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      {study.itemsImage ? (
+                        <img
+                          src={study.itemsImage}
+                          alt={study.items.join("\n")}
+                          className="w-full max-w-[800px] mx-auto h-auto"
+                        />
+                      ) : (
+                        <ul className="flex flex-col gap-4 pl-6 list-disc marker:text-text">
+                          {study.items.map((item, index) => (
+                            <li key={index} className="leading-relaxed">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
                 </div>
                 {study.insight && (
-                  <div className="flex flex-col items-start gap-2">
+                  <div className="flex flex-col items-start gap-2 mt-6">
                     {study.insightLabel && (
-                      <span className="px-3 py-0.5 rounded-full border border-[#B37B19] bg-white text-[#B37B19] text-xs font-bold leading-[1.6]">
+                      <span className="shrink-0 px-3 py-0.5 rounded-full border border-primary bg-white text-primary text-xs font-bold leading-[1.6]">
                         {study.insightLabel}
                       </span>
                     )}
                     <p className="text-[20px] font-bold leading-loose">
-                      <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(245,223,168,0.7)_56%,rgba(245,223,168,0.7)_92%,transparent_92%)]">
+                      <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(229,76,48,0.2)_56%,rgba(229,76,48,0.2)_92%,transparent_92%)]">
                         {study.insight}
                       </span>
                     </p>
@@ -218,28 +276,95 @@ function CaseSection({ section }) {
   // Gallery: text above a single row of reference screenshots.
   if (section.gallery) {
     return (
-      <CaseRow eyebrow={section.eyebrow} label={section.label}>
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-6 text-base leading-loose">
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col text-base leading-loose">
             {toParagraphs(section.text).map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-[7px] gap-y-[10px] w-full">
-            {section.gallery.map((image, index) => (
-              <figure key={index} className="flex flex-col gap-1">
-                <ZoomableImage
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full object-cover object-top border"
-                />
-                {image.caption && (
-                  <figcaption className="text-xs text-text-sub py-1">
-                    {image.caption}
-                  </figcaption>
-                )}
-              </figure>
-            ))}
+            {section.gallery.map((image, index) => {
+              const figure = (
+                <figure
+                  key={image.points ? undefined : index}
+                  className={`flex flex-col gap-1 ${
+                    image.points ? "w-full md:w-[58%] md:shrink-0" : ""
+                  }`}
+                >
+                  {image.title && (
+                    <p className="font-bold leading-normal pb-1">
+                      {image.title}
+                    </p>
+                  )}
+                  <div className="relative">
+                    <ZoomableImage
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full object-cover object-top border"
+                    />
+                    {image.points?.items.map(
+                      (point, i) =>
+                        point.highlight && (
+                          <div
+                            key={i}
+                            aria-hidden="true"
+                            className="absolute right-0 pointer-events-none border-2 border-primary rounded-[3px]"
+                            style={{
+                              top: point.highlight.top,
+                              height: point.highlight.height,
+                              left: point.highlight.left,
+                            }}
+                          >
+                            <span className="absolute right-full top-1/2 -translate-y-1/2 mr-1.5 flex items-center justify-center size-5 md:size-6 rounded-full bg-primary text-white text-xs font-bold leading-none">
+                              {i + 1}
+                            </span>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                  {image.caption && (
+                    <figcaption className="text-xs text-text-sub py-1">
+                      {image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+              if (!image.points) return figure;
+              // An image with numbered points spans the full row: the
+              // annotated screenshot on the left, what was taken from each
+              // numbered spot on the right.
+              return (
+                <div
+                  key={index}
+                  className="col-span-2 md:col-span-3 flex flex-col md:flex-row gap-6 md:gap-10 md:items-start"
+                >
+                  {figure}
+                  <div className="flex flex-col items-start gap-4 flex-1 min-w-0">
+                    <span className="px-3 py-0.5 rounded-full border border-primary bg-white text-primary text-xs font-bold leading-[1.6]">
+                      {image.points.label}
+                    </span>
+                    {image.points.items.map((point, i) => (
+                      <div key={i} className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="flex items-center justify-center size-6 shrink-0 rounded-full bg-primary text-white text-sm font-bold leading-none">
+                            {i + 1}
+                          </span>
+                          <p className="text-lg font-bold leading-normal">
+                            {point.title}
+                          </p>
+                        </div>
+                        <p className="leading-loose">{point.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </CaseRow>
@@ -249,12 +374,24 @@ function CaseSection({ section }) {
   // A column-layout section whose list has its own heading and eyebrow is
   // split into two rows: the flow/image first, then the list (e.g. BEFORE → ISSUES).
   const splitList =
-    section.layout !== "row" && section.list?.heading && section.list?.eyebrow;
+    section.layout !== "row" &&
+    section.list?.heading &&
+    (section.list?.eyebrow || section.list?.joinPrevious);
 
   const listNode =
     section.list &&
-    (section.list.marker === "dot" && !section.list.heading ? (
-      <DotList items={section.list.items.map((item) => item.text)} />
+    (section.list.itemsImage ? (
+      <img
+        src={section.list.itemsImage}
+        alt={section.list.items.map((item) => item.text).join("\n")}
+        className={`w-full max-w-[800px] mx-auto h-auto ${hasMessage ? "mt-6" : ""}`}
+      />
+    ) : section.list.marker === "dot" &&
+      !section.list.items.some((item) => item.title) ? (
+      <DotList
+        items={section.list.items.map((item) => item.text)}
+        className={hasMessage ? "mt-6" : ""}
+      />
     ) : (
       <MarkerList
         {...section.list}
@@ -269,7 +406,9 @@ function CaseSection({ section }) {
     <>
       {hasMessage && (
         <div className="flex flex-col gap-4">
-          {section.caption && <p>{section.caption}</p>}
+          {section.caption && (
+            <p className="leading-loose">{section.caption}</p>
+          )}
           {section.headline && (
             <p className="text-[20px] font-bold leading-loose">
               {section.headline}
@@ -284,7 +423,12 @@ function CaseSection({ section }) {
           )}
         </div>
       )}
-      {!splitList && listNode}
+      {!splitList &&
+        (media && !hasMessage && listNode ? (
+          <div className="mt-8">{listNode}</div>
+        ) : (
+          listNode
+        ))}
       {section.footnote && (
         <p className="-mt-6 text-xs leading-normal">{section.footnote}</p>
       )}
@@ -295,7 +439,11 @@ function CaseSection({ section }) {
   // "row" places them side by side on md and up.
   if (section.layout === "row") {
     return (
-      <CaseRow eyebrow={section.eyebrow} label={section.label}>
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
         <div className="flex flex-col md:flex-row gap-12 md:gap-8 md:items-start">
           {media && (
             <div className={`${section.mediaWidth ?? "md:w-1/2"} md:shrink-0`}>
@@ -311,7 +459,11 @@ function CaseSection({ section }) {
   if (splitList) {
     return (
       <>
-        <CaseRow eyebrow={section.eyebrow} label={section.label}>
+        <CaseRow
+          eyebrow={section.eyebrow}
+          label={section.label}
+          joined={section.joinPrevious}
+        >
           {media}
           {content}
         </CaseRow>
@@ -319,6 +471,7 @@ function CaseSection({ section }) {
           eyebrow={section.list.eyebrow}
           label={section.list.heading}
           note={section.list.note}
+          joined={section.list.joinPrevious}
         >
           {listNode}
         </CaseRow>
@@ -327,7 +480,11 @@ function CaseSection({ section }) {
   }
 
   return (
-    <CaseRow eyebrow={section.eyebrow} label={section.label}>
+    <CaseRow
+      eyebrow={section.eyebrow}
+      label={section.label}
+      joined={section.joinPrevious}
+    >
       {media}
       {content}
     </CaseRow>

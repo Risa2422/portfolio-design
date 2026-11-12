@@ -4,11 +4,8 @@ const LETTERS = "ABCDEFGHIJ";
 function Marker({ marker, index, color }) {
   if (marker === "dot") {
     return (
-      <span className="flex items-center justify-center size-7 shrink-0">
-        <span
-          className="size-2 rounded-full"
-          style={{ backgroundColor: color }}
-        />
+      <span className="flex items-center justify-center w-3 h-6 shrink-0">
+        <span className="size-1.5 rounded-full bg-text" />
       </span>
     );
   }
@@ -42,7 +39,7 @@ function MarkerList({
           {note && <span className="text-xs text-[#7a6a5f]">{note}</span>}
         </div>
       )}
-      <ul>
+      <ul className={marker === "letter" ? "flex flex-col gap-3" : undefined}>
         {items.map((item, index) => (
           <li
             key={index}
