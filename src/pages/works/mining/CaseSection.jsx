@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ZoomableImage from "../../../components/ZoomableImage";
 import { useLanguage } from "../../../context/LanguageContext";
 import { localizeImage } from "../../../utils/localizeImage";
@@ -37,6 +38,27 @@ export function CaseRow({ eyebrow, label, note, joined, children }) {
   );
 }
 
+// A step screenshot. Shows a placeholder until the file exists, so steps
+// can point at images that haven't been added yet.
+function StepImage({ src, alt }) {
+  const [failedSrc, setFailedSrc] = useState(null);
+  if (!src || failedSrc === src) {
+    return (
+      <div className="flex items-center justify-center w-full aspect-[371/243] border border-dashed border-[#c9c9c9] bg-[#f5f5f5] text-xs text-text-sub">
+        Image
+      </div>
+    );
+  }
+  return (
+    <ZoomableImage
+      src={src}
+      alt={alt}
+      className="w-full object-contain"
+      onError={() => setFailedSrc(src)}
+    />
+  );
+}
+
 function CaseSection({ section }) {
   const { language } = useLanguage();
   const colors = caseThemes[section.theme];
@@ -54,13 +76,27 @@ function CaseSection({ section }) {
       {section.imageLead && (
         <p className="leading-loose">{section.imageLead}</p>
       )}
-      {section.image && (
-        <ZoomableImage
-          src={localizeImage(section.image, language)}
-          alt={section.alt}
-          className={`${section.imageWidth ?? "w-full"} object-contain`}
-        />
-      )}
+      {section.image &&
+        (section.imageCaption ? (
+          <figure
+            className={`${section.imageWidth ?? "w-full"} flex flex-col gap-1`}
+          >
+            <ZoomableImage
+              src={localizeImage(section.image, language)}
+              alt={section.alt}
+              className="w-full object-contain"
+            />
+            <figcaption className="text-xs text-text-sub py-1 text-center">
+              {section.imageCaption}
+            </figcaption>
+          </figure>
+        ) : (
+          <ZoomableImage
+            src={localizeImage(section.image, language)}
+            alt={section.alt}
+            className={`${section.imageWidth ?? "w-full"} object-contain`}
+          />
+        ))}
     </div>
   );
 
@@ -151,13 +187,13 @@ function CaseSection({ section }) {
       >
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-1">
-            <h4 className="text-lg font-bold leading-normal">
+            <h4 className="text-base font-bold leading-normal">
               {problem.heading}
             </h4>
             <p className="leading-loose">{problem.text}</p>
           </div>
           <div className="flex flex-col gap-1">
-            <h4 className="text-lg font-bold leading-normal">
+            <h4 className="text-base font-bold leading-normal">
               {solution.heading}
             </h4>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
@@ -237,7 +273,7 @@ function CaseSection({ section }) {
                         <img
                           src={study.itemsImage}
                           alt={study.items.join("\n")}
-                          className="w-full max-w-[800px] mx-auto h-auto"
+                          className="w-full h-auto"
                         />
                       ) : (
                         <ul className="flex flex-col gap-4 pl-6 list-disc marker:text-text">
@@ -248,26 +284,136 @@ function CaseSection({ section }) {
                           ))}
                         </ul>
                       )}
+                      {study.insight && (
+                        <div className="flex flex-col items-start gap-2 mt-8">
+                          {study.insightLabel && (
+                            <span className="shrink-0 px-3 py-0.5 rounded-full border border-primary bg-white text-primary text-xs font-bold leading-[1.6]">
+                              {study.insightLabel}
+                            </span>
+                          )}
+                          <p className="text-lg font-bold leading-loose">
+                            <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(229,76,48,0.2)_56%,rgba(229,76,48,0.2)_92%,transparent_92%)]">
+                              {study.insight}
+                            </span>
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-                {study.insight && (
-                  <div className="flex flex-col items-start gap-2 mt-6">
-                    {study.insightLabel && (
-                      <span className="shrink-0 px-3 py-0.5 rounded-full border border-primary bg-white text-primary text-xs font-bold leading-[1.6]">
-                        {study.insightLabel}
-                      </span>
-                    )}
-                    <p className="text-[20px] font-bold leading-loose">
-                      <span className="box-decoration-clone px-1 -mx-1 rounded-[2px] bg-[linear-gradient(transparent_56%,rgba(229,76,48,0.2)_56%,rgba(229,76,48,0.2)_92%,transparent_92%)]">
-                        {study.insight}
-                      </span>
-                    </p>
-                  </div>
-                )}
               </div>
             </div>
           ))}
+        </div>
+      </CaseRow>
+    );
+  }
+
+  // Steps: a scenario walked through in screenshots, laid out two per row
+  // in a zigzag (→ across a row, ↙ down to the next row). Steps without an
+  // image show a placeholder. On mobile the steps stack with ↓ between.
+  if (section.steps) {
+    const rows = [];
+    for (let i = 0; i < section.steps.length; i += 2) {
+      rows.push(section.steps.slice(i, i + 2));
+    }
+    const downArrow = (
+      <img
+        src="/mining/step-arrow-dash.svg"
+        alt=""
+        aria-hidden="true"
+        width="117"
+        height="14.7279"
+        className="md:hidden self-center justify-self-center rotate-90 w-12 h-auto my-8"
+      />
+    );
+    // Each step is split into title / image / caption cells so that, on md
+    // and up, a row's two steps share grid rows: their images start at the
+    // same height even when one title wraps. On mobile the cells simply
+    // stack in DOM order.
+    const placement = [
+      [
+        "md:col-start-1 md:row-start-1",
+        "md:col-start-1 md:row-start-2",
+        "md:col-start-1 md:row-start-3",
+      ],
+      [
+        "md:col-start-3 md:row-start-1",
+        "md:col-start-3 md:row-start-2",
+        "md:col-start-3 md:row-start-3",
+      ],
+    ];
+    const renderStep = (step, col) => [
+      <p key="title" className={`font-bold leading-loose ${placement[col][0]}`}>
+        {step.title}
+      </p>,
+      <div key="image" className={placement[col][1]}>
+        <StepImage
+          src={step.image && localizeImage(step.image, language)}
+          alt={step.alt}
+        />
+      </div>,
+      <div key="caption" className={`pt-2 ${placement[col][2]}`}>
+        {step.caption && (
+          <div className="flex items-start gap-2">
+            {step.caption.marker && (
+              <span className="flex items-center justify-center size-[18px] shrink-0 mt-[5px] rounded-full bg-primary text-white text-[10px] font-bold leading-none">
+                {step.caption.marker}
+              </span>
+            )}
+            <p className="flex-1 min-w-0 text-sm leading-loose">
+              {step.caption.text}
+            </p>
+          </div>
+        )}
+      </div>,
+    ];
+    return (
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
+        <div className="flex flex-col gap-10">
+          {section.flowLabel && (
+            <p className="leading-loose">{section.flowLabel}</p>
+          )}
+          <div className="flex flex-col">
+            {rows.map((row, rowIndex) => (
+              <div key={rowIndex} className="flex flex-col">
+                {rowIndex > 0 && (
+                  <>
+                    <img
+                      src="/mining/step-arrow-dash.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="117"
+                      height="14.7279"
+                      className="hidden md:block self-center w-16 h-auto my-4 rotate-[165deg]"
+                    />
+                    {downArrow}
+                  </>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-[45%_1fr_45%]">
+                  {renderStep(row[0], 0)}
+                  {row[1] && (
+                    <>
+                      <img
+                        src="/mining/step-arrow-dash.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="117"
+                        height="14.7279"
+                        className="hidden md:block md:col-start-2 md:row-start-2 self-center justify-self-center w-16 h-auto"
+                      />
+                      {downArrow}
+                      {renderStep(row[1], 1)}
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </CaseRow>
     );
@@ -293,7 +439,7 @@ function CaseSection({ section }) {
                 <figure
                   key={image.points ? undefined : index}
                   className={`flex flex-col gap-1 ${
-                    image.points ? "w-full md:w-[58%] md:shrink-0" : ""
+                    image.points ? "w-full md:flex-1 md:min-w-0" : ""
                   }`}
                 >
                   {image.title && (
@@ -384,7 +530,7 @@ function CaseSection({ section }) {
       <img
         src={section.list.itemsImage}
         alt={section.list.items.map((item) => item.text).join("\n")}
-        className={`w-full max-w-[800px] mx-auto h-auto ${hasMessage ? "mt-6" : ""}`}
+        className={`w-full h-auto ${hasMessage ? "mt-6" : ""}`}
       />
     ) : section.list.marker === "dot" &&
       !section.list.items.some((item) => item.title) ? (
@@ -405,7 +551,13 @@ function CaseSection({ section }) {
   const content = (
     <>
       {hasMessage && (
-        <div className="flex flex-col gap-4">
+        <div
+          className={`flex flex-col gap-4 ${
+            media && section.layout !== "row" && !section.textFirst
+              ? "mt-8"
+              : ""
+          }`}
+        >
           {section.caption && (
             <p className="leading-loose">{section.caption}</p>
           )}
@@ -423,12 +575,7 @@ function CaseSection({ section }) {
           )}
         </div>
       )}
-      {!splitList &&
-        (media && !hasMessage && listNode ? (
-          <div className="mt-8">{listNode}</div>
-        ) : (
-          listNode
-        ))}
+      {!splitList && listNode}
       {section.footnote && (
         <p className="-mt-6 text-xs leading-normal">{section.footnote}</p>
       )}
@@ -485,8 +632,17 @@ function CaseSection({ section }) {
       label={section.label}
       joined={section.joinPrevious}
     >
-      {media}
-      {content}
+      {section.textFirst ? (
+        <>
+          {content}
+          {media && <div className="mt-8">{media}</div>}
+        </>
+      ) : (
+        <>
+          {media}
+          {content}
+        </>
+      )}
     </CaseRow>
   );
 }

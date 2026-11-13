@@ -44,18 +44,18 @@ const content = {
     productOverviewImageCaption: "制作デザイン (一部)",
     industryTitle: "カナダの鉱山業界",
     industryFlowImage: "/mining/industory_flow.svg",
-    clientTitle: "クライアントの立ち位置",
+    clientTitle: "各プロジェクトの流れ",
     clientText:
       "発足した各プロジェクトには、基本的に「依頼企業（鉱業企業）」「運用マネジメント会社」「現場」の3者が関わります。 \n本プロジェクトのクライアントは、その中心に立つ採掘運用マネジメント会社です。依頼企業からの委託を受け、輸送・人員・宿泊・機材などの予算作成と提案を行い、承認後は実際の現場や各業者への手配・依頼を進めます。プロジェクト開始後も現場の実績を管理し、依頼企業への予実報告までを担います。本システムは、この予算作成から手配・報告までの一連の業務をサポートします。",
     clientFlowImage: "/mining/client_flow.svg",
     challengesTitle: "クライアントの課題とシステムが解決すること",
     challengesText:
-      "カナダの鉱山業界ではExcelを中心とした手作業での管理が一般的であり、そこに起因する「非効率さ・属人化・ヒューマンエラーの常態化」が大きな課題でした。日々の業務の中で見過ごされがちなこれらの問題が現場の負担となっていたため、本システムでは業務の統一と自動化によって課題の解決を目指しました。",
+      "カナダの鉱山業界では、Excelを使った手作業での管理が一般的です。その結果、作業の非効率さ、業務の属人化、入力ミスの多発が当たり前になっていました。日々の業務の中で見過ごされがちなこれらの問題は、現場の大きな負担になっていました。そこで本システムでは、業務の統一と自動化によって課題の解決を目指しました。",
     challengesHeaders: ["課題", "具体例", "システムが提供する解決策"],
     challenges: [
       {
-        issue: "非効率さ",
-        before: "依頼企業への報告レポートを毎回作成",
+        issue: "手作業の多さ",
+        before: "依頼企業向けの報告書を毎回手作業で作成",
         solution: "集計・報告書作成の自動化",
       },
       {
@@ -64,14 +64,14 @@ const content = {
         solution: "入力形式と業務フローの統一",
       },
       {
-        issue: "ヒューマンエラーの常態化",
-        before: "過去ファイルの使い回しやコピペによる入力ミス",
+        issue: "入力ミスの多発",
+        before: "過去ファイルの使い回しやコピー＆ペーストによるミス",
         solution: "テンプレート化と入力チェック",
       },
     ],
     backgroundTitle: "プロジェクトの背景と課題",
     backgroundText:
-      "私が参画した時点では、すでにデザイン制作や実装が進行していましたが、プロダクトには以下のような課題がありました。これらを解消するため、UI/UXの全面的な見直しが必要でした。",
+      "私が参画した時点では、すでにデザイン制作や実装が進行していましたが、主に以下のような課題がありました。これらを解消するため、UI/UXの全面的な見直しが必要でした。",
     backgroundIssues: [
       {
         title: "動線の不備と画面の分断",
@@ -370,7 +370,7 @@ const content = {
         id: 3,
         title: "試算機能の追加",
         summary:
-          "既存の画面構成や操作感を維持したまま、新機能を組み込みました。",
+          "既存の画面構成や操作感を維持したまま、新機能を組み込みました。エンジニアとしての経験を活かし、データ構造や実装コストも踏まえて仕様を設計しました。",
         background:
           "開発の後半でクライアントから予算試算機能の追加要望を受けました。主要なUI構造が既に固まっていたため、既存のコンポーネントルールや操作の一貫性を維持しながら、ユーザーが違和感なく使えるよう新機能を自然に組み込みました。",
         sections: [
@@ -398,8 +398,10 @@ const content = {
             theme: "process",
             eyebrow: "User Flow",
             label: "ユーザーフローの作成",
-            layout: "row",
+            textFirst: true,
             image: "/mining/user-story.png",
+            imageWidth: "w-full md:w-4/5 self-center",
+            imageCaption: "作成したユーザーフロー",
             alt: "ユーザーフローの画像",
             text: [
               "試算データの保存・破棄・本番反映などの分岐パターンをユーザーフローで可視化し、チーム内の認識共有とスコープ定義を行いました。",
@@ -411,34 +413,64 @@ const content = {
             eyebrow: "After",
             label: "完成UI",
             flowLabel:
-              "想定シナリオ： ユーザーが新規試算を行い、試算結果を保存する。",
-            image: "/mining/draft-mode.svg",
-            alt: "ドラフトモードUIの画像",
-            list: {
-              marker: "letter",
-              items: [
-                {
-                  text: "頻繁に行われるシミュレーション業務に対応するため、『Budget versions』ドロップダウンを配置。新規試算の作成から過去バージョンの参照、本番予算への反映までを完結可能にしました。",
+              "・想定シナリオ： ユーザーが新しく試算を作成し、その結果を保存する。",
+            steps: [
+              {
+                title: "①「予算・試算（1）」ドロップダウンを開く",
+                caption: {
+                  marker: "A",
+                  text: "試算は日常的に行う作業のため、予算表のすぐ上にドロップダウンを配置しました。試算の作成と、保存済みの試算の切り替えを、画面を移動せずに行えます。",
                 },
-                {
-                  text: "新規試算作成時は、適用中の予算データを初期値として自動継承するようにしました。",
+                image: "/mining/draft-step1.svg",
+                alt: "試算機能の操作画面（ステップ1）",
+              },
+              {
+                title: "②「適用中の予算から試算を作成」ボタンを選択",
+                caption: {
+                  marker: "B",
+                  text: "試算データの作成元を適用中の予算に限定しました。試算からの派生作成によるマージ処理の複雑化を防ぎ、データの整合性維持と実装負荷の軽減を両立を目指しました。",
                 },
-                {
-                  text: "試算モードであることを直感的に識別できるよう、画面全体のカラーテーマを最適化しました。",
+                image: "/mining/draft-step2.svg",
+                alt: "試算機能の操作画面（ステップ2）",
+              },
+              {
+                title: "③ 試算を開始",
+                caption: {
+                  marker: "C",
+                  text: "適用中の予算との差額は合計額だけをリアルタイムで表示するようにしました。システム側の負担を減らすだけでなく、ユーザーの意思決定に必要な「予算をいくら超えるか、余るか」に情報を絞りました。",
                 },
-                {
-                  text: "試算時には、適用中の予算との合計差分を常時表示し、画面遷移なしで即座に数値比較できる仕様にしました。",
+                image: "/mining/draft-step3.svg",
+                alt: "試算機能の操作画面（ステップ3）",
+              },
+              {
+                title: "④ 試算中",
+                image: "/mining/draft-step4.svg",
+                alt: "試算機能の操作画面（ステップ4）",
+              },
+              {
+                title: "⑤ 試算を保存",
+                caption: {
+                  marker: "D",
+                  text: "試算名の入力を任意とし、未入力の際は日付をデフォルト名称として自動設定することで、保存時の入力負荷と操作の手間を軽減しました。",
                 },
-                {
-                  text: "試算データの保存時には任意の名前を付けられる仕様にし、未入力の場合はシステム側で自動生成する仕組みにしました。さらに、保存と同時に本番データとして反映できるチェックボックスを設け、一連の操作をスムーズに完了できる動線を構築しました。",
+                image: "/mining/draft-step5.svg",
+                alt: "試算機能の操作画面（ステップ5）",
+              },
+              {
+                title: "⑥ 適用中の予算に戻る",
+                caption: {
+                  marker: "",
+                  text: "保存した試算は、ドロップダウンを開くことで確認することができます。",
                 },
-              ],
-            },
+                image: "/mining/draft-step6.svg",
+                alt: "試算機能の操作画面（ステップ6）",
+              },
+            ],
           },
         ],
         reflection: {
-          headline: "既存UIとの一貫性を損なわない、自然な機能統合",
-          text: "UI構造が確定した段階での機能追加だったため、ユーザーフローで操作パターンを先に可視化し、既存コンポーネントの組み合わせで表現できる範囲を見極めました。新しいUIを増やすよりも一貫性を保つことが、ユーザーの迷いにくさにつながると実感しました。",
+          headline: "一貫性と実装のしやすさは、両立できる",
+          text: "UI構造が確定した段階での機能追加だったため、まずユーザーフローで操作パターンを可視化し、既存コンポーネントの組み合わせで表現できる範囲を見極めました。あわせて、エンジニア経験を活かしてデータ構造や実装の制約も早い段階で考慮しました。新しいUIを増やすよりも既存の一貫性を保つことが、ユーザーの迷いにくさと開発のしやすさの両方につながると実感しました。",
         },
       },
     ],
@@ -860,8 +892,10 @@ const content = {
             theme: "process",
             eyebrow: "User Flow",
             label: "Creating a User Flow",
-            layout: "row",
+            textFirst: true,
             image: "/mining/user-story.png",
+            imageWidth: "w-full md:w-4/5 self-center",
+            imageCaption: "The user flow I created",
             alt: "Image of the user flow",
             text: [
               "Created a user flow to visualize the branching patterns for simulation data (save, discard, and apply to the actual budget), which helped the team build a shared understanding and define the scope smoothly.",
@@ -874,28 +908,50 @@ const content = {
             label: "Final UI",
             flowLabel:
               "Scenario: The user creates a new simulation and saves the result.",
-            image: "/mining/draft-mode.svg",
-            alt: "Image of the draft mode UI",
-            list: {
-              marker: "letter",
-              items: [
-                {
-                  text: 'To support frequent simulation work, I added a "Budget versions" dropdown that lets users create new simulations, view past versions, and apply them to the actual budget, all in one place.',
-                },
-                {
-                  text: "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
-                },
-                {
-                  text: "Optimized the color theme of the entire screen so users can intuitively recognize when they are in simulation mode.",
-                },
-                {
-                  text: "During a simulation, the total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
-                },
-                {
-                  text: "When saving a simulation, users can give it any name they like; if left blank, the system generates one automatically. I also added a checkbox to apply the simulation to the actual budget at the same time as saving, creating a flow that lets users complete the whole process smoothly.",
-                },
-              ],
-            },
+            steps: [
+              {
+                title: "①Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step1.svg",
+                alt: "Simulation feature screen (step 1)",
+              },
+              {
+                title: "②Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step2.svg",
+                alt: "Simulation feature screen (step 2)",
+              },
+              {
+                title: "③Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step3.svg",
+                alt: "Simulation feature screen (step 3)",
+              },
+              {
+                title: "④Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step4.svg",
+                alt: "Simulation feature screen (step 4)",
+              },
+              {
+                title: "⑤Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step5.svg",
+                alt: "Simulation feature screen (step 5)",
+              },
+              {
+                title: "⑥Create a budget",
+                caption: { marker: "A", text: "Create a budget" },
+                image: "/mining/draft-step6.svg",
+                alt: "Simulation feature screen (step 6)",
+              },
+            ],
+            // 以前の主要機能リスト（A〜E）。ステップの説明文に使う場合はここから:
+            // text: 'To support frequent simulation work, I added a "Budget versions" dropdown that lets users create new simulations, view past versions, and apply them to the actual budget, all in one place.',
+            // text: "When a new simulation is created, it automatically inherits the currently applied budget data as its starting values.",
+            // text: "Optimized the color theme of the entire screen so users can intuitively recognize when they are in simulation mode.",
+            // text: "During a simulation, the total difference from the currently applied budget is always displayed, enabling instant comparison without leaving the screen.",
+            // text: "When saving a simulation, users can give it any name they like; if left blank, the system generates one automatically. I also added a checkbox to apply the simulation to the actual budget at the same time as saving, creating a flow that lets users complete the whole process smoothly.",
           },
         ],
         reflection: {

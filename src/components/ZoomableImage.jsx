@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ZoomableImage = ({ src, alt, className = "" }) => {
+const ZoomableImage = ({ src, alt, className = "", onError }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const ZoomableImage = ({ src, alt, className = "" }) => {
         alt={alt}
         className={`${className} cursor-zoom-in`}
         onClick={() => setIsOpen(true)}
+        onError={onError}
       />
       {isOpen && (
         <div
