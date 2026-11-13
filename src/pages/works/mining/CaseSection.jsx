@@ -39,12 +39,14 @@ export function CaseRow({ eyebrow, label, note, joined, children }) {
 }
 
 // A step screenshot. Shows a placeholder until the file exists, so steps
-// can point at images that haven't been added yet.
+// can point at images that haven't been added yet. Every step is shown at
+// the same 1305:854 ratio, top-aligned, so screenshots exported with extra
+// blank space at the bottom (e.g. 1305x904) line up with the others.
 function StepImage({ src, alt }) {
   const [failedSrc, setFailedSrc] = useState(null);
   if (!src || failedSrc === src) {
     return (
-      <div className="flex items-center justify-center w-full aspect-[371/243] border border-dashed border-[#c9c9c9] bg-[#f5f5f5] text-xs text-text-sub">
+      <div className="flex items-center justify-center w-full aspect-[1305/854] border border-dashed border-[#c9c9c9] bg-[#f5f5f5] text-xs text-text-sub">
         Image
       </div>
     );
@@ -53,7 +55,7 @@ function StepImage({ src, alt }) {
     <ZoomableImage
       src={src}
       alt={alt}
-      className="w-full object-contain"
+      className="w-full aspect-[1305/854] object-cover object-top"
       onError={() => setFailedSrc(src)}
     />
   );
@@ -357,11 +359,11 @@ function CaseSection({ section }) {
         {step.caption && (
           <div className="flex items-start gap-2">
             {step.caption.marker && (
-              <span className="flex items-center justify-center size-[18px] shrink-0 mt-[5px] rounded-full bg-primary text-white text-[10px] font-bold leading-none">
+              <span className="flex items-center justify-center size-[18px] shrink-0 mt-0.5 rounded-full bg-primary text-white text-[10px] font-bold leading-none">
                 {step.caption.marker}
               </span>
             )}
-            <p className="flex-1 min-w-0 text-sm leading-loose">
+            <p className="flex-1 min-w-0 text-sm leading-relaxed">
               {step.caption.text}
             </p>
           </div>
@@ -443,7 +445,7 @@ function CaseSection({ section }) {
                   }`}
                 >
                   {image.title && (
-                    <p className="font-bold leading-normal pb-1">
+                    <p className="font-medium leading-normal pb-1">
                       {image.title}
                     </p>
                   )}
