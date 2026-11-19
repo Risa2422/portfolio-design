@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const ZoomableImage = ({ src, alt, className = "", onError }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,27 +22,31 @@ const ZoomableImage = ({ src, alt, className = "", onError }) => {
         onClick={() => setIsOpen(true)}
         onError={onError}
       />
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 cursor-zoom-out"
-          onClick={() => setIsOpen(false)}
-        >
-          <button
-            type="button"
-            aria-label="Close"
+      {/* Rendered into <body> so a transformed ancestor (e.g. the pinned,
+          scrolling program flow) can't trap the fixed overlay inside it */}
+      {isOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 cursor-zoom-out"
             onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 md:top-6 md:right-6 text-white text-4xl leading-none hover:opacity-70"
           >
-            &times;
-          </button>
-          <img
-            src={src}
-            alt={alt}
-            className="max-w-full max-h-full object-contain cursor-default"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+            <button
+              type="button"
+              aria-label="Close"
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-white text-4xl leading-none hover:opacity-70"
+            >
+              &times;
+            </button>
+            <img
+              src={src}
+              alt={alt}
+              className="max-w-full max-h-full object-contain cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>,
+          document.body,
+        )}
     </>
   );
 };

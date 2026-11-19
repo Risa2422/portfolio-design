@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ZoomableImage from "../../../components/ZoomableImage";
+import PinnedScroll from "./PinnedScroll";
 import { useLanguage } from "../../../context/LanguageContext";
 import { localizeImage } from "../../../utils/localizeImage";
 import { caseThemes } from "./caseThemes";
@@ -11,28 +12,39 @@ const toParagraphs = (text) => (Array.isArray(text) ? text : [text]);
 // One row of a case study: an English eyebrow and the section title above
 // the content. CaseStudy separates rows with horizontal rules; a `joined`
 // row continues the previous one without a rule.
-export function CaseRow({ eyebrow, label, note, joined, children }) {
+export function CaseRow({
+  eyebrow,
+  label,
+  note,
+  joined,
+  className = "",
+  children,
+}) {
   return (
     <div
       className={`flex flex-col gap-4 py-12 px-6 ${
         joined ? "!bg-none !pt-0" : ""
-      }`}
+      } ${className}`}
     >
-      <div className="flex flex-col">
-        {eyebrow && (
-          <p className="text-xs font-semibold text-[#005989] uppercase">
-            {eyebrow}
-          </p>
-        )}
-        <h3
-          className={`font-bold ${
-            joined ? "text-lg" : "text-xl case-row-title"
-          }`}
-        >
-          {label}
-        </h3>
-        {note && <p className="pt-1 text-xs text-[#7a6a5f]">{note}</p>}
-      </div>
+      {(eyebrow || label || note) && (
+        <div className="flex flex-col">
+          {eyebrow && (
+            <p className="text-xs font-semibold text-[#005989] uppercase">
+              {eyebrow}
+            </p>
+          )}
+          {label && (
+            <h3
+              className={`font-bold ${
+                joined ? "text-lg" : "text-xl case-row-title"
+              }`}
+            >
+              {label}
+            </h3>
+          )}
+          {note && <p className="pt-1 text-xs text-[#7a6a5f]">{note}</p>}
+        </div>
+      )}
       <div className="flex flex-col flex-1 min-w-0">{children}</div>
     </div>
   );
@@ -92,6 +104,21 @@ function CaseSection({ section }) {
               {section.imageCaption}
             </figcaption>
           </figure>
+        ) : section.imageScrollHeight ? (
+          // Tall images sit in a fixed-height frame; PinnedScroll scrolls
+          // them with the page while the section is pinned
+          <div
+            data-pin-frame
+            className={`${section.imageWidth ?? "w-full"} ${section.imageScrollHeight} overflow-hidden rounded-lg border border-[#C2C2C2] bg-white`}
+          >
+            <div data-pin-content className="will-change-transform">
+              <ZoomableImage
+                src={localizeImage(section.image, language)}
+                alt={section.alt}
+                className="block w-full h-auto"
+              />
+            </div>
+          </div>
         ) : (
           <ZoomableImage
             src={localizeImage(section.image, language)}
@@ -112,48 +139,55 @@ function CaseSection({ section }) {
         label={section.label}
         joined={section.joinPrevious}
       >
-        <div className="flex flex-col gap-8 md:gap-12">
+        <div className="flex flex-col gap-4 md:gap-6">
           {section.caption && (
             <p className="text-base leading-loose">{section.caption}</p>
           )}
-          <div>
-            <div
-              className="hidden md:flex gap-4 pb-2.5 border-b  font-bold"
-              style={{ borderColor: colors.divider, color: colors.accent }}
-            >
-              <p className="flex-1">{findingHeading}</p>
-              <span className="w-4 shrink-0" />
-              <p className="flex-1">{decisionHeading}</p>
-            </div>
-            <ul>
-              {items.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex flex-col md:flex-row gap-2 md:gap-4 py-[18px] border-b md:border-b-0 last:border-b-0 text-sm leading-loose"
-                  style={{ borderColor: colors.divider }}
-                >
-                  <div className="flex flex-1 gap-3 items-start min-w-0">
-                    <img
-                      src="/mining/list-dot.svg"
-                      alt=""
-                      width="8"
-                      height="26.25"
-                      className="shrink-0 mt-px"
-                    />
-                    <p className="flex-1 min-w-0">{item.finding}</p>
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    className="md:pl-0 text-base leading-normal shrink-0 rotate-90 md:rotate-0 self-start md:self-auto font-bold"
+          {/* Same table style as the client challenges table on the page */}
+          <div className="w-full overflow-x-auto">
+            <table className="w-full min-w-[560px] table-fixed border-collapse text-left">
+              <colgroup>
+                <col className="w-1/2" />
+                <col className="w-1/2" />
+              </colgroup>
+              <thead>
+                <tr className="h-[48px] border-b-[1px] border-[#8a8a8a]">
+                  {[findingHeading, decisionHeading].map((header, i) => (
+                    <th key={header} scope="col" className="pb-4">
+                      <span
+                        className={`items-center justify-center px-3 py-1 rounded-full border text-xs font-bold text-white whitespace-nowrap ${
+                          i < 1 ? "bg-[#7e8284]" : "bg-[#005989]"
+                        }`}
+                      >
+                        {header}
+                      </span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {items.map((item, i) => (
+                  <tr
+                    key={i}
+                    className={`h-[70px] ${
+                      i < items.length - 1
+                        ? "border-b border-dashed border-[#8a8a8a]"
+                        : ""
+                    }`}
                   >
-                    →
-                  </span>
-                  <p className="flex-1 min-w-0 md:pl-0 font-bold">
-                    {item.decision}
-                  </p>
-                </li>
-              ))}
-            </ul>
+                    <th
+                      scope="row"
+                      className="py-4 pr-6 text-sm font-normal leading-relaxed align-top"
+                    >
+                      {item.finding}
+                    </th>
+                    <td className="py-4 font-semibold text-sm align-middle">
+                      {item.decision}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
           {section.summary && (
             <div
@@ -543,8 +577,16 @@ function CaseSection({ section }) {
     ) : (
       <MarkerList
         {...section.list}
-        heading={splitList ? undefined : section.list.heading}
-        note={splitList ? undefined : section.list.note}
+        // With hideHeading the list keeps its title inside the list itself
+        // (no separate numbered row title)
+        heading={
+          splitList && !section.list.hideHeading
+            ? undefined
+            : section.list.heading
+        }
+        note={
+          splitList && !section.list.hideHeading ? undefined : section.list.note
+        }
         color={colors.accent}
         dividerColor={colors.divider}
       />
@@ -606,21 +648,28 @@ function CaseSection({ section }) {
   }
 
   if (splitList) {
+    const mainRow = (
+      <CaseRow
+        eyebrow={section.eyebrow}
+        label={section.label}
+        joined={section.joinPrevious}
+      >
+        {media}
+        {content}
+      </CaseRow>
+    );
     return (
       <>
+        {section.imageScrollHeight ? (
+          <PinnedScroll>{mainRow}</PinnedScroll>
+        ) : (
+          mainRow
+        )}
         <CaseRow
-          eyebrow={section.eyebrow}
-          label={section.label}
-          joined={section.joinPrevious}
-        >
-          {media}
-          {content}
-        </CaseRow>
-        <CaseRow
-          eyebrow={section.list.eyebrow}
-          label={section.list.heading}
-          note={section.list.note}
-          joined={section.list.joinPrevious}
+          eyebrow={section.list.hideHeading ? undefined : section.list.eyebrow}
+          label={section.list.hideHeading ? undefined : section.list.heading}
+          note={section.list.hideHeading ? undefined : section.list.note}
+          joined={section.list.joinPrevious || section.list.hideHeading}
         >
           {listNode}
         </CaseRow>

@@ -351,14 +351,14 @@ const Quiz = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.overviewTitle}
           </h2>
           <p className="text-base leading-loose ">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.requirementsTitle}
           </h2>
@@ -417,7 +417,7 @@ const Quiz = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20  overflow-hidden">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.processTitle}
           </h2>
@@ -531,7 +531,7 @@ const Quiz = () => {
           id="final-ui"
           className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 scroll-mt-24"
         >
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.finalUiTitle}
           </h2>
@@ -710,7 +710,7 @@ const Quiz = () => {
           </section>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40  overflow-hidden py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.learningsTitle}
           </h2>

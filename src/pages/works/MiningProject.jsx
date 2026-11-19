@@ -4,7 +4,6 @@ import Accordion from "../../components/Accordion";
 import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
-import SectionMark from "../../components/SectionMark";
 import SkillItem from "../../components/SkillItem";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
@@ -31,37 +30,63 @@ const content = {
         value:
           "PdM1名、エンジニア5名、オペレーション2名、デザイナー1名（自身）",
       },
-      { title: "使用ツール", value: "Figma, ChatGPT, Alloy" },
+      {
+        title: "使用ツール",
+        value:
+          "Figma, AIツール（ChatGPT, Claude Design, Google Stitch, Alloy）",
+      },
     ],
     title: "鉱山開発の予算・進捗管理システム",
     thumbnail: "/mining/thumbnail.png",
     ProductOverview: "プロダクト概要",
     ProductOverviewText:
-      "世界有数の資源大国であるカナダの基幹産業です。広大で過酷な環境の中、資源の調査から環境評価、採掘まで、長期・大規模なプロジェクトが同時進行しています。そのため、フェーズごとの人員移動や、複雑な予算・実績の管理が欠かせない業界です。",
+      "世界有数の資源大国であるカナダの基幹産業です。資源の調査から環境評価、採掘まで、長期・大規模なプロジェクトが同時進行しています。",
     ProductOverviewApproach:
       "ITツールの導入が遅れがちな業界特性に配慮し、デジタル機器に不慣れなユーザーでも直感的に操作できるよう、既存のワークフローに寄り添ったUI/UXデザインを追求しました。",
     productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "制作デザイン (一部)",
+    summaryTitle: "プロジェクト概要",
+    summaryText:
+      "カナダの採掘運用会社向けに、鉱山開発の予算・進捗管理システムを開発した、MVP段階のプロジェクトです。",
+    summaryItems: [
+      {
+        eyebrow: "Challenge",
+        label: "課題",
+        text: "現場はExcel管理による属人化や入力ミスという課題を抱えていましたが、解決策として導入されたシステムも、操作の煩雑さや使い慣れないAI機能への戸惑いから十分に活用されていませんでした。",
+      },
+      {
+        eyebrow: "Approach",
+        label: "アプローチ",
+        text: "現場が求めているのは過度な自動化ではなく「従来の運用を活かしながらミスを防ぐこと」だと捉え直し、ITに不慣れなユーザーでも迷わず扱える操作性の追求と、実務に即した機能の追加を行いました。",
+      },
+      {
+        eyebrow: "Outcome",
+        label: "成果",
+        text: "MVPをリリース可能な品質まで引き上げ、クライアントから「まさにこういうシステムが欲しかった」と高評価を得ました。",
+      },
+    ],
     industryTitle: "カナダの鉱山業界について",
     industryFlowImage: "/mining/industory_flow.svg",
     clientTitle: "各プロジェクトの流れ",
+    zoomLabel: "拡大",
     clientText:
-      "発足した各プロジェクトには、基本的に「依頼企業（鉱業企業）」「運用マネジメント会社」「現場」の3者が関わります。 \n本プロジェクトのクライアントは、その中心に立つ採掘運用マネジメント会社です。依頼企業からの委託を受け、輸送・人員・宿泊・機材などの予算作成と提案を行い、承認後は実際の現場や各業者への手配・依頼を進めます。プロジェクト開始後も現場の実績を管理し、依頼企業への進捗報告までを担います。本システムは、この予算作成、管理、報告までの一連の業務をサポートします。",
+      "発足した各プロジェクトには、基本的に「依頼企業（鉱業企業）」「運用マネジメント会社」「現場」の3者が関わります。 \n本プロジェクトのクライアントは、その中心に立つ採掘運用会社です。依頼企業からの委託を受け、輸送・人員・宿泊・機材などの予算作成と提案を行い、承認後は実際の現場や各業者への手配・依頼を進めます。プロジェクト開始後も現場の実績を管理し、依頼企業への進捗報告までを担います。本システムは、この予算作成、管理、報告までの一連の業務をサポートします。",
     clientFlowImage: "/mining/client_flow.svg",
     challengesTitle: "クライアントの課題とアプローチ",
     challengesText:
-      "カナダの鉱山業界では、Excelを使った手作業での管理が一般的です。その結果、作業の非効率さ、業務の属人化、入力ミスの多発が当たり前になっていました。日々の業務の中で見過ごされがちなこれらの問題は、現場の大きな負担になっていました。そこで本システムでは、業務の統一と自動化によって課題の解決を目指しました。",
-    challengesHeaders: ["課題", "具体例", "システムが提供する解決策"],
+      "カナダの鉱山業界では、Excelを使った手作業での管理が一般的でした。そのため、煩雑な作業や業務の属人化、入力ミスの頻発が当たり前になっていました。日々の業務の中で見過ごされがちなこれらの問題は、現場に大きな負担を強いていました。",
+    challengesHeaders: ["課題", "システムが提供する解決策"],
     challenges: [
       {
         issue: "手作業の多さ",
         before: "依頼企業向けの報告書を毎回手作業で作成",
-        solution: "集計・報告書作成の自動化",
+        solution: "入力済みの実績データからレポートを自動で作成",
       },
       {
         issue: "属人化",
-        before: "担当者ごとにExcelのフォーマットや管理方法が異なる",
-        solution: "入力形式と業務フローの統一",
+        before:
+          "担当者ごとにExcelのフォーマットが異なり、引き継ぎや共有に手間がかかる",
+        solution: "入力形式の統一",
       },
       {
         issue: "入力ミスの多発",
@@ -70,18 +95,21 @@ const content = {
       },
     ],
     backgroundTitle: "プロジェクトの背景と課題",
+    seeSolution: "改善事例を見る",
     backgroundText:
-      "私が参画した時点で、デザイン制作と実装はすでに進んでいましたが、以下のような課題が残っていました。これらを解決するため、UI/UXを全面的に見直しました。",
+      "私が参画した時点で、プロダクトはMVPの開発段階にあり、デザイン制作と実装はすでに進んでいましたが、以下のような課題が残っていたため、UI/UXを全面的に見直す必要がありました。",
     backgroundIssues: [
       {
-        title: "動線の不備と画面の分断",
+        title: "導線の不備と画面構成の分かりにくさ",
+        target: 1,
         detail:
-          "ホーム画面から予算管理画面へ直接遷移できる導線がありませんでした。また、予算と報告書（レポート）は実際の業務で連動して扱うことが多いにもかかわらず、それぞれ独立したページに分断されている状態でした。そのため、画面間の行き来が煩雑になり、業務をスムーズに進められないという操作性の課題がありました。",
+          "画面同士のつながりが整理されておらず、ユーザーが次に何をすればよいか分かりにくい状態でした。目的の画面にたどり着くまでに遠回りが必要な場面も多く、日常的な作業に余計な手間がかかっていました。",
       },
       {
         title: "現場のフローと乖離したAI機能",
+        target: 2,
         detail:
-          "複数のAI機能が実装されていたものの、実際の業務の流れと一致しておらず、出力の精度も低いことから、ユーザーの信頼を得られていませんでした。",
+          "複数のAI機能が実装されていたものの、実際の業務のニーズと一致しておらず、出力の精度も低いことから、ユーザーの信頼を得られていませんでした。",
       },
     ],
     productFlowTitle: "担当領域と開発プロセス",
@@ -90,7 +118,7 @@ const content = {
     productFlowImage: "/product_development_flow.svg",
     improvementsTitle: "改善事例",
     improvementsText:
-      "秘密保持契約（NDA）のため、成果物の一部のみの掲載となりますが、参画期間中に特に力を入れたUI/UX改善の事例を2つご紹介します。",
+      "秘密保持契約（NDA）のため、成果物の一部のみの掲載となりますが、参画期間中に注力したUI/UX改善の事例を3つご紹介します。",
     caseLabels: {
       background: "課題・背景",
       backgroundEyebrow: "Background",
@@ -100,13 +128,44 @@ const content = {
     improvements: [
       {
         id: 1,
-        title: "プログラム作成フローの簡略化",
+        title: "予算作成までの導線を短縮",
         summary:
           "不要な画面遷移を廃止し、最速で予算作成へ到達できる入力体験を目指しました。",
         background: [
-          "最も利用頻度が高い「予算作成画面」へと至る事前フロー（プロジェクト、プログラム作成）が直感性に欠けており、離脱や操作上の混乱を招くUI/UXの課題がありました。",
+          "実務ではExcelを新規作成するだけで始められた予算作成が、本システムでは事前にプロジェクトやプログラムの詳細情報を登録する必要がありました。効率化のためのシステムがかえって従来より手間のかかる状態になっており、クライアントからも不満が寄せられていました。",
         ],
+        backgroundSteps: {
+          termNote: [
+            { text: "プロジェクト", bold: true },
+            { text: "は依頼企業から委託される案件全体、" },
+            { text: "プログラム", bold: true },
+            {
+              text: "はその中で実施される個別の作業単位です。予算はプログラムごとに作成されます。",
+            },
+          ],
+          heading: "改善前：予算を作成するまでの手順",
+          steps: [
+            {
+              label: "STEP 1",
+              title: "ホーム画面",
+              text: "「新規作成」を押す",
+            },
+            {
+              label: "STEP 2・必須",
+              title: "プロジェクトを作成",
+              text: "別画面で詳細を入力",
+            },
+            {
+              label: "STEP 3・必須",
+              title: "プログラムを作成",
+              text: "さらに別画面で詳細を入力",
+            },
+          ],
+          goal: "予算作成へ",
+          // note: "一番使われる予算作成の前に、必須の作成ステップが2つ、それぞれ別画面で挟まっていました。実際の画面は「03. フロー比較」で紹介します。",
+        },
         backgroundFigure: {
+          hidden: true, // 一時的に非表示
           caption:
             "データ構造としては、1つの親プロジェクトに複数の子プログラムが紐づけてあり、それらに各予算が紐づいていました。そのため、新規で予算を作成するためには、プロジェクトとプログラムを順番に作成することが前提となっていました。",
           image: "/mining/diagram.svg",
@@ -116,6 +175,8 @@ const content = {
         sections: [
           {
             theme: "before",
+            hidden: true, // 一時的に非表示
+            eyebrow: "Before",
             label: "改善前",
             flowLabel: "プロジェクト作成から予算作成までのユーザーフロー",
             image: "/mining/creation-flow-before.svg",
@@ -146,22 +207,21 @@ const content = {
             eyebrow: "Research",
             label: "ヒアリングと仕様定義",
             caption:
-              "UI上の課題抽出にとどまらず、実際の業務フローについてクライアントへヒアリングを実施しました。",
+              "表層的なUIの改修にとどまらず、根本的なUX（業務フローや仕様）から見直すため、クライアントへのヒアリングを実施しました。",
             pairs: {
-              findingHeading: "実態",
-              decisionHeading: "UI/UXへの落とし込み",
+              findingHeading: "業務の実態",
+              decisionHeading: "既存仕様とのズレ",
               items: [
                 {
                   finding:
-                    "一つのプロジェクト内に複数のプログラムが存在するとは限らず、プログラム単体で運用されるケースも多い。",
-                  decision:
-                    "プロジェクト作成を「必須の事前ステップ」から「任意の機能」へと変更",
+                    "実務における最小単位はプログラムであり、そもそもプロジェクトという枠組みを持たないケースも少なくない",
+                  decision: "プロジェクト作成が必須の事前ステップになっていた",
                 },
                 {
                   finding:
-                    "初期の予算策定段階では、プログラムの詳細（期間・人員など）が確定していないことが多い。",
+                    "初期の予算策定段階では、プログラムの詳細（期間・人員など）が確定していないことが多い",
                   decision:
-                    "必須入力項目を最小化し、詳細は後から登録可能な設計に変更（※エンジニアと協議し、システム上必須となる最小データ構造を定めた上で仕様を最適化）",
+                    "プロジェクト・プログラムの詳細項目の入力が必須になっていた",
                 },
               ],
             },
@@ -170,36 +230,37 @@ const content = {
           },
           {
             theme: "after",
-            eyebrow: "After",
-            label: "改善後",
-            flowLabel: "予算作成までのユーザーフロー (プログラム作成の場合)",
-            image: "/mining/creation-flow-after.svg",
+            eyebrow: "Before / After",
+            label: "予算作成までのフロー比較",
+            flowLabel: "ヒアリングの結果を踏まえて、UIを改善しました。",
+            image: "/mining/program_flow.svg",
+            imageScrollHeight: "h-[min(960px,calc(100vh_-_240px))]",
             alt: "変更後のプログラム作成フロー",
             list: {
               heading: "改善内容",
               eyebrow: "Solution",
-              note: "(図中の A・B・C に対応)",
-              marker: "letter",
+              hideHeading: true, // タイトルと区切り線を非表示
+              marker: "dot",
               items: [
                 {
                   title: "プロジェクト作成の任意化",
-                  text: "これまで必須であったプロジェクト作成を任意とし、プログラム単体での作成を可能にしました。また、プログラム作成後は直接予算作成画面へ遷移する設計としました。",
-                },
-                {
-                  title: "モーダルによる入力体験の継続性確保",
-                  text: "画面遷移に代えてモーダルUIを採用したことで、ユーザーは元の画面の文脈を保ったまま入力を完結できるようになりました。背面の一覧で既存の名称を参照しながら、新たな名称を設定することも可能です。",
+                  text: "これまで必須であったプロジェクト作成を任意とし、プログラム単体での作成を可能にしました。",
                 },
                 {
                   title: "入力必須項目の最小化",
                   text: "モーダル内の入力必須項目をプロジェクト・プログラム名のみに絞り込み、その他の詳細情報は後から入力できる仕様としました。これにより、ユーザーが最短の操作で予算作成に着手できるようになりました。",
+                },
+                {
+                  title: "モーダルによる入力体験の継続性確保",
+                  text: "画面遷移に代えてモーダルUIを採用したことで、ユーザーは元の画面の文脈を保ったまま入力を完結できるようになりました。背面の一覧で既存の名称を参照しながら、新たな名称を設定することも可能です。",
                 },
               ],
             },
           },
         ],
         reflection: {
-          headline: "前提を疑うことの大切さ",
-          text: "フローが直感的でないという課題が挙がった当初は、既存の仕様を前提としたまま、UI上の問題として捉えていました。しかし、クライアントへのヒアリングを通じて仕様と実際の運用との間にズレがあることが明らかになり、仕様そのものを問い直したことで、フロー全体の簡略化へとつなげることができました。",
+          headline: "UIの問題を、仕様の問題として捉え直す",
+          text: "当初は「フローが直感的でない」という課題を、既存の仕様を前提としたUI上の問題として捉えていました。しかしヒアリングを通じて、仕様そのものが実際の運用とずれていることが分かりました。画面の改善だけでなく仕様を問い直したことで、フロー全体を短くすることができました。",
         },
       },
       {
@@ -208,7 +269,7 @@ const content = {
         summary:
           "慣れ親しんだ操作性を踏襲することでユーザーの学習コストを極小化し、予算管理プロセス全体の効率化を実現しました。",
         background:
-          "初期仕様では、ユーザーがプロジェクト作成時に「期間」や「採掘場所」などの条件を入力すると、システムが予算項目を自動作成し、概算を算出する仕組みでした。しかし、プロトタイプを使ったクライアント検証では、自動生成された画面の操作性や見やすさについて、期待した評価が得られませんでした。そこで、UI/UXを再設計しました。",
+          "初期仕様では、ユーザーがシステム上でプロジェクト作成時に「期間」や「採掘場所」などの条件を入力すると、システムが予算項目を自動作成し、概算を算出する仕組みでした。しかし、プロトタイプを使ったクライアント検証では、自動生成された画面の操作性や見やすさについて、期待した評価が得られませんでした。そこで、UI/UXを再設計しました。",
         sections: [
           {
             theme: "before",
@@ -332,6 +393,7 @@ const content = {
           },
           {
             theme: "process",
+            hidden: true, // 一時的に非表示
             eyebrow: "Constraint",
             label: "技術的制約を考慮したUX設計",
             constraint: {
@@ -520,9 +582,30 @@ const content = {
       "Considering that the industry tends to be slow to adopt IT tools, I pursued a UI/UX design that fits into existing workflows, so that even users unfamiliar with digital devices can operate it intuitively.",
     productOverviewImage: "/mining/program_overview.svg",
     productOverviewImageCaption: "Selected designs (excerpt)",
+    summaryTitle: "Project Summary",
+    summaryText:
+      "A project to build a budget and progress management system for mine development, for a mining operations management company in Canada.",
+    summaryItems: [
+      {
+        eyebrow: "Challenge",
+        label: "Challenge",
+        text: "Manual Excel work had made tasks person-dependent and input mistakes routine, and the system under development wasn't being accepted on site.",
+      },
+      {
+        eyebrow: "Approach",
+        label: "Approach",
+        text: 'Shifted the direction from automation to "reducing mistakes without disrupting the Excel workflow," and brought everything from budget management to reporting into a single screen.',
+      },
+      {
+        eyebrow: "Outcome",
+        label: "Outcome",
+        text: 'Brought the product to release quality, and the client said it was "exactly the tool we wanted."',
+      },
+    ],
     industryTitle: "What Is the Mining Industry?",
     industryFlowImage: "/mining/industory_flow.svg",
     clientTitle: "The Client's Position",
+    zoomLabel: "Zoom in",
     clientText:
       "A program management platform for program managers in Canada's mining industry. At sites where multiple mining programs run simultaneously, it brings budget planning, actuals tracking, and reporting, which tend to become complex, into one place to streamline operations.",
     clientFlowImage: "/mining/client_flow.svg",
@@ -536,7 +619,7 @@ const content = {
         of Excel-based budgeting work.
       </>
     ),
-    challengesHeaders: ["Challenge", "Before", "Solved by the System"],
+    challengesHeaders: ["Challenge", "Solved by the System"],
     challenges: [
       {
         issue: "Inefficiency",
@@ -556,11 +639,20 @@ const content = {
       },
     ],
     backgroundTitle: "Project Background and Challenges",
+    seeSolution: "See the solution",
     backgroundText:
       "When I joined, design and implementation were already underway, but the project faced the challenges below. I came on board as a UI/UX Designer to turn that situation around.",
     backgroundIssues: [
-      { title: "Inconsistent user flows", detail: "Specifically, ..." },
-      { title: "A fundamental rethink of the UX", detail: "Specifically, ..." },
+      {
+        title: "Inconsistent user flows",
+        target: 1,
+        detail: "Specifically, ...",
+      },
+      {
+        title: "A fundamental rethink of the UX",
+        target: 2,
+        detail: "Specifically, ...",
+      },
     ],
     roleTitle: "My Role & Mission",
     roleText:
@@ -587,7 +679,37 @@ const content = {
         background: [
           "The preliminary flow (creating a project, then a program) leading to the Budget Creation screen, the most frequently used feature, lacked intuitiveness, causing drop-offs and confusion during operation.",
         ],
+        backgroundSteps: {
+          termNote: [
+            { text: "A " },
+            { text: "project", bold: true },
+            {
+              text: " is the entire engagement commissioned by a client company, and a ",
+            },
+            { text: "program", bold: true },
+            {
+              text: " is an individual unit of work carried out within it. Budgets are created per program.",
+            },
+          ],
+          heading: "Before: steps to start creating a budget",
+          steps: [
+            { label: "STEP 1", title: "Home", text: 'Click "Create new"' },
+            {
+              label: "STEP 2 · Required",
+              title: "Create a project",
+              text: "Enter details on a separate screen",
+            },
+            {
+              label: "STEP 3 · Required",
+              title: "Create a program",
+              text: "Enter details on yet another screen",
+            },
+          ],
+          goal: "Create a budget",
+          note: 'Two required creation steps, each on its own screen, stood in front of budget creation, the most-used feature. The actual screens are shown in "03. Flow comparison."',
+        },
         backgroundFigure: {
+          hidden: true, // 一時的に非表示
           caption:
             "In the data structure, multiple child programs were linked to a single parent project, and each budget was linked to those programs. As a result, creating a new budget required users to first create a project and then a program, in that order.",
           image: "/mining/diagram.svg",
@@ -597,6 +719,8 @@ const content = {
         sections: [
           {
             theme: "before",
+            hidden: true, // 一時的に非表示
+            eyebrow: "Before",
             label: "Before",
             flowLabel: "User flow from project creation to budget creation",
             image: "/mining/creation-flow-before.svg",
@@ -652,13 +776,15 @@ const content = {
             eyebrow: "After",
             label: "After",
             flowLabel: "User flow to budget creation (when creating a program)",
-            image: "/mining/creation-flow-after.svg",
+            image: "/mining/program_flow.svg",
+            imageScrollHeight: "h-[min(960px,calc(100vh_-_240px))]",
             alt: "Program creation flow after the change",
             list: {
               heading: "Improvements",
               eyebrow: "Solution",
+              hideHeading: true, // タイトルと区切り線を非表示
               note: "(Corresponds to A, B, C in the figure)",
-              marker: "letter",
+              marker: "dot",
               items: [
                 {
                   title: "Making project creation optional",
@@ -824,6 +950,7 @@ const content = {
           },
           {
             theme: "process",
+            hidden: true, // 一時的に非表示
             eyebrow: "Constraint",
             label: "UX designed around technical constraints",
             constraint: {
@@ -996,11 +1123,18 @@ const MiningProject = () => {
 
   const [openSections, setOpenSections] = useState({
     1: true,
-    2: true,
-    3: true,
+    2: false,
+    3: false,
   });
   const toggleSection = (id) => {
     setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+  // "解決策を見る": open that improvement's accordion and scroll to it.
+  const showImprovement = (id) => {
+    setOpenSections((prev) => ({ ...prev, [id]: true }));
+    document
+      .getElementById(`improvement-${id}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
@@ -1041,10 +1175,41 @@ const MiningProject = () => {
           </div>
         </div>
         <div className="flex flex-col gap-[140px] pt-0 md:pt-24 pb-16">
+          {/* Project Summary Section */}
+          <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
+              {t.summaryTitle}
+            </h2>
+            <p className="text-base leading-loose">{t.summaryText}</p>
+            {/* Centred as a block; rows stay left-aligned with each other */}
+            <ul className="flex flex-col gap-8 md:w-fit md:mx-auto">
+              {t.summaryItems.map((item) => (
+                <li
+                  key={item.label}
+                  className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4"
+                >
+                  <div className="md:w-40 md:shrink-0">
+                    <p className="text-[11px] font-semibold text-[#005989] uppercase">
+                      {item.eyebrow}
+                    </p>
+                    <h3 className="text-lg font-bold">{item.label}</h3>
+                  </div>
+                  {/* Dotted leader from the heading to its text; the
+                      heading, leader and text are vertically centred. */}
+                  <span
+                    aria-hidden="true"
+                    className="hidden md:block w-12 shrink-0 border-t-2 border-dotted border-[#C2C2C2]"
+                  />
+                  <p className="flex-1 min-w-0 font-medium leading-relaxed">
+                    {item.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
           {/* ProductOverview Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
               {t.industryTitle}
             </h2>
             <p className="text-base leading-loose">{t.ProductOverviewText}</p>
@@ -1053,40 +1218,63 @@ const MiningProject = () => {
               alt={t.industryTitle}
             />
           </div>
-          {/* Client Position Section */}
-          <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+          {/* Client Position Section: a zoomed-in panel hanging off the
+              industry diagram above. The connector line and magnifier fill
+              the 140px section gap, so the panel is pulled up by that much.
+              The connector is centred under the leftmost "プロジェクト発足"
+              label, which sits at 14.85% of industory_flow.svg's width. */}
+          <div className="-mt-[140px] flex flex-col px-6 md:px-12 lg:px-24 xl:px-40">
+            <div
+              aria-hidden="true"
+              className="flex flex-col items-center w-[44px] ml-[calc(14.85%-22px)]"
+            >
+              <div className="h-12 border-l-[1.5px] border-dashed border-[#292a2e]" />
+              <div className="relative flex items-center justify-center size-[44px] rounded-full border-[1.5px] border-[#292a2e] bg-white">
+                <img
+                  src="/mining/icon-zoom-in.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+                <span className="absolute left-full top-1/2 -translate-y-1/2 ml-3 text-sm font-semibold text-[#292a2e] whitespace-nowrap">
+                  {t.zoomLabel}
+                </span>
+              </div>
+              <div className="h-12 border-l-[1.5px] border-dashed border-[#292a2e]" />
+            </div>
+            <h2 className="flex items-center justify-center w-[200px] h-[33px] ml-[max(0px,calc(14.85%-100px))] px-4 rounded-t-lg bg-[#292a2e] text-[13px] font-bold text-white whitespace-nowrap">
               {t.clientTitle}
             </h2>
-            <p className="text-base leading-loose">{t.clientText}</p>
-            <ZoomableImage
-              src={t.clientFlowImage}
-              alt={t.clientTitle}
-              className="w-full object-contain"
-            />
+            <div className="flex flex-col gap-7 px-6 py-6 md:px-10 md:py-8 border-[1.5px] border-[#292a2e] rounded-lg bg-white">
+              <p className="text-sm leading-loose tracking-[0.04em] text-[#292a2e]">
+                {t.clientText}
+              </p>
+              <ZoomableImage
+                src={t.clientFlowImage}
+                alt={t.clientTitle}
+                className="w-full object-contain"
+              />
+            </div>
           </div>
           {/* Client Challenges Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
               {t.challengesTitle}
             </h2>
             <p className="text-base leading-loose">{t.challengesText}</p>
             <div className="w-full overflow-x-auto">
-              <table className="w-full min-w-[720px] table-fixed border-collapse text-left">
+              <table className="w-full min-w-[560px] table-fixed border-collapse text-left">
                 <colgroup>
-                  <col className="w-1/4" />
-                  <col className="w-[37.5%]" />
-                  <col className="w-[37.5%]" />
+                  <col className="w-1/2" />
+                  <col className="w-1/2" />
                 </colgroup>
                 <thead>
-                  <tr className="h-[40px] border-b border-[#bdbdbd]">
+                  <tr className="h-[48px] border-b-[1px] border-[#8a8a8a]">
                     {t.challengesHeaders.map((header, i) => (
                       <th key={header} scope="col" className="pb-4">
                         <span
                           className={`items-center justify-center px-3 py-1 rounded-full border text-xs font-bold text-white whitespace-nowrap ${
-                            i < 2 ? "bg-[#7e8284] " : "bg-[#005989]"
+                            i < 1 ? "bg-[#7e8284] " : "bg-[#005989]"
                           }`}
                         >
                           {header}
@@ -1101,15 +1289,20 @@ const MiningProject = () => {
                       key={row.issue}
                       className={`h-[70px] ${
                         i < t.challenges.length - 1
-                          ? "border-b border-dashed border-[#bab9b9]"
+                          ? "border-b border-dashed border-[#8a8a8a]"
                           : ""
                       }`}
                     >
-                      <th scope="row" className="pr-4 font-bold text-sm">
-                        {row.issue}
+                      <th
+                        scope="row"
+                        className="py-4 pr-6 text-sm font-normal align-top"
+                      >
+                        <p className="font-bold">{row.issue}</p>
+                        <p className="pt-1 leading-relaxed">{row.before}</p>
                       </th>
-                      <td className="pr-4 text-sm ">{row.before}</td>
-                      <td className=" font-semibold text-sm">{row.solution}</td>
+                      <td className="py-4 font-semibold text-sm align-middle">
+                        {row.solution}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -1118,41 +1311,46 @@ const MiningProject = () => {
           </div>
           {/* Project Background Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
               {t.backgroundTitle}
             </h2>
             <div className="text-base leading-relaxed">
               <p>{t.backgroundText}</p>
               <p>{t.roleText}</p>
             </div>
-            <ul className="flex flex-col gap-12">
+            <ul className="flex flex-col md:flex-row gap-12">
               {t.backgroundIssues.map((issue, index) => (
-                <li key={issue.title} className="">
-                  <p className="flex items-center gap-2 font-bold  text-lg">
-                    <span className="shrink-0 text-primary">
-                      {String(index + 1).padStart(2, "0")}.
-                    </span>
-                    {issue.title}
-                  </p>
-                  <div className="flex items-center gap-2 pl-8 pt-2">
-                    {/* <CornerDownRight
-                      aria-hidden="true"
-                      strokeWidth={1.5}
-                      className="size-5 shrink-0"
-                    /> */}
-                    <p className="font-medium leading-relaxed">
+                <li
+                  key={issue.title}
+                  className="flex flex-col justify-between gap-4 flex-1 min-w-0"
+                >
+                  <div>
+                    <p className="flex items-center gap-2 font-bold text-lg">
+                      <span className="shrink-0 text-primary">
+                        {String(index + 1).padStart(2, "0")}.
+                      </span>
+                      {issue.title}
+                    </p>
+                    <p className="pl-8 pt-2 font-medium leading-relaxed">
                       {issue.detail}
                     </p>
                   </div>
+                  {issue.target && (
+                    <button
+                      type="button"
+                      onClick={() => showImprovement(issue.target)}
+                      className="self-end px-5 py-2 rounded-full bg-primary text-sm font-bold leading-5 text-white transition-opacity hover:opacity-80 focus-visible:opacity-80"
+                    >
+                      {t.seeSolution}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
           {/* Product Development Flow Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold ">
               {t.productFlowTitle}
             </h2>
             <div className="flex flex-col gap-12">
@@ -1168,20 +1366,20 @@ const MiningProject = () => {
           </div>
           {/* Improvement Proposals Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-3xl font-semibold">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-3xl font-semibold">
               {t.improvementsTitle}
             </h2>
             <p className="-mb-4 text-base leading-loose">
               {t.improvementsText}
             </p>
             <div className="space-y-4 w-full">
-              {/* id: 1 は一時的に非表示 */}
-              {t.improvements
-                .filter((improvement) => improvement.id !== 1)
-                .map((improvement) => (
+              {t.improvements.map((improvement) => (
+                <div
+                  key={improvement.id}
+                  id={`improvement-${improvement.id}`}
+                  className="scroll-mt-24"
+                >
                   <Accordion
-                    key={improvement.id}
                     title={improvement.title}
                     summary={improvement.summary}
                     isOpen={openSections[improvement.id]}
@@ -1191,18 +1389,19 @@ const MiningProject = () => {
                       labels={t.caseLabels}
                       background={improvement.background}
                       backgroundFigure={improvement.backgroundFigure}
+                      backgroundSteps={improvement.backgroundSteps}
                       sections={improvement.sections}
                       reflection={improvement.reflection}
                     />
                   </Accordion>
-                ))}
+                </div>
+              ))}
             </div>
           </div>
 
           {/* AI Usage Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold">
               {t.aiUsageTitle}
             </h2>
             <div className="flex flex-col md:flex-row gap-10 md:gap-16">
@@ -1220,7 +1419,7 @@ const MiningProject = () => {
               <ul className="md:w-2/3 flex flex-col gap-6 list-disc pl-5">
                 {t.aiUsageSubTitle.map((subTitle, index) => (
                   <li key={subTitle} className="space-y-2">
-                    <h3 className="text-lg font-semibold text-[#3B2707]">
+                    <h3 className="text-lg font-semibold text-text">
                       {subTitle}
                     </h3>
                     <p className="text-base leading-loose">
@@ -1233,8 +1432,7 @@ const MiningProject = () => {
           </div>
           {/* Learnings Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
               {t.learnings}
             </h2>
             {/* <p className="text-base leading-loose">{t.learningsText}</p> */}
@@ -1249,8 +1447,7 @@ const MiningProject = () => {
           </div>
           {/* Future Outlook Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
-            <h2 className="-mb-4 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
-              <SectionMark />
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
               {t.futureOutlook}
             </h2>
             <p className="text-base leading-loose">{t.futureOutlookText}</p>

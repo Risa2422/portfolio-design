@@ -33,7 +33,10 @@ function Accordion({ number, title, summary, isOpen, onToggle, children }) {
           isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="overflow-hidden">
+        {/* overflow-clip (not hidden) so position: sticky still works inside;
+            min-h-0 lets the 0fr row collapse, since clip (unlike hidden)
+            keeps the grid item's minimum height at its content height */}
+        <div className="min-h-0 overflow-clip">
           <hr className="border-t border-solid border-gray-300 my-3" />
           {children}
         </div>

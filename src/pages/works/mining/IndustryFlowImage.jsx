@@ -2,10 +2,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import ZoomableImage from "../../../components/ZoomableImage";
 
 // Horizontal crop of each phase column (①, ②, ③) within industory_flow.svg.
-// Boundaries sit in the gaps between columns (1162px wide artboard).
+// Boundaries sit in the gaps between columns (viewBox x 100–1190).
 const PHASE_CLIPS = [
-  "inset(0 67% 0 0)",
-  "inset(0 33% 0 33%)",
+  "inset(0 68.5% 0 0)",
+  "inset(0 33% 0 31.5%)",
   "inset(0 0 0 67%)",
 ];
 

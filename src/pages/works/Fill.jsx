@@ -182,7 +182,7 @@ const WebDesign = () => {
         </div>
         {/* Overview Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.overviewTitle}
           </h2>
@@ -206,7 +206,7 @@ const WebDesign = () => {
         </div>
         {/* Output Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.outputTitle}
           </h2>
@@ -225,7 +225,7 @@ const WebDesign = () => {
         </div>
         {/* Design Process Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.processTitle}
           </h2>
@@ -262,7 +262,7 @@ const WebDesign = () => {
         </div>
         {/* Results & Learnings Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
-          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-[#3B2707]">
+          <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
             <SectionMark />
             {t.resultsTitle}
           </h2>

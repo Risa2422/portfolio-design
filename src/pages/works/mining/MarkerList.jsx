@@ -39,7 +39,13 @@ function MarkerList({
           {note && <span className="text-xs text-[#7a6a5f]">{note}</span>}
         </div>
       )}
-      <ul className={marker === "letter" ? "flex flex-col gap-3" : undefined}>
+      <ul
+        className={
+          marker === "letter" || items.some((item) => item.title)
+            ? "flex flex-col gap-3"
+            : undefined
+        }
+      >
         {items.map((item, index) => (
           <li
             key={index}
