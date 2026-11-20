@@ -332,7 +332,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
-import SectionMark from "../../components/SectionMark";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
@@ -482,14 +481,12 @@ const Mahjong = () => {
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.overviewTitle}
           </h2>
           <p className="text-base leading-loose">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.problemTitle}
           </h2>
           <div className="space-y-8">
@@ -565,7 +562,6 @@ const Mahjong = () => {
           className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20  overflow-hidden scroll-mt-24"
         >
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.uiDesignTitle}
           </h2>
           <div className="flex flex-col w-full gap-2">
@@ -755,7 +751,6 @@ const Mahjong = () => {
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.learningsTitle}
           </h2>
           <p className="text-base leading-loose">{t.learningsText}</p>

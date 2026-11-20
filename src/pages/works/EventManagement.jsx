@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
-import SectionMark from "../../components/SectionMark";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
@@ -333,21 +332,18 @@ const EventManagement = () => {
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.overviewTitle}
           </h2>
           <p className="leading-loose ">{t.overviewText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.backgroundTitle}
           </h2>
           <p className="text-base leading-loose ">{t.backgroundText}</p>
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.problemTitle}
           </h2>
           <div className="space-y-2">
@@ -394,7 +390,6 @@ const EventManagement = () => {
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.mvpTitle}
           </h2>
           <p className="text-base leading-loose ">{t.mvpText}</p>
@@ -408,7 +403,6 @@ const EventManagement = () => {
         </div>
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20  overflow-hidden">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.uiDesignTitle}
           </h2>
           <div>
@@ -706,7 +700,6 @@ const EventManagement = () => {
 
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.takeawaysTitle}
           </h2>
           <ul className="list-disc pl-5 space-y-6 text-base ">

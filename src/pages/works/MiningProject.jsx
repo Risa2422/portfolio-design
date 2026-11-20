@@ -52,7 +52,7 @@ const content = {
       {
         eyebrow: "Challenge",
         label: "課題",
-        text: "現場はExcel管理による属人化や入力ミスという課題を抱えていましたが、解決策として導入されたシステムも、操作の煩雑さや使い慣れないAI機能への戸惑いから十分に活用されていませんでした。",
+        text: "現場はExcel管理による属人化や入力ミスという課題を抱えていましたが、解決策として開発が進んでいたシステムも、操作の煩雑さや使い慣れないAI機能への戸惑いから十分に活用されていませんでした。",
       },
       {
         eyebrow: "Approach",
@@ -547,9 +547,25 @@ const content = {
       "短期間で最適なUIを選定するため、生成AIを活用して複数のデザインパターンを迅速に作成・検証しました。早い段階から高精度なUIで比較・検討できたことで、実装に近い解像度で意思決定を行うことができました。",
       "クライアントレビューにおいて、静的プロトタイプで合意を得ていても、実装後に実際の操作感とのギャップが生じる課題がありました。そこで開発前の段階でAIツール「Alloy」を導入し、クライアントが直接操作できるプロトタイプを作成・共有しました。これにより、以前に比べて実装後の認識ギャップによる手戻りを防ぐことができました。",
     ],
+    resultsTitle: "結果",
+    resultsText:
+      "本リリース直前までの参画でしたが、当初の目標であった「リリース可能な品質・状態への引き上げ」を達成しました。クライアントからは、次のような評価をいただきました。",
+    resultsQuotes: [
+      {
+        text: "Excelでは大量のデータを見やすく管理するのが難しいが、このシステムなら予算作成も実績管理も簡単にできる。",
+        role: "副社長 兼 探鉱マネージャー",
+      },
+      {
+        text: "現在のワークフローと大きく変わらないから使いやすい。",
+        role: "探鉱マネージャー",
+      },
+      {
+        text: "同業者も間違いなくこういうシステムを欲しがっているはず。",
+        role: "探鉱マネージャー",
+      },
+    ],
     learnings: "結果・振り返り",
     learningsText: [
-      "本リリース直前までの参画でしたが、当初の目標であった「リリース可能な品質・状態への引き上げ」を達成しました。",
       "一人デザイナーかつ非ネイティブという制約下で、早期からチームを巻き込むアプローチを徹底しました。未完成な段階で積極的にフィードバックを得ることで、手戻りを最小限に抑えスピーディーに成果へ繋げました。",
       "クライアント自身も自覚していない潜在的課題を発見することの難しさと、そのための徹底した業務理解の重要性を痛感しました。単に要望を受け取るだけでなく、自ら仮説を持って対話し、本質的な課題へアプローチする姿勢を今後も意識したいと思います。",
     ],
@@ -1100,6 +1116,23 @@ const content = {
       "To select the best UI in a short time, I used generative AI to quickly create and test multiple design patterns. Being able to compare high-fidelity UIs from an early stage allowed us to make decisions at a level of detail close to the final implementation.",
       'In client reviews, even when we had reached agreement on static prototypes, gaps often emerged between expectations and the actual feel after implementation. To address this, I introduced the AI tool "Alloy" before development began, creating and sharing prototypes that the client could interact with directly. Compared to before, this helped prevent rework caused by misaligned expectations after implementation.',
     ],
+    resultsTitle: "Results",
+    resultsText:
+      "Although my involvement wrapped up just prior to the official launch, I achieved the original goal of elevating the product to a release-ready standard. The client shared feedback such as the following:",
+    resultsQuotes: [
+      {
+        text: "With Excel, it's hard to keep large amounts of data easy to read, but with this system, both budgeting and tracking actuals are simple.",
+        role: "Vice President & Exploration Manager",
+      },
+      {
+        text: "It's easy to use because it doesn't change our current workflow much.",
+        role: "Vice President & Exploration Manager",
+      },
+      {
+        text: "Others in our industry would definitely want a system like this.",
+        role: "Vice President & Exploration Manager",
+      },
+    ],
     learnings: "Results & Reflection",
     learningsText: [
       "Although my involvement wrapped up just prior to the official launch, I successfully achieved the primary goal of elevating the product to a release-ready standard.",
@@ -1331,7 +1364,7 @@ const MiningProject = () => {
                       </span>
                       {issue.title}
                     </p>
-                    <p className="pl-8 pt-2 font-medium leading-relaxed">
+                    <p className="pl-8 pt-4 font-medium leading-relaxed">
                       {issue.detail}
                     </p>
                   </div>
@@ -1339,7 +1372,7 @@ const MiningProject = () => {
                     <button
                       type="button"
                       onClick={() => showImprovement(issue.target)}
-                      className="self-end px-5 py-2 rounded-full bg-primary text-sm font-bold leading-5 text-white transition-opacity hover:opacity-80 focus-visible:opacity-80"
+                      className="self-end px-5 py-2 pt-2 rounded-full border border-primary bg-white text-sm font-bold leading-5 text-primary transition-opacity hover:opacity-80 focus-visible:opacity-80"
                     >
                       {t.seeSolution}
                     </button>
@@ -1430,6 +1463,43 @@ const MiningProject = () => {
               </ul>
             </div>
           </div>
+          {/* Results Section */}
+          <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
+            <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
+              {t.resultsTitle}
+            </h2>
+            <div className="flex flex-col gap-6">
+              <p className="text-base leading-loose">{t.resultsText}</p>
+              <ul className="grid gap-10 md:grid-cols-3">
+                {t.resultsQuotes.map((quote) => (
+                  <li
+                    key={quote.text}
+                    className="flex flex-col gap-1 pt-6 pb-7 rounded-lg"
+                  >
+                    <img
+                      src="/mining/icon-quote.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="19.5"
+                      height="14.25"
+                    />
+                    <p className="text-[17px] font-bold leading-8 text-text">
+                      {quote.text}
+                    </p>
+                    {quote.role && (
+                      <p className="mt-auto flex items-center justify-end gap-2 pt-3 text-sm leading-5 text-[#7e8284]">
+                        <span
+                          aria-hidden="true"
+                          className="h-px w-3 shrink-0 bg-border"
+                        />
+                        {quote.role}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           {/* Learnings Section */}
           <div className="flex flex-col gap-12 px-6 md:px-12 lg:px-24 xl:px-40">
             <h2 className="-mb-8 flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
@@ -1454,7 +1524,7 @@ const MiningProject = () => {
             <Link to="/" className="group hover:opacity-80 pt-20">
               <div className="flex items-center gap-2">
                 <span className="flex items-center justify-center w-14 h-10">
-                  <ArrowLeftIcon className="w-14 text-[#1C1619] transition-colors group-hover:text-primary group-focus-visible:text-primary" />
+                  <ArrowLeftIcon className="w-14 transition-colors group-hover:text-primary group-focus-visible:text-primary" />
                 </span>
                 <p className="font-normal tracking-widest transition-colors group-hover:text-primary group-focus-visible:text-primary">
                   {t.home}

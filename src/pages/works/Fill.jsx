@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ArrowLeftIcon from "../../components/ArrowLeftIcon";
 import FadeInPageWrapper from "../../components/FadeInPageWrapper";
 import InfoList from "../../components/InfoList";
-import SectionMark from "../../components/SectionMark";
 import ZoomableImage from "../../components/ZoomableImage";
 import { useLanguage } from "../../context/LanguageContext";
 import { localizeImage } from "../../utils/localizeImage";
@@ -183,7 +182,6 @@ const WebDesign = () => {
         {/* Overview Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.overviewTitle}
           </h2>
           <div className="flex flex-col gap-8 justify-center items-center">
@@ -207,7 +205,6 @@ const WebDesign = () => {
         {/* Output Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.outputTitle}
           </h2>
           <div className="grid gap-10 items-start md:grid-cols-3">
@@ -226,7 +223,6 @@ const WebDesign = () => {
         {/* Design Process Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20 ">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.processTitle}
           </h2>
           <div className="space-y-8">
@@ -263,7 +259,6 @@ const WebDesign = () => {
         {/* Results & Learnings Section */}
         <div className="flex flex-col gap-8 px-6 md:px-12 lg:px-24 xl:px-40 py-0 md:py-20">
           <h2 className="flex items-center gap-2 text-2xl md:text-[26px] font-semibold text-text">
-            <SectionMark />
             {t.resultsTitle}
           </h2>
           <p className="text-base leading-loose ">{t.resultsText}</p>
